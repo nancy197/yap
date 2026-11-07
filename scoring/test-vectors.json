@@ -1,0 +1,71 @@
+{
+  "arenaRoot": "35407ab58106f0d778a36808f43ab773056f9bc968ed89b83e17ffc968a768d6",
+  "arenas": [
+    {
+      "account": "alice.near",
+      "amount": "5555555555555555555",
+      "arenaId": 2,
+      "epoch": 7,
+      "leaf": "127626c44bf56368eb5ea028e8fb50b79796141d89ef25edd791e5a255d375ae",
+      "proof": [
+        "9109f8f1465c5b2445398b420cbcca99bec048b1dc489670caff1123dd97d9ae"
+      ]
+    },
+    {
+      "account": "bob.near",
+      "amount": "99",
+      "arenaId": 2,
+      "epoch": 7,
+      "leaf": "9109f8f1465c5b2445398b420cbcca99bec048b1dc489670caff1123dd97d9ae",
+      "proof": [
+        "127626c44bf56368eb5ea028e8fb50b79796141d89ef25edd791e5a255d375ae"
+      ]
+    }
+  ],
+  "emptyRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "node": {
+    "a": "4ac880791208956848996745f2012a1e19ca9dfc6d6c21fcd1844bcd1549db52",
+    "b": "961e19df4af054640481ff46caadb6f1e9dcdb033d10c8c14a03b7c1379e1a17",
+    "hash": "8f1f884c5fe96539da28443d11955ba7208e3a395ea9b488a0a38df284dabf35"
+  },
+  "schema": "yap-merkle-v1",
+  "yappers": [
+    {
+      "account": "alice.near",
+      "amount": "123456789012345678901",
+      "epoch": 7,
+      "leaf": "4ac880791208956848996745f2012a1e19ca9dfc6d6c21fcd1844bcd1549db52",
+      "proof": [
+        "961e19df4af054640481ff46caadb6f1e9dcdb033d10c8c14a03b7c1379e1a17",
+        "4417de3b2dbfd150cdb5eec06c3f47d66b8fcdd10b4a6cac3e31ed14c13619d3"
+      ],
+      "score": "987654321",
+      "tier": 3
+    },
+    {
+      "account": "bob.near",
+      "amount": "42",
+      "epoch": 7,
+      "leaf": "961e19df4af054640481ff46caadb6f1e9dcdb033d10c8c14a03b7c1379e1a17",
+      "proof": [
+        "4ac880791208956848996745f2012a1e19ca9dfc6d6c21fcd1844bcd1549db52",
+        "4417de3b2dbfd150cdb5eec06c3f47d66b8fcdd10b4a6cac3e31ed14c13619d3"
+      ],
+      "score": "250000",
+      "tier": 1
+    },
+    {
+      "account": "carol.near",
+      "amount": "0",
+      "epoch": 7,
+      "leaf": "d34ca802ce442b6c01157144a90f91ee26b317d821d000807789e9f38716d5b7",
+      "proof": [
+        "d34ca802ce442b6c01157144a90f91ee26b317d821d000807789e9f38716d5b7",
+        "8f1f884c5fe96539da28443d11955ba7208e3a395ea9b488a0a38df284dabf35"
+      ],
+      "score": "1",
+      "tier": 4
+    }
+  ],
+  "yappersRoot": "dec4606d631b0992df7222fdf22e97c861652555c729da4b4b61ee1334305a44"
+}

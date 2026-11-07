@@ -1,0 +1,118 @@
+// Quality labeler: an AI model running in a verified TEE on NEAR AI Cloud gives each post q in 0..3.
+// Labels are the only non-deterministic input to scoring, so every run publishes the label file, the prompt hash
+// and the TEE attestation report hash. Labels are cached by post key + text hash and never recomputed.
+// CLI: pnpm labeler --dataset <file> [--mock] [--out labels.json]
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { createHash } from 'node:crypto';
+import { mockLabels, type EpochDataset, type Labels } from '@yap/scoring';
+import { chatJson, fetchAttestation, modelPricing, type AttestationResult } from './providers/nearai.ts';
+import { ROOT, loadEnv } from './common.ts';
+
+export const LABEL_MODEL = 'Qwen/Qwen3.8-27B';
+const CACHE = resolve(ROOT, 'data/labels-cache');
+const BATCH = 12;
+const sha = (s: string) => createHash('sha256').update(s).digest('hex');
+type Detail = { key: string; q: 0 | 1 | 2 | 3; reason: string; cached?: boolean };
+export type LabelRun = {
+  labels: Labels;
+  details: Detail[];
+  model: string;
+  simulated: boolean;
+  promptHash: string;
+  attestation: { verified: boolean; reportHash: string; checks: { name: string; passed: boolean }[] } | null;
+  usage: { promptTokens: number; completionTokens: number; usd: number; calls: number };
+};
+
+export async function promptText() {
+  return readFile(resolve(ROOT, 'agents/prompts/label.md'), 'utf8');
+}
+
+export async function labelDataset(d: EpochDataset, opts: { mock?: boolean } = {}): Promise<LabelRun> {
+  const prompt = await promptText();
+  const promptHash = sha(prompt);
+  const posts = d.posts; // every post in the dataset may be scored or engaged with, so all need a label
+  if (opts.mock || !process.env.NEARAI_API_KEY) {
+    const labels = mockLabels(d);
+    return { labels, details: Object.entries(labels).map(([key, q]) => ({ key, q, reason: 'SIMULATED heuristic label' })), model: 'mock-heuristic (SIMULATED)', simulated: true, promptHash, attestation: null, usage: { promptTokens: 0, completionTokens: 0, usd: 0, calls: 0 } };
+  }
+  await mkdir(CACHE, { recursive: true });
+  const details: Detail[] = [];
+  const todo: typeof posts = [];
+  for (const p of posts) {
+    const f = resolve(CACHE, `${sha(p.key + '\n' + p.text)}.json`);
+    if (existsSync(f)) details.push({ ...(JSON.parse(await readFile(f, 'utf8')) as Detail), cached: true });
+    else todo.push(p);
+  }
+  // Attest the model's TEE once per run, before sending any post to it.
+  let att: AttestationResult | null = null;
+  if (todo.length) {
+    att = await fetchAttestation(LABEL_MODEL);
+    if (!att.verified) throw new Error(`attestation failed: ${att.checks.filter((c) => !c.passed).map((c) => c.name).join(', ')}`);
+  }
+  const usage = { promptTokens: 0, completionTokens: 0, usd: 0, calls: 0 };
+  for (let i = 0; i < todo.length; i += BATCH) {
+    const batch = todo.slice(i, i + BATCH);
+    const user = JSON.stringify({ posts: batch.map((p) => ({ key: p.key, text: p.text.slice(0, 1200), reply: !!p.replyTo, quote: !!p.quote })) });
+    let got: Detail[] = [];
+    for (let attempt = 0; attempt < 3 && got.length < batch.length; attempt++) {
+      let r;
+      try {
+        r = await chatJson(LABEL_MODEL, prompt, user, 0);
+      } catch (e) {
+        console.warn(`labeler call failed (attempt ${attempt + 1}): ${String(e).slice(0, 120)}`);
+        continue;
+      }
+      usage.promptTokens += r.promptTokens;
+      usage.completionTokens += r.completionTokens;
+      usage.calls++;
+      try {
+        const arr = (JSON.parse(r.content).labels ?? []) as Detail[];
+        got = batch.map((p) => {
+          const hit = arr.find((x) => x.key === p.key);
+          const q = Number(hit?.q);
+          if (!hit || ![0, 1, 2, 3].includes(q)) throw new Error(`missing label ${p.key}`);
+          return { key: p.key, q: q as Detail['q'], reason: String(hit.reason ?? '').slice(0, 160) };
+        });
+      } catch {
+        got = [];
+      }
+    }
+    if (got.length < batch.length) throw new Error('labeler returned invalid JSON three times');
+    for (const [j, x] of got.entries()) {
+      await writeFile(resolve(CACHE, `${sha(batch[j]!.key + '\n' + batch[j]!.text)}.json`), JSON.stringify(x));
+      details.push(x);
+    }
+  }
+  try {
+    const price = (await modelPricing())[LABEL_MODEL];
+    if (price) usage.usd = (usage.promptTokens * price.input + usage.completionTokens * price.output) / 1e6;
+  } catch {
+    /* pricing is informational */
+  }
+  details.sort((a, b) => (a.key < b.key ? -1 : 1));
+  const labels: Labels = Object.fromEntries(details.map((x) => [x.key, x.q]));
+  return {
+    labels,
+    details,
+    model: LABEL_MODEL,
+    simulated: false,
+    promptHash,
+    attestation: att ? { verified: att.verified, reportHash: att.reportHash, checks: att.checks.map(({ name, passed }) => ({ name, passed })) } : null,
+    usage,
+  };
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  await loadEnv();
+  const arg = (n: string) => process.argv[process.argv.indexOf(`--${n}`) + 1];
+  const d = JSON.parse(await readFile(resolve(arg('dataset')), 'utf8')) as EpochDataset;
+  const run = await labelDataset(d, { mock: process.argv.includes('--mock') });
+  const out = process.argv.includes('--out') ? resolve(arg('out')) : null;
+  if (out) {
+    await mkdir(dirname(out), { recursive: true });
+    await writeFile(out, JSON.stringify(run, null, 2));
+  }
+  console.log(JSON.stringify({ posts: run.details.length, model: run.model, attestation: run.attestation?.verified, usage: run.usage, sample: run.details.slice(0, 5) }, null, 2));
+}

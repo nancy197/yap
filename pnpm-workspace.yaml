@@ -1,0 +1,6 @@
+packages:
+  - indexer
+  - scoring
+  - agents
+  - web
+  - sim

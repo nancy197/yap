@@ -1,0 +1,58 @@
+{
+ "generatedAt": "2026-11-07T16:00:47.481Z",
+ "state": {
+  "streak": 0,
+  "best_streak": 0,
+  "attention_target": "100000000",
+  "minted_total": "1000000000000000000000000",
+  "burned_total": "0",
+  "reserve": "600000000000000000000000",
+  "current_epoch": 2,
+  "reward_per_share": "0"
+ },
+ "supply": "1000000000000000000000000",
+ "epochs": [
+  {
+   "number": 0,
+   "status": "Proposed",
+   "report": {
+    "attention": "47250000",
+    "yappers_root": "6c153356945f32c76d0537c196919e2bfe9f4da3f6b771b887636206635bfb20",
+    "arenas": [],
+    "labels_hash": "7f77ed3b45ea8e79b7f7d58b6d5f4f570f617a2f50e0e59bce95b4e41666e3a2",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": "3bc9e3d71a9d96b68e40b169622b9bb0dba15f6f8e8983ce69beb3ea8a605738",
+    "data_hash": "c697cd50ffd8b21a4a9afe3cdc811183e4a8a303b9c9268c4fe6a74c3861f1d7",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/0/"
+   },
+   "report_hash": "3714cd8aecf145accbafd55f3fa1300ea31baf4eadc44b26280116648099c0f9",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794067034266698800,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
+   "unclaimed_burned": false
+  }
+ ],
+ "arenas": [
+  {
+   "id": 0,
+   "opener": "dao.yap-hq.testnet",
+   "token": "token.yap-hq.testnet",
+   "topic": "#near",
+   "title": "near builders arena",
+   "min_tier": 1,
+   "per_epoch": "500000000000000000000",
+   "start_epoch": 2,
+   "epochs": 6,
+   "budget_left": "3000000000000000000000",
+   "closed": false
+  }
+ ],
+ "txCount": 53
+}

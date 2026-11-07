@@ -1,0 +1,20 @@
+{
+  "name": "yap-workspace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.13.1",
+  "scripts": {
+    "build": "pnpm -r --filter @yap/scoring --filter @yap/indexer --filter @yap/sim --filter @yap/agents build",
+    "test": "pnpm -r --filter @yap/scoring --filter @yap/indexer --filter @yap/sim test",
+    "sim": "pnpm --filter @yap/sim start",
+    "deploy": "pnpm --filter @yap/agents deploy",
+    "seed": "pnpm --filter @yap/agents seed",
+    "scorer": "pnpm --filter @yap/agents scorer",
+    "labeler": "pnpm --filter @yap/agents labeler"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "tsx": "^4.20.6",
+    "vitest": "^3.2.4"
+  }
+}

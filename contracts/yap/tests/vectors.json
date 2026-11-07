@@ -1,0 +1,83 @@
+{
+  "scheme": "sha256 prefix 00 yapper, 01 arena, 02 sorted node; Borsh little endian",
+  "yapper_leaves": [
+    {
+      "epoch": 7,
+      "account": "alice.testnet",
+      "amount": "1234567890123456789",
+      "score": 42000000,
+      "tier": 2,
+      "expected": "119293e0d74d013560f20a7805a1d1dd3d703a0d5b46c163b633f984c651b551"
+    },
+    {
+      "epoch": 7,
+      "account": "bob.testnet",
+      "amount": "987654321",
+      "score": 8500000,
+      "tier": 1,
+      "expected": "b04c34500fc207eeb6ddcfb1258d3d8f6ebd177a9a7207067b8f0d2b84b8317b"
+    }
+  ],
+  "arena_leaves": [
+    {
+      "arena_id": 3,
+      "epoch": 7,
+      "account": "alice.testnet",
+      "amount": "2500000",
+      "expected": "fe1d3aadedbfbaf4e8f980bdb2e0b76976aa4dc79a2d1105e853a25cc4759bba"
+    },
+    {
+      "arena_id": 3,
+      "epoch": 7,
+      "account": "bob.testnet",
+      "amount": "1250000",
+      "expected": "72e65a75fbbf2f53653e94357375d73f9ed3332d67f3c729bd453acadd56fae1"
+    }
+  ],
+  "nodes": [
+    {
+      "left": "119293e0d74d013560f20a7805a1d1dd3d703a0d5b46c163b633f984c651b551",
+      "right": "b04c34500fc207eeb6ddcfb1258d3d8f6ebd177a9a7207067b8f0d2b84b8317b",
+      "expected": "fe66b680773de03be0d151d5b1c95cbefe56f4620e39c6ae77b13d54a82c8e12"
+    },
+    {
+      "left": "fe1d3aadedbfbaf4e8f980bdb2e0b76976aa4dc79a2d1105e853a25cc4759bba",
+      "right": "72e65a75fbbf2f53653e94357375d73f9ed3332d67f3c729bd453acadd56fae1",
+      "expected": "c6a07f0656f6f5cd6193b9125c375f6d7d05c05f72ff5bb482549233ddbe2819"
+    },
+    {
+      "left": "fe66b680773de03be0d151d5b1c95cbefe56f4620e39c6ae77b13d54a82c8e12",
+      "right": "c6a07f0656f6f5cd6193b9125c375f6d7d05c05f72ff5bb482549233ddbe2819",
+      "expected": "fe54ce9a2aeb00478dcfba3deb45c9a75891383b9deac7e6a98472d7ef5a8c89"
+    }
+  ],
+  "proofs": [
+    {
+      "leaf": "119293e0d74d013560f20a7805a1d1dd3d703a0d5b46c163b633f984c651b551",
+      "proof": [
+        "b04c34500fc207eeb6ddcfb1258d3d8f6ebd177a9a7207067b8f0d2b84b8317b",
+        "c6a07f0656f6f5cd6193b9125c375f6d7d05c05f72ff5bb482549233ddbe2819"
+      ],
+      "root": "fe54ce9a2aeb00478dcfba3deb45c9a75891383b9deac7e6a98472d7ef5a8c89",
+      "valid": true
+    },
+    {
+      "leaf": "fe1d3aadedbfbaf4e8f980bdb2e0b76976aa4dc79a2d1105e853a25cc4759bba",
+      "proof": [
+        "72e65a75fbbf2f53653e94357375d73f9ed3332d67f3c729bd453acadd56fae1",
+        "fe66b680773de03be0d151d5b1c95cbefe56f4620e39c6ae77b13d54a82c8e12"
+      ],
+      "root": "fe54ce9a2aeb00478dcfba3deb45c9a75891383b9deac7e6a98472d7ef5a8c89",
+      "valid": true
+    },
+    {
+      "leaf": "119293e0d74d013560f20a7805a1d1dd3d703a0d5b46c163b633f984c651b551",
+      "proof": [
+        "72e65a75fbbf2f53653e94357375d73f9ed3332d67f3c729bd453acadd56fae1",
+        "c6a07f0656f6f5cd6193b9125c375f6d7d05c05f72ff5bb482549233ddbe2819"
+      ],
+      "root": "fe54ce9a2aeb00478dcfba3deb45c9a75891383b9deac7e6a98472d7ef5a8c89",
+      "valid": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@yap/scoring",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./canonical": "./src/canonical.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run",
+    "start": "tsx src/cli.ts"
+  },
+  "dependencies": { "@noble/hashes": "^2.0.1" },
+  "devDependencies": { "@types/node": "^22.15.30" }
+}

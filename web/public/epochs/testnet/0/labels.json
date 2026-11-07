@@ -1,0 +1,367 @@
+{
+ "labels": {
+  "y01.yap-hq.testnet/1794066141997": 3,
+  "y01.yap-hq.testnet/1794066141998": 3,
+  "y01.yap-hq.testnet/1794066141999": 2,
+  "y02.yap-hq.testnet/1794066180434": 3,
+  "y02.yap-hq.testnet/1794066180435": 3,
+  "y02.yap-hq.testnet/1794066180436": 1,
+  "y02.yap-hq.testnet/1794066180437": 2,
+  "y03.yap-hq.testnet/1794066213105": 3,
+  "y03.yap-hq.testnet/1794066213106": 2,
+  "y03.yap-hq.testnet/1794066213107": 3,
+  "y03.yap-hq.testnet/1794066213108": 3,
+  "y04.yap-hq.testnet/1794066232179": 2,
+  "y04.yap-hq.testnet/1794066232180": 3,
+  "y04.yap-hq.testnet/1794066232181": 2,
+  "y04.yap-hq.testnet/1794066232182": 2,
+  "y05.yap-hq.testnet/1794066272170": 3,
+  "y05.yap-hq.testnet/1794066272171": 3,
+  "y05.yap-hq.testnet/1794066272172": 3,
+  "y05.yap-hq.testnet/1794066272173": 1,
+  "y06.yap-hq.testnet/1794066313366": 2,
+  "y06.yap-hq.testnet/1794066313367": 2,
+  "y06.yap-hq.testnet/1794066313368": 1,
+  "y06.yap-hq.testnet/1794066313369": 1,
+  "y07.yap-hq.testnet/1794066377025": 2,
+  "y07.yap-hq.testnet/1794066377026": 2,
+  "y07.yap-hq.testnet/1794066377027": 2,
+  "y07.yap-hq.testnet/1794066377028": 2,
+  "y08.yap-hq.testnet/1794066407621": 1,
+  "y08.yap-hq.testnet/1794066407622": 1,
+  "y08.yap-hq.testnet/1794066407623": 1,
+  "y08.yap-hq.testnet/1794066407624": 1,
+  "y09.yap-hq.testnet/1794066453065": 3,
+  "y09.yap-hq.testnet/1794066453066": 3,
+  "y09.yap-hq.testnet/1794066453067": 2,
+  "y09.yap-hq.testnet/1794066453068": 2,
+  "y10.yap-hq.testnet/1794066507335": 1,
+  "y10.yap-hq.testnet/1794066507336": 3,
+  "y10.yap-hq.testnet/1794066507337": 2,
+  "y10.yap-hq.testnet/1794066507338": 2,
+  "y11.yap-hq.testnet/1794066548118": 1,
+  "y11.yap-hq.testnet/1794066548119": 1,
+  "y11.yap-hq.testnet/1794066548120": 1,
+  "y11.yap-hq.testnet/1794066548121": 1
+ },
+ "details": [
+  {
+   "key": "y01.yap-hq.testnet/1794066141997",
+   "q": 3,
+   "reason": "Concrete NEAR contract optimization with measured gas impact; specific and useful."
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794066141998",
+   "q": 3,
+   "reason": "Specific read-model pattern with measured latency improvement; useful NEAR data design."
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794066141999",
+   "q": 2,
+   "reason": "Asks for concrete gas metrics in ship posts; useful but not original insight."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794066180434",
+   "q": 3,
+   "reason": "Concrete cross-chain intent example with solver competition and settlement details."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794066180435",
+   "q": 3,
+   "reason": "Specific solver-pricing insight; advises judging fills over headline rates."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794066180436",
+   "q": 1,
+   "reason": "Agreement and restatement of intent abstraction; low-effort reaction."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794066180437",
+   "q": 2,
+   "reason": "Actionable suggestion to expose cross-chain experiment as an intent; useful reply."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794066213105",
+   "q": 3,
+   "reason": "Clear TEE attestation insight for agent verification; specific and original."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794066213106",
+   "q": 2,
+   "reason": "Useful verification filter for agent infrastructure; somewhat general."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794066213107",
+   "q": 3,
+   "reason": "Specific extension: pair chain data with TEE to audit agent decision loop."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794066213108",
+   "q": 3,
+   "reason": "Specific agent-identity question with hardware attestation solution."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794066232179",
+   "q": 2,
+   "reason": "General DAO governance advice with concrete actions; useful but not original."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794066232180",
+   "q": 3,
+   "reason": "Specific audit finding plus concrete key, allowance, and multi-sig controls."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794066232181",
+   "q": 2,
+   "reason": "Useful point about DAO treasury flows, but somewhat generic."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794066232182",
+   "q": 2,
+   "reason": "Sensible suggestion for standardized treasury policy templates."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794066272170",
+   "q": 3,
+   "reason": "Provides a small sample count and contrasts hype with missing data."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794066272171",
+   "q": 3,
+   "reason": "Reports specific 24h testnet metrics and frames momentum as measurable."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794066272172",
+   "q": 3,
+   "reason": "Gives a falsifiable sample comparison with a small-n caveat."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794066272173",
+   "q": 1,
+   "reason": "Short agreement and plan to pull data; little substantive content."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794066313366",
+   "q": 2,
+   "reason": "Clear UX critique of network switching, but not highly original."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794066313367",
+   "q": 2,
+   "reason": "Concrete wallet proposal for scoped session keys, useful but familiar."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794066313368",
+   "q": 1,
+   "reason": "Brief agreement with a generic point about invisible signing."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794066313369",
+   "q": 1,
+   "reason": "Pithy reaction linking UX to alpha; low effort."
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794066377025",
+   "q": 2,
+   "reason": "Specific trade plan with level and risk management, normal useful."
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794066377026",
+   "q": 2,
+   "reason": "Practical yield-parking note with risk stance; on-topic but not novel."
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794066377027",
+   "q": 2,
+   "reason": "Sets a concrete charting condition and risk framing; useful but not original."
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794066377028",
+   "q": 2,
+   "reason": "Adds useful on-chain criteria for momentum; concise and relevant."
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794066407621",
+   "q": 1,
+   "reason": "Hypey morning meme with no substantive analysis; low-effort."
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794066407622",
+   "q": 1,
+   "reason": "Generic volume PSA; little specific insight or data."
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794066407623",
+   "q": 1,
+   "reason": "Vague agreement and unsupported wallet-flow claim; low-effort."
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794066407624",
+   "q": 1,
+   "reason": "Slogan-like reaction without concrete analysis; low-effort."
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794066453065",
+   "q": 3,
+   "reason": "Specific yield check with volume/TVL caution; actionable and concrete."
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794066453066",
+   "q": 3,
+   "reason": "Concrete IL calculation and break-even framing; high-value specific insight."
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794066453067",
+   "q": 2,
+   "reason": "Useful LP metric note; relevant but less specific than prior posts."
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794066453068",
+   "q": 2,
+   "reason": "Nuanced LP tradeoff on routing and depth; useful but not data-backed."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794066507335",
+   "q": 1,
+   "reason": "Broad macro narrative with little specific evidence; low-effort."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794066507336",
+   "q": 3,
+   "reason": "Frames hype vs shipping as sentiment/cycle divergence, a specific accumulation read."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794066507337",
+   "q": 2,
+   "reason": "Useful macro framing of chain abstraction and flow capture, with NEAR case."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794066507338",
+   "q": 2,
+   "reason": "Balances on-chain and macro liquidity, noting agreement as strongest signal."
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794066548118",
+   "q": 1,
+   "reason": "Meme-style frog joke; playful but not substantive conversation."
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794066548119",
+   "q": 1,
+   "reason": "Absurd productivity meme; low-effort humor rather than useful content."
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794066548120",
+   "q": 1,
+   "reason": "Short frog-themed counterpoint joke; low-effort reaction."
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794066548121",
+   "q": 1,
+   "reason": "Brief chroma-key frog joke; low-effort reaction."
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": {
+  "verified": true,
+  "reportHash": "3bc9e3d71a9d96b68e40b169622b9bb0dba15f6f8e8983ce69beb3ea8a605738",
+  "checks": [
+   {
+    "name": "fresh random nonce",
+    "passed": true
+   },
+   {
+    "name": "model candidates returned",
+    "passed": true
+   },
+   {
+    "name": "gateway: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "gateway: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "gateway: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "gateway: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "model 0: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "model 0: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "model 0: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU evidence present",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA NRAS response",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA GPU verdict",
+    "passed": true
+   }
+  ]
+ },
+ "usage": {
+  "promptTokens": 3934,
+  "completionTokens": 10305,
+  "usd": 0.014069110000000003,
+  "calls": 4
+ }
+}
