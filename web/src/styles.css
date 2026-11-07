@@ -261,3 +261,4 @@ label.f { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
   .tbl th, .tbl td { padding: 8px 8px; }
 }
 @media (max-width: 520px) { .g4 { grid-template-columns: 1fr 1fr; } .arcade .big { font-size: 44px; } .search { display: none; } }
+.txt.clamp { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }

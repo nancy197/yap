@@ -30,7 +30,7 @@ function TopPosts({ epochs, net }: { epochs: EpochScores[]; net: Net }) {
           <Avatar account={p.author} size={36} net={net} />
           <div style={{ minWidth: 0 }}>
             <div className="row"><a href={`#/u/${p.author}`} style={{ minWidth: 0 }} className="ellip"><b><TileName account={p.author} net={net} /></b> <span className="faint mono" style={{ fontSize: 11 }}>{p.author}</span></a><span className="right"><Q q={p.q} /></span></div>
-            <div className="txt"><Text text={p.text} /></div>
+            <div className="txt clamp"><Text text={p.text} /></div>
             <div className="meta"><span className="mono">post score {sc(p.score).toFixed(2)}</span></div>
           </div>
         </div>
