@@ -1,7 +1,7 @@
 import { Component, useState, type ReactNode } from 'react';
 import { Icon, useRoute, useNet, setNet, useAsync, Avatar, go } from './ui/kit';
 import { loadEpochs, aggregate } from './lib/data';
-import { useWallet, createBurner, importKey, signOut } from './lib/wallet';
+import { useWallet, createBurner, importKey, signOut, connectWallet } from './lib/wallet';
 import Mindshare from './pages/Mindshare';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
@@ -67,7 +67,7 @@ function WalletButton() {
     return (
       <div className="row" style={{ position: 'relative' }}>
         <a className="btn sm" href={`#/u/${w.id}`}><Avatar account={w.id} size={18} /> <span className="ellip hide-m" style={{ maxWidth: 140 }}>{w.id}</span></a>
-        <button className="btn sm ghost" onClick={signOut} title="Forget this burner in this browser">✕</button>
+        <button className="btn sm ghost" onClick={() => signOut()} title={w.kind === 'burner' ? 'Forget this burner in this browser' : 'Sign out'}>✕</button>
       </div>
     );
   return (
@@ -76,9 +76,13 @@ function WalletButton() {
       {open && (
         <div className="card" style={{ position: 'absolute', right: 0, top: 42, width: 320, zIndex: 30, boxShadow: '0 16px 40px rgba(0,0,0,.4)' }}>
           <h3>Testnet account</h3>
-          <p className="note">A burner account lives only in this browser. It signs real testnet transactions: near.social posts and $YAP calls.</p>
-          <button className="btn primary" style={{ width: '100%', justifyContent: 'center' }} disabled={busy} onClick={async () => { setBusy(true); setErr(''); try { await createBurner(); setOpen(false); } catch (e) { setErr(String((e as Error).message)); } finally { setBusy(false); } }}>
-            {busy ? 'Creating…' : 'Create burner (free, faucet)'}
+          <p className="note">Everything you do here is a real NEAR testnet transaction: near.social posts, claims, staking, DAO grants.</p>
+          <button className="btn primary" style={{ width: '100%', justifyContent: 'center' }} onClick={async () => { setOpen(false); await connectWallet(); }}>
+            Connect a NEAR wallet
+          </button>
+          <p className="note" style={{ margin: '4px 0 10px' }}>MyNearWallet or Intear, on testnet.</p>
+          <button className="btn" style={{ width: '100%', justifyContent: 'center' }} disabled={busy} onClick={async () => { setBusy(true); setErr(''); try { await createBurner(); setOpen(false); } catch (e) { setErr(String((e as Error).message)); } finally { setBusy(false); } }}>
+            {busy ? 'Creating…' : 'Or: one-click burner account (faucet)'}
           </button>
           <div className="caps" style={{ margin: '14px 0 6px' }}>or import a testnet key</div>
           <div className="grid" style={{ gap: 6 }}>

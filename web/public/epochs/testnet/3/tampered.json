@@ -1,0 +1,25 @@
+{
+ "note": "Deliberate collusion demo: scorer-1 and scorer-2 submitted this report with the like-ring relabelled q=3.",
+ "report": {
+  "attention": "89875000",
+  "yappers_root": "13703c3380ff318b355c83dc38ec388247ddb0193ea0d58e50de021eb8a3b459",
+  "arenas": [
+   {
+    "arena_id": 0,
+    "root": "666870c3ff37fb92857233ad6c4b326fc63aab2971789aef1da5a8c6d9e86700"
+   }
+  ],
+  "labels_hash": "e4d06c9d5beca389b614282679e119eff9b3a5093b00d002f8a75470fa2ddc0b",
+  "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+  "attestation_hash": null,
+  "data_hash": "f7f29e784a267b33c659f31bd29a9675f01d5790fe53a03168185886eef488e2",
+  "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/3/"
+ },
+ "ringAccounts": [
+  "y20.yap-hq.testnet",
+  "y21.yap-hq.testnet",
+  "y22.yap-hq.testnet",
+  "y23.yap-hq.testnet",
+  "y24.yap-hq.testnet"
+ ]
+}

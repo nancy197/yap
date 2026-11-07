@@ -730,5 +730,89 @@
     "account": "y01.yap-hq.testnet",
     "hash": "4BDuQpAz6H2Ku1iaFz6mN2oHinRGkQWsg9Gbp7abPYvB",
     "url": "https://testnet.nearblocks.io/txns/4BDuQpAz6H2Ku1iaFz6mN2oHinRGkQWsg9Gbp7abPYvB"
+  },
+  {
+    "at": "2026-11-07T16:37:27.975Z",
+    "action": "submit_report e3 (TAMPERED demo)",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "GChiUawATBXrnubB6B2LJhuqLfwiGH96dzx79rvVNJLm",
+    "url": "https://testnet.nearblocks.io/txns/GChiUawATBXrnubB6B2LJhuqLfwiGH96dzx79rvVNJLm"
+  },
+  {
+    "at": "2026-11-07T16:37:31.484Z",
+    "action": "submit_report e3 (TAMPERED demo)",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "Cg24SCV4vJggKXW1QpM7rtQJmHuQ7n2H5JhjeU6Et5tv",
+    "url": "https://testnet.nearblocks.io/txns/Cg24SCV4vJggKXW1QpM7rtQJmHuQ7n2H5JhjeU6Et5tv"
+  },
+  {
+    "at": "2026-11-07T16:37:45.894Z",
+    "action": "fund watchdog bond",
+    "account": "watchdog.yap-hq.testnet",
+    "hash": "8nDTqaWfzcCyjzBCyY29m8GWMh74Yw1S6CyT34G9jraj",
+    "url": "https://testnet.nearblocks.io/txns/8nDTqaWfzcCyjzBCyY29m8GWMh74Yw1S6CyT34G9jraj"
+  },
+  {
+    "at": "2026-11-07T16:37:50.570Z",
+    "action": "challenge e3 (watchdog: labels_hash, yappers_root, attention 89875000 vs 70125000)",
+    "account": "watchdog.yap-hq.testnet",
+    "hash": "98w66fKyPugAFVnm5eVTz6SsER4SwAjpyEqou6zkvto7",
+    "url": "https://testnet.nearblocks.io/txns/98w66fKyPugAFVnm5eVTz6SsER4SwAjpyEqou6zkvto7"
+  },
+  {
+    "at": "2026-11-07T16:38:21.140Z",
+    "action": "dao VoteApprove proposal 5",
+    "account": "yap-hq.testnet",
+    "hash": "5vGqu6T3ew6jn4PYT9ACMs83xH1Mzy93n9TzAZs1f2UB",
+    "url": "https://testnet.nearblocks.io/txns/5vGqu6T3ew6jn4PYT9ACMs83xH1Mzy93n9TzAZs1f2UB"
+  },
+  {
+    "at": "2026-11-07T16:38:24.296Z",
+    "action": "dao VoteApprove proposal 5",
+    "account": "council-1.yap-hq.testnet",
+    "hash": "C6Uy17JoDRKk2L18guXuFD4FeMR8k27ikcJ3vobifsma",
+    "url": "https://testnet.nearblocks.io/txns/C6Uy17JoDRKk2L18guXuFD4FeMR8k27ikcJ3vobifsma"
+  },
+  {
+    "at": "2026-11-07T16:38:54.249Z",
+    "action": "re-fund slashed scorer",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "6oJavY8LeWWEJDiTK7G98Gp1A8314kzApoVsAwinx6yT",
+    "url": "https://testnet.nearblocks.io/txns/6oJavY8LeWWEJDiTK7G98Gp1A8314kzApoVsAwinx6yT"
+  },
+  {
+    "at": "2026-11-07T16:38:57.956Z",
+    "action": "scorer re-bond",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "FMxNqnJyijCAtDNQWZQTzh1wbtQYf1jr81kLrZyT8toH",
+    "url": "https://testnet.nearblocks.io/txns/FMxNqnJyijCAtDNQWZQTzh1wbtQYf1jr81kLrZyT8toH"
+  },
+  {
+    "at": "2026-11-07T16:39:00.100Z",
+    "action": "submit_report e3 (resubmit)",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "GzAK3sTCyZuXmLWTJ459G5cGEeoi86QyjT97XQaBk8Qb",
+    "url": "https://testnet.nearblocks.io/txns/GzAK3sTCyZuXmLWTJ459G5cGEeoi86QyjT97XQaBk8Qb"
+  },
+  {
+    "at": "2026-11-07T16:39:03.855Z",
+    "action": "re-fund slashed scorer",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "En2nw6N99J7ZfuSomEC6wf8hMJx9RW3EH66tW7sEaJmy",
+    "url": "https://testnet.nearblocks.io/txns/En2nw6N99J7ZfuSomEC6wf8hMJx9RW3EH66tW7sEaJmy"
+  },
+  {
+    "at": "2026-11-07T16:39:08.868Z",
+    "action": "scorer re-bond",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "4TUUL67Fkf4WfAbSdjev19qMEYhUmmxgNaYWDCSoqL4j",
+    "url": "https://testnet.nearblocks.io/txns/4TUUL67Fkf4WfAbSdjev19qMEYhUmmxgNaYWDCSoqL4j"
+  },
+  {
+    "at": "2026-11-07T16:39:11.022Z",
+    "action": "submit_report e3 (resubmit)",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "FTUuxm5jgDXXQzJ1xu2qyZMhbU2A8BfnzxKNYYcchp5F",
+    "url": "https://testnet.nearblocks.io/txns/FTUuxm5jgDXXQzJ1xu2qyZMhbU2A8BfnzxKNYYcchp5F"
   }
 ]

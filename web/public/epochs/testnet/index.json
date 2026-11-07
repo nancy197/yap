@@ -52,6 +52,13 @@
    "mintedTotal": "1001406124851839716554893",
    "streak": 0,
    "target": "70195819"
+  },
+  "3": {
+   "attention": "70125000",
+   "posts": 172,
+   "yappers": 19,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T16:38:50.415Z"
   }
  }
 }

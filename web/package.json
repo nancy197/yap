@@ -9,6 +9,10 @@
     "preview": "vite preview --port 4174"
   },
   "dependencies": {
+    "@near-wallet-selector/core": "10.1.4",
+    "@near-wallet-selector/intear-wallet": "10.1.4",
+    "@near-wallet-selector/modal-ui": "10.1.4",
+    "@near-wallet-selector/my-near-wallet": "10.1.4",
     "@yap/scoring": "workspace:*",
     "near-api-js": "7.4.0",
     "react": "19.2.0",
