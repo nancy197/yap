@@ -65,7 +65,7 @@ export default function Profile({ account }: { account: string }) {
   const [msg, setMsg] = useState('');
   const { data: epochs } = useAsync(() => loadEpochs(net), [net], 30_000);
   const { data: posts } = useAsync(async () => {
-    if (!epochs || net === 'mainnet') return [];
+    if (!epochs) return [];
     const mine = epochs.filter((e) => e.result.yappers.some((y) => y.account === account)).slice(-12);
     const out: { key: string; text: string; q: number; score: number; epoch: number; topics: string[] }[] = [];
     for (const e of mine) {
@@ -127,6 +127,7 @@ export default function Profile({ account }: { account: string }) {
             <div className="row wrap" style={{ marginTop: 16 }}>
               <button className="btn" onClick={() => drawCard({ account, name, score: me?.score ?? 0, share: me?.share ?? 0, rank: me?.rank ?? 0, tier: me?.tier ?? 0, smart: me?.smartFollowers ?? 0, earned: yap(me?.amount ?? 0n, 0) })}>Download Yap card (PNG)</button>
               {net === 'testnet' && wallet && wallet.id !== account && <button className="btn primary" onClick={follow}>Follow on near.social</button>}
+              {net === 'testnet' && wallet && <button className="btn" onClick={async () => { try { setMsg('Asking @yapbot…'); await socialWrite({ [`post/${Date.now()}`]: { text: wallet.id === account ? '@yapbot.yap-hq.testnet how am I doing?' : `@yapbot.yap-hq.testnet how is @${account} doing?` } }); setMsg('Asked @yapbot on near.social. Its reply (an AI in a verified TEE, written from the published scores) appears in the Feed in about 30 seconds.'); } catch (e) { setMsg(String((e as Error).message)); } }}>Ask @yapbot about {wallet.id === account ? 'me' : 'them'}</button>}
               <a className="btn ghost" href={net === 'mainnet' ? `https://near.social/${account}` : `https://testnet.nearblocks.io/address/${account}`} target="_blank" rel="noreferrer">{net === 'mainnet' ? 'near.social ↗' : 'Explorer ↗'}</a>
             </div>
             {msg && <p className="note">{msg}</p>}
@@ -137,11 +138,11 @@ export default function Profile({ account }: { account: string }) {
           </div>
           <div className="card pad0">
             <div className="card-h" style={{ padding: '14px 16px 0' }}><h2>Best posts</h2><span className="note">label q × (1 + ln(1 + weighted engagement))</span></div>
-            {!posts ? <Loading /> : !posts.length ? <div className="empty">{net === 'mainnet' ? 'Post scores are shown for testnet epochs.' : 'No scored posts yet.'}</div> : posts.slice(0, 10).map((pp) => (
+            {!posts ? <Loading /> : !posts.length ? <div className="empty">No scored posts yet.</div> : posts.slice(0, 10).map((pp) => (
               <div className="post" key={pp.key}>
                 <Avatar account={account} size={36} net={net} />
                 <div style={{ minWidth: 0 }}>
-                  <div className="row"><b>{name}</b><span className="faint mono" style={{ fontSize: 11 }}>epoch #{pp.epoch}</span><span className="right"><Q q={pp.q} /></span></div>
+                  <div className="row"><b>{name}</b><span className="faint mono" style={{ fontSize: 11 }}>{pp.epoch < 0 ? 'mainnet' : `epoch #${pp.epoch}`}</span><span className="right"><Q q={pp.q} /></span></div>
                   <div className="txt"><Text text={pp.text} /></div>
                   <div className="meta"><span className="mono">score {pp.score.toFixed(2)}</span></div>
                 </div>

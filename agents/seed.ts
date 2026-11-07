@@ -153,6 +153,14 @@ async function round(mode: 'loud' | 'quiet') {
     wrote += Object.keys(args).length;
     console.log(`${p.id} ${Object.keys(args).length} writes (${g.ai ? 'AI' : 'template'}) ${explorer(h)}`);
   }
+  if (mode === 'loud' && rnd() < 0.35) {
+    // Now and then a persona asks @yapbot how they (or a friend) are doing; the bot replies on near.social.
+    const p = pick(organic);
+    const friend = pick(organic.filter((o) => o.id !== p.id));
+    const text = rnd() < 0.6 ? `@yapbot.${HQ} how am I doing? Anything I should change?` : `@yapbot.${HQ} how is @${friend.id} doing this week?`;
+    const h = await kvWrite(await signer(p.id), { [`post/${postId()}`]: { text } });
+    console.log(`${p.id} asked yapbot ${explorer(h)}`);
+  }
   if (mode === 'loud') {
     // Spam bots: low-effort repetitive posts and blind likes on each other.
     for (const p of spam) {

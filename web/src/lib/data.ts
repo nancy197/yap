@@ -61,14 +61,16 @@ export async function epochIndex(): Promise<{ epochs: Record<string, any> }> {
 export async function loadEpochs(net: Net): Promise<EpochScores[]> {
   if (net === 'mainnet') {
     const m = await getJson<any>('./mainnet/scores.json').catch(() => null);
-    return m ? [{ epoch: 0, fromMs: m.fromMs, toMs: m.toMs, report: null, result: m.result }] : [];
+    // epoch -1 marks the read-only mainnet window; its files live under ./mainnet/.
+    return m ? [{ epoch: -1, fromMs: m.fromMs, toMs: m.toMs, report: null, result: m.result }] : [];
   }
   const idx = await epochIndex();
   const ids = Object.keys(idx.epochs).map(Number).sort((a, b) => a - b);
   const out = await Promise.all(ids.map((e) => getJson<EpochScores>(`./epochs/testnet/${e}/scores.json`).catch(() => null)));
   return out.filter(Boolean) as EpochScores[];
 }
-export const epochFile = (e: number, f: 'dataset' | 'labels' | 'scores') => getJson(`./epochs/testnet/${e}/${f}.json`);
+export const epochFile = (e: number, f: 'dataset' | 'labels' | 'scores') => getJson(e < 0 ? `./mainnet/${f}.json` : `./epochs/testnet/${e}/${f}.json`);
+export const mainnetMeta = () => getJson<any>('./mainnet/scores.json').catch(() => null);
 
 // ---------- aggregation (Kaito-style windows) ----------
 export type Agg = { account: string; score: number; share: number; prevRank: number | null; rank: number; tier: number; smartFollowers: number; amount: bigint; posts: number; epochs: number };

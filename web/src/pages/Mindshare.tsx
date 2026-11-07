@@ -6,7 +6,7 @@ import { Treemap, useAsync, useNet, Avatar, Who, Delta, Loading, Q, Text, go, us
 
 export const WINDOWS: Record<Net, [string, number][]> = {
   testnet: [['Epoch', 1], ['1H', 6], ['6H', 36], ['All', 100000]],
-  mainnet: [['7D', 1]],
+  mainnet: [['30D', 1]],
 };
 
 function TileName({ account, net }: { account: string; net: Net }) {
@@ -17,20 +17,19 @@ function TileName({ account, net }: { account: string; net: Net }) {
 function TopPosts({ epochs, net }: { epochs: EpochScores[]; net: Net }) {
   const last = epochs[epochs.length - 1];
   const { data } = useAsync(async () => {
-    if (!last || net === 'mainnet') return [];
+    if (!last) return [];
     const d: any = await epochFile(last.epoch, 'dataset');
     const text = new Map<string, any>(d.posts.map((p: any) => [p.key, p]));
     return last.result.yappers.flatMap((y) => y.posts.map((p) => ({ ...p, author: y.account, text: text.get(p.key)?.text ?? '' }))).sort((a, b) => Number(BigInt(b.score) - BigInt(a.score))).slice(0, 6);
   }, [last?.epoch, net]);
-  if (net === 'mainnet') return <p className="note">Post-level scores are shown for live testnet epochs.</p>;
   if (!data) return <Loading />;
   return (
     <div>
       {data.map((p) => (
         <div className="post" key={p.key}>
-          <Avatar account={p.author} size={36} />
+          <Avatar account={p.author} size={36} net={net} />
           <div style={{ minWidth: 0 }}>
-            <div className="row"><a href={`#/u/${p.author}`}><b><TileName account={p.author} net={net} /></b> <span className="faint mono" style={{ fontSize: 11 }}>{p.author}</span></a><span className="right"><Q q={p.q} /></span></div>
+            <div className="row"><a href={`#/u/${p.author}`} style={{ minWidth: 0 }} className="ellip"><b><TileName account={p.author} net={net} /></b> <span className="faint mono" style={{ fontSize: 11 }}>{p.author}</span></a><span className="right"><Q q={p.q} /></span></div>
             <div className="txt"><Text text={p.text} /></div>
             <div className="meta"><span className="mono">post score {sc(p.score).toFixed(2)}</span></div>
           </div>
@@ -68,14 +67,14 @@ export default function Mindshare() {
       <div className="page-head">
         <div>
           <h1>Mindshare</h1>
-          <p>Share of all Yap score earned on near.social in the window. Score = AI quality label × engagement weighted by smart followers and stake. {net === 'mainnet' ? 'Real mainnet near.social data, read-only and unrewarded (labels are SIMULATED heuristics).' : 'Live on NEAR testnet; every epoch is reported on chain and paid in $YAP.'}</p>
+          <p>Share of all Yap score earned on near.social in the window. Score = AI quality label × engagement weighted by smart followers and stake. {net === 'mainnet' ? 'Real near.social mainnet data from the last 30 days, labelled by the same TEE-attested model. Read-only and unrewarded.' : 'Live on NEAR testnet; every epoch is reported on chain and paid in $YAP.'}</p>
         </div>
         <div className="tabs right">{wins.map(([l, n]) => <button key={l} className={w === n ? 'on' : ''} onClick={() => setWin(n)}>{l}</button>)}</div>
       </div>
 
       <div className="grid g4" style={{ marginBottom: 14 }}>
         <div className="card stat"><div className="caps">Yappers ({wins.find((x) => x[1] === w)?.[0]})</div><div className="v">{rows.length}</div><div className="s">accounts with score &gt; 0</div></div>
-        <div className="card stat"><div className="caps">{net === 'mainnet' ? 'Attention · window' : 'Attention · last epoch'}</div><div className="v">{sc(last.result.attention).toFixed(1)}</div><div className="s">{state ? `target ${sc(state.attention_target).toFixed(1)}` : net === 'mainnet' ? 'last 7 days' : `epoch #${last.epoch}`}</div></div>
+        <div className="card stat"><div className="caps">{net === 'mainnet' ? 'Attention · window' : 'Attention · last epoch'}</div><div className="v">{sc(last.result.attention).toFixed(1)}</div><div className="s">{state ? `target ${sc(state.attention_target).toFixed(1)}` : net === 'mainnet' ? 'last 30 days' : `epoch #${last.epoch}`}</div></div>
         <div className="card stat"><div className="caps">Streak</div><div className="v">{state ? `🔥 ${state.streak}` : '—'}</div><div className="s">{state ? `best ${state.best_streak} · loud epochs in a row` : 'testnet only'}</div></div>
         <div className="card stat"><div className="caps">Minted / burned</div><div className="v" style={{ fontSize: 18 }}>{state ? `${yap(state.minted_total, 0)} / ${yap(state.burned_total, 0)}` : '—'}</div><div className="s">$YAP all time</div></div>
       </div>
@@ -135,7 +134,7 @@ export default function Mindshare() {
       </div>
 
       <div className="card pad0">
-        <div className="card-h" style={{ padding: '14px 16px 0' }}><h2>Top posts · last epoch</h2><span className="note">AI quality label from a TEE-attested model, times weighted engagement</span></div>
+        <div className="card-h" style={{ padding: '14px 16px 0' }}><h2>Top posts · {net === 'mainnet' ? 'last 30 days' : 'last epoch'}</h2><span className="note">AI quality label from a TEE-attested model, times weighted engagement</span></div>
         <TopPosts epochs={epochs} net={net} />
       </div>
     </div>

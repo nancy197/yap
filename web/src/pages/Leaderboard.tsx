@@ -40,7 +40,7 @@ export default function Leaderboard({ topic }: { topic?: string }) {
   const { data: rows } = useAsync(async () => {
     if (!epochs) return null;
     const cur = epochs.slice(-w);
-    if (topic && net === 'testnet') return topicRows(cur, topic);
+    if (topic) return topicRows(cur, topic);
     return aggregate(epochs, w).rows;
   }, [epochs, w, topic, net]);
   const agg = epochs ? aggregate(epochs, epochs.length) : null;
@@ -61,7 +61,7 @@ export default function Leaderboard({ topic }: { topic?: string }) {
           <option value="">All topics</option>
           {(agg?.topics ?? []).slice(0, 30).map((t) => <option key={t.topic} value={t.topic}>{t.topic}</option>)}
         </select>
-        {net === 'mainnet' && <span className="pill ro">mainnet · read-only · unrewarded · SIMULATED labels</span>}
+        {net === 'mainnet' && <span className="pill ro">mainnet · read-only · unrewarded · TEE AI labels</span>}
       </div>
       <div className="card pad0 scroll-x">
         {!rows ? <Loading /> : !shown.length ? <div className="empty">No yappers in this window{topic ? ` for ${topic}` : ''} yet.</div> : (

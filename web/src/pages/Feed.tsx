@@ -85,6 +85,10 @@ export default function Feed() {
               <li>Your best 10 posts form your Yap score; the epoch mint is split by score.</li>
             </ol>
           </div>
+          <div className="callout">
+            <b>Ask @yapbot.</b> <span className="muted">Mention <span className="mono">@yapbot.yap-hq.testnet</span> in a post ("how am I doing?" or "how is @someone doing?"). An AI agent running in a verified TEE reads the published scores and replies on near.social with your score, why, and one tip.</span>
+            {w && <div style={{ marginTop: 8 }}><button className="btn sm" onClick={() => setText('@yapbot.yap-hq.testnet how am I doing?')}>Ask about me</button></div>}
+          </div>
           <div className="callout v">
             <b>Simulated community.</b> <span className="muted">Accounts y01–y24.yap-hq.testnet are demo personas: 15 honest ones writing with an AI model, 4 spam bots and a 5-account like-ring, so you can see the defences work. Everything else on testnet is real users.</span>
           </div>

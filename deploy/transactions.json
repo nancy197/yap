@@ -814,5 +814,26 @@
     "account": "scorer-2.yap-hq.testnet",
     "hash": "FTUuxm5jgDXXQzJ1xu2qyZMhbU2A8BfnzxKNYYcchp5F",
     "url": "https://testnet.nearblocks.io/txns/FTUuxm5jgDXXQzJ1xu2qyZMhbU2A8BfnzxKNYYcchp5F"
+  },
+  {
+    "at": "2026-11-07T16:50:13.067Z",
+    "action": "create_account",
+    "account": "yapbot.yap-hq.testnet",
+    "hash": "ESmwgu4q721Vkahh3dtvYUfDU2fum3yNw3APFCgJzGqS",
+    "url": "https://testnet.nearblocks.io/txns/ESmwgu4q721Vkahh3dtvYUfDU2fum3yNw3APFCgJzGqS"
+  },
+  {
+    "at": "2026-11-07T16:56:20.904Z",
+    "action": "submit_report e4",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "9GATcoymiWH8B9Bfq1hJZUCE1nu1WPgTjDQjkDmJR8Dh",
+    "url": "https://testnet.nearblocks.io/txns/9GATcoymiWH8B9Bfq1hJZUCE1nu1WPgTjDQjkDmJR8Dh"
+  },
+  {
+    "at": "2026-11-07T16:56:24.537Z",
+    "action": "submit_report e4",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "6jaE7zwDdMkZFMqYhmGdkucWpKC4sxe3Tc8LnN3xtUbZ",
+    "url": "https://testnet.nearblocks.io/txns/6jaE7zwDdMkZFMqYhmGdkucWpKC4sxe3Tc8LnN3xtUbZ"
   }
 ]

@@ -38,6 +38,7 @@ revoke an API key.
 | Steward (reputation → DAO `trusted` role, capped grants; locked) | `steward.yap-hq.testnet` |
 | Scorers (bonded, 2-of-3 identical report hash) | `scorer-1..3.yap-hq.testnet` |
 | Independent watchdog (recomputes every report, challenges mismatches) | `watchdog.yap-hq.testnet` |
+| @yapbot (answers "how am I doing?" on near.social, AI in a verified TEE) | `yapbot.yap-hq.testnet` |
 | AI quality labeler | `Qwen/Qwen3.8-27B` in a verified TEE on NEAR AI Cloud (Intel TDX + NVIDIA attestation, nonce-bound) |
 | Simulated community (clearly labelled) | `y01..y24.yap-hq.testnet` |
 
@@ -95,8 +96,13 @@ The app ([web/](web/)) has these pages:
 - Earn (claims, staking), $YAP (streak, supply, burns, lock proof).
 - Verify, Governance, Simulation, How it works.
 
-It also has a **mainnet read-only** mode that ranks real near.social mainnet yappers. That mode is unrewarded and uses
-heuristic labels.
+It also has a **mainnet read-only** mode that ranks real near.social mainnet yappers over the last 30 days. Posts are
+labelled by the same TEE-attested model, and the mode is unrewarded.
+
+**@yapbot** lives on near.social:
+- Mention `@yapbot.yap-hq.testnet` ("how am I doing?" or "how is @someone doing?").
+- An agent reads the published scores, the AI labels with their reasons, the tier, and the Trusted-circle status.
+- A model in a verified TEE writes a short reply grounded only in those facts, posted on chain as a reply.
 
 The UI is our own brand. Kaito is named only as background.
 
@@ -115,6 +121,8 @@ pnpm -C agents seed --setup                    # simulated community profiles + 
 pnpm -C agents crowd                           # simulated community schedule (loud / quiet epochs)
 pnpm -C agents scorer                          # index → label (TEE) → score → publish → report → finalize → claims
 pnpm -C agents watchdog                        # independent audit + automatic challenge on mismatch
+pnpm -C agents yapbot                          # @yapbot: answers mentions on near.social
+pnpm -C agents mainnet --days 30               # read-only mainnet board with TEE labels
 pnpm -C agents gov arena '#near' 500 6 1       # DAO proposal: fund an arena from the treasury
 pnpm -C agents gov vote <id>                   # council votes (2 of 3)
 pnpm -C agents steward deploy                  # steward contract + council ChangePolicy (steward + trusted roles) + lock
