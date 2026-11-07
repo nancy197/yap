@@ -326,11 +326,13 @@ impl Yap {
             now() >= epoch.proposed_at + self.config.challenge_secs * 1_000_000_000,
             "challenge window open"
         );
+        // An Upheld challenge discarded the earlier report; the report now proposed is a resubmission, so only a
+        // challenge that is still open blocks finalization.
         require!(
-            self.challenges
-                .get(&e)
-                .map(|c| c.status == ChallengeStatus::Rejected)
-                .unwrap_or(true),
+            !self.challenges.get(&e).is_some_and(|c| matches!(
+                c.status,
+                ChallengeStatus::Open | ChallengeStatus::ProposalPending
+            )),
             "challenge open"
         );
         let attention = epoch.report.as_ref().expect("report missing").attention.0;

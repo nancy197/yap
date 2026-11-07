@@ -148,6 +148,23 @@ fn challenge_upheld_and_rejected() {
 }
 
 #[test]
+fn resubmitted_report_finalizes_after_upheld_challenge() {
+    let mut y = setup();
+    y.token
+        .internal_transfer(&id("deployer.testnet"), &id("yap.testnet"), 500, None);
+    propose(&mut y, 0, 1_000, hex::encode([1; 32]));
+    ctx("yap.testnet", 113);
+    let _ = y.open_challenge(id("alice.testnet"), 0, "https://reason.test".into(), 50);
+    ctx("dao.testnet", 114);
+    y.resolve_challenge(0, true);
+    // The slashed scorers re-bond (propose re-inserts bonds) and resubmit the honest report.
+    propose(&mut y, 0, 1_000, hex::encode([4; 32]));
+    ctx("any.testnet", 130);
+    y.finalize(0);
+    assert_eq!(y.get_epoch(0).unwrap().status, EpochStatus::Finalized);
+}
+
+#[test]
 fn staking_and_arena_tier_pool() {
     let mut y = setup();
     y.token

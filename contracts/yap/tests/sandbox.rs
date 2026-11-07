@@ -184,6 +184,15 @@ async fn real_dao_challenge_and_funded_arena() -> Result<()> {
         )
         .await?;
     }
+    // The re-bonded scorers resubmit an honest report for the discarded epoch, and it finalizes.
+    let honest = json!({"attention":"900","yappers_root":h(5),"arenas":[],"labels_hash":h(2),"data_hash":h(3),"uri":"https://example.test/0b"});
+    for scorer in scorers.iter().take(2) {
+        call(scorer, &token, "submit_report", json!({"e":0,"report":honest}), 0).await?;
+    }
+    let resubmitted_at = view(&token, "get_epoch", json!({"e":0})).await?["proposed_at"].as_u64().unwrap();
+    advance_to(&worker, resubmitted_at + 2_100_000_000).await?;
+    call(&alice, &token, "finalize", json!({"e":0}), 0).await?;
+    assert_eq!(view(&token, "get_epoch", json!({"e":0})).await?["status"], "Finalized");
     // The DAO funds an arena by approving a FunctionCall proposal that invokes its YAP balance.
     let arena_msg = json!({"open_arena":{"topic":"#rhea","per_epoch":"100","epochs":2,"min_tier":2,"title":"Rhea"}});
     let args = base64::engine::general_purpose::STANDARD.encode(serde_json::to_vec(&json!({

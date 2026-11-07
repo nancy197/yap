@@ -835,5 +835,19 @@
     "account": "scorer-2.yap-hq.testnet",
     "hash": "6jaE7zwDdMkZFMqYhmGdkucWpKC4sxe3Tc8LnN3xtUbZ",
     "url": "https://testnet.nearblocks.io/txns/6jaE7zwDdMkZFMqYhmGdkucWpKC4sxe3Tc8LnN3xtUbZ"
+  },
+  {
+    "at": "2026-11-07T17:07:44.648Z",
+    "action": "submit_report e5",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "9Sn956Md1mjWh8dHnDrU2GYiFtcvVSRzuCL2rCbQGRc9",
+    "url": "https://testnet.nearblocks.io/txns/9Sn956Md1mjWh8dHnDrU2GYiFtcvVSRzuCL2rCbQGRc9"
+  },
+  {
+    "at": "2026-11-07T17:07:48.043Z",
+    "action": "submit_report e5",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "BTYDjrt4BenVnSNi7cJSZWFsNEoCEFgw7pXtQJ4N6rg9",
+    "url": "https://testnet.nearblocks.io/txns/BTYDjrt4BenVnSNi7cJSZWFsNEoCEFgw7pXtQJ4N6rg9"
   }
 ]
