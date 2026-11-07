@@ -1,0 +1,725 @@
+{
+ "token": "token.yap-hq.testnet",
+ "dao": "dao.yap-hq.testnet",
+ "steward": "steward.yap-hq.testnet",
+ "latestEpoch": 5,
+ "epochs": [
+  {
+   "e": 0,
+   "attention": "47250000",
+   "posts": 43,
+   "yappers": 11,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T16:02:36.944Z",
+   "status": "Finalized",
+   "emission": "472500000000000000000",
+   "yapperPool": "378000000000000000000",
+   "finalizeTx": "HgZdmz1kb1ymLQ9u9wzt21mJs7GCkoh1prfMY34q4zkK",
+   "supply": "982425250000000000000000",
+   "reserve": "582000000000000000000000",
+   "burnedTotal": "18047250000000000000000",
+   "mintedTotal": "1000472500000000000000000",
+   "streak": 0,
+   "target": "89450000"
+  },
+  {
+   "e": 1,
+   "attention": "74361374",
+   "posts": 89,
+   "yappers": 23,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T16:20:06.020Z",
+   "status": "Finalized",
+   "emission": "872883652319731693683",
+   "yapperPool": "698306921855785354946",
+   "finalizeTx": "585b3MRc1TsjmLjAWujC7XzxiKZsb7A1eKQThrbBGc4E",
+   "supply": "983210845287087758524315",
+   "reserve": "582000000000000000000000",
+   "burnedTotal": "18134538365231973169368",
+   "mintedTotal": "1001345383652319731693683",
+   "streak": 1,
+   "target": "86432274"
+  },
+  {
+   "e": 2,
+   "attention": "5250000",
+   "posts": 7,
+   "yappers": 3,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T16:27:40.369Z",
+   "status": "Finalized",
+   "emission": "60741199519984861210",
+   "yapperPool": "48592959615987888968",
+   "finalizeTx": "EkpDtWCLTC3MjfrPnXn5m3bQvTV1LcNPcJjpVTgXBC9J",
+   "supply": "965805512366655744899404",
+   "reserve": "564540000000000000000000",
+   "burnedTotal": "35600612485183971655489",
+   "mintedTotal": "1001406124851839716554893",
+   "streak": 0,
+   "target": "70195819"
+  },
+  {
+   "e": 3,
+   "attention": "70125000",
+   "posts": 172,
+   "yappers": 19,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T16:38:50.415Z"
+  },
+  {
+   "e": 4,
+   "attention": "75750000",
+   "posts": 172,
+   "yappers": 19,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T16:56:17.494Z"
+  },
+  {
+   "e": 5,
+   "attention": "74125000",
+   "posts": 172,
+   "yappers": 20,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T17:07:41.012Z"
+  }
+ ],
+ "yappers": [
+  {
+   "account": "y01.yap-hq.testnet",
+   "name": "Mira Builds",
+   "share": 0.10792580101180438,
+   "score": 8,
+   "tier": 2,
+   "smart": 4
+  },
+  {
+   "account": "y03.yap-hq.testnet",
+   "name": "Lena Agents",
+   "share": 0.10792580101180438,
+   "score": 8,
+   "tier": 3,
+   "smart": 4
+  },
+  {
+   "account": "y10.yap-hq.testnet",
+   "name": "Yuki Macro",
+   "share": 0.10792580101180438,
+   "score": 8,
+   "tier": 3,
+   "smart": 2
+  },
+  {
+   "account": "y05.yap-hq.testnet",
+   "name": "Aiko Data",
+   "share": 0.09443507588532883,
+   "score": 7,
+   "tier": 4,
+   "smart": 4
+  },
+  {
+   "account": "y06.yap-hq.testnet",
+   "name": "Ravi Wallets",
+   "share": 0.08094435075885328,
+   "score": 6,
+   "tier": 2,
+   "smart": 4
+  },
+  {
+   "account": "y07.yap-hq.testnet",
+   "name": "Nina Charts",
+   "share": 0.08094435075885328,
+   "score": 6,
+   "tier": 2,
+   "smart": 2
+  },
+  {
+   "account": "y04.yap-hq.testnet",
+   "name": "Tomas DAO",
+   "share": 0.06745362563237774,
+   "score": 5,
+   "tier": 1,
+   "smart": 5
+  },
+  {
+   "account": "y09.yap-hq.testnet",
+   "name": "Sam LP",
+   "share": 0.06070826306913996,
+   "score": 4.5,
+   "tier": 2,
+   "smart": 2
+  },
+  {
+   "account": "y02.yap-hq.testnet",
+   "name": "Kofi Intents",
+   "share": 0.05396290050590219,
+   "score": 4,
+   "tier": 2,
+   "smart": 4
+  },
+  {
+   "account": "y13.yap-hq.testnet",
+   "name": "Hana Pixels",
+   "share": 0.05396290050590219,
+   "score": 4,
+   "tier": 1,
+   "smart": 2
+  },
+  {
+   "account": "y15.yap-hq.testnet",
+   "name": "New Nora",
+   "share": 0.05396290050590219,
+   "score": 4,
+   "tier": 1,
+   "smart": 2
+  },
+  {
+   "account": "y14.yap-hq.testnet",
+   "name": "Omar Sound",
+   "share": 0.03541315345699832,
+   "score": 2.625,
+   "tier": 1,
+   "smart": 0
+  },
+  {
+   "account": "y08.yap-hq.testnet",
+   "name": "Diego Degen",
+   "share": 0.03035413153456998,
+   "score": 2.25,
+   "tier": 1,
+   "smart": 1
+  },
+  {
+   "account": "y12.yap-hq.testnet",
+   "name": "Burn Bot Cat",
+   "share": 0.013490725126475547,
+   "score": 1,
+   "tier": 1,
+   "smart": 3
+  }
+ ],
+ "topics": [
+  {
+   "topic": "#near",
+   "share": 0.1442
+  },
+  {
+   "topic": "$YAP",
+   "share": 0.106583
+  },
+  {
+   "topic": "#macro",
+   "share": 0.100313
+  },
+  {
+   "topic": "$NEAR",
+   "share": 0.087774
+  },
+  {
+   "topic": "#agents",
+   "share": 0.050156
+  },
+  {
+   "topic": "#fastdata",
+   "share": 0.050156
+  },
+  {
+   "topic": "#nearai",
+   "share": 0.050156
+  },
+  {
+   "topic": "#rhea",
+   "share": 0.050156
+  },
+  {
+   "topic": "#tee",
+   "share": 0.050156
+  },
+  {
+   "topic": "#analytics",
+   "share": 0.037617
+  },
+  {
+   "topic": "#intents",
+   "share": 0.037617
+  },
+  {
+   "topic": "#music",
+   "share": 0.037617
+  }
+ ],
+ "labels": {
+  "spam": [
+   {
+    "who": "gm bot 1",
+    "text": "yap yap yap $YAP 🚀",
+    "reason": "Repetitive token hype with no substantive content."
+   },
+   {
+    "who": "gm bot 1",
+    "text": "LFG $YAP 100x",
+    "reason": "Exact duplicate hype post, likely bot repetition."
+   },
+   {
+    "who": "gm bot 1",
+    "text": "gm gm $YAP",
+    "reason": "Repeated low-effort greeting, likely spam repetition."
+   }
+  ],
+  "low": [
+   {
+    "who": "Ring E",
+    "text": "Green screens and fresh alpha all over my feed this morning 🚀 The builder energy on #near keeps compounding, and $YAP chatter is heating up",
+    "reason": "Generic hype about alpha and momentum; no specific insight or useful detail."
+   },
+   {
+    "who": "Ring E",
+    "text": "Small ships make big waves. Deployed another tiny experiment on #near today — iterations beat hesitations every time. $YAP community, let's ",
+    "reason": "Motivational builder post with vague claim; low-effort and not specific."
+   },
+   {
+    "who": "Diego Degen",
+    "text": "gm degens, the swamp is LOUD today and my $YAP bags are croaking in perfect harmony. frogs don't fud, they front-run. #memecoins",
+    "reason": "Meme greeting with no substantive analysis; low-effort reaction."
+   }
+  ],
+  "insight": [
+   {
+    "who": "Lena Agents",
+    "text": "Everyone's shipping agents; few can answer 'which model produced this output, on what hardware?' TEE-verified inference turns that from a vi",
+    "reason": "Specific insight linking agent provenance to TEE attestation rather than vague trust."
+   },
+   {
+    "who": "Lena Agents",
+    "text": "Agent autonomy without verifiability is just delegated risk. The stack I want: agent logic on NEAR, inference in a TEE, attestation attached",
+    "reason": "Concrete stack proposal tying agent actions to TEE attestation for verifiable autonomy."
+   },
+   {
+    "who": "Lena Agents",
+    "text": "Everyone's shipping agents; few can answer 'which model produced this output, on what hardware?' TEE-verified inference turns that from a vi",
+    "reason": "Specific TEE attestation insight for agent provenance; original and actionable."
+   }
+  ]
+ },
+ "tx": {
+  "deploy": [
+   {
+    "action": "deploy token",
+    "hash": "Geb5ZHD71JgD6wdTaDSXYApFqpK2o9Bg18Ewb6v6dJKK"
+   },
+   {
+    "action": "init token",
+    "hash": "Gb8kwi9Heodsts9eNcgUnkQYXrVYmi6AfwFsoSmJNFWE"
+   },
+   {
+    "action": "delete full-access key (lock)",
+    "hash": "9L4itgrorJWk2NZ128RUK9PtaFqHNieRnv15CrHHm28A"
+   }
+  ],
+  "finalize": [
+   {
+    "action": "finalize e0",
+    "hash": "HgZdmz1kb1ymLQ9u9wzt21mJs7GCkoh1prfMY34q4zkK"
+   },
+   {
+    "action": "finalize e1",
+    "hash": "585b3MRc1TsjmLjAWujC7XzxiKZsb7A1eKQThrbBGc4E"
+   },
+   {
+    "action": "finalize e2",
+    "hash": "EkpDtWCLTC3MjfrPnXn5m3bQvTV1LcNPcJjpVTgXBC9J"
+   }
+  ],
+  "tampered": [
+   {
+    "action": "submit_report e3 (TAMPERED demo)",
+    "hash": "GChiUawATBXrnubB6B2LJhuqLfwiGH96dzx79rvVNJLm"
+   },
+   {
+    "action": "submit_report e3 (TAMPERED demo)",
+    "hash": "Cg24SCV4vJggKXW1QpM7rtQJmHuQ7n2H5JhjeU6Et5tv"
+   }
+  ],
+  "challenge": [
+   {
+    "action": "challenge e3 (watchdog: labels_hash, yappers_root, attention 89875000 vs 70125000)",
+    "hash": "98w66fKyPugAFVnm5eVTz6SsER4SwAjpyEqou6zkvto7"
+   }
+  ],
+  "vote": [
+   {
+    "action": "dao VoteApprove proposal 5",
+    "hash": "5vGqu6T3ew6jn4PYT9ACMs83xH1Mzy93n9TzAZs1f2UB"
+   },
+   {
+    "action": "dao VoteApprove proposal 5",
+    "hash": "C6Uy17JoDRKk2L18guXuFD4FeMR8k27ikcJ3vobifsma"
+   }
+  ],
+  "resubmit": [
+   {
+    "action": "submit_report e3 (resubmit)",
+    "hash": "GzAK3sTCyZuXmLWTJ459G5cGEeoi86QyjT97XQaBk8Qb"
+   },
+   {
+    "action": "submit_report e3 (resubmit)",
+    "hash": "FTUuxm5jgDXXQzJ1xu2qyZMhbU2A8BfnzxKNYYcchp5F"
+   }
+  ],
+  "steward": [
+   {
+    "action": "dao add_proposal (ChangePolicy: add steward + trusted roles)",
+    "hash": "6DAPKKu3aupf6VWEkjD73fcfSphv1G3dXSoAbLqDwUYK"
+   },
+   {
+    "action": "steward promote y02.yap-hq.testnet (tier 3, epoch 2)",
+    "hash": "8V14xveDJ867YRERQdg3G826s3naNcdkohQv5D8wJehL"
+   },
+   {
+    "action": "steward promote y01.yap-hq.testnet (tier 3, epoch 2)",
+    "hash": "AjY3bCT2PbZQfXYaVz8c3QyFFwirFTiBrSu9fNMvzSVB"
+   },
+   {
+    "action": "steward grant 120 YAP y01.yap-hq.testnet -> y15.yap-hq.testnet",
+    "hash": "4BDuQpAz6H2Ku1iaFz6mN2oHinRGkQWsg9Gbp7abPYvB"
+   }
+  ],
+  "arena": [
+   {
+    "action": "dao add_proposal (fund arena #near)",
+    "hash": "Ck7VFhvssCN75KT5SrnEa3NM2ZvwpjuiGZ4Ldi4tCY1B"
+   },
+   {
+    "action": "dao VoteApprove proposal 0",
+    "hash": "24KDH8V9FoYjpFqyXckgfdSXc3LU3rBcwKQSP8cy9yud"
+   },
+   {
+    "action": "dao VoteApprove proposal 0",
+    "hash": "Aj9Pi4ygi4CWmmn8hx177HCRdvNeqPhqwGrKcMAsKg4P"
+   }
+  ]
+ },
+ "sim": {
+  "steady": [
+   1002550.45,
+   1004717.12,
+   1006490.765,
+   1008214.205,
+   1009918.955,
+   1011430.985,
+   1013017.505,
+   1014612.385,
+   1016096.895,
+   1017728.745,
+   1019311.245,
+   1020966.795,
+   1022452.995,
+   1024089.345,
+   1025767.845,
+   1027231.017299,
+   1028451.543796,
+   1029741.028523,
+   1031140.67801,
+   1032513.71462,
+   1033738.229703,
+   1034925.92396,
+   1036334.252486,
+   1037547.490302,
+   1038722.592843,
+   1039944.235122,
+   1041225.853706,
+   1042592.258107,
+   1044120.35066,
+   1045492.002052,
+   1046796.771377,
+   1048352.172062,
+   1049570.042168,
+   1050909.281184,
+   1052280.389043,
+   1053817.796427,
+   1055026.873021,
+   1056347.452078,
+   1057714.165934,
+   1059139.571197,
+   1060391.791867,
+   1061614.320749,
+   1063028.392739,
+   1064139.347412,
+   1065444.971663,
+   1066850.46837,
+   1068063.917547,
+   1069480.425238,
+   1070784.117623,
+   1072217.987324,
+   1073670.861655,
+   1075168.555726,
+   1076603.006708,
+   1077962.13579,
+   1079327.226814,
+   1080789.1403,
+   1082286.465804,
+   1083551.394498,
+   1084872.630367,
+   1086259.30291
+  ],
+  "hype": [
+   1002681.49,
+   1004807.57,
+   1006474.84,
+   1008278.92,
+   1009950.17,
+   1011495.74,
+   1013044.055,
+   1014581.675,
+   1016184.795,
+   1017728.295,
+   1019413.845,
+   1021011.495,
+   1022635.995,
+   1024000.845,
+   1025538.345,
+   1026933.434136,
+   1028331.313237,
+   1029698.168531,
+   1031118.36254,
+   1032453.761606,
+   1034999.287135,
+   1037065.22574,
+   1038986.619832,
+   1040644.690803,
+   1042365.574619,
+   1043853.229576,
+   1045419.447979,
+   1046953.031417,
+   1048437.468453,
+   1049777.379835,
+   1032162.002423,
+   1015200.968353,
+   998825.498023,
+   982953.78783,
+   983754.658486,
+   968385.875648,
+   969113.9186,
+   969740.325598,
+   970569.856252,
+   971570.872923,
+   956380.433276,
+   941734.173821,
+   927578.051629,
+   913767.278891,
+   900618.861936,
+   887925.877641,
+   875651.619014,
+   863828.003648,
+   852352.825971,
+   841341.457782,
+   842396.656417,
+   831691.161659,
+   832479.636396,
+   833454.565533,
+   834421.413135,
+   835530.315359,
+   837045.152413,
+   838055.901738,
+   839430.409668,
+   840938.038452
+  ],
+  "dead": [
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   600000,
+   540000,
+   486000,
+   437400,
+   393660,
+   354294,
+   318864.6,
+   286978.14,
+   258280.326,
+   232452.2934,
+   209207.06406,
+   188286.357654,
+   169457.721888,
+   152511.949699,
+   137260.754729,
+   123534.679256,
+   111181.211331,
+   100063.090197,
+   90056.781178,
+   81051.10306,
+   72945.992754,
+   65651.393478,
+   59086.254131,
+   53177.628717,
+   47859.865846,
+   43073.879261,
+   38766.491335,
+   34889.842201,
+   31400.857981,
+   28260.772183,
+   25434.694965,
+   22891.225468,
+   20602.102921,
+   18541.892629,
+   16687.703366,
+   15018.933029,
+   13517.039726,
+   12165.335754,
+   10948.802178,
+   9853.92196,
+   8868.529764
+  ],
+  "deadSupply": [
+   1002390.745,
+   1004447.195,
+   1006331.7,
+   1007899.14,
+   1009549.89,
+   1011324.26,
+   1012775.645,
+   1014480.285,
+   1016177.22,
+   1017884.37,
+   1019526.42,
+   1021046.82,
+   1022605.92,
+   1024106.97,
+   1025512.62,
+   1026986.549697,
+   1028279.026708,
+   1029685.837856,
+   1030966.46025,
+   1032409.129964,
+   972256.706397,
+   918031.845231,
+   869230.813717,
+   825298.711354,
+   785738.249505,
+   750064.981919,
+   717931.879416,
+   689049.025772,
+   663039.83592,
+   639603.237767,
+   618371.555235,
+   599432.021303,
+   582293.943992,
+   566880.87751,
+   553078.766385,
+   540725.298459,
+   529607.177326,
+   519600.868307,
+   510595.190189,
+   502490.079883,
+   495195.480607,
+   488630.341259,
+   482721.715846,
+   477403.952974,
+   472617.96639,
+   468310.578464,
+   464433.92933,
+   460944.94511,
+   457804.859312,
+   454978.782093,
+   452435.312597,
+   450146.19005,
+   448085.979758,
+   446231.790495,
+   444563.020158,
+   443061.126855,
+   441709.422883,
+   440492.889307,
+   439398.009089,
+   438412.616893
+  ],
+  "spam": {
+   "none": 0.8702212666666664,
+   "all": 0.2692041
+  },
+  "ring": {
+   "none": 0.5233496,
+   "all": 0.19084751666666663
+  }
+ },
+ "mainnet": {
+  "yappers": [
+   {
+    "account": "yawrd.near",
+    "share": 0.14852139570548786
+   },
+   {
+    "account": "inzuria.near",
+    "share": 0.1430966647413379
+   },
+   {
+    "account": "ai_god.near",
+    "share": 0.12435360714745343
+   },
+   {
+    "account": "cf847e7565b443ea0535ac21e14f042875d1be3d18b886077227d6f520d450a2",
+    "share": 0.11125276127873748
+   },
+   {
+    "account": "bebekxbt.near",
+    "share": 0.1081544570670473
+   },
+   {
+    "account": "ryukkin.near",
+    "share": 0.057350971208932934
+   },
+   {
+    "account": "as2.near",
+    "share": 0.04356794873699641
+   },
+   {
+    "account": "mooagent.near",
+    "share": 0.03236320848490434
+   },
+   {
+    "account": "congos.tg",
+    "share": 0.03194067443492543
+   },
+   {
+    "account": "vandal.near",
+    "share": 0.031035460556737206
+   },
+   {
+    "account": "alvariance.near",
+    "share": 0.029873730909142474
+   },
+   {
+    "account": "kinuonnear.near",
+    "share": 0.024066337367866994
+   }
+  ],
+  "count": 27,
+  "posts": 83
+ },
+ "yapbot": [
+  {
+   "asker": "y15.yap-hq.testnet",
+   "question": "Hey @yapbot.yap-hq.testnet how am I doing this week? Still learning #near",
+   "reply": "You’re doing well, y15: latest epoch 4 score 4, rank 10 of 19, Bronze tier. Your learning questions are helping; a labeler called one \"useful learning question.\" One tip: post fresh, non-duplicate questions, since repeats scored 0."
+  },
+  {
+   "asker": "y07.yap-hq.testnet",
+   "question": "@yapbot.yap-hq.testnet how is @y03.yap-hq.testnet doing? Their agent threads are great.",
+   "reply": "@y03 is doing well: latest epoch 4 score 8, rank 3 of 19, Gold tier. Labelers liked the 'concrete agent stack with NEAR logic, TEE inference, and per-action attestation.' Tip: add one specific TEE attestation detail to each agent thread to keep the trailing total at the Gold bar (25.5)."
+  }
+ ]
+}

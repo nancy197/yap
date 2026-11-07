@@ -1,0 +1,12 @@
+[
+ {
+  "asker": "y15.yap-hq.testnet",
+  "question": "Hey @yapbot.yap-hq.testnet how am I doing this week? Still learning #near",
+  "reply": "You’re doing well, y15: latest epoch 4 score 4, rank 10 of 19, Bronze tier. Your learning questions are helping; a labeler called one \"useful learning question.\" One tip: post fresh, non-duplicate questions, since repeats scored 0."
+ },
+ {
+  "asker": "y07.yap-hq.testnet",
+  "question": "@yapbot.yap-hq.testnet how is @y03.yap-hq.testnet doing? Their agent threads are great.",
+  "reply": "@y03 is doing well: latest epoch 4 score 8, rank 3 of 19, Gold tier. Labelers liked the 'concrete agent stack with NEAR logic, TEE inference, and per-action attestation.' Tip: add one specific TEE attestation detail to each agent thread to keep the trailing total at the Gold bar (25.5)."
+ }
+]
