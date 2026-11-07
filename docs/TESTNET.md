@@ -5,8 +5,8 @@ on-chain epoch records. Every hash links to testnet.nearblocks.io. Times are UTC
 
 - Token: [`token.yap-hq.testnet`](https://testnet.nearblocks.io/address/token.yap-hq.testnet). It has **no access keys**: every full-access key was deleted after init.
 - Community DAO: [`dao.yap-hq.testnet`](https://testnet.nearblocks.io/address/dao.yap-hq.testnet). Sputnik DAO v2 with a council of 3; 2 votes pass a proposal.
-- State now: supply 1,000,000 YAP; minted 1,000,000; burned 0; Reserve 600,000.
-  Streak 0, best streak 0.
+- State now: supply 965,805.512 YAP; minted 1,001,406.124; burned 35,600.612; Reserve 564,540.
+  Streak 0, best streak 1.
 - **Simulated community.** Accounts `y01..y24.yap-hq.testnet` are demo personas: 15 honest (text written by `z-ai/glm-5.3-flash`), 4 spam bots and a 5-account like-ring.
   Their near.social writes are real testnet transactions.
 - **Labels.** Post quality labels come from `Qwen/Qwen3.8-27B` in a TEE on NEAR AI Cloud. Its attestation is verified before every labelling run.
@@ -15,15 +15,17 @@ on-chain epoch records. Every hash links to testnet.nearblocks.io. Times are UTC
 
 | # | status | attention | kind | emission (YAP) | streak | burned total | supply | signers | posts | labels |
 | ---: | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| 0 | Proposed | 47.25 |  | 0 | — | — | — | 2/3 | 43 | TEE AI |
+| 0 | Finalized | 47.25 | quiet | 472.5 | 0 | 18,047.25 | 982,425.25 | 2/3 | 43 | TEE AI |
+| 1 | Finalized | 74.36 | loud | 872.883 | 1 | 18,134.538 | 983,210.845 | 2/3 | 89 | TEE AI |
+| 2 | Finalized | 5.25 | quiet | 60.741 | 0 | 35,600.612 | 965,805.512 | 2/3 | 7 | TEE AI |
 
 ## Arenas
 
 - #0 **near builders arena** (#near), opened by `dao.yap-hq.testnet`: 500 per epoch for 6 epochs from epoch 2. Budget left 3,000.
 
-## Transactions (53)
+## Transactions (105)
 
-### create_account (32)
+### create_account (33)
 
 - 2026-11-07 15:17:37 · create_account · `token.yap-hq.testnet` · [CnKtUfHUGK…](https://testnet.nearblocks.io/txns/CnKtUfHUGKTaDEBmYNs6NYGmsCe6DrjRDnJ2EM3eeqCT)
 - 2026-11-07 15:17:40 · create_account · `dao.yap-hq.testnet` · [4QDajzWfkG…](https://testnet.nearblocks.io/txns/4QDajzWfkG7PuHjMyfHKTFhcQU1KxZuiH5GnGk8NVEdU)
@@ -57,6 +59,7 @@ on-chain epoch records. Every hash links to testnet.nearblocks.io. Times are UTC
 - 2026-11-07 15:23:25 · create_account · `y23.yap-hq.testnet` · [2FHCQfANsj…](https://testnet.nearblocks.io/txns/2FHCQfANsjo1hHQboaJ9mqxgA2RsEUgzT67haGgr9toM)
 - 2026-11-07 15:23:31 · create_account · `y24.yap-hq.testnet` · [e2UmA6FiBp…](https://testnet.nearblocks.io/txns/e2UmA6FiBphGT5CyJJXQgzr6UZyi7U3X5NwVLfnQbCo)
 - 2026-11-07 15:59:18 · create_account · `watchdog.yap-hq.testnet` · [9mPWgup1QF…](https://testnet.nearblocks.io/txns/9mPWgup1QFphGmV2rYFrCzkosKcK6bL2HN4eF4Maiwuu)
+- 2026-11-07 16:32:47 · create_account · `steward.yap-hq.testnet` · [HAcAQyonZZ…](https://testnet.nearblocks.io/txns/HAcAQyonZZRiXdTsXp3offZe9UQWpfmRCeKw6QRd7ahm)
 
 ### deploy sputnik dao (1)
 
@@ -92,25 +95,103 @@ on-chain epoch records. Every hash links to testnet.nearblocks.io. Times are UTC
 - 2026-11-07 15:18:27 · scorer_bond · `scorer-2.yap-hq.testnet` · [6kxa5XpHnJ…](https://testnet.nearblocks.io/txns/6kxa5XpHnJvY1qivaBrhTWRbPSz6W82mKrLaM5QKQkdV)
 - 2026-11-07 15:18:36 · scorer_bond · `scorer-3.yap-hq.testnet` · [9ueEQcNsLS…](https://testnet.nearblocks.io/txns/9ueEQcNsLSNEELPXmhufcqe2zYonqnrHg9K3JXqZVc83)
 
-### delete full-access key (1)
+### delete full-access key (2)
 
 - 2026-11-07 15:18:38 · delete full-access key (lock) · `token.yap-hq.testnet` · [9L4itgrorJ…](https://testnet.nearblocks.io/txns/9L4itgrorJWk2NZ128RUK9PtaFqHNieRnv15CrHHm28A)
+- 2026-11-07 16:33:05 · delete full-access key (lock steward) · `steward.yap-hq.testnet` · [221wRXBXst…](https://testnet.nearblocks.io/txns/221wRXBXstUAnk92W8Dtw5F7HXKHC5nFYSp3LSr5D8JY)
 
-### dao add_proposal (1)
+### dao add_proposal (2)
 
 - 2026-11-07 15:56:06 · dao add_proposal (fund arena #near) · `yap-hq.testnet` · [Ck7VFhvssC…](https://testnet.nearblocks.io/txns/Ck7VFhvssCN75KT5SrnEa3NM2ZvwpjuiGZ4Ldi4tCY1B)
+- 2026-11-07 16:32:56 · dao add_proposal (ChangePolicy: add steward + trusted roles) · `yap-hq.testnet` · [6DAPKKu3au…](https://testnet.nearblocks.io/txns/6DAPKKu3aupf6VWEkjD73fcfSphv1G3dXSoAbLqDwUYK)
 
-### dao VoteApprove proposal (2)
+### dao VoteApprove proposal (4)
 
 - 2026-11-07 15:56:23 · dao VoteApprove proposal 0 · `yap-hq.testnet` · [24KDH8V9Fo…](https://testnet.nearblocks.io/txns/24KDH8V9FoYjpFqyXckgfdSXc3LU3rBcwKQSP8cy9yud)
 - 2026-11-07 15:57:20 · dao VoteApprove proposal 0 · `council-1.yap-hq.testnet` · [Aj9Pi4ygi4…](https://testnet.nearblocks.io/txns/Aj9Pi4ygi4CWmmn8hx177HCRdvNeqPhqwGrKcMAsKg4P)
+- 2026-11-07 16:32:59 · dao VoteApprove proposal 1 · `yap-hq.testnet` · [85UfAacMTh…](https://testnet.nearblocks.io/txns/85UfAacMThYZCxRaFrC4juHLK798JqJVVZNzcHuhbV6C)
+- 2026-11-07 16:33:03 · dao VoteApprove proposal 1 · `council-1.yap-hq.testnet` · [DEH4BaNMGY…](https://testnet.nearblocks.io/txns/DEH4BaNMGYfmM4Azgq8ie21oDZBwZpuE9oWgEDbQuNPs)
 
 ### top up council (2)
 
 - 2026-11-07 15:56:47 · top up council · `council-1.yap-hq.testnet` · [2NyCWaXXu2…](https://testnet.nearblocks.io/txns/2NyCWaXXu2HfT9h19dvmhLtRKkJCZMRkKgd5JGRk3A5T)
 - 2026-11-07 15:56:49 · top up council · `council-2.yap-hq.testnet` · [HxDSRHwR8Q…](https://testnet.nearblocks.io/txns/HxDSRHwR8QNAYKMhhiixG21ohATdNp372oTV6Ut8p8af)
 
-### submit_report (2)
+### submit_report (6)
 
 - 2026-11-07 15:57:12 · submit_report e0 · `scorer-1.yap-hq.testnet` · [BfKABP4Db4…](https://testnet.nearblocks.io/txns/BfKABP4Db4pQrkao4D9wrRDv6G3m6PFt27spXsxJG1pU)
 - 2026-11-07 15:57:15 · submit_report e0 · `scorer-2.yap-hq.testnet` · [67QEP4NYkb…](https://testnet.nearblocks.io/txns/67QEP4NYkbUbFEeh6PC1PHd24BMJqzBJ5eP4H2UMnKm3)
+- 2026-11-07 16:14:44 · submit_report e1 · `scorer-1.yap-hq.testnet` · [2Ed5xEBSjU…](https://testnet.nearblocks.io/txns/2Ed5xEBSjULgt1enVCGJjoHLUs7PmfYKwcQenGn4UX1N)
+- 2026-11-07 16:14:48 · submit_report e1 · `scorer-2.yap-hq.testnet` · [9qec7iNH1y…](https://testnet.nearblocks.io/txns/9qec7iNH1yAWuqRcpcCVZVMmyMkJK4FhFeENgka21SiS)
+- 2026-11-07 16:22:17 · submit_report e2 · `scorer-1.yap-hq.testnet` · [Fyoxf9gHVq…](https://testnet.nearblocks.io/txns/Fyoxf9gHVqsP8nTbXYE7B7jAsRa6wUbhcyJwbg17KPoJ)
+- 2026-11-07 16:22:21 · submit_report e2 · `scorer-2.yap-hq.testnet` · [HXT3kJwv2i…](https://testnet.nearblocks.io/txns/HXT3kJwv2igncs2juaAbm7XK5Pk4bqSvpVrPyZZWd8Q)
+
+### finalize (3)
+
+- 2026-11-07 16:02:36 · finalize e0 · [HgZdmz1kb1…](https://testnet.nearblocks.io/txns/HgZdmz1kb1ymLQ9u9wzt21mJs7GCkoh1prfMY34q4zkK)
+- 2026-11-07 16:20:05 · finalize e1 · [585b3MRc1T…](https://testnet.nearblocks.io/txns/585b3MRc1TsjmLjAWujC7XzxiKZsb7A1eKQThrbBGc4E)
+- 2026-11-07 16:27:39 · finalize e2 · [EkpDtWCLTC…](https://testnet.nearblocks.io/txns/EkpDtWCLTC3MjfrPnXn5m3bQvTV1LcNPcJjpVTgXBC9J)
+
+### claim (33)
+
+- 2026-11-07 16:08:09 · claim e0 · `y03.yap-hq.testnet` · [9NfxbpooSE…](https://testnet.nearblocks.io/txns/9NfxbpooSENDhCLntonzMgfhAZZxM9a3yQHh4hCP72kM)
+- 2026-11-07 16:08:12 · claim e0 · `y05.yap-hq.testnet` · [F5qsEtK243…](https://testnet.nearblocks.io/txns/F5qsEtK2439fzuKMGkYVAaU6JAVduVkMoCKCuZqZxmWa)
+- 2026-11-07 16:08:16 · claim e0 · `y09.yap-hq.testnet` · [D8rqPhzGzT…](https://testnet.nearblocks.io/txns/D8rqPhzGzTqWaHj3xnv4XDX83Av66HnQPjDMdfXL9DFa)
+- 2026-11-07 16:08:19 · claim e0 · `y02.yap-hq.testnet` · [Nj8Gk41zoS…](https://testnet.nearblocks.io/txns/Nj8Gk41zoSb56UsksZBAttgv1eZELCBjX1ycwdmZxsq)
+- 2026-11-07 16:08:23 · claim e0 · `y01.yap-hq.testnet` · [pawEUQwjc8…](https://testnet.nearblocks.io/txns/pawEUQwjc8jZk2r8S6M34RwhU4G3i9usRcNrYvisTwv)
+- 2026-11-07 16:08:26 · claim e0 · `y04.yap-hq.testnet` · [67YympFocG…](https://testnet.nearblocks.io/txns/67YympFocGY9fSL2FweTGomoHvH26F8zkfx3h11R9A5k)
+- 2026-11-07 16:08:29 · claim e0 · `y10.yap-hq.testnet` · [4rc2mzPTSS…](https://testnet.nearblocks.io/txns/4rc2mzPTSSVhdr1wpezXidnhWB8RajX9ABzU6Gfmsf62)
+- 2026-11-07 16:08:33 · claim e0 · `y07.yap-hq.testnet` · [HNZW2uyWGB…](https://testnet.nearblocks.io/txns/HNZW2uyWGBrNztiZ2SLQDXG81R1zaW4BC55ZqR5tcVVP)
+- 2026-11-07 16:08:37 · claim e0 · `y06.yap-hq.testnet` · [FZepWwUv2V…](https://testnet.nearblocks.io/txns/FZepWwUv2VtKeJfz839UKYeGfQKmZvn32VugbUQgGN19)
+- 2026-11-07 16:08:39 · claim e0 · `y08.yap-hq.testnet` · [8tegCX174M…](https://testnet.nearblocks.io/txns/8tegCX174MoFDBH7PsAifFAsqGPDXPh4cmb4ueiNqN8)
+- 2026-11-07 16:08:43 · claim e0 · `y11.yap-hq.testnet` · [AWwTkJPM5A…](https://testnet.nearblocks.io/txns/AWwTkJPM5AQvjN6n8thu7hVnkuruZghj32ony9sdKzX3)
+- 2026-11-07 16:20:08 · claim e1 · `y05.yap-hq.testnet` · [GRrYj8iLKP…](https://testnet.nearblocks.io/txns/GRrYj8iLKP45MvhvSW9TPVMgV1q2c2hx6oBr6iZWAMb4)
+- 2026-11-07 16:20:14 · claim e1 · `y15.yap-hq.testnet` · [BE4j2kftVf…](https://testnet.nearblocks.io/txns/BE4j2kftVfUtoF2699qfSyUgwKR9KzjvE3miw6f74ZTe)
+- 2026-11-07 16:20:17 · claim e1 · `y01.yap-hq.testnet` · [GhKJdhKnap…](https://testnet.nearblocks.io/txns/GhKJdhKnapo8BxWKyx855h59oom3MedsRYU7PrSQfJsu)
+- 2026-11-07 16:20:20 · claim e1 · `y06.yap-hq.testnet` · [4kfqGdryXz…](https://testnet.nearblocks.io/txns/4kfqGdryXzWk1rJQTiRM72EmVeTnwSzwJGgttH3Y66Cz)
+- 2026-11-07 16:20:26 · claim e1 · `y13.yap-hq.testnet` · [9ErXm8TQta…](https://testnet.nearblocks.io/txns/9ErXm8TQtaohYQYDFZ1NhbLqvivtbzsZU78mbPYK88RP)
+- 2026-11-07 16:20:28 · claim e1 · `y04.yap-hq.testnet` · [13F9wUeixq…](https://testnet.nearblocks.io/txns/13F9wUeixqpRXZtkbDyya4pwC2TkauhPenj7qH8R2Bmd)
+- 2026-11-07 16:20:31 · claim e1 · `y09.yap-hq.testnet` · [9awyBCYEsg…](https://testnet.nearblocks.io/txns/9awyBCYEsgunrKKweDfEg8msE3UsoTyioxyKpreaLi5p)
+- 2026-11-07 16:20:34 · claim e1 · `y10.yap-hq.testnet` · [5h6JZ99QvG…](https://testnet.nearblocks.io/txns/5h6JZ99QvGCRuZcgyzmHaepAMjKpktifQzrB2SDfNjzR)
+- 2026-11-07 16:20:39 · claim e1 · `y14.yap-hq.testnet` · [4Y7L7CZyo3…](https://testnet.nearblocks.io/txns/4Y7L7CZyo3wUiCvmhRyqEvXacRvoExMXfPLXgxqj12wa)
+- 2026-11-07 16:20:42 · claim e1 · `y02.yap-hq.testnet` · [EcSL1nMcbT…](https://testnet.nearblocks.io/txns/EcSL1nMcbT99hoTYePeGCHsaYGHybJEY8V7YAiuspb5V)
+- 2026-11-07 16:20:45 · claim e1 · `y07.yap-hq.testnet` · [DgdZbYf5Gz…](https://testnet.nearblocks.io/txns/DgdZbYf5Gz3k3aH8hxR9QNyvNZK4cNpyMpPDMomfMNZs)
+- 2026-11-07 16:20:48 · claim e1 · `y03.yap-hq.testnet` · [9BWYD4hgRR…](https://testnet.nearblocks.io/txns/9BWYD4hgRRysetKEaN7nMycPK6ttu9o9QJrv6YY5gF3s)
+- 2026-11-07 16:20:53 · claim e1 · `y12.yap-hq.testnet` · [7erBDjJ7x4…](https://testnet.nearblocks.io/txns/7erBDjJ7x4voozsLHfQ6zDq7YqahmMV4i8WEer91vv8c)
+- 2026-11-07 16:20:56 · claim e1 · `y08.yap-hq.testnet` · [9JESpimwd8…](https://testnet.nearblocks.io/txns/9JESpimwd8y6TxVKr3Q6kZtkbpDUfZRUA4NHwoNGHn1C)
+- 2026-11-07 16:21:01 · claim e1 · `y21.yap-hq.testnet` · [BSqHjXCgFf…](https://testnet.nearblocks.io/txns/BSqHjXCgFfSoYfU1irtPvrQ8bNX8RvsPwsTW5u8ZbyA6)
+- 2026-11-07 16:21:07 · claim e1 · `y24.yap-hq.testnet` · [5UFF5v6iZa…](https://testnet.nearblocks.io/txns/5UFF5v6iZaUyT4GvfcgFicrCz9A7uCp9JJQAD8VGr9eD)
+- 2026-11-07 16:21:13 · claim e1 · `y22.yap-hq.testnet` · [94N4BP72vs…](https://testnet.nearblocks.io/txns/94N4BP72vsxr2jQGpm7CkTrKsVpFbqBx2GARAwkEV1FD)
+- 2026-11-07 16:21:18 · claim e1 · `y23.yap-hq.testnet` · [RQBjGaufNo…](https://testnet.nearblocks.io/txns/RQBjGaufNok6NTKbarjAUSBTrA2b9gj8Kp4o28YAhu3)
+- 2026-11-07 16:21:24 · claim e1 · `y20.yap-hq.testnet` · [CB8cL1zYN9…](https://testnet.nearblocks.io/txns/CB8cL1zYN9XBkGw74CMXfZR43q43bjzXCy4HwCF6fXWQ)
+- 2026-11-07 16:27:43 · claim e2 · `y02.yap-hq.testnet` · [4BV2NpUKEL…](https://testnet.nearblocks.io/txns/4BV2NpUKELTVSJHPME2Fj64dpJzNJVUjTMRFHsg186Wh)
+- 2026-11-07 16:27:46 · claim e2 · `y11.yap-hq.testnet` · [BBfNBZTCVT…](https://testnet.nearblocks.io/txns/BBfNBZTCVT9EjcSb6Gv4dcW9CrLgiYfXLc2ik9xVJaBT)
+- 2026-11-07 16:27:50 · claim e2 · `y01.yap-hq.testnet` · [7Egz4coqnK…](https://testnet.nearblocks.io/txns/7Egz4coqnKmDtrfGvwvRbQBNgWdMpeXX1jmCuYNR4gZe)
+
+### fund yap-hq from quorum-court (1)
+
+- 2026-11-07 16:32:10 · fund yap-hq from quorum-court (testnet) · `yap-hq.testnet` · [5enMPmKqwE…](https://testnet.nearblocks.io/txns/5enMPmKqwEVsf9ZCUQzF6vnzP2qsyS8QAXUoUVjsXsPY)
+
+### deploy steward (1)
+
+- 2026-11-07 16:32:50 · deploy steward · `steward.yap-hq.testnet` · [GaT1gQsyij…](https://testnet.nearblocks.io/txns/GaT1gQsyijnJkRHbewp1nWUKMztw7sH6bzeuFtEZbvjt)
+
+### init steward (1)
+
+- 2026-11-07 16:32:53 · init steward · `steward.yap-hq.testnet` · [8MyBFyoS1U…](https://testnet.nearblocks.io/txns/8MyBFyoS1UKqvGuRFCfoSSjYp3q9Fmk4AwBiuR3Numnk)
+
+### steward promote y02.yap-hq.testnet (1)
+
+- 2026-11-07 16:33:22 · steward promote y02.yap-hq.testnet (tier 3, epoch 2) · `y02.yap-hq.testnet` · [8V14xveDJ8…](https://testnet.nearblocks.io/txns/8V14xveDJ867YRERQdg3G826s3naNcdkohQv5D8wJehL)
+
+### steward promote y01.yap-hq.testnet (1)
+
+- 2026-11-07 16:33:29 · steward promote y01.yap-hq.testnet (tier 3, epoch 2) · `y01.yap-hq.testnet` · [AjY3bCT2Pb…](https://testnet.nearblocks.io/txns/AjY3bCT2PbZQfXYaVz8c3QyFFwirFTiBrSu9fNMvzSVB)
+
+### top up trusted demo member (1)
+
+- 2026-11-07 16:34:00 · top up trusted demo member · `y01.yap-hq.testnet` · [BLGuEQ651t…](https://testnet.nearblocks.io/txns/BLGuEQ651trFRJKjMzXmR6dmwFaVR5YDKCgydgGEyyJV)
+
+### steward grant 120 YAP y01.yap-hq.testnet -> y15.yap-hq.testnet (1)
+
+- 2026-11-07 16:34:07 · steward grant 120 YAP y01.yap-hq.testnet -> y15.yap-hq.testnet · `y01.yap-hq.testnet` · [4BDuQpAz6H…](https://testnet.nearblocks.io/txns/4BDuQpAz6H2Ku1iaFz6mN2oHinRGkQWsg9Gbp7abPYvB)

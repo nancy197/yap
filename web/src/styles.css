@@ -204,7 +204,7 @@ label.f { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
 .post .meta button:hover { color: var(--accent); }
 .post .meta button.on { color: var(--accent); }
 .tag { color: var(--violet); }
-.q { font: 600 10.5px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px solid var(--border-strong); }
+.q { font: 600 10.5px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px solid var(--border-strong); white-space: nowrap; }
 .q.q0 { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 45%, transparent); }
 .q.q1 { color: var(--muted); }
 .q.q2 { color: var(--good); border-color: color-mix(in srgb, var(--good) 45%, transparent); }

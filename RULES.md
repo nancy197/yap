@@ -141,6 +141,25 @@ Let `ratio = attention / attention_target`.
 - After the window, everyone gets the same price (a meme.cooking-style batch auction), and
   over-commits are refunded.
 
+## R-10 Trusted circle (reputation becomes DAO membership)
+- The `steward` contract (`contracts/steward`) is immutable: no owner, no setters, and its keys are deleted. The
+  community DAO grants it a `steward` role through a council `ChangePolicy` vote. That role may file and approve
+  `add_member_to_role`, `remove_member_from_role` and `transfer` proposals.
+- **promote** (anyone can call):
+  - It takes a yapper leaf (`account, e, amount, score, tier, proof`) with `tier >= min_tier`. On testnet,
+    `min_tier` is 3 = Gold.
+  - The steward reads `get_epoch(e)` from the token. The epoch must be Finalized, the proof must verify against
+    `yappers_root`, and `e` must be within `season_epochs` of now.
+  - The steward then files `AddMemberToRole(trusted)` and approves it with its own role, so no council vote is needed.
+  - Membership expires `season_epochs` after the proof epoch. A newer proof only extends it.
+- **demote**: once a season has ended, anyone can trigger `RemoveMemberFromRole` the same way.
+- **grant**: an active trusted member can send at most `grant_cap` YAP (300) from the DAO treasury per grant.
+  - Grants are also limited to `period_budget` (1,500) per season. The steward files a `Transfer` proposal and approves it.
+  - Self-grants are refused.
+  - Anything above the caps stays a normal council proposal.
+- Every membership change and grant is a Sputnik proposal, visible in Trezu and on the explorer. Every membership
+  points to the epoch and Merkle leaf that earned it.
+
 ## R-9 Sybil resistance: limits, stated plainly
 - Smart-follower PageRank, stake weighting, the per-author caps and the AI spam label make farming
   expensive, not impossible.

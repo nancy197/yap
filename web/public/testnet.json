@@ -1,20 +1,20 @@
 {
- "generatedAt": "2026-11-07T16:00:47.481Z",
+ "generatedAt": "2026-11-07T16:35:28.762Z",
  "state": {
   "streak": 0,
-  "best_streak": 0,
-  "attention_target": "100000000",
-  "minted_total": "1000000000000000000000000",
-  "burned_total": "0",
-  "reserve": "600000000000000000000000",
-  "current_epoch": 2,
+  "best_streak": 1,
+  "attention_target": "70195819",
+  "minted_total": "1001406124851839716554893",
+  "burned_total": "35600612485183971655489",
+  "reserve": "564540000000000000000000",
+  "current_epoch": 5,
   "reward_per_share": "0"
  },
- "supply": "1000000000000000000000000",
+ "supply": "965805512366655744899404",
  "epochs": [
   {
    "number": 0,
-   "status": "Proposed",
+   "status": "Finalized",
    "report": {
     "attention": "47250000",
     "yappers_root": "6c153356945f32c76d0537c196919e2bfe9f4da3f6b771b887636206635bfb20",
@@ -31,11 +31,68 @@
     "scorer-2.yap-hq.testnet"
    ],
    "proposed_at": 1794067034266698800,
-   "emission": "0",
-   "yapper_pool": "0",
-   "staker_pool": "0",
-   "dao_pool": "0",
-   "claimed": "0",
+   "emission": "472500000000000000000",
+   "yapper_pool": "378000000000000000000",
+   "staker_pool": "47250000000000000000",
+   "dao_pool": "47250000000000000000",
+   "claimed": "378000000000000000000",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 1,
+   "status": "Finalized",
+   "report": {
+    "attention": "74361374",
+    "yappers_root": "5c7b196cc3d96b357c49e11df24498af6f81d2cb3f3089557f753fa1c64cbc37",
+    "arenas": [],
+    "labels_hash": "11355b6c6faa0559893613e8cd4efc8ec45545e66f7e428821c683898afadc00",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": "2bf9324ff1eb127ad0ffaaaf7412939e68ced621d67d780094994da7c4e9efb4",
+    "data_hash": "e18e2eb9fe7e25cb04dbf5dd9447b9b7ad5e69574dbafbba311113babb556f92",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/1/"
+   },
+   "report_hash": "54b62532f274571fc37ed5d78c54061955c21e455c82d9a35d37b9b669b2d394",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794068087212462000,
+   "emission": "872883652319731693683",
+   "yapper_pool": "698306921855785354946",
+   "staker_pool": "87288365231973169368",
+   "dao_pool": "87288365231973169369",
+   "claimed": "680699319843487982115",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 2,
+   "status": "Finalized",
+   "report": {
+    "attention": "5250000",
+    "yappers_root": "64ab566cf5a724e5983a23b072e4e9e3947945a94ec887ecdba5fbc73f36d1ee",
+    "arenas": [
+     {
+      "arena_id": 0,
+      "root": "a6fc85cfb969756032b8e616e6b9076c1eef98553965d8a74492bc09c6b54362"
+     }
+    ],
+    "labels_hash": "f9ef8715ed43d2419d6b040bf93938b3e43fc06ca0aa9958424b44cfaf2ca0de",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": "c4665091bce3d49894fcd8c94430b85b685b4ba0d64fd0b5a25e63fc80a71066",
+    "data_hash": "d8281b0232dec98cb28850f2a25391e3c2d5753dd5fb786489a95987b5692196",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/2/"
+   },
+   "report_hash": "e5e6bc966fa8603ebe2275daaf7e5588f767ace067db2191f8e5ab293d4292e9",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794068540316424400,
+   "emission": "60741199519984861210",
+   "yapper_pool": "48592959615987888968",
+   "staker_pool": "6074119951998486121",
+   "dao_pool": "6074119951998486121",
+   "claimed": "48592959615987888968",
    "unclaimed_burned": false
   }
  ],
@@ -54,5 +111,5 @@
    "closed": false
   }
  ],
- "txCount": 53
+ "txCount": 105
 }

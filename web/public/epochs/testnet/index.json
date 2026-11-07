@@ -7,7 +7,51 @@
    "posts": 43,
    "yappers": 11,
    "simulatedLabels": false,
-   "updatedAt": "2026-11-07T15:57:09.429Z"
+   "updatedAt": "2026-11-07T16:02:36.944Z",
+   "status": "Finalized",
+   "emission": "472500000000000000000",
+   "yapperPool": "378000000000000000000",
+   "finalizeTx": "HgZdmz1kb1ymLQ9u9wzt21mJs7GCkoh1prfMY34q4zkK",
+   "supply": "982425250000000000000000",
+   "reserve": "582000000000000000000000",
+   "burnedTotal": "18047250000000000000000",
+   "mintedTotal": "1000472500000000000000000",
+   "streak": 0,
+   "target": "89450000"
+  },
+  "1": {
+   "attention": "74361374",
+   "posts": 89,
+   "yappers": 23,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T16:20:06.020Z",
+   "status": "Finalized",
+   "emission": "872883652319731693683",
+   "yapperPool": "698306921855785354946",
+   "finalizeTx": "585b3MRc1TsjmLjAWujC7XzxiKZsb7A1eKQThrbBGc4E",
+   "supply": "983210845287087758524315",
+   "reserve": "582000000000000000000000",
+   "burnedTotal": "18134538365231973169368",
+   "mintedTotal": "1001345383652319731693683",
+   "streak": 1,
+   "target": "86432274"
+  },
+  "2": {
+   "attention": "5250000",
+   "posts": 7,
+   "yappers": 3,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-07T16:27:40.369Z",
+   "status": "Finalized",
+   "emission": "60741199519984861210",
+   "yapperPool": "48592959615987888968",
+   "finalizeTx": "EkpDtWCLTC3MjfrPnXn5m3bQvTV1LcNPcJjpVTgXBC9J",
+   "supply": "965805512366655744899404",
+   "reserve": "564540000000000000000000",
+   "burnedTotal": "35600612485183971655489",
+   "mintedTotal": "1001406124851839716554893",
+   "streak": 0,
+   "target": "70195819"
   }
  }
 }

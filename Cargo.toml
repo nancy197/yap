@@ -1,5 +1,5 @@
 [workspace]
-members = ["contracts/yap"]
+members = ["contracts/yap", "contracts/steward"]
 resolver = "2"
 
 [profile.release]

@@ -187,8 +187,8 @@ async function claims(e: number) {
     if (await view(TOKEN, 'is_claimed', { e, account: y.account })) continue;
     const acc = await signer(y.account);
     try {
-      if (!(await view(TOKEN, 'storage_balance_of', { account_id: y.account }))) await call(acc, TOKEN, 'storage_deposit', { account_id: y.account }, 1_250_000_000_000_000_000_000n, tgas(30));
-      const h = await call(acc, TOKEN, 'claim', { e, amount: y.amount, score: Number(y.score), tier: y.tier, proof: y.proof }, 0n, tgas(60));
+      if (!(await view(TOKEN, 'storage_balance_of', { account_id: y.account }))) await call(acc, TOKEN, 'storage_deposit', { account_id: y.account }, 1_250_000_000_000_000_000_000n, tgas(8));
+      const h = await call(acc, TOKEN, 'claim', { e, amount: y.amount, score: Number(y.score), tier: y.tier, proof: y.proof }, 0n, tgas(12));
       await recordTx(`claim e${e}`, h, y.account);
     } catch (err) {
       log(`claim ${y.account} failed: ${String(err).slice(0, 160)}`);
@@ -196,15 +196,19 @@ async function claims(e: number) {
   }
 }
 
+const claimRuns = new Set<number>();
 async function tick() {
   const now = Date.now();
   const cur = Math.floor((now / 1000 - cfg.genesis_ts) / cfg.epoch_secs);
   // Walk recent epochs oldest first: each needs its predecessor final, because the predicted pool depends on it.
   for (let e = Math.max(0, cur - 3); e < cur; e++) {
     const rec = await epochRec(e);
-    if (rec && ['Finalized', 'Dead'].includes(rec.status)) continue;
+    if (rec && ['Finalized', 'Dead'].includes(rec.status)) {
+      if (rec.status === 'Finalized' && !claimRuns.has(e)) { claimRuns.add(e); await claims(e); }
+      continue;
+    }
     if (rec?.status === 'Proposed') {
-      if (await finalize(e)) { await claims(e); continue; }
+      if (await finalize(e)) { claimRuns.add(e); await claims(e); continue; }
       return;
     }
     if (rec?.status === 'Challenged') return log(`epoch ${e} challenged: waiting for the DAO`);

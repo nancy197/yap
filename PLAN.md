@@ -25,10 +25,10 @@ Deadline: 2026-11-14 23:59 UTC. Tracks: memecoins + social. Testnet only.
 - [x] Tests (vitest) incl. like-ring, spam, self-like, new-account cases; run on real mainnet near.social data read-only and print the top 20.
 
 ## Phase 3: agents + testnet live
-- [ ] labeler (NEAR AI TEE, attestation saved; --mock SIMULATED), label cache, cost print.
-- [ ] Deploy: sub-accounts, Sputnik DAO (council = yap-hq + council-1 + council-2), token contract with testnet config (epoch 600 s), lock keys (delete full-access keys of token account) and print proof.
-- [ ] crowd seeder (24 bot personas incl. spam bots + like-ring) writing real testnet near.social data.
-- [ ] scorer service: index → label → score → publish → 2-of-3 submit → finalize → claims; runs epochs live.
+- [x] labeler (NEAR AI TEE, attestation saved; --mock SIMULATED), label cache, cost print.
+- [x] Deploy: sub-accounts, Sputnik DAO (council = yap-hq + council-1 + council-2), token contract with testnet config (epoch 600 s), lock keys (delete full-access keys of token account) and print proof.
+- [x] crowd seeder (24 bot personas incl. spam bots + like-ring) writing real testnet near.social data.
+- [x] scorer service: index → label → score → publish → 2-of-3 submit → finalize → claims; runs epochs live.
 - [ ] One challenge handled by a DAO vote on testnet; one DAO-funded arena paid out.
 - [ ] docs/TESTNET.md with real tx hashes.
 
@@ -36,10 +36,10 @@ Deadline: 2026-11-14 23:59 UTC. Tracks: memecoins + social. Testnet only.
 - [x] 60-epoch scenarios using real scoring code; web/public/sim.json; sim/RESULTS.md.
 
 ## Phase 5: web
-- [ ] All pages in SPEC.md (Mindshare, Leaderboard, Profile, Arenas, Earn, Token, Feed/Compose, Verify, Governance, Sim), original brand, testnet live + mainnet read-only.
+- [x] All pages in SPEC.md (Mindshare, Leaderboard, Profile, Arenas, Earn, Token, Feed/Compose, Verify, Governance, Sim), original brand, testnet live + mainnet read-only.
 
 ## Phase 6: README + polish
-- [ ] README (story, how it works, NEAR features used, what is simulated, limits), demo script.
+- [x] README (story, how it works, NEAR features used, what is simulated, limits), demo script.
 
 ## Progress log
 P3 2026-11-07: Read AGENTS.md, RULES.md, SPEC.md Agents, PLAN.md, contract API, scoring spec, Phase 2 APIs, and Quorum testnet/attestation code. Corrected Phase 3 council plan to use independent council accounts. Starting agents package; verification pending.
@@ -69,3 +69,6 @@ P4 2026-11-07: First full run completed and wrote sim.json/RESULTS.md. Inspectio
 P4 2026-11-07: Corrected run completed all six 60-epoch scenarios; output inspection confirmed the fade retains attention and supply reconciles with genesis plus mint minus burn. Aligned published config with 600-second synthetic testnet epochs and added a reproducible-data test. Final pnpm build and all 16 tests passed; regenerating the final output now.
 P4 2026-11-07: The output run passed with testnet epoch duration. Final review unified the scenario RNG and claim choices under the published root seed 20261107; regenerating outputs once more so documented seed matches every random input. No contracts/ changes.
 P4 2026-11-07: Phase 4 complete. Final pnpm sim generated six 60-epoch series and RESULTS.md from seed 20261107. Final pnpm build and all 16 tests passed; JSON checks confirmed 60 ordered rows per scenario, 600-second config, dead epochs from 20, and supply = genesis + minted − burned within six-decimal display rounding. No contracts/ changes.
+P3 2026-11-07: (supervisor, Codex out of credit) Deployed on testnet: token.yap-hq.testnet (all keys deleted), Sputnik DAO dao.yap-hq.testnet (council yap-hq + council-1/2, 2 of 3), scorer bonds. Labeler uses Qwen/Qwen3.8-27B with verified TEE attestation (22 checks). Crowd of 24 personas writes real near.social testnet data. Scorer reported epoch 0 (2/3), watchdog recomputed it: match. Arena #near funded by DAO proposal 0 (approved 2/3). Collusion demo armed for epoch 3 (scorer --tamper 3) with watchdog auto-challenge.
+P5 2026-11-07: (supervisor) Web app built: Mindshare, Leaderboard, Profile + Yap card, Arenas (+DAO proposal builder), Feed/compose, Earn, $YAP, Verify (in-browser recompute matches chain for epoch 0), Governance, Sim, How. Screenshots checked at 1440 and 390.
+P7 2026-11-07: Trusted circle. contracts/steward (8 unit tests + sandbox test with real Sputnik: promote by proof -> DAO role, capped grant paid from treasury, over-cap/over-budget/non-member refused, demote after season). Testnet: steward.yap-hq.testnet deployed + locked; council approved ChangePolicy (proposal 1); keeper promoted y01, y02 (Gold, epoch 2; proposals 2-3); y01 granted 120 YAP to y15 (proposal 4, Approved by steward). UI: Trusted circle on Governance.

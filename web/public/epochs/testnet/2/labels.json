@@ -1,0 +1,151 @@
+{
+ "labels": {
+  "y01.yap-hq.testnet/1794067413209": 1,
+  "y02.yap-hq.testnet/1794067415867": 3,
+  "y02.yap-hq.testnet/1794067415869": 3,
+  "y11.yap-hq.testnet/1794067209135": 1,
+  "y11.yap-hq.testnet/1794067209136": 1,
+  "y11.yap-hq.testnet/1794067209137": 1,
+  "y11.yap-hq.testnet/1794067209138": 1
+ },
+ "details": [
+  {
+   "key": "y01.yap-hq.testnet/1794067413209",
+   "q": 1,
+   "reason": "vague teaser with no concrete info"
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794067415867",
+   "q": 3,
+   "reason": "clear, specific explanation of intent swap flow and solver competition"
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794067415869",
+   "q": 3,
+   "reason": "specific solver-side insight linking APR to volume and chop to liquidity cost"
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794067209135",
+   "q": 1,
+   "reason": "low-effort meme greeting with no substantive content"
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794067209136",
+   "q": 1,
+   "reason": "low-effort meme slogan, no useful information"
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794067209137",
+   "q": 1,
+   "reason": "low-effort meme reply, no substantive insight"
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794067209138",
+   "q": 1,
+   "reason": "low-effort dismissive reply with no concrete content"
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": {
+  "verified": true,
+  "reportHash": "c4665091bce3d49894fcd8c94430b85b685b4ba0d64fd0b5a25e63fc80a71066",
+  "checks": [
+   {
+    "name": "fresh random nonce",
+    "passed": true
+   },
+   {
+    "name": "model candidates returned",
+    "passed": true
+   },
+   {
+    "name": "gateway: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "gateway: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "gateway: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "gateway: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "model 0: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "model 0: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "model 0: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU evidence present",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA NRAS response",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA GPU verdict",
+    "passed": true
+   }
+  ]
+ },
+ "usage": {
+  "promptTokens": 680,
+  "completionTokens": 1670,
+  "usd": 0.0022817,
+  "calls": 1
+ }
+}

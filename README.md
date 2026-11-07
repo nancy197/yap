@@ -19,6 +19,11 @@ revoke an API key.
   - funds topic **Arenas** by proposal;
   - receives 10% of every mint;
   - is the **court of appeal** for scoring disputes. The token contract itself files the proposal.
+- **Reputation becomes DAO membership (the Trusted circle).**
+  - Gold+ yappers are added to the DAO's `trusted` role by an immutable steward contract.
+  - The steward checks their Merkle leaf against a finalized epoch, so there is no council vote and no admin.
+  - Trusted members can send small, capped treasury grants: 300 YAP each, 1,500 per season.
+  - Membership expires each season unless it is re-earned.
 - **Reputation-gated access:**
   - Tiers (Bronze → Inner Circle) come from on-chain score history.
   - Arenas can require a tier.
@@ -30,6 +35,7 @@ revoke an API key.
 | --- | --- |
 | $YAP token (NEP-141 + mechanics, locked) | `token.yap-hq.testnet` |
 | Community DAO (Sputnik v2; council of 3, 2 to pass) | `dao.yap-hq.testnet` |
+| Steward (reputation → DAO `trusted` role, capped grants; locked) | `steward.yap-hq.testnet` |
 | Scorers (bonded, 2-of-3 identical report hash) | `scorer-1..3.yap-hq.testnet` |
 | Independent watchdog (recomputes every report, challenges mismatches) | `watchdog.yap-hq.testnet` |
 | AI quality labeler | `Qwen/Qwen3.8-27B` in a verified TEE on NEAR AI Cloud (Intel TDX + NVIDIA attestation, nonce-bound) |
@@ -99,7 +105,7 @@ The UI is our own brand. Kaito is named only as background.
 ```bash
 pnpm install
 pnpm -r test                                  # scoring + indexer + sim tests (vitest)
-cargo test -p yap                              # contract unit tests + sandbox test with the real Sputnik DAO wasm
+cargo test -p yap -p steward                   # contract unit tests + sandbox tests with the real Sputnik DAO wasm
 pnpm sim                                       # 60-epoch economy simulation → web/public/sim.json, sim/RESULTS.md
 pnpm -C web dev                                # the app (http://localhost:5180)
 
@@ -111,6 +117,9 @@ pnpm -C agents scorer                          # index → label (TEE) → score
 pnpm -C agents watchdog                        # independent audit + automatic challenge on mismatch
 pnpm -C agents gov arena '#near' 500 6 1       # DAO proposal: fund an arena from the treasury
 pnpm -C agents gov vote <id>                   # council votes (2 of 3)
+pnpm -C agents steward deploy                  # steward contract + council ChangePolicy (steward + trusted roles) + lock
+pnpm -C agents steward keeper                  # promote Gold+ yappers each finalized epoch, demote expired ones
+pnpm -C agents steward grant <from> <to> <YAP> <memo>   # a trusted member's capped treasury grant
 ```
 
 `NEARAI_API_KEY` in `.env` enables the real labeler. Without it, labels fall back to a heuristic, and the run is

@@ -3,6 +3,7 @@
 export const RPC = 'https://test.rpc.fastnear.com';
 export const TOKEN = 'token.yap-hq.testnet';
 export const DAO = 'dao.yap-hq.testnet';
+export const STEWARD = 'steward.yap-hq.testnet';
 export const HQ = 'yap-hq.testnet';
 export const KV_TEST = 'https://kv.test.fastnear.com';
 export const SOCIAL_MAIN = 'https://api2.near.social';

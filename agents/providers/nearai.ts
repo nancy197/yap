@@ -12,7 +12,7 @@ async function api(path:string, init:RequestInit={}) {
   return response.json() as Promise<any>;
 }
 export async function chatJson(model:string, system:string, user:string, temperature=0):Promise<{content:string;promptTokens:number;completionTokens:number}> {
-  const response=await api('/chat/completions',{method:'POST',headers:{'content-type':'application/json','x-no-aliasing':'true'},body:JSON.stringify({model,stream:false,response_format:{type:'json_object'},max_tokens:4000,temperature,messages:[{role:'system',content:system},{role:'user',content:user}]})});
+  const response=await api('/chat/completions',{method:'POST',headers:{'content-type':'application/json','x-no-aliasing':'true'},body:JSON.stringify({model,stream:false,response_format:{type:'json_object'},max_tokens:6000,temperature,messages:[{role:'system',content:system},{role:'user',content:user}]})});
   const content=response.choices?.[0]?.message?.content;
   if(typeof content!=='string'||!content.trim())throw new Error('NEAR AI returned an empty completion');
   return {content,promptTokens:Number(response.usage?.prompt_tokens??0),completionTokens:Number(response.usage?.completion_tokens??0)};

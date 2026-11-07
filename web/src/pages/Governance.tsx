@@ -2,6 +2,7 @@
 // proposal and is the court of appeal for scoring challenges: the token contract itself files the proposal.
 import { view, yap, DAO, TOKEN, nbAcc } from '../lib/data';
 import { useAsync, Loading, Who } from '../ui/kit';
+import Trusted from './Trusted';
 
 const decode = (b64: string) => { try { return JSON.parse(atob(b64)); } catch { return null; } };
 function describe(p: any): string {
@@ -13,6 +14,10 @@ function describe(p: any): string {
     if (a?.method_name === 'ft_transfer_call' && args?.msg?.includes('open_arena')) { const m = JSON.parse(args.msg).open_arena; return `Fund arena ${m.topic} · ${yap(args.amount, 0)} YAP`; }
     return `${a?.method_name ?? 'call'} on ${k.FunctionCall.receiver_id}`;
   }
+  if (k?.AddMemberToRole) return `Add ${k.AddMemberToRole.member_id} to role '${k.AddMemberToRole.role}'`;
+  if (k?.RemoveMemberFromRole) return `Remove ${k.RemoveMemberFromRole.member_id} from role '${k.RemoveMemberFromRole.role}'`;
+  if (k?.Transfer) return `Grant ${yap(k.Transfer.amount, 0)} YAP to ${k.Transfer.receiver_id}`;
+  if (k?.ChangePolicy) return 'Change policy (roles: ' + (k.ChangePolicy.policy?.roles ?? []).map((r: any) => r.name).join(', ') + ')';
   return Object.keys(k ?? {})[0] ?? 'proposal';
 }
 
@@ -46,6 +51,7 @@ export default function Governance() {
         <div className="card stat"><div className="caps">Proposals</div><div className="v">{last ?? '…'}</div><div className="s">all time</div></div>
         <div className="card stat"><div className="caps">Challenges</div><div className="v">{challenges?.length ?? '…'}</div><div className="s">scoring disputes</div></div>
       </div>
+      <Trusted />
       <div className="grid g-main">
         <div className="card pad0 scroll-x">
           <div className="card-h" style={{ padding: '14px 16px 0' }}><h2>Proposals</h2></div>
@@ -57,9 +63,9 @@ export default function Governance() {
                   <tr key={p.id} style={{ cursor: 'default' }}>
                     <td className="rank">{p.id}</td>
                     <td style={{ maxWidth: 360 }}><div>{describe(p)}</div><div className="note ellip">{p.description}</div></td>
-                    <td className="mono" style={{ fontSize: 12 }}>{p.proposer === TOKEN ? '$YAP contract' : p.proposer}</td>
+                    <td className="mono" style={{ fontSize: 12 }}>{p.proposer === TOKEN ? '$YAP contract' : p.proposer === 'steward.yap-hq.testnet' ? 'steward contract' : p.proposer}</td>
                     <td><span className={`pill ${p.status === 'Approved' ? 'live' : p.status === 'InProgress' ? 'acc' : ''}`}>{p.status}</span></td>
-                    <td className="r">{Object.values(p.votes ?? {}).filter((v) => v === 'Approve').length}/{council.length}</td>
+                    <td className="r">{Object.values(p.votes ?? {}).filter((v) => v === 'Approve').length} {Object.keys(p.votes ?? {}).includes('steward.yap-hq.testnet') ? '(steward)' : `/${council.length}`}</td>
                   </tr>
                 ))}
               </tbody>

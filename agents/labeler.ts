@@ -12,7 +12,7 @@ import { ROOT, loadEnv } from './common.ts';
 
 export const LABEL_MODEL = 'Qwen/Qwen3.8-27B';
 const CACHE = resolve(ROOT, 'data/labels-cache');
-const BATCH = 12;
+const BATCH = 8;
 const sha = (s: string) => createHash('sha256').update(s).digest('hex');
 type Detail = { key: string; q: 0 | 1 | 2 | 3; reason: string; cached?: boolean };
 export type LabelRun = {
@@ -52,39 +52,57 @@ export async function labelDataset(d: EpochDataset, opts: { mock?: boolean } = {
     if (!att.verified) throw new Error(`attestation failed: ${att.checks.filter((c) => !c.passed).map((c) => c.name).join(', ')}`);
   }
   const usage = { promptTokens: 0, completionTokens: 0, usd: 0, calls: 0 };
-  for (let i = 0; i < todo.length; i += BATCH) {
-    const batch = todo.slice(i, i + BATCH);
+  /** Asks the model for labels; keeps every valid one it returns, so retries only cover what is missing. */
+  const ask = async (batch: typeof todo): Promise<Map<string, Detail>> => {
+    const out = new Map<string, Detail>();
     const user = JSON.stringify({ posts: batch.map((p) => ({ key: p.key, text: p.text.slice(0, 1200), reply: !!p.replyTo, quote: !!p.quote })) });
-    let got: Detail[] = [];
-    for (let attempt = 0; attempt < 3 && got.length < batch.length; attempt++) {
-      let r;
-      try {
-        r = await chatJson(LABEL_MODEL, prompt, user, 0);
-      } catch (e) {
-        console.warn(`labeler call failed (attempt ${attempt + 1}): ${String(e).slice(0, 120)}`);
-        continue;
-      }
-      usage.promptTokens += r.promptTokens;
-      usage.completionTokens += r.completionTokens;
-      usage.calls++;
-      try {
-        const arr = (JSON.parse(r.content).labels ?? []) as Detail[];
-        got = batch.map((p) => {
-          const hit = arr.find((x) => x.key === p.key);
-          const q = Number(hit?.q);
-          if (!hit || ![0, 1, 2, 3].includes(q)) throw new Error(`missing label ${p.key}`);
-          return { key: p.key, q: q as Detail['q'], reason: String(hit.reason ?? '').slice(0, 160) };
-        });
-      } catch {
-        got = [];
-      }
+    let r;
+    try {
+      r = await chatJson(LABEL_MODEL, prompt, user, 0);
+    } catch (e) {
+      console.warn(`labeler call failed: ${String(e).slice(0, 160)}`);
+      return out;
     }
-    if (got.length < batch.length) throw new Error('labeler returned invalid JSON three times');
-    for (const [j, x] of got.entries()) {
-      await writeFile(resolve(CACHE, `${sha(batch[j]!.key + '\n' + batch[j]!.text)}.json`), JSON.stringify(x));
-      details.push(x);
+    usage.promptTokens += r.promptTokens;
+    usage.completionTokens += r.completionTokens;
+    usage.calls++;
+    let arr: Detail[] = [];
+    try {
+      const j = JSON.parse(r.content.slice(r.content.indexOf('{'), r.content.lastIndexOf('}') + 1));
+      arr = Array.isArray(j) ? j : (j.labels ?? []);
+    } catch {
+      console.warn(`labeler JSON parse failed: ${r.content.slice(0, 160).replace(/\s+/g, ' ')}`);
     }
-  }
+    for (const p of batch) {
+      const hit = arr.find((x) => x?.key === p.key);
+      const q = Number(hit?.q);
+      if (hit && [0, 1, 2, 3].includes(q)) out.set(p.key, { key: p.key, q: q as Detail['q'], reason: String(hit.reason ?? '').slice(0, 160) });
+    }
+    return out;
+  };
+  const save = async (p: (typeof todo)[number], x: Detail) => {
+    await writeFile(resolve(CACHE, `${sha(p.key + '\n' + p.text)}.json`), JSON.stringify(x));
+    details.push(x);
+  };
+  const fallback = mockLabels(d);
+  const batches: (typeof todo)[] = [];
+  for (let i = 0; i < todo.length; i += BATCH) batches.push(todo.slice(i, i + BATCH));
+  // Four batches in flight: labelling must finish well inside one epoch.
+  const work = async (first: (typeof todo)) => {
+    let left = first;
+    for (let attempt = 0; attempt < 2 && left.length; attempt++) {
+      const got = await ask(left);
+      for (const p of left) if (got.has(p.key)) await save(p, got.get(p.key)!);
+      left = left.filter((p) => !got.has(p.key));
+    }
+    // Last resort: one post per call; if even that fails, a clearly marked heuristic label (not cached).
+    for (const p of left) {
+      const got = await ask([p]);
+      if (got.has(p.key)) await save(p, got.get(p.key)!);
+      else details.push({ key: p.key, q: fallback[p.key]!, reason: 'FALLBACK heuristic: the TEE labeler returned no valid label for this post' });
+    }
+  };
+  for (let i = 0; i < batches.length; i += 4) await Promise.all(batches.slice(i, i + 4).map(work));
   try {
     const price = (await modelPricing())[LABEL_MODEL];
     if (price) usage.usd = (usage.promptTokens * price.input + usage.completionTokens * price.output) / 1e6;
