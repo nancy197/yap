@@ -1,4 +1,5 @@
-import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, Sequence } from 'remotion';
+import { BrowserClip } from '../ui/BrowserClip';
 import { C, mono, display, body, Kinetic, ease, Identicon, Caps, grad } from '../ui/kit';
 import { cue } from '../timeline';
 import data from '../data.json';
@@ -25,20 +26,9 @@ export function Proof() {
       <div style={{ opacity: 1 - toSim, transform: `translateX(${-toSim * 160}px)` }}>
         <Kinetic text="Already ranking real near.social mainnet." size={56} delay={2} highlight={['real', 'mainnet']} />
         <div style={{ display: 'flex', gap: 50, marginTop: 40 }}>
-          <div style={{ width: 1100, display: 'grid', gap: 12 }}>
-            {data.mainnet.yappers.slice(0, 8).map((y, i) => {
-              const s = ease(f, 10 + i * 4, 24 + i * 4);
-              return (
-                <div key={y.account} style={{ display: 'flex', alignItems: 'center', gap: 18, opacity: s, transform: `translateX(${(1 - s) * 60}px)` }}>
-                  <span style={{ fontFamily: mono, fontSize: 24, color: C.muted, width: 34 }}>{i + 1}</span>
-                  <Identicon seed={y.account} size={44} />
-                  <span style={{ fontFamily: body, fontSize: 26, color: C.text, width: 360, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{y.account.length > 30 ? `${y.account.slice(0, 10)}…${y.account.slice(-6)}` : y.account}</span>
-                  <div style={{ flex: 1, height: 18, borderRadius: 9, background: 'rgba(255,255,255,.06)' }}><div style={{ width: `${(y.share / max) * 100 * s}%`, height: '100%', borderRadius: 9, background: grad }} /></div>
-                  <span style={{ fontFamily: mono, fontSize: 24, color: C.text, width: 100, textAlign: 'right' }}>{(y.share * 100).toFixed(1)}%</span>
-                </div>
-              );
-            })}
-          </div>
+          <Sequence from={0} layout="none">
+            <BrowserClip src="mainnet" from={110} width={1260} tilt={false} cams={[{ at: 0, zoom: 1.4, x: 0.8, y: 0.06 }, { at: 40, zoom: 1.4, x: 0.8, y: 0.06 }, { at: 75, zoom: 1.1, x: 0.5, y: 0.45 }, { at: 160, zoom: 1.25, x: 0.5, y: 0.55 }]} />
+          </Sequence>
           <div style={{ display: 'grid', gap: 24, alignContent: 'start' }}>
             {[[data.mainnet.count, 'yappers'], [data.mainnet.posts, 'posts · 30 days'], ['TEE', 'AI labels'], ['0', 'YAP paid (read-only)']].map(([v, k]) => (
               <div key={k as string}><div style={{ fontFamily: display, fontSize: 64, fontWeight: 700, color: C.amber }}>{v}</div><Caps>{k}</Caps></div>

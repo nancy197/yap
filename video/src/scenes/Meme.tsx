@@ -1,4 +1,5 @@
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Sequence } from 'remotion';
+import { BrowserClip } from '../ui/BrowserClip';
 import { C, mono, display, body, Kinetic, ease, Caps, short, grad } from '../ui/kit';
 import { cue } from '../timeline';
 import data from '../data.json';
@@ -66,19 +67,14 @@ export function Meme() {
           </div>
         </div>
       </div>
-      {/* the lock */}
-      <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center', opacity: lockIn }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 50, transform: `scale(${0.9 + lockIn * 0.1})`, background: 'rgba(14,13,18,0.92)', border: `1px solid ${C.border}`, borderRadius: 32, padding: '50px 70px' }}>
-          <svg width={150} height={170} viewBox="0 0 24 28">
-            <path d="M6 12V8a6 6 0 0 1 12 0v4" fill="none" stroke={C.amber} strokeWidth={2.2} />
-            <rect x={3} y={12} width={18} height={14} rx={3} fill={C.orange} />
-            <circle cx={12} cy={19} r={2} fill="#1a0f06" />
-          </svg>
-          <div>
-            <div style={{ fontFamily: mono, fontSize: 30, color: C.muted }}>view_access_key_list(<span style={{ color: C.text }}>{data.token}</span>)</div>
-            <div style={{ fontFamily: display, fontSize: 92, fontWeight: 700, color: C.text, marginTop: 6 }}>0 keys</div>
-            <div style={{ fontFamily: mono, fontSize: 24, color: C.faint, marginTop: 10 }}>no admin · no upgrade · tx {short(data.tx.deploy.at(-1)?.hash ?? '9L4itgrorJWk2NZ128RUK9PtaFqHNieRnv15CrHHm28A', 8)}</div>
-          </div>
+      {/* the real $YAP page: streak, supply, and the "no admin key" proof */}
+      <AbsoluteFill style={{ opacity: lockIn }}>
+        <Sequence from={tNobody - 12} layout="none">
+          <BrowserClip src="token" from={80} width={1500} style={{ position: 'absolute', left: 210, top: 150 }} cams={[{ at: 0, zoom: 1.0, x: 0.5, y: 0.4 }, { at: 40, zoom: 1.0, x: 0.5, y: 0.4 }, { at: 100, zoom: 1.7, x: 0.83, y: 0.47 }]} />
+        </Sequence>
+        <div style={{ position: 'absolute', left: 120, bottom: 150, display: 'flex', alignItems: 'center', gap: 22, background: 'rgba(14,13,18,0.94)', border: `1px solid ${C.border}`, borderRadius: 22, padding: '18px 28px', opacity: ease(f, tNobody + 40, tNobody + 55) }}>
+          <svg width={54} height={62} viewBox="0 0 24 28"><path d="M6 12V8a6 6 0 0 1 12 0v4" fill="none" stroke={C.amber} strokeWidth={2.2} /><rect x={3} y={12} width={18} height={14} rx={3} fill={C.orange} /><circle cx={12} cy={19} r={2} fill="#1a0f06" /></svg>
+          <div><div style={{ fontFamily: display, fontSize: 44, fontWeight: 700, color: C.text }}>0 access keys</div><div style={{ fontFamily: mono, fontSize: 18, color: C.faint }}>{data.token} · tx {short(data.tx.deploy.at(-1)?.hash ?? '9L4itgrorJWk2NZ128RUK9PtaFqHNieRnv15CrHHm28A', 8)}</div></div>
         </div>
       </AbsoluteFill>
     </AbsoluteFill>

@@ -27,7 +27,7 @@ const main = R('data/mainnet-sample/scores.json');
 const mtot = main.result.yappers.reduce((n, y) => n + Number(y.score), 0);
 const yb = existsSync(new URL('../../data/yapbot-replies.json', import.meta.url)) ? R('data/yapbot-replies.json') : [];
 const data = {
-  token: 'token.yap-hq.testnet', dao: 'dao.yap-hq.testnet', steward: 'steward.yap-hq.testnet',
+  token: 'token2.yap-hq.testnet', dao: 'dao.yap-hq.testnet', steward: 'steward2.yap-hq.testnet',
   latestEpoch: latestId, epochs, yappers, topics,
   labels: { spam: sample(0, (k) => /^y1[6-9]/.test(k)), low: sample(1, (k) => /^y2/.test(k)), insight: sample(3, (k) => /^y0[3-5]/.test(k)) },
   tx: { deploy: pick(/deploy token|init token|delete full-access key \(lock\)$/), finalize: pick(/^finalize/), tampered: pick(/TAMPERED/), challenge: pick(/^challenge e/), vote: pick(/VoteApprove proposal 5/), resubmit: pick(/resubmit/), steward: pick(/steward (promote|grant)|ChangePolicy/), arena: pick(/fund arena|proposal 0/) },

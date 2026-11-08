@@ -1,9 +1,9 @@
 // Data layer: published epoch files (scores, labels, datasets), on-chain views, near.social profiles.
 // Testnet = live, rewarded epochs. Mainnet = read-only sample of real near.social data (unrewarded).
 export const RPC = 'https://test.rpc.fastnear.com';
-export const TOKEN = 'token.yap-hq.testnet';
+export const TOKEN = 'token2.yap-hq.testnet';
 export const DAO = 'dao.yap-hq.testnet';
-export const STEWARD = 'steward.yap-hq.testnet';
+export const STEWARD = 'steward2.yap-hq.testnet';
 export const HQ = 'yap-hq.testnet';
 export const KV_TEST = 'https://kv.test.fastnear.com';
 export const SOCIAL_MAIN = 'https://api2.near.social';
@@ -147,9 +147,20 @@ export async function feed(net: Net, limit = 60): Promise<FeedPost[]> {
     const j = await fetch(`${SOCIAL_MAIN}/v1/feed/global?limit=${limit}`).then((r) => r.json());
     return (j.items ?? []).map((it: any) => ({ key: it.post.key, author: it.post.author.account_id, text: it.post.text, ts: it.post.created_at, likes: it.post.counts.likes, reposts: it.post.counts.reposts }));
   }
-  const kv = (body: unknown) => fetch(`${KV_TEST}/v0/latest/social`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }).then((r) => r.json());
-  const posts = await kv({ key_prefix: 'post/', limit: 200 });
-  const [likes, reposts] = await Promise.all([kv({ key_prefix: 'like/', limit: 200 }), kv({ key_prefix: 'repost/', limit: 200 })]);
+  // FastData pages are not time-ordered: read every page, then sort.
+  const kv = async (body: Record<string, unknown>) => {
+    const entries: any[] = [];
+    let token: string | undefined;
+    for (let i = 0; i < 25; i++) {
+      const r = await fetch(`${KV_TEST}/v0/latest/social`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...body, limit: 200, ...(token ? { page_token: token } : {}) }) });
+      const j = JSON.parse((await r.text()).replace(/("block_timestamp"\s*:\s*)(\d+)/g, '$1"$2"'));
+      entries.push(...(j.entries ?? []));
+      token = j.page_token;
+      if (!token) break;
+    }
+    return { entries };
+  };
+  const [posts, likes, reposts] = await Promise.all([kv({ key_prefix: 'post/' }), kv({ key_prefix: 'like/' }), kv({ key_prefix: 'repost/' })]);
   const count = (j: any, pre: string) => {
     const m = new Map<string, number>();
     for (const e of j.entries ?? []) if (e.value && typeof e.value === 'object') m.set(e.key.slice(pre.length), (m.get(e.key.slice(pre.length)) ?? 0) + 1);

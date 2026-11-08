@@ -33,9 +33,9 @@ revoke an API key.
 
 | Piece | Where |
 | --- | --- |
-| $YAP token (NEP-141 + mechanics, locked) | `token.yap-hq.testnet` |
+| $YAP token v2 (NEP-141 + mechanics, locked) | `token2.yap-hq.testnet` |
 | Community DAO (Sputnik v2; council of 3, 2 to pass) | `dao.yap-hq.testnet` |
-| Steward (reputation → DAO `trusted` role, capped grants; locked) | `steward.yap-hq.testnet` |
+| Steward v2 (reputation → DAO `trusted` role, capped grants; locked) | `steward2.yap-hq.testnet` |
 | Scorers (bonded, 2-of-3 identical report hash) | `scorer-1..3.yap-hq.testnet` |
 | Independent watchdog (recomputes every report, challenges mismatches) | `watchdog.yap-hq.testnet` |
 | @yapbot (answers "how am I doing?" on near.social, AI in a verified TEE) | `yapbot.yap-hq.testnet` |
@@ -46,6 +46,15 @@ The simulated community has 15 honest personas writing with an AI model, 4 spam 
 
 Testnet epochs are 10 minutes; mainnet would use 1 day. Every transaction is listed in [docs/TESTNET.md](docs/TESTNET.md),
 and the app's $YAP page shows them live.
+
+### Why v2
+
+The first deployment (`token.yap-hq.testnet`, `steward.yap-hq.testnet`) found a real bug during our own collusion test:
+- After a challenge was upheld, the honest resubmitted report could never finalize, because `finalize` only accepted
+  "no challenge" or "rejected".
+- The contracts are immutable (no keys, no upgrade), so we fixed the code and deployed v2. The fix: only a still-open
+  challenge blocks finalization. A regression test now covers the full upheld → re-bond → resubmit → finalize path.
+- v1's data is archived in `web/public/epochs/testnet-v1/` and `deploy/*-v1.json`.
 
 ## The mechanic
 

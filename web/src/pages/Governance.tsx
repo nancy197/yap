@@ -1,6 +1,6 @@
 // Governance: the community treasury is a stock Sputnik DAO v2 (also visible in Trezu). It funds arenas by
 // proposal and is the court of appeal for scoring challenges: the token contract itself files the proposal.
-import { view, yap, DAO, TOKEN, nbAcc } from '../lib/data';
+import { view, yap, DAO, TOKEN, STEWARD, nbAcc } from '../lib/data';
 import { useAsync, Loading, Who } from '../ui/kit';
 import Trusted from './Trusted';
 
@@ -63,9 +63,9 @@ export default function Governance() {
                   <tr key={p.id} style={{ cursor: 'default' }}>
                     <td className="rank">{p.id}</td>
                     <td style={{ maxWidth: 360 }}><div>{describe(p)}</div><div className="note ellip">{p.description}</div></td>
-                    <td className="mono" style={{ fontSize: 12 }}>{p.proposer === TOKEN ? '$YAP contract' : p.proposer === 'steward.yap-hq.testnet' ? 'steward contract' : p.proposer}</td>
+                    <td className="mono" style={{ fontSize: 12 }}>{p.proposer === TOKEN ? '$YAP contract' : p.proposer === STEWARD ? 'steward contract' : p.proposer}</td>
                     <td><span className={`pill ${p.status === 'Approved' ? 'live' : p.status === 'InProgress' ? 'acc' : ''}`}>{p.status}</span></td>
-                    <td className="r">{Object.values(p.votes ?? {}).filter((v) => v === 'Approve').length} {Object.keys(p.votes ?? {}).includes('steward.yap-hq.testnet') ? '(steward)' : `/${council.length}`}</td>
+                    <td className="r">{Object.values(p.votes ?? {}).filter((v) => v === 'Approve').length} {Object.keys(p.votes ?? {}).includes(STEWARD) ? '(steward)' : `/${council.length}`}</td>
                   </tr>
                 ))}
               </tbody>

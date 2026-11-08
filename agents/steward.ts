@@ -10,7 +10,7 @@ import { resolve } from 'node:path';
 import { ROOT, HQ, TOKEN, DAO, Y, tgas, call, view, signer, subAccount, recordTx, txHash, provider, sleep, loadEnv } from './common.ts';
 import { COUNCIL } from './deploy.ts';
 
-export const STEWARD = `steward.${HQ}`;
+export const STEWARD = `steward2.${HQ}`;
 const ROLE = 'trusted';
 const PUBLIC = resolve(ROOT, 'web/public/epochs/testnet');
 const log = (...a: unknown[]) => console.log(new Date().toISOString().slice(11, 19), ...a);
@@ -21,7 +21,7 @@ async function hasCode(id: string) {
 }
 
 async function deploy() {
-  const st = await subAccount('steward', 2600);
+  const st = await subAccount(STEWARD.split('.')[0]!, 2600);
   if (!(await hasCode(STEWARD))) {
     const r: any = await st.deployContract(new Uint8Array(await readFile(resolve(ROOT, 'target/near/steward/steward.wasm'))));
     await recordTx('deploy steward', txHash(r), STEWARD);
@@ -35,7 +35,9 @@ async function deploy() {
   }
   // Council changes the DAO policy: + steward role (files/approves member + transfer proposals), + trusted role.
   const policy: any = await view(DAO, 'get_policy');
-  if (!policy.roles.some((r: any) => r.name === 'steward')) {
+  const stRole = policy.roles.find((r: any) => r.name === 'steward');
+  if (!stRole || !stRole.kind.Group.includes(STEWARD)) {
+    policy.roles = policy.roles.filter((r: any) => r.name !== 'steward' && r.name !== ROLE);
     policy.roles.push(
       { name: 'steward', kind: { Group: [STEWARD] }, permissions: ['add_member_to_role:AddProposal', 'add_member_to_role:VoteApprove', 'remove_member_from_role:AddProposal', 'remove_member_from_role:VoteApprove', 'transfer:AddProposal', 'transfer:VoteApprove'], vote_policy: {} },
       { name: ROLE, kind: { Group: [] }, permissions: ['vote:AddProposal', 'vote:VoteApprove', 'vote:VoteReject'], vote_policy: {} },

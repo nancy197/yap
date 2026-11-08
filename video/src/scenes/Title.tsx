@@ -1,4 +1,5 @@
-import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, Sequence } from 'remotion';
+import { BrowserClip } from '../ui/BrowserClip';
 import { C, display, mono, Kinetic, useSpring, ease, Chip, grad } from '../ui/kit';
 import { cue } from '../timeline';
 
@@ -11,8 +12,10 @@ export function Title() {
   const tSwitch = cue('title', 'switch');
   const tSocial = cue('title', 'social');
   const tTx = cue('title', 'transaction');
+  const hero = ease(f, tSocial - 10, tSocial + 20);
   return (
     <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: `translateY(${-hero * 250}px) scale(${1 - hero * 0.35})` }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 50 }}>
         <svg viewBox="0 0 64 64" width={260} height={260} style={{ transform: `scale(${pop}) rotate(${(1 - pop) * -20}deg)`, filter: 'drop-shadow(0 30px 60px rgba(255,138,61,0.35))' }}>
           <defs>
@@ -42,6 +45,10 @@ export function Title() {
           return <Chip key={t as string} color={c as string} style={{ opacity: s, transform: `translateY(${(1 - s) * 20}px)`, fontSize: 26 }}>{t as string}</Chip>;
         })}
       </div>
+      </div>
+      <Sequence from={tSocial - 10}>
+        <BrowserClip src="mindshare" from={60} width={1440} style={{ position: 'absolute', left: 240, top: 470 + (1 - hero) * 400 }} cams={[{ at: 0, zoom: 1, x: 0.5, y: 0.3 }, { at: 120, zoom: 1.1, x: 0.5, y: 0.35 }]} />
+      </Sequence>
     </AbsoluteFill>
   );
 }

@@ -87,7 +87,7 @@ export async function labelDataset(d: EpochDataset, opts: { mock?: boolean } = {
   const fallback = mockLabels(d);
   const batches: (typeof todo)[] = [];
   for (let i = 0; i < todo.length; i += BATCH) batches.push(todo.slice(i, i + BATCH));
-  // Four batches in flight: labelling must finish well inside one epoch.
+  // Six batches in flight: labelling must finish well inside one epoch.
   const work = async (first: (typeof todo)) => {
     let left = first;
     for (let attempt = 0; attempt < 2 && left.length; attempt++) {
@@ -102,7 +102,7 @@ export async function labelDataset(d: EpochDataset, opts: { mock?: boolean } = {
       else details.push({ key: p.key, q: fallback[p.key]!, reason: 'FALLBACK heuristic: the TEE labeler returned no valid label for this post' });
     }
   };
-  for (let i = 0; i < batches.length; i += 4) await Promise.all(batches.slice(i, i + 4).map(work));
+  for (let i = 0; i < batches.length; i += 6) await Promise.all(batches.slice(i, i + 6).map(work));
   try {
     const price = (await modelPricing())[LABEL_MODEL];
     if (price) usage.usd = (usage.promptTokens * price.input + usage.completionTokens * price.output) / 1e6;

@@ -67,7 +67,7 @@ async function main() {
   console.log(`${HQ} balance before: ${await balance(HQ)} NEAR`);
 
   // 1. accounts
-  await subAccount('token', 4300);
+  await subAccount(TOKEN.split('.')[0]!, 4300);
   await subAccount('dao', 5300);
   for (const id of SCORERS) await subAccount(id.split('.')[0], 300);
   for (const id of COUNCIL.slice(1)) await subAccount(id.split('.')[0], 200);

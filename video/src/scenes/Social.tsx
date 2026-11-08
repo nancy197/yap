@@ -1,5 +1,6 @@
 import type * as React from 'react';
-import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, interpolate, Sequence } from 'remotion';
+import { BrowserClip } from '../ui/BrowserClip';
 import { C, mono, display, body, Kinetic, ease, Identicon, TierBadge, Caps } from '../ui/kit';
 import { cue } from '../timeline';
 import data from '../data.json';
@@ -70,6 +71,12 @@ export function Social() {
         <text x={65} y={72} textAnchor="middle" fill={C.text} fontFamily={mono} fontSize={20}>season</text>
       </svg>
       <Caps style={{ position: 'absolute', left: 1450, top: 930, opacity: ease(f, tExpire, tExpire + 10) }}>seat expires · earn it again</Caps>
+      {/* the real Governance page: trusted circle, grants, steward proposals */}
+      <AbsoluteFill style={{ background: `rgba(11,10,13,${0.75 * ease(f, tGrant + 6, tGrant + 20)})`, opacity: ease(f, tGrant + 6, tGrant + 20) }}>
+        <Sequence from={tGrant + 6} layout="none">
+          <BrowserClip src="governance" from={70} width={1500} style={{ position: 'absolute', left: 210, top: 130 }} cams={[{ at: 0, zoom: 1.3, x: 0.5, y: 0.42 }, { at: 120, zoom: 1.4, x: 0.52, y: 0.5 }]} />
+        </Sequence>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 }

@@ -103,6 +103,9 @@ importers:
       '@types/react':
         specifier: 19.2.2
         version: 19.2.2
+      playwright-core:
+        specifier: 1.56.1
+        version: 1.56.1
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -2234,6 +2237,11 @@ packages:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
+  playwright-core@1.56.1:
+    resolution: {integrity: sha512-hutraynyn31F+Bifme+Ps9Vq59hKuUCz7H1kDOcBs+2oGguKkWTU50bBWrtz34OUWmIwpBTWDxaRPXrIXkgvmQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   pngjs@5.0.0:
     resolution: {integrity: sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==}
     engines: {node: '>=10.13.0'}
@@ -3419,13 +3427,13 @@ snapshots:
       '@remotion/timeline-utils': 4.0.541(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@rspack/core': 2.3.0
       '@rspack/plugin-react-refresh': 2.0.2(@rspack/core@2.3.0)(react-refresh@0.18.0)
-      css-loader: 7.1.4(@rspack/core@2.3.0)(webpack@5.105.0(esbuild@0.28.1)(postcss@8.5.32))
+      css-loader: 7.1.4(@rspack/core@2.3.0)(webpack@5.105.0(postcss@8.5.32))
       esbuild: 0.28.1
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
       react-refresh: 0.18.0
       remotion: 4.0.541(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      style-loader: 4.0.0(webpack@5.105.0(esbuild@0.28.1)(postcss@8.5.32))
+      style-loader: 4.0.0(webpack@5.105.0(postcss@8.5.32))
       webpack: 5.105.0(esbuild@0.28.1)(postcss@8.5.32)
     transitivePeerDependencies:
       - '@minify-html/node'
@@ -4370,7 +4378,7 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  css-loader@7.1.4(@rspack/core@2.3.0)(webpack@5.105.0(esbuild@0.28.1)(postcss@8.5.32)):
+  css-loader@7.1.4(@rspack/core@2.3.0)(webpack@5.105.0(postcss@8.5.32)):
     dependencies:
       icss-utils: 5.1.0(postcss@8.5.32)
       postcss: 8.5.32
@@ -4935,6 +4943,8 @@ snapshots:
 
   picomatch@4.0.7: {}
 
+  playwright-core@1.56.1: {}
+
   pngjs@5.0.0: {}
 
   possible-typed-array-names@1.1.0: {}
@@ -5179,7 +5189,7 @@ snapshots:
     dependencies:
       js-tokens: 9.0.1
 
-  style-loader@4.0.0(webpack@5.105.0(esbuild@0.28.1)(postcss@8.5.32)):
+  style-loader@4.0.0(webpack@5.105.0(postcss@8.5.32)):
     dependencies:
       webpack: 5.105.0(esbuild@0.28.1)(postcss@8.5.32)
 

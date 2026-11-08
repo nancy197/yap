@@ -1,0 +1,58 @@
+{
+  "genesisTs": 1794066000,
+  "network": "testnet",
+  "hq": "yap-hq.testnet",
+  "token": "token.yap-hq.testnet",
+  "dao": "dao.yap-hq.testnet",
+  "scorers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet",
+    "scorer-3.yap-hq.testnet"
+  ],
+  "council": [
+    "yap-hq.testnet",
+    "council-1.yap-hq.testnet",
+    "council-2.yap-hq.testnet"
+  ],
+  "config": {
+    "epoch_secs": 600,
+    "genesis_ts": 1794066000,
+    "base_emission": "1000000000000000000000",
+    "initial_attention_target": "100000000",
+    "ema_bps": 2000,
+    "loud_bps": 8000,
+    "max_ratio_bps": 30000,
+    "streak_cap": 10,
+    "streak_step_bps": 500,
+    "quiet_burn_bps": 300,
+    "dead_burn_bps": 1000,
+    "report_deadline_epochs": 3,
+    "yapper_bps": 8000,
+    "staker_bps": 1000,
+    "dao_bps": 1000,
+    "claim_epochs": 14,
+    "scorers": [
+      "scorer-1.yap-hq.testnet",
+      "scorer-2.yap-hq.testnet",
+      "scorer-3.yap-hq.testnet"
+    ],
+    "scorer_quorum": 2,
+    "scorer_bond": "1000000000000000000000",
+    "challenge_secs": 300,
+    "challenge_bond": "500000000000000000000",
+    "unbond_epochs": 7,
+    "dao": "dao.yap-hq.testnet",
+    "dao_proposal_bond": "100000000000000000000000",
+    "accepted_arena_tokens": [
+      "wrap.testnet"
+    ],
+    "initial_supply": "1000000000000000000000000",
+    "genesis_split": {
+      "reserve_bps": 6000,
+      "dao_bps": 2500,
+      "deployer_bps": 1500
+    }
+  },
+  "locked": true,
+  "lockCheckedAt": "2026-11-07T15:18:38.668Z"
+}

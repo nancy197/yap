@@ -6,7 +6,8 @@ import {Account, JsonRpcProvider, KeyPair, type KeyPairString} from 'near-api-js
 
 export const ROOT = resolve(import.meta.dirname, '..');
 export const HQ = 'yap-hq.testnet';
-export const TOKEN = `token.${HQ}`;
+export const TOKEN_PREFIX = process.env.YAP_TOKEN_PREFIX ?? 'token2';
+export const TOKEN = `${TOKEN_PREFIX}.${HQ}`; // v2: token.yap-hq.testnet (v1) is retired, see README
 export const DAO = `dao.${HQ}`;
 export const RPC = process.env.NEAR_RPC ?? 'https://test.rpc.fastnear.com';
 export const provider = new JsonRpcProvider({url:RPC});

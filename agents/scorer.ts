@@ -201,8 +201,15 @@ async function tick() {
   const now = Date.now();
   const cur = Math.floor((now / 1000 - cfg.genesis_ts) / cfg.epoch_secs);
   // Walk recent epochs oldest first: each needs its predecessor final, because the predicted pool depends on it.
-  for (let e = Math.max(0, cur - 3); e < cur; e++) {
+  for (let e = Math.max(0, cur - 8); e < cur; e++) {
     const rec = await epochRec(e);
+    // Past the finalization deadline and never finalized: the permissionless crank marks it dead (10% burn).
+    if (rec?.status === 'Proposed' && cur > e + cfg_deadline()) {
+      try {
+        await recordTx(`crank_dead_epoch e${e} (missed deadline)`, await call(await signer(SCORERS[0]!), TOKEN, 'crank_dead_epoch', { e }, 0n, tgas(100)));
+      } catch (err) { log(`crank failed: ${String(err).slice(0, 160)}`); }
+      continue;
+    }
     if (rec && ['Finalized', 'Dead'].includes(rec.status)) {
       if (rec.status === 'Finalized' && !claimRuns.has(e)) { claimRuns.add(e); await claims(e); }
       continue;

@@ -1,5 +1,6 @@
 import type * as React from 'react';
-import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, Sequence } from 'remotion';
+import { BrowserClip } from '../ui/BrowserClip';
 import { C, mono, body, display, Kinetic, ease, Identicon, Chip } from '../ui/kit';
 import { cue } from '../timeline';
 import data from '../data.json';
@@ -28,19 +29,17 @@ export function Bot() {
   return (
     <AbsoluteFill style={{ padding: '140px 110px' }}>
       <Kinetic text="Ask @yapbot, right on near.social." size={58} delay={4} highlight={['@yapbot']} />
-      <div style={{ marginTop: 50, display: 'grid', gap: 30 }}>
-        {card(qa.asker, 'New Nora', qa.question.slice(0, qChars), C.border, ease(f, tAsk - 8, tAsk + 4))}
-        <div style={{ marginLeft: 120 }}>
-          {card('yapbot.yap-hq.testnet', 'yapbot', qa.reply.slice(0, rChars), C.orange, ease(f, tReplies - 8, tReplies + 4), (
-            <div style={{ display: 'flex', gap: 14, marginTop: 18, opacity: ease(f, tTee, tTee + 12) }}>
-              <Chip color={C.violet}>Qwen3.8-27B · verified TEE</Chip>
-              <Chip color={C.green}>facts from published epochs</Chip>
-              <Chip color={C.orange}>reply = NEAR tx</Chip>
-            </div>
-          ))}
-        </div>
+      <Sequence from={tAsk - 15} durationInFrames={tReplies - tAsk + 15} layout="none">
+        <BrowserClip src="ask" from={30} width={1500} tilt={false} style={{ position: 'absolute', left: 210, top: 210 }} cams={[{ at: 0, zoom: 1.55, x: 0.42, y: 0.28 }, { at: 100, zoom: 1.5, x: 0.45, y: 0.3 }]} />
+      </Sequence>
+      <Sequence from={tReplies} layout="none">
+        <BrowserClip src="reply" from={10} width={1500} tilt={false} enter={-30} style={{ position: 'absolute', left: 210, top: 210 }} cams={[{ at: 0, zoom: 1.2, x: 0.45, y: 0.45 }, { at: 70, zoom: 1.55, x: 0.42, y: 0.5 }]} />
+      </Sequence>
+      <div style={{ position: 'absolute', right: 110, top: 150, display: 'flex', gap: 14, opacity: ease(f, tTee, tTee + 12) }}>
+        <Chip color={C.violet}>Qwen3.8-27B · verified TEE</Chip>
+        <Chip color={C.green}>facts from published epochs</Chip>
+        <Chip color={C.orange}>question + reply = NEAR txs</Chip>
       </div>
-      <div style={{ position: 'absolute', right: 110, top: 150, fontFamily: display, fontWeight: 700, fontSize: 30, color: C.muted, opacity: ease(f, tReplies + 60, tReplies + 80) }}>no invented numbers</div>
     </AbsoluteFill>
   );
 }

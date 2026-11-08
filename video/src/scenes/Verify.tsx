@@ -1,4 +1,5 @@
-import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, useCurrentFrame, Sequence } from 'remotion';
+import { BrowserClip } from '../ui/BrowserClip';
 import { C, mono, display, body, Kinetic, ease } from '../ui/kit';
 import { cue } from '../timeline';
 
@@ -10,27 +11,15 @@ export function Verify() {
   const tPick = cue('verify', 'pick');
   const tMs = cue('verify', 'milliseconds');
   const tChain = cue('verify', 'chain');
-  const win = ease(f, tPick - 6, tPick + 12);
   const lock = ease(f, tChain - 10, tChain + 20);
   const scramble = (s: string, p: number) => s.split('').map((c, i) => (i / s.length < p ? c : '0123456789abcdef'[(i * 7 + f) % 16])).join('');
   return (
     <AbsoluteFill style={{ padding: '140px 110px' }}>
       <Kinetic text="Don't trust us. Verify in your browser." size={58} delay={2} highlight={['verify']} />
       <div style={{ display: 'flex', gap: 40, marginTop: 50 }}>
-        <div style={{ width: 980, borderRadius: 24, overflow: 'hidden', border: `1px solid ${C.border}`, background: 'rgba(20,19,26,0.92)', opacity: win, transform: `translateY(${(1 - win) * 40}px)` }}>
-          <div style={{ display: 'flex', gap: 10, padding: '14px 18px', borderBottom: `1px solid ${C.border}` }}>
-            {[C.red, C.amber, C.green].map((c) => <span key={c} style={{ width: 14, height: 14, borderRadius: 7, background: c }} />)}
-            <span style={{ fontFamily: mono, fontSize: 18, color: C.faint, marginLeft: 14 }}>yap · verify / epoch #0</span>
-          </div>
-          {CHECKS.map((c, i) => {
-            const on = f > tPick + 10 + i * 7;
-            return (
-              <div key={c} style={{ display: 'flex', gap: 16, padding: '13px 22px', borderBottom: `1px solid ${C.border}`, fontFamily: body, fontSize: 24, color: on ? C.text : C.faint }}>
-                <span style={{ color: on ? C.green : C.faint, fontWeight: 700, width: 24 }}>{on ? '✓' : '·'}</span>{c}
-              </div>
-            );
-          })}
-        </div>
+        <Sequence from={tPick - 25} layout="none">
+          <BrowserClip src="verify" from={50} width={1120} tilt={false} cams={[{ at: 0, zoom: 1.25, x: 0.38, y: 0.32 }, { at: 70, zoom: 1.5, x: 0.36, y: 0.6 }]} />
+        </Sequence>
         <div style={{ flex: 1, display: 'grid', gap: 30, alignContent: 'start' }}>
           <div style={{ opacity: ease(f, tMs - 6, tMs + 6) }}>
             <div style={{ fontFamily: mono, fontSize: 24, color: C.muted }}>recompute time</div>

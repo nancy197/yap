@@ -6,13 +6,12 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { history } from '@yap/indexer';
 import { chatJson, fetchAttestation } from './providers/nearai.ts';
 import { kvWrite } from './seed.ts';
 import { ROOT, HQ, TOKEN, view, signer, subAccount, sleep, loadEnv } from './common.ts';
 
 export const BOT = `yapbot.${HQ}`;
-const STEWARD = `steward.${HQ}`;
+const STEWARD = `steward2.${HQ}`;
 const MODEL = 'Qwen/Qwen3.8-27B';
 const PUBLIC = resolve(ROOT, 'web/public/epochs/testnet');
 const STATE = resolve(ROOT, 'data/yapbot-state.json');
@@ -130,20 +129,22 @@ for (;;) {
     const floor = BigInt(Date.now() - 30 * 60_000) * 1_000_000n;
     if (BigInt(st.since) < floor) st.since = String(floor);
     const found: { key: string; author: string; text: string; ts: string }[] = [];
-    // History comes back mostly newest first but not strictly, so stop only after a long run of older rows.
-    let older = 0;
-    for await (const w of history('testnet')) {
-      if (BigInt(w.blockTimestamp) < BigInt(st.since)) {
-        if (++older > 300) break;
-        continue;
+    // FastData history is not time-ordered, so scan the latest value of every post key (a few pages) and filter.
+    let token: string | undefined;
+    do {
+      const r = await fetch('https://kv.test.fastnear.com/v0/latest/social', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ key_prefix: 'post/', limit: 200, ...(token ? { page_token: token } : {}) }) });
+      const text = (await r.text()).replace(/("block_timestamp"\s*:\s*)(\d+)/g, '$1"$2"');
+      const page = JSON.parse(text) as { entries: any[]; page_token?: string };
+      for (const e of page.entries ?? []) {
+        if (BigInt(e.block_timestamp) < BigInt(st.since) || e.predecessor_id === BOT) continue;
+        const v = e.value;
+        if (typeof v?.text !== 'string' || !v.text.includes(`@${BOT}`)) continue;
+        const key = `${e.predecessor_id}/${e.key.slice(5)}`;
+        if (!st.answered.includes(key)) found.push({ key, author: e.predecessor_id, text: v.text, ts: e.block_timestamp });
       }
-      older = 0;
-      const v: any = w.value;
-      if (!w.key.startsWith('post/') || typeof v?.text !== 'string' || w.predecessorId === BOT) continue;
-      if (!v.text.includes(`@${BOT}`)) continue;
-      const key = `${w.predecessorId}/${w.key.slice(5)}`;
-      if (!st.answered.includes(key)) found.push({ key, author: w.predecessorId, text: v.text, ts: w.blockTimestamp });
-    }
+      token = page.page_token;
+    } while (token);
+    found.sort((a, b) => (BigInt(a.ts) < BigInt(b.ts) ? 1 : -1));
     for (const q of found.reverse()) {
       try {
         await answer(q);
