@@ -163,7 +163,8 @@ async function finalize(e: number) {
   const ready = Number(BigInt(rec.proposed_at) / 1_000_000n) + cfg.challenge_secs * 1000 + 5000;
   if (Date.now() < ready) return false;
   const challenge = await view(TOKEN, 'get_challenge', { e }).catch(() => null);
-  if (challenge && challenge.status !== 'Rejected') return log(`epoch ${e} has an open challenge`), false;
+  // Only a challenge that is still open blocks finalization; an Upheld one discarded the earlier report.
+  if (challenge && ['Open', 'ProposalPending'].includes(challenge.status)) return log(`epoch ${e} has an open challenge`), false;
   const h = await call(await signer(SCORERS[0]!), TOKEN, 'finalize', { e }, 0n, tgas(150));
   await recordTx(`finalize e${e}`, h);
   const after = await epochRec(e);
@@ -197,9 +198,24 @@ async function claims(e: number) {
 }
 
 const claimRuns = new Set<number>();
+const prelabeled = new Set<number>();
 async function tick() {
   const now = Date.now();
   const cur = Math.floor((now / 1000 - cfg.genesis_ts) / cfg.epoch_secs);
+  // Label the epoch that just ended right away (labels are cached), so its report is fast even while the
+  // previous epoch is still in its challenge window. Only the pool prediction has to wait for that.
+  const ended = cur - 1;
+  if (ended >= 0 && !prelabeled.has(ended) && now >= bounds(ended).toMs + 30_000) {
+    prelabeled.add(ended);
+    try {
+      const { fromMs, toMs } = bounds(ended);
+      const d = makeDataset('testnet', fromMs, toMs, await allWrites(), ended);
+      const l = await labelDataset(d, { mock });
+      log(`prelabeled epoch ${ended}: ${l.details.length} posts, $${l.usage.usd.toFixed(4)}`);
+    } catch (err) {
+      log(`prelabel ${ended} failed: ${String(err).slice(0, 160)}`);
+    }
+  }
   // Walk recent epochs oldest first: each needs its predecessor final, because the predicted pool depends on it.
   for (let e = Math.max(0, cur - 8); e < cur; e++) {
     const rec = await epochRec(e);

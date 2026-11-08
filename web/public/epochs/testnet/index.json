@@ -1,0 +1,64 @@
+{
+ "network": "testnet",
+ "token": "token2.yap-hq.testnet",
+ "epochs": {
+  "0": {
+   "attention": "71000000",
+   "posts": 172,
+   "yappers": 20,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T00:30:34.985Z",
+   "status": "Finalized",
+   "emission": "710000000000000000000",
+   "yapperPool": "568000000000000000000",
+   "finalizeTx": "Dbngn2oZEUEYzG94JsDhF2E3TzLSdQdSZeYXUL7tk1F5",
+   "supply": "982639000000000000000000",
+   "reserve": "582000000000000000000000",
+   "burnedTotal": "18071000000000000000000",
+   "mintedTotal": "1000710000000000000000000",
+   "streak": 0,
+   "target": "94200000"
+  },
+  "1": {
+   "attention": "70875000",
+   "posts": 172,
+   "yappers": 20,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T00:42:55.330Z",
+   "status": "Finalized",
+   "emission": "752388535031847133757",
+   "yapperPool": "601910828025477707005",
+   "finalizeTx": "GSRfYJnGT9vD5zntkNETcQjJagNaDDQd669earPKQTqU",
+   "supply": "965856149681528662420382",
+   "reserve": "564540000000000000000000",
+   "burnedTotal": "35606238853503184713375",
+   "mintedTotal": "1001462388535031847133757",
+   "streak": 0,
+   "target": "89535000"
+  },
+  "2": {
+   "attention": "0",
+   "posts": 0,
+   "yappers": 0,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T00:49:35.041Z",
+   "status": "Dead",
+   "emission": "0",
+   "yapperPool": "0",
+   "finalizeTx": "6o3wR2hVdxfyyzdaxQuqBUARuAUsd4T3tbsR9hhWJm5H",
+   "supply": "909402149681528662420382",
+   "reserve": "508086000000000000000000",
+   "burnedTotal": "92060238853503184713375",
+   "mintedTotal": "1001462388535031847133757",
+   "streak": 0,
+   "target": "71628000"
+  },
+  "3": {
+   "attention": "74250000",
+   "posts": 172,
+   "yappers": 23,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T00:55:45.751Z"
+  }
+ }
+}

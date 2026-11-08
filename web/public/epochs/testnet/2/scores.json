@@ -1,0 +1,137 @@
+{
+ "epoch": 2,
+ "fromMs": 1794097800000,
+ "toMs": 1794098400000,
+ "predictedYapperPool": "0",
+ "stakes": {},
+ "arenas": [
+  {
+   "id": 0,
+   "topic": "#near",
+   "minTier": 1,
+   "amount": "500000000000000000000"
+  }
+ ],
+ "trailing": {
+  "y03.yap-hq.testnet": [
+   "8000000",
+   "8000000"
+  ],
+  "y10.yap-hq.testnet": [
+   "8000000",
+   "9000000"
+  ],
+  "y05.yap-hq.testnet": [
+   "7000000",
+   "7000000"
+  ],
+  "y07.yap-hq.testnet": [
+   "7000000",
+   "6000000"
+  ],
+  "y01.yap-hq.testnet": [
+   "6000000",
+   "6000000"
+  ],
+  "y04.yap-hq.testnet": [
+   "6000000",
+   "4000000"
+  ],
+  "y06.yap-hq.testnet": [
+   "6000000",
+   "4000000"
+  ],
+  "y09.yap-hq.testnet": [
+   "4500000",
+   "7250000"
+  ],
+  "y02.yap-hq.testnet": [
+   "4000000",
+   "4000000"
+  ],
+  "y13.yap-hq.testnet": [
+   "4000000",
+   "3250000"
+  ],
+  "y15.yap-hq.testnet": [
+   "4000000",
+   "4000000"
+  ],
+  "y14.yap-hq.testnet": [
+   "2625000",
+   "2625000"
+  ],
+  "y08.yap-hq.testnet": [
+   "1250000",
+   "1500000"
+  ],
+  "y12.yap-hq.testnet": [
+   "1000000",
+   "1000000"
+  ],
+  "y16.yap-hq.testnet": [
+   "500000",
+   "625000"
+  ],
+  "y18.yap-hq.testnet": [
+   "250000",
+   "500000"
+  ],
+  "y20.yap-hq.testnet": [
+   "250000"
+  ],
+  "y21.yap-hq.testnet": [
+   "250000"
+  ],
+  "y24.yap-hq.testnet": [
+   "250000",
+   "250000"
+  ],
+  "y19.yap-hq.testnet": [
+   "125000",
+   "250000"
+  ],
+  "y17.yap-hq.testnet": [
+   "875000"
+  ],
+  "y11.yap-hq.testnet": [
+   "750000"
+  ]
+ },
+ "report": {
+  "attention": "0",
+  "yappers_root": "0000000000000000000000000000000000000000000000000000000000000000",
+  "arenas": [
+   {
+    "arena_id": 0,
+    "root": "0000000000000000000000000000000000000000000000000000000000000000"
+   }
+  ],
+  "labels_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+  "attestation_hash": null,
+  "data_hash": "fe62e7029fa63dac368e249712bfa90e09c00b08e60a64261fe69fee84ef6de7",
+  "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/2/"
+ },
+ "result": {
+  "attention": "0",
+  "yappersRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "yappers": [],
+  "arenas": {
+   "0": {
+    "id": 0,
+    "topic": "#near",
+    "root": "0000000000000000000000000000000000000000000000000000000000000000",
+    "yappers": []
+   }
+  },
+  "mindshare": [],
+  "smartAccounts": [
+   "y01.yap-hq.testnet",
+   "y02.yap-hq.testnet",
+   "y03.yap-hq.testnet",
+   "y05.yap-hq.testnet",
+   "y06.yap-hq.testnet"
+  ]
+ }
+}

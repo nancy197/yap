@@ -159,5 +159,442 @@
     "account": "council-1.yap-hq.testnet",
     "hash": "Fo6oeat6dtcBDjpbbeZDosj4f5wqn5XDYe783Ex5M7T9",
     "url": "https://testnet.nearblocks.io/txns/Fo6oeat6dtcBDjpbbeZDosj4f5wqn5XDYe783Ex5M7T9"
+  },
+  {
+    "at": "2026-11-08T00:25:18.266Z",
+    "action": "submit_report e0",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "H4yqag2nYoaQJfogPeiMxGmAcsdpuKn3jDHbmTESenBC",
+    "url": "https://testnet.nearblocks.io/txns/H4yqag2nYoaQJfogPeiMxGmAcsdpuKn3jDHbmTESenBC"
+  },
+  {
+    "at": "2026-11-08T00:25:21.898Z",
+    "action": "submit_report e0",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "3gKNufZu3FhAvFBmVnsePwwQjpvTnHw1RBoD12wRz6Q7",
+    "url": "https://testnet.nearblocks.io/txns/3gKNufZu3FhAvFBmVnsePwwQjpvTnHw1RBoD12wRz6Q7"
+  },
+  {
+    "at": "2026-11-08T00:30:34.080Z",
+    "action": "finalize e0",
+    "hash": "Dbngn2oZEUEYzG94JsDhF2E3TzLSdQdSZeYXUL7tk1F5",
+    "url": "https://testnet.nearblocks.io/txns/Dbngn2oZEUEYzG94JsDhF2E3TzLSdQdSZeYXUL7tk1F5"
+  },
+  {
+    "at": "2026-11-08T00:30:40.613Z",
+    "action": "claim e0",
+    "account": "y03.yap-hq.testnet",
+    "hash": "BmRsnug7EV1FquieoRDvVNoXx5w2VVKdhU9PjvJtVsup",
+    "url": "https://testnet.nearblocks.io/txns/BmRsnug7EV1FquieoRDvVNoXx5w2VVKdhU9PjvJtVsup"
+  },
+  {
+    "at": "2026-11-08T00:30:44.485Z",
+    "action": "steward promote y03.yap-hq.testnet (tier 4, epoch 0)",
+    "account": "y03.yap-hq.testnet",
+    "hash": "9r786Yud5HmvjYiCEgEsKtF4M7QyBzJiCnjTHT5yxaGq",
+    "url": "https://testnet.nearblocks.io/txns/9r786Yud5HmvjYiCEgEsKtF4M7QyBzJiCnjTHT5yxaGq"
+  },
+  {
+    "at": "2026-11-08T00:30:46.124Z",
+    "action": "claim e0",
+    "account": "y10.yap-hq.testnet",
+    "hash": "AjqrTz3Rn5ujVVxrjhrg33AKcEeZXEKMqEFYUAvffZNT",
+    "url": "https://testnet.nearblocks.io/txns/AjqrTz3Rn5ujVVxrjhrg33AKcEeZXEKMqEFYUAvffZNT"
+  },
+  {
+    "at": "2026-11-08T00:30:51.304Z",
+    "action": "steward promote y10.yap-hq.testnet (tier 3, epoch 0)",
+    "account": "y10.yap-hq.testnet",
+    "hash": "APG3gCQB66KY2Ds2NV5aYqhCSF7SsCsfjW624x32f2gE",
+    "url": "https://testnet.nearblocks.io/txns/APG3gCQB66KY2Ds2NV5aYqhCSF7SsCsfjW624x32f2gE"
+  },
+  {
+    "at": "2026-11-08T00:30:51.746Z",
+    "action": "claim e0",
+    "account": "y05.yap-hq.testnet",
+    "hash": "HthBeUXSdzTt3jUuQTvF4AmPYr4w3scbejndA9n2CwGj",
+    "url": "https://testnet.nearblocks.io/txns/HthBeUXSdzTt3jUuQTvF4AmPYr4w3scbejndA9n2CwGj"
+  },
+  {
+    "at": "2026-11-08T00:30:56.991Z",
+    "action": "claim e0",
+    "account": "y07.yap-hq.testnet",
+    "hash": "CU5p7TGQhdtmvau6wXxm9DfJkfARSBEM2V5ueqCMFao9",
+    "url": "https://testnet.nearblocks.io/txns/CU5p7TGQhdtmvau6wXxm9DfJkfARSBEM2V5ueqCMFao9"
+  },
+  {
+    "at": "2026-11-08T00:31:13.317Z",
+    "action": "claim e0",
+    "account": "y01.yap-hq.testnet",
+    "hash": "DAUtf1mN6ofVuG4Sn25LV6EwAQdeJcyupZKjkh9RvwPD",
+    "url": "https://testnet.nearblocks.io/txns/DAUtf1mN6ofVuG4Sn25LV6EwAQdeJcyupZKjkh9RvwPD"
+  },
+  {
+    "at": "2026-11-08T00:31:18.826Z",
+    "action": "claim e0",
+    "account": "y04.yap-hq.testnet",
+    "hash": "9uPpLK5iefhn8zhdeYEUd1LhmZZzdis8zdEV4XSTbHqj",
+    "url": "https://testnet.nearblocks.io/txns/9uPpLK5iefhn8zhdeYEUd1LhmZZzdis8zdEV4XSTbHqj"
+  },
+  {
+    "at": "2026-11-08T00:31:24.209Z",
+    "action": "claim e0",
+    "account": "y06.yap-hq.testnet",
+    "hash": "4NZsq831GLoBFxNxdzGRTrWyYsjufKR5WcvjaVn18DBD",
+    "url": "https://testnet.nearblocks.io/txns/4NZsq831GLoBFxNxdzGRTrWyYsjufKR5WcvjaVn18DBD"
+  },
+  {
+    "at": "2026-11-08T00:31:29.615Z",
+    "action": "claim e0",
+    "account": "y09.yap-hq.testnet",
+    "hash": "9ZEWUVf66nKb7qAoSEcPqy8Ldjsu44pDm8V4VPd1xB87",
+    "url": "https://testnet.nearblocks.io/txns/9ZEWUVf66nKb7qAoSEcPqy8Ldjsu44pDm8V4VPd1xB87"
+  },
+  {
+    "at": "2026-11-08T00:31:35.070Z",
+    "action": "claim e0",
+    "account": "y02.yap-hq.testnet",
+    "hash": "CEkzc99e1GY9RhKKWoBEywn4xSvPZQKXoujfpKzco4ok",
+    "url": "https://testnet.nearblocks.io/txns/CEkzc99e1GY9RhKKWoBEywn4xSvPZQKXoujfpKzco4ok"
+  },
+  {
+    "at": "2026-11-08T00:31:40.602Z",
+    "action": "claim e0",
+    "account": "y13.yap-hq.testnet",
+    "hash": "7s3XuyuNbGyP29tceHMQrDT76fMjDEUMwvSFNTUpz4w9",
+    "url": "https://testnet.nearblocks.io/txns/7s3XuyuNbGyP29tceHMQrDT76fMjDEUMwvSFNTUpz4w9"
+  },
+  {
+    "at": "2026-11-08T00:31:46.536Z",
+    "action": "claim e0",
+    "account": "y15.yap-hq.testnet",
+    "hash": "CXqSMXXEhkuxem1sDrUdcz7NVaaBpoiw9Ft8Ji9TLco6",
+    "url": "https://testnet.nearblocks.io/txns/CXqSMXXEhkuxem1sDrUdcz7NVaaBpoiw9Ft8Ji9TLco6"
+  },
+  {
+    "at": "2026-11-08T00:31:51.847Z",
+    "action": "claim e0",
+    "account": "y14.yap-hq.testnet",
+    "hash": "F7z8u17cZtJT4m66Ua1SdZ4HXnf1eSbWWwAG9qjzMuQs",
+    "url": "https://testnet.nearblocks.io/txns/F7z8u17cZtJT4m66Ua1SdZ4HXnf1eSbWWwAG9qjzMuQs"
+  },
+  {
+    "at": "2026-11-08T00:31:57.671Z",
+    "action": "claim e0",
+    "account": "y08.yap-hq.testnet",
+    "hash": "DMTQqF575u8TXbdhQpQ3vmivKy6gA3ZTt7JyKmBhnSLw",
+    "url": "https://testnet.nearblocks.io/txns/DMTQqF575u8TXbdhQpQ3vmivKy6gA3ZTt7JyKmBhnSLw"
+  },
+  {
+    "at": "2026-11-08T00:32:04.915Z",
+    "action": "claim e0",
+    "account": "y12.yap-hq.testnet",
+    "hash": "2x1VmV6DLGEVsBGCg9mk7U2B9mXZfDa6vu2W7j6SCcf4",
+    "url": "https://testnet.nearblocks.io/txns/2x1VmV6DLGEVsBGCg9mk7U2B9mXZfDa6vu2W7j6SCcf4"
+  },
+  {
+    "at": "2026-11-08T00:32:41.420Z",
+    "action": "claim e0",
+    "account": "y16.yap-hq.testnet",
+    "hash": "5EWP8Uux4eFvd1BaCbZjfoN7A8LawZNEgY8rzbYfuDsN",
+    "url": "https://testnet.nearblocks.io/txns/5EWP8Uux4eFvd1BaCbZjfoN7A8LawZNEgY8rzbYfuDsN"
+  },
+  {
+    "at": "2026-11-08T00:32:47.217Z",
+    "action": "claim e0",
+    "account": "y18.yap-hq.testnet",
+    "hash": "AY9MbDf4fDrcPtm4cDBgv8AD5AdN7kd4LdpGXWwsyiB1",
+    "url": "https://testnet.nearblocks.io/txns/AY9MbDf4fDrcPtm4cDBgv8AD5AdN7kd4LdpGXWwsyiB1"
+  },
+  {
+    "at": "2026-11-08T00:32:52.832Z",
+    "action": "claim e0",
+    "account": "y20.yap-hq.testnet",
+    "hash": "CvvDWGNEhY48V2bLcubCfQ4efMv3Rvx8TXyX4cAwbQWp",
+    "url": "https://testnet.nearblocks.io/txns/CvvDWGNEhY48V2bLcubCfQ4efMv3Rvx8TXyX4cAwbQWp"
+  },
+  {
+    "at": "2026-11-08T00:32:58.156Z",
+    "action": "claim e0",
+    "account": "y21.yap-hq.testnet",
+    "hash": "2eZaAQkQ1BGny6sRdeFTiE2hAVp5MNEwFw45cKRJajVY",
+    "url": "https://testnet.nearblocks.io/txns/2eZaAQkQ1BGny6sRdeFTiE2hAVp5MNEwFw45cKRJajVY"
+  },
+  {
+    "at": "2026-11-08T00:33:05.297Z",
+    "action": "claim e0",
+    "account": "y24.yap-hq.testnet",
+    "hash": "2PBap7Cr8EwBcv7QmVpgJo6hkiDcoJT6u8qAmCg9Vep9",
+    "url": "https://testnet.nearblocks.io/txns/2PBap7Cr8EwBcv7QmVpgJo6hkiDcoJT6u8qAmCg9Vep9"
+  },
+  {
+    "at": "2026-11-08T00:33:10.919Z",
+    "action": "claim e0",
+    "account": "y19.yap-hq.testnet",
+    "hash": "tAT2cUKpAK5pvNnMh1ZBSRa9jQAKaBa3RDJyishL41N",
+    "url": "https://testnet.nearblocks.io/txns/tAT2cUKpAK5pvNnMh1ZBSRa9jQAKaBa3RDJyishL41N"
+  },
+  {
+    "at": "2026-11-08T00:37:35.072Z",
+    "action": "submit_report e1",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "45st1pQRBeTv8LWRoZew3SnJ1HAoDpGhwu5vziBAvFvW",
+    "url": "https://testnet.nearblocks.io/txns/45st1pQRBeTv8LWRoZew3SnJ1HAoDpGhwu5vziBAvFvW"
+  },
+  {
+    "at": "2026-11-08T00:37:38.026Z",
+    "action": "submit_report e1",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "FzbdEkNt3b47tYWs18aPv5vKgfWhP6NeRtsgnqnb8unL",
+    "url": "https://testnet.nearblocks.io/txns/FzbdEkNt3b47tYWs18aPv5vKgfWhP6NeRtsgnqnb8unL"
+  },
+  {
+    "at": "2026-11-08T00:42:54.562Z",
+    "action": "finalize e1",
+    "hash": "GSRfYJnGT9vD5zntkNETcQjJagNaDDQd669earPKQTqU",
+    "url": "https://testnet.nearblocks.io/txns/GSRfYJnGT9vD5zntkNETcQjJagNaDDQd669earPKQTqU"
+  },
+  {
+    "at": "2026-11-08T00:42:58.244Z",
+    "action": "claim e1",
+    "account": "y10.yap-hq.testnet",
+    "hash": "CDadANWrG3ARkYFwXcSE3yNVAH29awnMFZRspDvXMEhS",
+    "url": "https://testnet.nearblocks.io/txns/CDadANWrG3ARkYFwXcSE3yNVAH29awnMFZRspDvXMEhS"
+  },
+  {
+    "at": "2026-11-08T00:43:01.044Z",
+    "action": "claim e1",
+    "account": "y03.yap-hq.testnet",
+    "hash": "GDmGfU2HJQx6rk3iCp8hJ5g3WrVQLc9QPsoamTJzywkZ",
+    "url": "https://testnet.nearblocks.io/txns/GDmGfU2HJQx6rk3iCp8hJ5g3WrVQLc9QPsoamTJzywkZ"
+  },
+  {
+    "at": "2026-11-08T00:43:04.136Z",
+    "action": "claim e1",
+    "account": "y09.yap-hq.testnet",
+    "hash": "C1nc6t9ay16ZHoVMZovvhi2kQTeM76XBGsWsAmWyw3XV",
+    "url": "https://testnet.nearblocks.io/txns/C1nc6t9ay16ZHoVMZovvhi2kQTeM76XBGsWsAmWyw3XV"
+  },
+  {
+    "at": "2026-11-08T00:43:07.100Z",
+    "action": "claim e1",
+    "account": "y05.yap-hq.testnet",
+    "hash": "44ehdZB7UHiad5RvtUcNuHqXotwGyjZ3b4Dk8yfB9Ayh",
+    "url": "https://testnet.nearblocks.io/txns/44ehdZB7UHiad5RvtUcNuHqXotwGyjZ3b4Dk8yfB9Ayh"
+  },
+  {
+    "at": "2026-11-08T00:43:09.708Z",
+    "action": "claim e1",
+    "account": "y01.yap-hq.testnet",
+    "hash": "4PGCjh4LRdQx9uJk7zQdajRcvA618tPVDKTekmJ76eo3",
+    "url": "https://testnet.nearblocks.io/txns/4PGCjh4LRdQx9uJk7zQdajRcvA618tPVDKTekmJ76eo3"
+  },
+  {
+    "at": "2026-11-08T00:43:12.479Z",
+    "action": "claim e1",
+    "account": "y07.yap-hq.testnet",
+    "hash": "4GXSiKCyvbMutUjb76K96NnicfR9AHkbTAfEdGxrbvW2",
+    "url": "https://testnet.nearblocks.io/txns/4GXSiKCyvbMutUjb76K96NnicfR9AHkbTAfEdGxrbvW2"
+  },
+  {
+    "at": "2026-11-08T00:43:15.119Z",
+    "action": "claim e1",
+    "account": "y02.yap-hq.testnet",
+    "hash": "E3MRQj2eP8e15sgUEik34kaGwXusWjMneRivMv8iyfnt",
+    "url": "https://testnet.nearblocks.io/txns/E3MRQj2eP8e15sgUEik34kaGwXusWjMneRivMv8iyfnt"
+  },
+  {
+    "at": "2026-11-08T00:43:17.942Z",
+    "action": "claim e1",
+    "account": "y04.yap-hq.testnet",
+    "hash": "8ErqJ4FxBVyutAmZA35ZJfNg1CASNwmJQ6Q93YkXSYk9",
+    "url": "https://testnet.nearblocks.io/txns/8ErqJ4FxBVyutAmZA35ZJfNg1CASNwmJQ6Q93YkXSYk9"
+  },
+  {
+    "at": "2026-11-08T00:43:20.479Z",
+    "action": "claim e1",
+    "account": "y06.yap-hq.testnet",
+    "hash": "AqiRnot8GKFRUQs8rdDcn8RezerbnJyCFSSkAr8BYKd5",
+    "url": "https://testnet.nearblocks.io/txns/AqiRnot8GKFRUQs8rdDcn8RezerbnJyCFSSkAr8BYKd5"
+  },
+  {
+    "at": "2026-11-08T00:43:23.220Z",
+    "action": "claim e1",
+    "account": "y15.yap-hq.testnet",
+    "hash": "ENJypGGTPCZmooXtTcWvKxN7LJxfGTi3oeu1KefwRGCQ",
+    "url": "https://testnet.nearblocks.io/txns/ENJypGGTPCZmooXtTcWvKxN7LJxfGTi3oeu1KefwRGCQ"
+  },
+  {
+    "at": "2026-11-08T00:43:23.223Z",
+    "action": "steward promote y10.yap-hq.testnet (tier 4, epoch 1)",
+    "account": "y10.yap-hq.testnet",
+    "hash": "4iwd58uiLmiQZPPFtdwc8Ji6jmZ6Ho4DhM26tDVSkjT6",
+    "url": "https://testnet.nearblocks.io/txns/4iwd58uiLmiQZPPFtdwc8Ji6jmZ6Ho4DhM26tDVSkjT6"
+  },
+  {
+    "at": "2026-11-08T00:43:26.114Z",
+    "action": "claim e1",
+    "account": "y13.yap-hq.testnet",
+    "hash": "Gz2h26VPUx4fdaktWtmSPXvmBmmNjGgc8GAVyo3HsXYs",
+    "url": "https://testnet.nearblocks.io/txns/Gz2h26VPUx4fdaktWtmSPXvmBmmNjGgc8GAVyo3HsXYs"
+  },
+  {
+    "at": "2026-11-08T00:43:26.807Z",
+    "action": "steward promote y03.yap-hq.testnet (tier 3, epoch 1)",
+    "account": "y03.yap-hq.testnet",
+    "hash": "7AJjJJkD13DLTBsToX2XXfpCcDbWU24vctCdce3P57dQ",
+    "url": "https://testnet.nearblocks.io/txns/7AJjJJkD13DLTBsToX2XXfpCcDbWU24vctCdce3P57dQ"
+  },
+  {
+    "at": "2026-11-08T00:43:29.172Z",
+    "action": "claim e1",
+    "account": "y14.yap-hq.testnet",
+    "hash": "4eY46QYKzz6jbptGbMGwVEe3SgYxqE9gBB3jRWicZDzC",
+    "url": "https://testnet.nearblocks.io/txns/4eY46QYKzz6jbptGbMGwVEe3SgYxqE9gBB3jRWicZDzC"
+  },
+  {
+    "at": "2026-11-08T00:43:32.125Z",
+    "action": "claim e1",
+    "account": "y08.yap-hq.testnet",
+    "hash": "svwdkB5MZMUfWTWcGihBSL6txq8K2SzLLuHwBFSkFGJ",
+    "url": "https://testnet.nearblocks.io/txns/svwdkB5MZMUfWTWcGihBSL6txq8K2SzLLuHwBFSkFGJ"
+  },
+  {
+    "at": "2026-11-08T00:43:33.145Z",
+    "action": "steward promote y05.yap-hq.testnet (tier 3, epoch 1)",
+    "account": "y05.yap-hq.testnet",
+    "hash": "DwcLQxEMGtDFn7xX4wSAe4LmBtNfZy15oKMMyuppwD6Q",
+    "url": "https://testnet.nearblocks.io/txns/DwcLQxEMGtDFn7xX4wSAe4LmBtNfZy15oKMMyuppwD6Q"
+  },
+  {
+    "at": "2026-11-08T00:43:35.289Z",
+    "action": "claim e1",
+    "account": "y12.yap-hq.testnet",
+    "hash": "9Kjvd5M96g96ss74obg2MF93Y7BqP6wyY5gRLZMYWx4w",
+    "url": "https://testnet.nearblocks.io/txns/9Kjvd5M96g96ss74obg2MF93Y7BqP6wyY5gRLZMYWx4w"
+  },
+  {
+    "at": "2026-11-08T00:43:40.444Z",
+    "action": "claim e1",
+    "account": "y11.yap-hq.testnet",
+    "hash": "HNm3oXoMTGS6idySA24zvqNitgEsdMXAxbgQbV495o5V",
+    "url": "https://testnet.nearblocks.io/txns/HNm3oXoMTGS6idySA24zvqNitgEsdMXAxbgQbV495o5V"
+  },
+  {
+    "at": "2026-11-08T00:43:43.739Z",
+    "action": "claim e1",
+    "account": "y24.yap-hq.testnet",
+    "hash": "2HZmo2AymE1HnKDs7jcWJW9FvnRdzPgqhvUJ1oLTyJFd",
+    "url": "https://testnet.nearblocks.io/txns/2HZmo2AymE1HnKDs7jcWJW9FvnRdzPgqhvUJ1oLTyJFd"
+  },
+  {
+    "at": "2026-11-08T00:44:09.812Z",
+    "action": "submit_report e2",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "9kfdnkiJ6F59Xy1TSTXA6cBuvzF2DGjYUq4eBvF5Hy4e",
+    "url": "https://testnet.nearblocks.io/txns/9kfdnkiJ6F59Xy1TSTXA6cBuvzF2DGjYUq4eBvF5Hy4e"
+  },
+  {
+    "at": "2026-11-08T00:44:13.335Z",
+    "action": "submit_report e2",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "5gWeZ9YCu62cH71Fj1NUDbtstyiBZfhiB9Mm84pW53Qz",
+    "url": "https://testnet.nearblocks.io/txns/5gWeZ9YCu62cH71Fj1NUDbtstyiBZfhiB9Mm84pW53Qz"
+  },
+  {
+    "at": "2026-11-08T00:49:34.248Z",
+    "action": "finalize e2",
+    "hash": "6o3wR2hVdxfyyzdaxQuqBUARuAUsd4T3tbsR9hhWJm5H",
+    "url": "https://testnet.nearblocks.io/txns/6o3wR2hVdxfyyzdaxQuqBUARuAUsd4T3tbsR9hhWJm5H"
+  },
+  {
+    "at": "2026-11-08T00:54:38.672Z",
+    "action": "submit_report e3 (TAMPERED demo)",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "H74mJtBu3UEnY9H6XEn7V2Fvfyv7Sf4vBzSybbsy69aS",
+    "url": "https://testnet.nearblocks.io/txns/H74mJtBu3UEnY9H6XEn7V2Fvfyv7Sf4vBzSybbsy69aS"
+  },
+  {
+    "at": "2026-11-08T00:54:41.685Z",
+    "action": "submit_report e3 (TAMPERED demo)",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "6pgL2aVK1NfgS7XFmaz5crzsDVDPik9vroV7cV4BJMYc",
+    "url": "https://testnet.nearblocks.io/txns/6pgL2aVK1NfgS7XFmaz5crzsDVDPik9vroV7cV4BJMYc"
+  },
+  {
+    "at": "2026-11-08T00:54:55.671Z",
+    "action": "fund watchdog bond",
+    "account": "watchdog.yap-hq.testnet",
+    "hash": "Hfxp8n4tTECYEvGaLtMhm3otvDHrr6gSkpSQRfVUC1RY",
+    "url": "https://testnet.nearblocks.io/txns/Hfxp8n4tTECYEvGaLtMhm3otvDHrr6gSkpSQRfVUC1RY"
+  },
+  {
+    "at": "2026-11-08T00:55:00.093Z",
+    "action": "challenge e3 (watchdog: labels_hash, yappers_root, attention 93250000 vs 74250000)",
+    "account": "watchdog.yap-hq.testnet",
+    "hash": "3g35hmDnpgz6QDT7ssLdMRXceDYsu6GWu2LjW5K8yRjs",
+    "url": "https://testnet.nearblocks.io/txns/3g35hmDnpgz6QDT7ssLdMRXceDYsu6GWu2LjW5K8yRjs"
+  },
+  {
+    "at": "2026-11-08T00:55:14.772Z",
+    "action": "dao VoteApprove proposal 11",
+    "account": "yap-hq.testnet",
+    "hash": "7jWWLcfsFFrWRQVU137ZTAv7CxAw7G1GUQBTNpKMciHe",
+    "url": "https://testnet.nearblocks.io/txns/7jWWLcfsFFrWRQVU137ZTAv7CxAw7G1GUQBTNpKMciHe"
+  },
+  {
+    "at": "2026-11-08T00:55:18.098Z",
+    "action": "dao VoteApprove proposal 11",
+    "account": "council-1.yap-hq.testnet",
+    "hash": "3RrNkCZxrBRzp9ZpfvyQWShq6GaphsG5W3B6r1VJ697U",
+    "url": "https://testnet.nearblocks.io/txns/3RrNkCZxrBRzp9ZpfvyQWShq6GaphsG5W3B6r1VJ697U"
+  },
+  {
+    "at": "2026-11-08T00:55:48.874Z",
+    "action": "re-fund slashed scorer",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "HYq2RMn11EK4WJgx7RxUUd9tQ3PE1q99hZZiCtHuhaxb",
+    "url": "https://testnet.nearblocks.io/txns/HYq2RMn11EK4WJgx7RxUUd9tQ3PE1q99hZZiCtHuhaxb"
+  },
+  {
+    "at": "2026-11-08T00:55:52.667Z",
+    "action": "scorer re-bond",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "4MXTMmAe7ZyR9PBW6F17aZrhM2EcEvQnLbCRBPPPULb3",
+    "url": "https://testnet.nearblocks.io/txns/4MXTMmAe7ZyR9PBW6F17aZrhM2EcEvQnLbCRBPPPULb3"
+  },
+  {
+    "at": "2026-11-08T00:55:54.755Z",
+    "action": "submit_report e3 (resubmit)",
+    "account": "scorer-1.yap-hq.testnet",
+    "hash": "4F6GgT6Ub89sz2hVQTLzMC8X2fScrp6LnHwurVpQRpDH",
+    "url": "https://testnet.nearblocks.io/txns/4F6GgT6Ub89sz2hVQTLzMC8X2fScrp6LnHwurVpQRpDH"
+  },
+  {
+    "at": "2026-11-08T00:55:57.779Z",
+    "action": "re-fund slashed scorer",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "GixAff1DFKvdTyzEVtjCJK5k6zKytenjTuLrEBEx4YVX",
+    "url": "https://testnet.nearblocks.io/txns/GixAff1DFKvdTyzEVtjCJK5k6zKytenjTuLrEBEx4YVX"
+  },
+  {
+    "at": "2026-11-08T00:56:01.455Z",
+    "action": "scorer re-bond",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "C7WHUwTwkaaLeUL6BwNPp7FFowDisWzkEgS6EVMz7c4C",
+    "url": "https://testnet.nearblocks.io/txns/C7WHUwTwkaaLeUL6BwNPp7FFowDisWzkEgS6EVMz7c4C"
+  },
+  {
+    "at": "2026-11-08T00:56:03.865Z",
+    "action": "submit_report e3 (resubmit)",
+    "account": "scorer-2.yap-hq.testnet",
+    "hash": "BRhvFciKxiEiCo3ardzx7W8ykjv9UbwZAWhFRi2hH1Dr",
+    "url": "https://testnet.nearblocks.io/txns/BRhvFciKxiEiCo3ardzx7W8ykjv9UbwZAWhFRi2hH1Dr"
+  },
+  {
+    "at": "2026-11-08T01:25:41.044Z",
+    "action": "crank_dead_epoch e3 (missed deadline)",
+    "hash": "7e32Ch1XFA14jbEihanczHnMXQxkkuF56NS9ipFLz758",
+    "url": "https://testnet.nearblocks.io/txns/7e32Ch1XFA14jbEihanczHnMXQxkkuF56NS9ipFLz758"
   }
 ]
