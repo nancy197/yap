@@ -1,0 +1,268 @@
+{
+ "labels": {
+  "y01.yap-hq.testnet/1794100267534": 3,
+  "y01.yap-hq.testnet/1794100267535": 2,
+  "y01.yap-hq.testnet/1794100267536": 3,
+  "y01.yap-hq.testnet/1794100267537": 2,
+  "y02.yap-hq.testnet/1794100269798": 2,
+  "y02.yap-hq.testnet/1794100269799": 3,
+  "y02.yap-hq.testnet/1794100269801": 2,
+  "y03.yap-hq.testnet/1794100272465": 3,
+  "y03.yap-hq.testnet/1794100272466": 3,
+  "y04.yap-hq.testnet/1794100274563": 2,
+  "y04.yap-hq.testnet/1794100274564": 2,
+  "y04.yap-hq.testnet/1794100274565": 3,
+  "y05.yap-hq.testnet/1794100277251": 2,
+  "y05.yap-hq.testnet/1794100277252": 3,
+  "y05.yap-hq.testnet/1794100277253": 3,
+  "y05.yap-hq.testnet/1794100277254": 3,
+  "y06.yap-hq.testnet/1794100279539": 3,
+  "y06.yap-hq.testnet/1794100279540": 3,
+  "y06.yap-hq.testnet/1794100279542": 3,
+  "y07.yap-hq.testnet/1794100282059": 2,
+  "y07.yap-hq.testnet/1794100282060": 2,
+  "y07.yap-hq.testnet/1794100282061": 3,
+  "y08.yap-hq.testnet/1794100284492": 1,
+  "y08.yap-hq.testnet/1794100284493": 2,
+  "y08.yap-hq.testnet/1794100284495": 1,
+  "y09.yap-hq.testnet/1794100286882": 2,
+  "y09.yap-hq.testnet/1794100286883": 2,
+  "y09.yap-hq.testnet/1794100286884": 2,
+  "y09.yap-hq.testnet/1794100286885": 1,
+  "y10.yap-hq.testnet/1794100289443": 2,
+  "y10.yap-hq.testnet/1794100289444": 2,
+  "y10.yap-hq.testnet/1794100289445": 3,
+  "y10.yap-hq.testnet/1794100289446": 3,
+  "y11.yap-hq.testnet/1794100291737": 1,
+  "y11.yap-hq.testnet/1794100291738": 1,
+  "y11.yap-hq.testnet/1794100291739": 1
+ },
+ "details": [
+  {
+   "key": "y01.yap-hq.testnet/1794100267534",
+   "q": 3,
+   "reason": "Specific gas optimization with benchmark numbers and concrete data-structure change.",
+   "cached": true
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794100267535",
+   "q": 2,
+   "reason": "Concrete indexer metrics and next-step RPC backoff plan.",
+   "cached": true
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794100267536",
+   "q": 3,
+   "reason": "Concrete IL breakeven math and rebalance process tied to realized vol.",
+   "cached": true
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794100267537",
+   "q": 2,
+   "reason": "Practical note on using quiet periods for profiling/fuzzing, with concrete fuzzer result.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794100269798",
+   "q": 2,
+   "reason": "Clear explanation of intent-based cross-chain swaps and solver settlement.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794100269799",
+   "q": 3,
+   "reason": "Specific insight into solver quote differences and execution quality.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794100269801",
+   "q": 2,
+   "reason": "Useful reply linking chop rebalances to order book and suggesting intent-sourced USDC.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794100272465",
+   "q": 3,
+   "reason": "Specific framing of TEE-verified inference for agent provenance and trust.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794100272466",
+   "q": 3,
+   "reason": "Frames agent trust as verifiability and gives a concrete NEAR/TEE/attestation stack.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794100274563",
+   "q": 2,
+   "reason": "Useful governance checklist: budget, milestones, rollback; ties voting to treasury ownership.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794100274564",
+   "q": 2,
+   "reason": "Practical treasury principle: set policy in calm periods, avoid market-driven allocation decisions.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794100274565",
+   "q": 3,
+   "reason": "Specific treasury ops practice: treat IL as budgeted cost, cap LP exposure, review after rebalances.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794100277251",
+   "q": 2,
+   "reason": "Useful data read: rising activity with falling fees, with retention caveat before trend claim.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794100277252",
+   "q": 3,
+   "reason": "Specific indexer metrics plus signal: mention volume up while deploys flat, separating noise from shipping.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794100277253",
+   "q": 3,
+   "reason": "Data-backed claim: 'stay early' density coincides with volume tops; only liquidity led, not hype.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794100277254",
+   "q": 3,
+   "reason": "Concrete IL math: 1.5–1.7% drift vs 0.04%/day fee recovery, ~6 weeks, volume-dependent.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794100279539",
+   "q": 3,
+   "reason": "Specific wallet onboarding critique with a concrete alternative: show value before custody.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794100279540",
+   "q": 3,
+   "reason": "Clear chain-signature UX expectation and identifies network switching as a detour.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794100279542",
+   "q": 3,
+   "reason": "Actionable UX fix: simulate IL on confirm screens before signing, not after.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794100282059",
+   "q": 2,
+   "reason": "Specific NEAR trade plan with levels and risk stance; useful but not novel.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794100282060",
+   "q": 2,
+   "reason": "Concrete LP APR vs IL example with practical entry approach.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794100282061",
+   "q": 3,
+   "reason": "Quantifies fee yield vs IL drag and states break-even condition clearly.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794100284492",
+   "q": 1,
+   "reason": "Meme-style greeting and bag talk; low-effort reaction with little substance.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794100284493",
+   "q": 2,
+   "reason": "Useful market-cycle observation, though phrased as a slogan.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794100284495",
+   "q": 1,
+   "reason": "Meme-y reaction with numbers but little substantive analysis.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794100286882",
+   "q": 2,
+   "reason": "Specific position with APR and IL breakeven condition; useful context.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794100286883",
+   "q": 2,
+   "reason": "Concrete IL/fee outcome and a clear condition for concentrated LPs.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794100286884",
+   "q": 2,
+   "reason": "Useful LP heuristic about hype-driven TVL vs steady volume.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794100286885",
+   "q": 1,
+   "reason": "Reaction with analogy; limited new information.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794100289443",
+   "q": 2,
+   "reason": "Clear macro/liquidity rotation point, but broad and not highly original.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794100289444",
+   "q": 2,
+   "reason": "General market-structure observation; useful but not specific.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794100289445",
+   "q": 3,
+   "reason": "Sharp risk framing: daily fees vs gap-driven IL around macro events.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794100289446",
+   "q": 3,
+   "reason": "Frames meme froth as late-cycle liquidity signal and contrasts with stablecoin flows; specific macro insight.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794100291737",
+   "q": 1,
+   "reason": "Punchy meme reaction to 'stay early' hype; little substantive analysis.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794100291738",
+   "q": 1,
+   "reason": "Short meme about impermanent loss; expressive but not analytically useful.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794100291739",
+   "q": 1,
+   "reason": "Joke about a yield refund; humorous but minimal substantive content.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

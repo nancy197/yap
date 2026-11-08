@@ -1,124 +1,129 @@
 {
- "generatedAt": "2026-11-07T16:58:20.751Z",
+ "generatedAt": "2026-11-08T02:26:55.226Z",
  "state": {
-  "streak": 0,
-  "best_streak": 1,
-  "attention_target": "70195819",
-  "minted_total": "1001406124851839716554893",
-  "burned_total": "36600612485183971655489",
-  "reserve": "564540000000000000000000",
-  "current_epoch": 7,
+  "streak": 3,
+  "best_streak": 3,
+  "attention_target": "53402207",
+  "minted_total": "1010469884544391955043621",
+  "burned_total": "243764135274439195504360",
+  "reserve": "359282853180000000000000",
+  "current_epoch": 13,
   "reward_per_share": "0"
  },
- "supply": "964805512366655744899404",
+ "supply": "766705749269952759539261",
  "epochs": [
   {
    "number": 0,
    "status": "Finalized",
    "report": {
-    "attention": "47250000",
-    "yappers_root": "6c153356945f32c76d0537c196919e2bfe9f4da3f6b771b887636206635bfb20",
+    "attention": "71000000",
+    "yappers_root": "d6bfbe0925f5745a957ca7b6c5b5724dc42af78feb589ad9d646640cb823238e",
     "arenas": [],
-    "labels_hash": "7f77ed3b45ea8e79b7f7d58b6d5f4f570f617a2f50e0e59bce95b4e41666e3a2",
+    "labels_hash": "eac7292a4b7fe712a8e582be9f03e2f228fc9f317a99e982c9c89d59ebda3ac4",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
-    "attestation_hash": "3bc9e3d71a9d96b68e40b169622b9bb0dba15f6f8e8983ce69beb3ea8a605738",
-    "data_hash": "c697cd50ffd8b21a4a9afe3cdc811183e4a8a303b9c9268c4fe6a74c3861f1d7",
+    "attestation_hash": "f19ade74cf6b59d202c05b39ab0d0e406339de8735a0ee4d513f509d3914ef5b",
+    "data_hash": "4ec411408e1e276f2e6133d0c8fd8e93a94d9fe47899f082156fbd1f0c06cb8d",
     "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/0/"
    },
-   "report_hash": "3714cd8aecf145accbafd55f3fa1300ea31baf4eadc44b26280116648099c0f9",
+   "report_hash": "5caf63eb137d927a524dae95b86ae2c0705798ca3581a6ca6f1e85d07e82dcc0",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794067034266698800,
-   "emission": "472500000000000000000",
-   "yapper_pool": "378000000000000000000",
-   "staker_pool": "47250000000000000000",
-   "dao_pool": "47250000000000000000",
-   "claimed": "378000000000000000000",
+   "proposed_at": 1794097520813643000,
+   "emission": "710000000000000000000",
+   "yapper_pool": "568000000000000000000",
+   "staker_pool": "71000000000000000000",
+   "dao_pool": "71000000000000000000",
+   "claimed": "568000000000000000000",
    "unclaimed_burned": false
   },
   {
    "number": 1,
    "status": "Finalized",
    "report": {
-    "attention": "74361374",
-    "yappers_root": "5c7b196cc3d96b357c49e11df24498af6f81d2cb3f3089557f753fa1c64cbc37",
-    "arenas": [],
-    "labels_hash": "11355b6c6faa0559893613e8cd4efc8ec45545e66f7e428821c683898afadc00",
+    "attention": "70875000",
+    "yappers_root": "7fde8a6d4062f63c76300faecd8cfb10eca9650b79bcb5fb5ad2d1c4c32d2601",
+    "arenas": [
+     {
+      "arena_id": 0,
+      "root": "c2e66b971374f642e5d51b73ea3486e07482f64eac188e7116893528ef86c087"
+     }
+    ],
+    "labels_hash": "83b092eda0e6591bc05896f68c9bfd6a07815064f610b9a893629e6e2339d222",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
-    "attestation_hash": "2bf9324ff1eb127ad0ffaaaf7412939e68ced621d67d780094994da7c4e9efb4",
-    "data_hash": "e18e2eb9fe7e25cb04dbf5dd9447b9b7ad5e69574dbafbba311113babb556f92",
+    "attestation_hash": "afe7e82ae616d214dc8d5ad8bb81b3bc679e27aed603ba15310a7d5fdd31d890",
+    "data_hash": "6bc359f068298a91a7b0966c7b036540e2c94273de043a43ba409f3074772957",
     "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/1/"
    },
-   "report_hash": "54b62532f274571fc37ed5d78c54061955c21e455c82d9a35d37b9b669b2d394",
+   "report_hash": "4b1513ec16a1cd10343103ccafd1fc3cbf09e925dec6ff91bc653cf82da21599",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794068087212462000,
-   "emission": "872883652319731693683",
-   "yapper_pool": "698306921855785354946",
-   "staker_pool": "87288365231973169368",
-   "dao_pool": "87288365231973169369",
-   "claimed": "680699319843487982115",
+   "proposed_at": 1794098257109726500,
+   "emission": "752388535031847133757",
+   "yapper_pool": "601910828025477707005",
+   "staker_pool": "75238853503184713375",
+   "dao_pool": "75238853503184713377",
+   "claimed": "582802547770700636943",
    "unclaimed_burned": false
   },
   {
    "number": 2,
-   "status": "Finalized",
+   "status": "Dead",
    "report": {
-    "attention": "5250000",
-    "yappers_root": "64ab566cf5a724e5983a23b072e4e9e3947945a94ec887ecdba5fbc73f36d1ee",
+    "attention": "0",
+    "yappers_root": "0000000000000000000000000000000000000000000000000000000000000000",
     "arenas": [
      {
       "arena_id": 0,
-      "root": "a6fc85cfb969756032b8e616e6b9076c1eef98553965d8a74492bc09c6b54362"
+      "root": "0000000000000000000000000000000000000000000000000000000000000000"
      }
     ],
-    "labels_hash": "f9ef8715ed43d2419d6b040bf93938b3e43fc06ca0aa9958424b44cfaf2ca0de",
+    "labels_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
-    "attestation_hash": "c4665091bce3d49894fcd8c94430b85b685b4ba0d64fd0b5a25e63fc80a71066",
-    "data_hash": "d8281b0232dec98cb28850f2a25391e3c2d5753dd5fb786489a95987b5692196",
+    "attestation_hash": null,
+    "data_hash": "fe62e7029fa63dac368e249712bfa90e09c00b08e60a64261fe69fee84ef6de7",
     "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/2/"
    },
-   "report_hash": "e5e6bc966fa8603ebe2275daaf7e5588f767ace067db2191f8e5ab293d4292e9",
+   "report_hash": "8c01de1e9b49f34a913a88329c74aedc81b28da04f76e280eaface8c6a2ae593",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794068540316424400,
-   "emission": "60741199519984861210",
-   "yapper_pool": "48592959615987888968",
-   "staker_pool": "6074119951998486121",
-   "dao_pool": "6074119951998486121",
-   "claimed": "48592959615987888968",
+   "proposed_at": 1794098652360697000,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
    "unclaimed_burned": false
   },
   {
    "number": 3,
-   "status": "Proposed",
+   "status": "Dead",
    "report": {
-    "attention": "70125000",
-    "yappers_root": "bffc07d636b8ab28946a293ea3b43717bfe6793dfc60e9b026a21f4dfdd2d4b4",
+    "attention": "74250000",
+    "yappers_root": "9a0fc30520e0b1dafbb987ab6dbe43f149db36877c499f2d9159ebad44e86adb",
     "arenas": [
      {
       "arena_id": 0,
-      "root": "adf4aea60bb90a6f8fef418e843f92d4a08e54636023c7c49460673d12bbcfca"
+      "root": "20a4abcd45b080597cff3689f2bc9283b2fcf981e46351203273b405f43504eb"
      }
     ],
-    "labels_hash": "4a90d946031976c6bdd0e96502adae5dd7e2106ed812a3408e20666b23fba19c",
+    "labels_hash": "d959207d6ede4a50c04d3d85256a178bcabaacd2efef220e87951d8cd5bbb6ee",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "f7f29e784a267b33c659f31bd29a9675f01d5790fe53a03168185886eef488e2",
+    "data_hash": "68dda2f3cc29c1b00c3489fd84bbe621a4f7f6ca9955b7eb4aa5acb9acc4e173",
     "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/3/"
    },
-   "report_hash": "b02c9c9b21bb6e4db89c9d8f40f25457cbc6e3a0e9a28b3a5a85c682e0af1f46",
+   "report_hash": "25c0d4baec494b1a815744194dd98b194d6e01c1a325e10bd6829c4182dbf68a",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794069550162519600,
+   "proposed_at": 1794099362995894500,
    "emission": "0",
    "yapper_pool": "0",
    "staker_pool": "0",
@@ -128,33 +133,191 @@
   },
   {
    "number": 4,
-   "status": "Proposed",
-   "report": {
-    "attention": "75750000",
-    "yappers_root": "b87cb7e8907c1497d49ce0f8c12b90db9be8cdb0948542e3d2e8dd34b63adb63",
-    "arenas": [
-     {
-      "arena_id": 0,
-      "root": "69ecf9aa067fa5c404d952b2b1fc0edd7d28872053697974a577132b0b629481"
-     }
-    ],
-    "labels_hash": "d97d1aafe6d2788599162c1eeb5d286a082a31b885b8f3e8aa399826eb4c2c14",
-    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
-    "attestation_hash": "90412f1a7e5e65b97ee9d1d1704d37f34afb745bcf8fa81e020a81fe4f8cf4aa",
-    "data_hash": "efe5c3a4d475522bff193381c2feadd705a96f53a97209357103047f6368f5de",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/4/"
-   },
-   "report_hash": "61552f3422c60b3c98fa9679a0c7cec0b716a70ab3893fdb47e1210d41877286",
-   "signers": [
-    "scorer-1.yap-hq.testnet",
-    "scorer-2.yap-hq.testnet"
-   ],
-   "proposed_at": 1794070583514525400,
+   "status": "Dead",
+   "report": null,
+   "report_hash": null,
+   "signers": [],
+   "proposed_at": 0,
    "emission": "0",
    "yapper_pool": "0",
    "staker_pool": "0",
    "dao_pool": "0",
    "claimed": "0",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 5,
+   "status": "Dead",
+   "report": null,
+   "report_hash": null,
+   "signers": [],
+   "proposed_at": 0,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 6,
+   "status": "Finalized",
+   "report": {
+    "attention": "46500000",
+    "yappers_root": "d683dfac9a4e6d097e82a3d25715088720659579c9b1129a7f27c14118ea898a",
+    "arenas": [
+     {
+      "arena_id": 0,
+      "root": "7d349a6b5a5e86260392961d16535f184bfeef547f6490801e510ce8b46c8964"
+     }
+    ],
+    "labels_hash": "e8c1c66a0cb2e392c33a6184e331df62e18913efbbf6ec8d0a755777e12b94eb",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "cb5d55e7f7a12157a91031cf351133dca64cd736d2f154cc97574b80e3e7c824",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/6/"
+   },
+   "report_hash": "2da0076af6f0c75af97c5367cb046ac4979c1f20f49322264782b4de36f6421e",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794102188704103000,
+   "emission": "1331341488314625565420",
+   "yapper_pool": "1065073190651700452336",
+   "staker_pool": "133134148831462556542",
+   "dao_pool": "133134148831462556542",
+   "claimed": "1065073190651700452336",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 7,
+   "status": "Finalized",
+   "report": {
+    "attention": "82429902",
+    "yappers_root": "969e12cedebd21e7d40aa8c96b275b52589f1742097aef29cec26e79aed8511f",
+    "arenas": [],
+    "labels_hash": "e60eeb77eca549848014b8484b6717287ebf5a2d164227de3de06af8a53aff81",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "a68e98f4d6bf2129046741cdb29990d89d9633de1253c654cdcf0282aeca4aec",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/7/"
+   },
+   "report_hash": "427384662dad01cc9a20a097963ed39181e04706222e5292927632f2fc2d11d5",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794102569500466200,
+   "emission": "2346678118704842703820",
+   "yapper_pool": "1877342494963874163056",
+   "staker_pool": "234667811870484270382",
+   "dao_pool": "234667811870484270382",
+   "claimed": "1806170563972592543442",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 8,
+   "status": "Finalized",
+   "report": {
+    "attention": "2250000",
+    "yappers_root": "26a3d570848e937671e4ad45f6ae1fec5a8149e03b604a4541279231196b0ef0",
+    "arenas": [],
+    "labels_hash": "6bc5e86c72e7078c423a6c681e1129cceef94033cb802edb4c5df0bcb902c2ea",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "f995bee6da68985364cd5248267d8f7f47c5386b3943e610deb06254acbfc3bf",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/8/"
+   },
+   "report_hash": "18d03ab27a60219a5aba76c31736733cbfa2bd26b01056ecb0d7f977f3c6e45c",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794102988083970300,
+   "emission": "47471316880914214013",
+   "yapper_pool": "37977053504731371210",
+   "staker_pool": "4747131688091421401",
+   "dao_pool": "4747131688091421402",
+   "claimed": "37977053504731371210",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 9,
+   "status": "Finalized",
+   "report": {
+    "attention": "99000000",
+    "yappers_root": "d63a271c84f91a087d4879e2bd707bea7b47d2c7c9b3cceb330ad8c2592c8966",
+    "arenas": [],
+    "labels_hash": "07548a57484cc270e83cea68eb9793155b486e07a00a8d01cdcb7e56fc2464b9",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "da05b82bae1378aa340815f3feeb36fb60f2d30cd356ba9d063babf5a62cdfc3",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/9/"
+   },
+   "report_hash": "01005e415273deb7c6f9e5944c18e5ba94feb8fe37beab4bc2abc2a0bad5ef09",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794103500893093600,
+   "emission": "2709314906134553570192",
+   "yapper_pool": "2167451924907642856153",
+   "staker_pool": "270931490613455357019",
+   "dao_pool": "270931490613455357020",
+   "claimed": "0",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 10,
+   "status": "Finalized",
+   "report": {
+    "attention": "55000000",
+    "yappers_root": "5b8c05c7e408375df08a75f1bacc953968794a43bea57e04ae323ceb548a8fa5",
+    "arenas": [],
+    "labels_hash": "ecb4eeb103b95b7552f17d7e3c1119112b64ed9a8e7a5cbbd9db67c3f6463eda",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "f8d03fb6585f1143a736c9184a77488bb121121294bc83c8d3f492ed5636b2bd",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/10/"
+   },
+   "report_hash": "8e75cdb08778502a29b0615e3cb7cff7aefeb3928afd2beb8e754f0eb0598e00",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794103854071145000,
+   "emission": "1198159642632350001403",
+   "yapper_pool": "958527714105880001122",
+   "staker_pool": "119815964263235000140",
+   "dao_pool": "119815964263235000141",
+   "claimed": "958527714105880001122",
+   "unclaimed_burned": false
+  },
+  {
+   "number": 11,
+   "status": "Finalized",
+   "report": {
+    "attention": "61429902",
+    "yappers_root": "d1aa57a19e5578c6f9bff8311829315668b540d8e659b5833295d5e6b850caee",
+    "arenas": [],
+    "labels_hash": "e24e2decc0b6d926834a30ca7b34f922b9d2b5c51202cb0e9b3d73228a8644a3",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "c626fd68b278c34bac04dcf342f08061c053f4fe8315ea57f915de48c3bd0423",
+    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/11/"
+   },
+   "report_hash": "daa6fe7c871c246d9455f86aa5e35feea545f96285e0713342316cfc55638ced",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794104475683645000,
+   "emission": "1374530536692821855016",
+   "yapper_pool": "1099624429354257484012",
+   "staker_pool": "137453053669282185501",
+   "dao_pool": "137453053669282185503",
+   "claimed": "690151062109122696941",
    "unclaimed_burned": false
   }
  ],
@@ -162,16 +325,16 @@
   {
    "id": 0,
    "opener": "dao.yap-hq.testnet",
-   "token": "token.yap-hq.testnet",
+   "token": "token2.yap-hq.testnet",
    "topic": "#near",
    "title": "near builders arena",
    "min_tier": 1,
    "per_epoch": "500000000000000000000",
-   "start_epoch": 2,
+   "start_epoch": 1,
    "epochs": 6,
    "budget_left": "3000000000000000000000",
    "closed": false
   }
  ],
- "txCount": 120
+ "txCount": 189
 }

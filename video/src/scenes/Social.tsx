@@ -36,12 +36,12 @@ export function Social() {
       {/* DAO frame */}
       <div style={{ position: 'absolute', left: 90, top: 260, right: 90, bottom: 170, borderRadius: 36, border: `1px solid ${C.border}`, background: 'rgba(20,19,26,0.6)', opacity: daoIn }}>
         <div style={{ position: 'absolute', left: 30, top: 20, fontFamily: mono, fontSize: 22, color: C.muted }}>Sputnik DAO v2 · {data.dao} · works in Trezu</div>
-        <div style={{ position: 'absolute', right: 30, top: 14, fontFamily: mono, fontSize: 30, color: C.amber }}>treasury 247,020 YAP</div>
+        <div style={{ position: 'absolute', right: 30, top: 14, fontFamily: mono, fontSize: 30, color: C.amber }}>treasury {data.dao_balance.toLocaleString('en-US')} YAP</div>
       </div>
       {role('council', C.blue, <>3 humans · 2 of 3 · everything else</>, 160, tTreasury + 6)}
       {role('steward', C.violet, <>an immutable contract · no keys<div style={{ marginTop: 12, fontFamily: mono, fontSize: 20, color: proofLit > 0.5 ? C.green : C.faint }}>{proofLit > 0.5 ? '✓ Merkle proof · finalized epoch' : 'waiting for a proof…'}</div></>, 700, tTreasury + 12)}
       {role('trusted', C.amber, <>
-        {['y02.yap-hq.testnet', ...(travel >= 1 ? [member.account] : [])].map((a) => <div key={a} style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 8, color: C.text }}><Identicon seed={a} size={34} />{a.split('.')[0]}</div>)}
+        {[...(data.members.length ? data.members.filter((a) => a !== member.account).slice(0, 3) : ['y02.yap-hq.testnet']), ...(travel >= 1 ? [member.account] : [])].map((a) => <div key={a} style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 8, color: C.text }}><Identicon seed={a} size={34} />{a.split('.')[0]}</div>)}
         <div style={{ marginTop: 10 }}>grants ≤ 300 YAP · 1,500 / season</div>
       </>, 1240, tTreasury + 18)}
       {/* Merkle proof mini tree lighting up inside the steward */}
@@ -62,7 +62,7 @@ export function Social() {
       {/* grant coin */}
       {grant > 0 && grant < 1 && <div style={{ position: 'absolute', left: 1500 - grant * 900, top: 230 + Math.sin(grant * Math.PI) * -60 + grant * 560, width: 44, height: 44, borderRadius: 22, background: C.amber, boxShadow: `0 0 26px ${C.amber}` }} />}
       <div style={{ position: 'absolute', left: 520, top: 780, display: 'flex', alignItems: 'center', gap: 14, opacity: ease(f, tGrant + 40, tGrant + 50), fontFamily: body, fontSize: 30, color: C.text }}>
-        <Identicon seed="y15.yap-hq.testnet" size={50} /> New Nora <span style={{ fontFamily: mono, color: C.green }}>+120 YAP grant · proposal #4 · Approved</span>
+        <Identicon seed="y15.yap-hq.testnet" size={50} /> New Nora <span style={{ fontFamily: mono, color: C.green }}>+120 YAP grant · proposal #{data.grantProposal} · Approved</span>
       </div>
       {/* season ring */}
       <svg style={{ position: 'absolute', left: 1620, top: 790, opacity: ease(f, tExpire - 4, tExpire + 8) }} width={130} height={130}>

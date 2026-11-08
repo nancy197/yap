@@ -1,0 +1,106 @@
+{
+ "challenge": {
+  "epoch": 11,
+  "challenger": "watchdog.yap-hq.testnet",
+  "bond": "500000000000000000000",
+  "reason_uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/11/ (recomputed: labels_hash, yappers_root, attention 71179902 vs 61429902)",
+  "opened_at": 1794104386908801500,
+  "proposal_id": 21,
+  "status": "Upheld"
+ },
+ "members": [
+  [
+   "y05.yap-hq.testnet",
+   {
+    "since_epoch": 9,
+    "proof_epoch": 10,
+    "expires_epoch": 16,
+    "tier": 4,
+    "score": 12000000,
+    "add_proposal": 15
+   }
+  ],
+  [
+   "y10.yap-hq.testnet",
+   {
+    "since_epoch": 9,
+    "proof_epoch": 11,
+    "expires_epoch": 17,
+    "tier": 3,
+    "score": 9304902,
+    "add_proposal": 16
+   }
+  ],
+  [
+   "y01.yap-hq.testnet",
+   {
+    "since_epoch": 12,
+    "proof_epoch": 10,
+    "expires_epoch": 16,
+    "tier": 3,
+    "score": 4250000,
+    "add_proposal": 20
+   }
+  ],
+  [
+   "y07.yap-hq.testnet",
+   {
+    "since_epoch": 10,
+    "proof_epoch": 7,
+    "expires_epoch": 13,
+    "tier": 3,
+    "score": 6000000,
+    "add_proposal": 19
+   }
+  ]
+ ],
+ "grants": [
+  {
+   "id": 0,
+   "by": "y03.yap-hq.testnet",
+   "receiver": "y15.yap-hq.testnet",
+   "amount": "120000000000000000000",
+   "memo": "Welcome to NEAR: thanks for the honest beginner questions",
+   "epoch": 9,
+   "proposal": 18,
+   "status": "Approved"
+  }
+ ],
+ "dao": "247926988454439195504367",
+ "state": {
+  "streak": 3,
+  "best_streak": 3,
+  "attention_target": "53402207",
+  "minted_total": "1010469884544391955043621",
+  "burned_total": "243764135274439195504360",
+  "reserve": "359282853180000000000000",
+  "current_epoch": 13,
+  "reward_per_share": "0"
+ },
+ "ep11": {
+  "number": 11,
+  "status": "Finalized",
+  "report": {
+   "attention": "61429902",
+   "yappers_root": "d1aa57a19e5578c6f9bff8311829315668b540d8e659b5833295d5e6b850caee",
+   "arenas": [],
+   "labels_hash": "e24e2decc0b6d926834a30ca7b34f922b9d2b5c51202cb0e9b3d73228a8644a3",
+   "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+   "attestation_hash": null,
+   "data_hash": "c626fd68b278c34bac04dcf342f08061c053f4fe8315ea57f915de48c3bd0423",
+   "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/11/"
+  },
+  "report_hash": "daa6fe7c871c246d9455f86aa5e35feea545f96285e0713342316cfc55638ced",
+  "signers": [
+   "scorer-1.yap-hq.testnet",
+   "scorer-2.yap-hq.testnet"
+  ],
+  "proposed_at": 1794104475683645000,
+  "emission": "1374530536692821855016",
+  "yapper_pool": "1099624429354257484012",
+  "staker_pool": "137453053669282185501",
+  "dao_pool": "137453053669282185503",
+  "claimed": "761752962392424954790",
+  "unclaimed_burned": false
+ }
+}

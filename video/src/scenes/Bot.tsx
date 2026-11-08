@@ -33,9 +33,9 @@ export function Bot() {
         <BrowserClip src="ask" from={30} width={1500} tilt={false} style={{ position: 'absolute', left: 210, top: 210 }} cams={[{ at: 0, zoom: 1.55, x: 0.42, y: 0.28 }, { at: 100, zoom: 1.5, x: 0.45, y: 0.3 }]} />
       </Sequence>
       <Sequence from={tReplies} layout="none">
-        <BrowserClip src="reply" from={10} width={1500} tilt={false} enter={-30} style={{ position: 'absolute', left: 210, top: 210 }} cams={[{ at: 0, zoom: 1.2, x: 0.45, y: 0.45 }, { at: 70, zoom: 1.55, x: 0.42, y: 0.5 }]} />
+        <BrowserClip src="reply" from={75} width={1500} tilt={false} enter={-30} style={{ position: "absolute", left: 210, top: 210 }} cams={[{ at: 0, zoom: 1.25, x: 0.5, y: 0.4 }, { at: 90, zoom: 1.5, x: 0.48, y: 0.4 }]} />
       </Sequence>
-      <div style={{ position: 'absolute', right: 110, top: 150, display: 'flex', gap: 14, opacity: ease(f, tTee, tTee + 12) }}>
+      <div style={{ position: 'absolute', right: 70, top: 300, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 14, opacity: ease(f, tTee, tTee + 12) }}>
         <Chip color={C.violet}>Qwen3.8-27B · verified TEE</Chip>
         <Chip color={C.green}>facts from published epochs</Chip>
         <Chip color={C.orange}>question + reply = NEAR txs</Chip>

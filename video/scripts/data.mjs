@@ -25,6 +25,7 @@ const series = (k, f) => sim.scenarios[k].map((r) => r[f]);
 const mean = (k, d) => sim.scenarios[k].reduce((n, r) => n + r.defences[d], 0) / sim.scenarios[k].length;
 const main = R('data/mainnet-sample/scores.json');
 const mtot = main.result.yappers.reduce((n, y) => n + Number(y.score), 0);
+const facts = existsSync(new URL('../../data/video-facts.json', import.meta.url)) ? R('data/video-facts.json') : null;
 const yb = existsSync(new URL('../../data/yapbot-replies.json', import.meta.url)) ? R('data/yapbot-replies.json') : [];
 const data = {
   token: 'token2.yap-hq.testnet', dao: 'dao.yap-hq.testnet', steward: 'steward2.yap-hq.testnet',
@@ -34,6 +35,12 @@ const data = {
   sim: { steady: series('steady', 'supply'), hype: series('hype-then-fade', 'supply'), dead: series('dead-meme', 'reserve'), deadSupply: series('dead-meme', 'supply'), spam: { none: mean('spam-farm', 'none'), all: mean('spam-farm', 'all') }, ring: { none: mean('like-ring', 'none'), all: mean('like-ring', 'all') } },
   mainnet: { yappers: main.result.yappers.slice(0, 12).map((y) => ({ account: y.account, share: Number(y.score) / mtot })), count: main.result.yappers.length, posts: R('data/mainnet-sample/dataset.json').posts.length },
   yapbot: yb,
+  trust: facts ? { epoch: facts.challenge.epoch, proposal: facts.challenge.proposal_id, bad: Number(R(`${pub}/${facts.challenge.epoch}/tampered.json`).report.attention) / 1e6, good: Number(facts.ep11.report.attention) / 1e6, badRoot: R(`${pub}/${facts.challenge.epoch}/tampered.json`).report.yappers_root, goodRoot: facts.ep11.report.yappers_root } : null,
+  dao_balance: facts ? Number(BigInt(facts.dao) / 10n ** 18n) : 247020,
+  members: facts ? facts.members.map((m) => m[0]) : [],
+  grantProposal: facts?.grants?.[0]?.proposal ?? 4,
+  streak: facts ? { now: facts.state.streak, best: facts.state.best_streak } : null,
+  dataset: { posts: ds.posts.length, likes: ds.likes.length, reposts: ds.reposts.length, follows: ds.follows.length, hash: ds.dataHash },
 };
 writeFileSync(new URL('../src/data.json', import.meta.url), JSON.stringify(data, null, 1));
 console.log('epochs', epochs.length, 'latest', latestId, 'yappers', yappers.length, 'tx groups', Object.fromEntries(Object.entries(data.tx).map(([k, v]) => [k, v.length])));

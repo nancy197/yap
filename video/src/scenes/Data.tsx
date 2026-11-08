@@ -3,7 +3,7 @@ import { C, mono, body, display, Kinetic, ease, Identicon, Panel, Caps } from '.
 import { cue } from '../timeline';
 import data from '../data.json';
 
-const HASH = 'c697cd50ffd8b21a4a9afe3cdc811183e4a8a303b9c9268c4fe6a74c3861f1d7';
+
 const KINDS = [
   ['post', C.orange],
   ['like', C.violet],
@@ -13,6 +13,7 @@ const KINDS = [
 ] as const;
 
 export function Data() {
+  const HASH = data.dataset?.hash ?? 'c697cd50ffd8b21a4a9afe3cdc811183e4a8a303b9c9268c4fe6a74c3861f1d7';
   const f = useCurrentFrame();
   const tLand = cue('data', 'land');
   const tIdx = cue('data', 'indexer');
@@ -73,7 +74,7 @@ export function Data() {
           <Caps>indexer · epoch #{data.latestEpoch} · social-kv/1</Caps>
           <div style={{ fontFamily: display, fontSize: 48, fontWeight: 700, margin: '10px 0 18px' }}>dataset.json</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12, fontFamily: mono, fontSize: 22, color: C.muted, marginBottom: 20 }}>
-            {[['posts', data.epochs.at(-1)?.posts ?? 172], ['likes', 391], ['reposts', 45], ['follows', 246]].map(([k, v]) => (
+            {[['posts', data.dataset?.posts ?? 172], ['likes', data.dataset?.likes ?? 391], ['reposts', data.dataset?.reposts ?? 45], ['follows', data.dataset?.follows ?? 246]].map(([k, v]) => (
               <div key={k as string}><div style={{ color: C.text, fontSize: 36, fontWeight: 600 }}>{v}</div>{k}</div>
             ))}
           </div>

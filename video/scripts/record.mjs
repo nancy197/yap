@@ -194,7 +194,7 @@ export const CLIPS = {
     await h.wait(1600);
   },
   verify: async (p, h) => {
-    await h.go('verify/0', 2400);
+    await h.go('verify/11', 2400);
     await h.click('text=Recompute & compare', 900);
     await h.wait(3200);
     await h.move(1500, 480, 900);
@@ -210,11 +210,14 @@ export const CLIPS = {
   },
   reply: async (p, h) => {
     // After yapbot has answered: the feed (already loaded) shows the on-chain reply at the top.
-    await h.wait(800);
-    await h.move(800, 420, 900);
-    await h.wait(1200);
-    await h.scroll(250, 900);
-    await h.wait(2500);
+    await h.wait(1000);
+    // Newer community posts may sit above it: glide down to yapbot's reply to y15.
+    const target = p.locator('.post', { hasText: 'reply to y15.yap-hq.testnet' }).filter({ hasText: 'yapbot' }).first();
+    const box = await target.boundingBox().catch(() => null);
+    if (box && box.y > 380) await h.scroll(box.y - 330, 1600);
+    await h.wait(600);
+    await h.move(900, 520, 1200);
+    await h.wait(5500);
   },
   mainnet: async (p, h) => {
     await h.go('', 2600);

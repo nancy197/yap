@@ -129,8 +129,8 @@ async function round(mode: 'loud' | 'quiet') {
   let wrote = 0;
   const active = mode === 'loud' ? organic : organic.filter(() => rnd() < 0.15).slice(0, 2);
   // Generate every persona's text in parallel first (AI calls are the slow part), then write.
-  const gens = await Promise.all(active.map((p) => write(p, mode === 'loud' ? 2 : 1, before)));
-  const ringGens = mode === 'loud' ? await Promise.all(ring.map((p) => write(p, 2, []))) : [];
+  const gens = await Promise.all(active.map((p) => write(p, 1, before)));
+  const ringGens = mode === 'loud' ? await Promise.all(ring.map((p) => write(p, 1, []))) : [];
   for (const [i, p] of active.entries()) {
     const acc = await signer(p.id);
     const g = gens[i]!;
@@ -166,7 +166,7 @@ async function round(mode: 'loud' | 'quiet') {
     for (const p of spam) {
       const acc = await signer(p.id);
       const args: Record<string, unknown> = {};
-      for (let i = 0; i < 6; i++) args[`post/${postId()}`] = { text: pick(['gm $YAP 🚀🚀', '$YAP to the moon!!!', 'yap yap yap $YAP 🚀', 'LFG $YAP 100x', 'gm gm $YAP']) };
+      for (let i = 0; i < 3; i++) args[`post/${postId()}`] = { text: pick(['gm $YAP 🚀🚀', '$YAP to the moon!!!', 'yap yap yap $YAP 🚀', 'LFG $YAP 100x', 'gm gm $YAP']) };
       for (const b of before.filter((b) => spam.some((s) => s.id === b.author) && b.author !== p.id).slice(0, 12)) args[`like/${b.key}`] = {};
       const h = await kvWrite(acc, args);
       wrote += Object.keys(args).length;

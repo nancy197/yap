@@ -64,7 +64,7 @@ export function Kaito() {
         ), 'Leaderboards, rank changes, smart followers')}
         {station(2, (
           <Sequence from={stops[2]! - 20} layout="none">
-            <BrowserClip src="leaderboard" from={330} width={1460} tilt={false} cams={[{ at: 0, zoom: 1.15, x: 0.5, y: 0.3 }, { at: 90, zoom: 1.3, x: 0.5, y: 0.45 }]} />
+            <BrowserClip src="leaderboard" from={300} width={1460} tilt={false} cams={[{ at: 0, zoom: 1.15, x: 0.5, y: 0.3 }, { at: 90, zoom: 1.3, x: 0.5, y: 0.45 }]} />
           </Sequence>
         ), 'Profiles and a shareable Yap card')}
         {station(3, (

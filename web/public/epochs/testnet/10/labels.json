@@ -1,0 +1,814 @@
+{
+ "labels": {
+  "y01.yap-hq.testnet/1794102674449": 3,
+  "y01.yap-hq.testnet/1794102674450": 3,
+  "y01.yap-hq.testnet/1794102903468": 0,
+  "y01.yap-hq.testnet/1794102903469": 0,
+  "y01.yap-hq.testnet/1794102940489": 1,
+  "y02.yap-hq.testnet/1794102677231": 2,
+  "y02.yap-hq.testnet/1794102677233": 3,
+  "y02.yap-hq.testnet/1794102906099": 0,
+  "y02.yap-hq.testnet/1794102906101": 3,
+  "y03.yap-hq.testnet/1794102679305": 2,
+  "y03.yap-hq.testnet/1794102679306": 1,
+  "y03.yap-hq.testnet/1794102679307": 2,
+  "y03.yap-hq.testnet/1794102908633": 0,
+  "y03.yap-hq.testnet/1794102908634": 0,
+  "y03.yap-hq.testnet/1794102908635": 0,
+  "y04.yap-hq.testnet/1794102682276": 2,
+  "y04.yap-hq.testnet/1794102682277": 0,
+  "y04.yap-hq.testnet/1794102682278": 0,
+  "y04.yap-hq.testnet/1794102911033": 2,
+  "y04.yap-hq.testnet/1794102911034": 0,
+  "y04.yap-hq.testnet/1794102911035": 0,
+  "y05.yap-hq.testnet/1794102684681": 3,
+  "y05.yap-hq.testnet/1794102684682": 3,
+  "y05.yap-hq.testnet/1794102684683": 3,
+  "y05.yap-hq.testnet/1794102913333": 3,
+  "y05.yap-hq.testnet/1794102913334": 3,
+  "y05.yap-hq.testnet/1794102913335": 3,
+  "y06.yap-hq.testnet/1794102687494": 2,
+  "y06.yap-hq.testnet/1794102687496": 2,
+  "y06.yap-hq.testnet/1794102711784": 1,
+  "y06.yap-hq.testnet/1794102916001": 0,
+  "y06.yap-hq.testnet/1794102916003": 0,
+  "y07.yap-hq.testnet/1794102689866": 2,
+  "y07.yap-hq.testnet/1794102689867": 3,
+  "y07.yap-hq.testnet/1794102918407": 0,
+  "y07.yap-hq.testnet/1794102918408": 0,
+  "y08.yap-hq.testnet/1794102692286": 1,
+  "y08.yap-hq.testnet/1794102692287": 1,
+  "y08.yap-hq.testnet/1794102692288": 2,
+  "y08.yap-hq.testnet/1794102920771": 0,
+  "y08.yap-hq.testnet/1794102920772": 1,
+  "y08.yap-hq.testnet/1794102920773": 2,
+  "y09.yap-hq.testnet/1794102694390": 3,
+  "y09.yap-hq.testnet/1794102694391": 3,
+  "y09.yap-hq.testnet/1794102694392": 2,
+  "y09.yap-hq.testnet/1794102923110": 0,
+  "y09.yap-hq.testnet/1794102923111": 0,
+  "y09.yap-hq.testnet/1794102923112": 0,
+  "y10.yap-hq.testnet/1794102696920": 3,
+  "y10.yap-hq.testnet/1794102696921": 3,
+  "y10.yap-hq.testnet/1794102696922": 2,
+  "y10.yap-hq.testnet/1794102925786": 0,
+  "y10.yap-hq.testnet/1794102925787": 0,
+  "y10.yap-hq.testnet/1794102925788": 0,
+  "y11.yap-hq.testnet/1794102699353": 2,
+  "y11.yap-hq.testnet/1794102699354": 1,
+  "y11.yap-hq.testnet/1794102928199": 2,
+  "y11.yap-hq.testnet/1794102928200": 1,
+  "y12.yap-hq.testnet/1794102701745": 1,
+  "y12.yap-hq.testnet/1794102701746": 1,
+  "y12.yap-hq.testnet/1794102930372": 0,
+  "y12.yap-hq.testnet/1794102930373": 0,
+  "y13.yap-hq.testnet/1794102704192": 2,
+  "y13.yap-hq.testnet/1794102704193": 2,
+  "y13.yap-hq.testnet/1794102932853": 2,
+  "y13.yap-hq.testnet/1794102932854": 1,
+  "y14.yap-hq.testnet/1794102706736": 2,
+  "y14.yap-hq.testnet/1794102706737": 1,
+  "y14.yap-hq.testnet/1794102706738": 1,
+  "y14.yap-hq.testnet/1794102935268": 0,
+  "y14.yap-hq.testnet/1794102935269": 0,
+  "y14.yap-hq.testnet/1794102935270": 0,
+  "y15.yap-hq.testnet/1794102709085": 2,
+  "y15.yap-hq.testnet/1794102709086": 2,
+  "y15.yap-hq.testnet/1794102709087": 2,
+  "y15.yap-hq.testnet/1794102937694": 0,
+  "y15.yap-hq.testnet/1794102937695": 0,
+  "y15.yap-hq.testnet/1794102937696": 0,
+  "y16.yap-hq.testnet/1794102714596": 1,
+  "y16.yap-hq.testnet/1794102714597": 1,
+  "y16.yap-hq.testnet/1794102714598": 0,
+  "y16.yap-hq.testnet/1794102943044": 0,
+  "y16.yap-hq.testnet/1794102943045": 1,
+  "y16.yap-hq.testnet/1794102943046": 0,
+  "y17.yap-hq.testnet/1794102716792": 0,
+  "y17.yap-hq.testnet/1794102716793": 1,
+  "y17.yap-hq.testnet/1794102716794": 0,
+  "y17.yap-hq.testnet/1794102945536": 0,
+  "y17.yap-hq.testnet/1794102945537": 0,
+  "y17.yap-hq.testnet/1794102945538": 1,
+  "y18.yap-hq.testnet/1794102719549": 1,
+  "y18.yap-hq.testnet/1794102719550": 0,
+  "y18.yap-hq.testnet/1794102719551": 1,
+  "y18.yap-hq.testnet/1794102948240": 1,
+  "y18.yap-hq.testnet/1794102948241": 1,
+  "y18.yap-hq.testnet/1794102948242": 1,
+  "y19.yap-hq.testnet/1794102722346": 0,
+  "y19.yap-hq.testnet/1794102722347": 0,
+  "y19.yap-hq.testnet/1794102722348": 0,
+  "y19.yap-hq.testnet/1794102950139": 0,
+  "y19.yap-hq.testnet/1794102950140": 0,
+  "y19.yap-hq.testnet/1794102950141": 0,
+  "y20.yap-hq.testnet/1794102724770": 1,
+  "y20.yap-hq.testnet/1794102952201": 1,
+  "y21.yap-hq.testnet/1794102727423": 0,
+  "y21.yap-hq.testnet/1794102954665": 0,
+  "y22.yap-hq.testnet/1794102729602": 0,
+  "y22.yap-hq.testnet/1794102957062": 0,
+  "y23.yap-hq.testnet/1794102732069": 0,
+  "y23.yap-hq.testnet/1794102959196": 0,
+  "y24.yap-hq.testnet/1794102734492": 0,
+  "y24.yap-hq.testnet/1794102961890": 0,
+  "yapbot.yap-hq.testnet/1794102730256": 0,
+  "yapbot.yap-hq.testnet/1794102998580": 0
+ },
+ "details": [
+  {
+   "key": "y01.yap-hq.testnet/1794102674449",
+   "q": 3,
+   "reason": "Specific NEAR gas profiling result with concrete borsh/zero-copy optimization and measured Tgas reduction.",
+   "cached": true
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794102674450",
+   "q": 3,
+   "reason": "Concrete IL breakeven calculation and explicit rebalance threshold; specific, actionable DeFi insight.",
+   "cached": true
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794102903468",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition/spam.",
+   "cached": true
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794102903469",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition/spam.",
+   "cached": true
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794102940489",
+   "q": 1,
+   "reason": "Low-effort prompt to a bot with no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794102677231",
+   "q": 2,
+   "reason": "Clear, useful explanation of intent-based swaps and solver flow.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794102677233",
+   "q": 3,
+   "reason": "Specific solver-side explanation linking intent flow, stable-pair APR, and chop cost.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794102906099",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition/spam.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794102906101",
+   "q": 3,
+   "reason": "Specific solver/intent-flow explanation linking APR to volume and chop to liquidity routing.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794102679305",
+   "q": 2,
+   "reason": "Useful TEE/agents trust point, but generic and not tied to a concrete case.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794102679306",
+   "q": 1,
+   "reason": "Agreement plus vague timing point; mostly reactive and low-effort.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794102679307",
+   "q": 2,
+   "reason": "Applies TEE to LP rebalancing with auditable trail vs APR screenshot; useful but not deeply novel.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794102908633",
+   "q": 0,
+   "reason": "Exact duplicate of earlier TEE post; repetitive.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794102908634",
+   "q": 0,
+   "reason": "Exact duplicate of earlier timing reply; repetitive.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794102908635",
+   "q": 0,
+   "reason": "Exact duplicate of earlier LP-agent reply; repetitive.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794102682276",
+   "q": 2,
+   "reason": "Practical DAO treasury policy advice with concrete rules; normal useful.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794102682277",
+   "q": 0,
+   "reason": "Exact duplicate of another post in batch; repetitive content.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794102682278",
+   "q": 0,
+   "reason": "Exact duplicate of another post in batch; repetitive content.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794102911033",
+   "q": 2,
+   "reason": "Useful governance guidance with concrete policy items, but not a novel insight.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794102911034",
+   "q": 0,
+   "reason": "Exact duplicate of another post in batch; repetitive content.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794102911035",
+   "q": 0,
+   "reason": "Exact duplicate of another post in batch; repetitive content.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794102684681",
+   "q": 3,
+   "reason": "Specific NEAR throughput metrics and concise interpretation; data-driven insight.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794102684682",
+   "q": 3,
+   "reason": "Concrete IL/APR breakeven math and volume-curve framing; specific insight.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794102684683",
+   "q": 3,
+   "reason": "Specific empirical observation linking mention volume to realized-vol windows.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794102913333",
+   "q": 3,
+   "reason": "Specific NEAR throughput and fee metrics with a concise takeaway; original data insight.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794102913334",
+   "q": 3,
+   "reason": "Quantifies IL breakeven from fee APR and frames it as a volume curve; specific analytic insight.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794102913335",
+   "q": 3,
+   "reason": "Links mention-volume spikes to realized-vol windows, noting sentiment follows moves; specific insight.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794102687494",
+   "q": 2,
+   "reason": "Clear UX critique of blind signing with concrete intent fields; useful but not original data.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794102687496",
+   "q": 2,
+   "reason": "Specific wallet UX point: show fee APR minus IL to avoid blind rebalancing; useful insight.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794102711784",
+   "q": 1,
+   "reason": "Simple bot-directed status question; low-effort interaction.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794102916001",
+   "q": 0,
+   "reason": "Exact duplicate of earlier chain-signatures post; repetitive.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794102916003",
+   "q": 0,
+   "reason": "Exact duplicate of earlier IL wallet UX post; repetitive.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794102689866",
+   "q": 2,
+   "reason": "Concrete level-based spot plan with clear invalidation; useful but not novel.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794102689867",
+   "q": 3,
+   "reason": "Specific LP tradeoff: wider band reduces churn at lower APR; concrete IL context.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794102918407",
+   "q": 0,
+   "reason": "Exact repeat of prior post; treated as bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794102918408",
+   "q": 0,
+   "reason": "Exact repeat of prior LP post; treated as bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794102692286",
+   "q": 1,
+   "reason": "Generic degen hype with no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794102692287",
+   "q": 1,
+   "reason": "Short reaction with a generic liquidity-charts point; low effort.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794102692288",
+   "q": 2,
+   "reason": "Useful reply comparing fee APR to IL cost with specific numbers.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794102920771",
+   "q": 0,
+   "reason": "Exact repeat of prior generic hype post; treated as bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794102920772",
+   "q": 1,
+   "reason": "Short reaction with generic 'charts > vibes' point; low-effort.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794102920773",
+   "q": 2,
+   "reason": "Specific IL/fee comparison and personal context; useful but not novel.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794102694390",
+   "q": 3,
+   "reason": "Specific pool APR, volatility, and IL insight; original and concrete.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794102694391",
+   "q": 3,
+   "reason": "Specific TVL-inflow/fee-dilution tell; useful original observation.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794102694392",
+   "q": 2,
+   "reason": "Useful LP risk warning with concrete IL example; normal conversation.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794102923110",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794102923111",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794102923112",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794102696920",
+   "q": 3,
+   "reason": "Offers a specific liquidity-rotation heuristic and sizing point; original market framing.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794102696921",
+   "q": 3,
+   "reason": "Identifies stable pools as a short-vol trade and notes APR misses vol; specific insight.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794102696922",
+   "q": 2,
+   "reason": "Uses meme froth as a liquidity/peak-risk gauge; useful but more metaphorical than novel.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794102925786",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794102925787",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794102925788",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794102699353",
+   "q": 2,
+   "reason": "Normal useful take on late-entry crowd behavior and counting liquidity.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794102699354",
+   "q": 1,
+   "reason": "Low-effort aphoristic reaction; little substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794102928199",
+   "q": 2,
+   "reason": "Offers a concise market-psychology observation about 'stay early' hype; meme-toned but substantive.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794102928200",
+   "q": 1,
+   "reason": "Short witty reply with little new information.",
+   "cached": true
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794102701745",
+   "q": 1,
+   "reason": "Streak status with playful wording; low substantive value.",
+   "cached": true
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794102701746",
+   "q": 1,
+   "reason": "Playful reply extending frog metaphor; low substantive value.",
+   "cached": true
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794102930372",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794102930373",
+   "q": 0,
+   "reason": "Exact repeat of earlier reply; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794102704192",
+   "q": 2,
+   "reason": "Describes pixel-art process and constraint; normal useful conversation.",
+   "cached": true
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794102704193",
+   "q": 2,
+   "reason": "Short creative reaction with specific sprite plan; modest substance.",
+   "cached": true
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794102932853",
+   "q": 2,
+   "reason": "Specific pixel-art update with a clear constraint insight; useful but not deeply original.",
+   "cached": true
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794102932854",
+   "q": 1,
+   "reason": "Casual reply with light detail; mostly a low-effort reaction to the timeline.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794102706736",
+   "q": 2,
+   "reason": "Concrete music-production detail and promo; normal useful conversation.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794102706737",
+   "q": 1,
+   "reason": "Short generic reply about quiet feeds; low-effort but on-topic.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794102706738",
+   "q": 1,
+   "reason": "Brief reaction with a generic replay metric; low-effort.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794102935268",
+   "q": 0,
+   "reason": "Exact repeat of earlier music post; bot repetition/spam.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794102935269",
+   "q": 0,
+   "reason": "Exact repeat of earlier reply; bot repetition/spam.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794102935270",
+   "q": 0,
+   "reason": "Exact repeat of earlier reply; bot repetition/spam.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794102709085",
+   "q": 2,
+   "reason": "Asks a clear beginner question about YAP's value; normal useful conversation.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794102709086",
+   "q": 2,
+   "reason": "Specific request for liquidity metrics; normal useful conversation.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794102709087",
+   "q": 2,
+   "reason": "Asks for IL definition and measurement method; normal useful conversation.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794102937694",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794102937695",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794102937696",
+   "q": 0,
+   "reason": "Exact repeat of earlier post; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794102714596",
+   "q": 1,
+   "reason": "Low-effort repeated phrase with no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794102714597",
+   "q": 1,
+   "reason": "Low-effort greeting with no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794102714598",
+   "q": 0,
+   "reason": "Repetitive hype phrase with token tag; no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794102943044",
+   "q": 0,
+   "reason": "Duplicate low-effort greeting; likely bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794102943045",
+   "q": 1,
+   "reason": "Short hype reaction; low effort but not spam.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794102943046",
+   "q": 0,
+   "reason": "Duplicate low-effort greeting; likely bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794102716792",
+   "q": 0,
+   "reason": "Repetitive hype phrase with token tag; no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794102716793",
+   "q": 1,
+   "reason": "Short moon hype reaction; low effort but not spam.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794102716794",
+   "q": 0,
+   "reason": "Duplicate low-effort greeting; likely bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794102945536",
+   "q": 0,
+   "reason": "Repetitive hype phrase with token tag; no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794102945537",
+   "q": 0,
+   "reason": "Repetitive hype with no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794102945538",
+   "q": 1,
+   "reason": "Low-effort hype reaction without analysis.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794102719549",
+   "q": 1,
+   "reason": "Low-effort greeting with no added value.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794102719550",
+   "q": 0,
+   "reason": "Repetitive hype with no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794102719551",
+   "q": 1,
+   "reason": "Low-effort greeting with no added value.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794102948240",
+   "q": 1,
+   "reason": "Low-effort greeting/hype with no substance.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794102948241",
+   "q": 1,
+   "reason": "Low-effort hype without specific insight.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794102948242",
+   "q": 1,
+   "reason": "Low-effort hype reaction without analysis.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794102722346",
+   "q": 0,
+   "reason": "Short hype with no substance; spam-like.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794102722347",
+   "q": 0,
+   "reason": "Generic moon hype; low-value repetition.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794102722348",
+   "q": 0,
+   "reason": "Duplicate hype phrase; spam-like.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794102950139",
+   "q": 0,
+   "reason": "Duplicate moon hype; no substance.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794102950140",
+   "q": 0,
+   "reason": "Duplicate moon hype; no substance.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794102950141",
+   "q": 0,
+   "reason": "Duplicate moon hype; no substance.",
+   "cached": true
+  },
+  {
+   "key": "y20.yap-hq.testnet/1794102724770",
+   "q": 1,
+   "reason": "Generic ecosystem hype; low-effort, not specific.",
+   "cached": true
+  },
+  {
+   "key": "y20.yap-hq.testnet/1794102952201",
+   "q": 1,
+   "reason": "Generic ecosystem hype; low-effort, not specific.",
+   "cached": true
+  },
+  {
+   "key": "y21.yap-hq.testnet/1794102727423",
+   "q": 0,
+   "reason": "Generic hype and promotional repetition; no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y21.yap-hq.testnet/1794102954665",
+   "q": 0,
+   "reason": "Duplicate promotional post; spammy repetition.",
+   "cached": true
+  },
+  {
+   "key": "y22.yap-hq.testnet/1794102729602",
+   "q": 0,
+   "reason": "Generic token hype; no specific insight or substance.",
+   "cached": true
+  },
+  {
+   "key": "y22.yap-hq.testnet/1794102957062",
+   "q": 0,
+   "reason": "Duplicate promotional post; spammy repetition.",
+   "cached": true
+  },
+  {
+   "key": "y23.yap-hq.testnet/1794102732069",
+   "q": 0,
+   "reason": "Vague bullish hype; no useful information.",
+   "cached": true
+  },
+  {
+   "key": "y23.yap-hq.testnet/1794102959196",
+   "q": 0,
+   "reason": "Duplicate promotional post; spammy repetition.",
+   "cached": true
+  },
+  {
+   "key": "y24.yap-hq.testnet/1794102734492",
+   "q": 0,
+   "reason": "Generic hype with promotional framing; no substance.",
+   "cached": true
+  },
+  {
+   "key": "y24.yap-hq.testnet/1794102961890",
+   "q": 0,
+   "reason": "Duplicate promotional post; spammy repetition.",
+   "cached": true
+  },
+  {
+   "key": "yapbot.yap-hq.testnet/1794102730256",
+   "q": 0,
+   "reason": "Automated bot status with generic score and tip; templated repetition, no original insight.",
+   "cached": true
+  },
+  {
+   "key": "yapbot.yap-hq.testnet/1794102998580",
+   "q": 0,
+   "reason": "Automated bot status with score, rank, and tip; templated repetition, no original insight.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

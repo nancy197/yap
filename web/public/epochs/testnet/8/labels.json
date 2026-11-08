@@ -1,0 +1,37 @@
+{
+ "labels": {
+  "y15.yap-hq.testnet/1794101562624": 1,
+  "y15.yap-hq.testnet/1794101562625": 2,
+  "y15.yap-hq.testnet/1794101562626": 2
+ },
+ "details": [
+  {
+   "key": "y15.yap-hq.testnet/1794101562624",
+   "q": 1,
+   "reason": "Broad meme-vs-learning question with little specific substance.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794101562625",
+   "q": 2,
+   "reason": "Asks for concrete liquidity metrics and a starting point.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794101562626",
+   "q": 2,
+   "reason": "Specific request to explain IL and the 1.6% measurement.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

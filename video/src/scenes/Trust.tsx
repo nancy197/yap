@@ -20,6 +20,7 @@ export function Trust() {
   const votes = [tUp - 8, tUp + 4];
   const slash = ease(f, tLost, tLost + 30);
   const honest = ease(f, tHonest, tHonest + 14);
+  const T = data.trust ?? { epoch: 11, proposal: 21, bad: 71.2, good: 61.4, badRoot: '0'.repeat(64), goodRoot: '0'.repeat(64) };
   const txs = [...data.tx.tampered, ...data.tx.challenge, ...data.tx.vote, ...data.tx.resubmit];
   const Scorer = ({ i }: { i: number }) => {
     const bad = cheat && i < 2;
@@ -30,9 +31,9 @@ export function Trust() {
         <Caps>scorer-{i + 1}</Caps>
         <div style={{ fontFamily: mono, fontSize: 26, color: C.muted, marginTop: 10 }}>bond <span style={{ color: bad && slash > 0 ? C.red : C.text }}>{Math.round(bond).toLocaleString('en-US')} YAP</span></div>
         <div style={{ marginTop: 18, fontFamily: mono, fontSize: 22, color: C.muted }}>report</div>
-        <div style={{ fontFamily: mono, fontSize: 30, color: bad ? C.red : C.text }}>attention {bad ? '89.9' : '70.1'}</div>
-        <div style={{ fontFamily: mono, fontSize: 18, color: C.faint }}>root {bad ? 'b81f…22aa' : '6c15…5b20'}</div>
-        {i === 2 && honest > 0 && <div style={{ marginTop: 14, fontFamily: mono, fontSize: 24, color: C.green, opacity: honest }}>✓ FINALIZED</div>}
+        <div style={{ fontFamily: mono, fontSize: 30, color: bad ? C.red : C.text }}>attention {bad ? T.bad.toFixed(1) : T.good.toFixed(1)}</div>
+        <div style={{ fontFamily: mono, fontSize: 18, color: C.faint }}>root {bad ? short(T.badRoot, 4) : short(T.goodRoot, 4)}</div>
+        {i === 2 && honest > 0 && <div style={{ marginTop: 14, fontFamily: mono, fontSize: 24, color: C.green, opacity: honest }}>✓ resubmitted · FINALIZED</div>}
       </div>
     );
   };
@@ -52,15 +53,15 @@ export function Trust() {
         </div>
       )}
       <div style={{ position: 'absolute', left: 230, top: 760, opacity: mismatch * (1 - toCourt), transform: `scale(${1.6 - mismatch * 0.6}) rotate(-4deg)`, fontFamily: display, fontWeight: 700, fontSize: 56, color: C.red, border: `5px solid ${C.red}`, borderRadius: 14, padding: '6px 24px', background: 'rgba(30,8,8,0.85)' }}>
-        WATCHDOG: 70.1 ≠ 89.9
+        WATCHDOG: {T.good.toFixed(1)} ≠ {T.bad.toFixed(1)}
       </div>
       <div style={{ position: 'absolute', left: 900, top: 780, opacity: ease(f, tChal, tChal + 10) * (1 - toCourt), fontFamily: mono, fontSize: 28, color: C.amber }}>→ challenge · bonds 500 YAP</div>
       {/* the court */}
       <div style={{ position: 'absolute', right: 110, top: 250, width: 900, opacity: toCourt, transform: `translateX(${(1 - toCourt) * 120}px)` }}>
         <div style={{ borderRadius: 30, padding: 36, background: 'rgba(26,25,32,0.88)', border: `1px solid ${C.border}` }}>
           <Caps>Sputnik DAO · {data.dao}</Caps>
-          <div style={{ fontFamily: display, fontSize: 46, fontWeight: 700, marginTop: 10, color: C.text }}>Proposal #5 — opened by the token contract</div>
-          <div style={{ fontFamily: mono, fontSize: 26, color: C.muted, marginTop: 10 }}>resolve_challenge(e: 3, upheld: true)</div>
+          <div style={{ fontFamily: display, fontSize: 46, fontWeight: 700, marginTop: 10, color: C.text }}>Proposal #{T.proposal} — opened by the token contract</div>
+          <div style={{ fontFamily: mono, fontSize: 26, color: C.muted, marginTop: 10 }}>resolve_challenge(e: {T.epoch}, upheld: true)</div>
           <div style={{ display: 'flex', gap: 22, marginTop: 30 }}>
             {['yap-hq', 'council-1', 'council-2'].map((c, i) => {
               const v = i < 2 && f > votes[i]!;

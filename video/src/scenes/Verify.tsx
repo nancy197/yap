@@ -3,7 +3,8 @@ import { BrowserClip } from '../ui/BrowserClip';
 import { C, mono, display, body, Kinetic, ease } from '../ui/kit';
 import { cue } from '../timeline';
 
-const ROOT = '6c153356945f32c76d0537c196919e2bfe9f4da3f6b771b887636206635bfb20';
+import data from '../data.json';
+const ROOT = data.trust?.goodRoot ?? '6c153356945f32c76d0537c196919e2bfe9f4da3f6b771b887636206635bfb20';
 const CHECKS = ['Dataset hash matches its content', 'On-chain report exists · 2 signatures', 'data_hash on chain = recomputed', 'labels_hash on chain = recomputed', 'Recomputed every score in this browser', 'Attention = published', 'Yappers root = published', 'Yappers root = on chain', 'Attention = on chain'];
 
 export function Verify() {

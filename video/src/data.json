@@ -1,302 +1,410 @@
 {
- "token": "token.yap-hq.testnet",
+ "token": "token2.yap-hq.testnet",
  "dao": "dao.yap-hq.testnet",
- "steward": "steward.yap-hq.testnet",
- "latestEpoch": 5,
+ "steward": "steward2.yap-hq.testnet",
+ "latestEpoch": 12,
  "epochs": [
   {
    "e": 0,
-   "attention": "47250000",
-   "posts": 43,
-   "yappers": 11,
-   "simulatedLabels": false,
-   "updatedAt": "2026-11-07T16:02:36.944Z",
-   "status": "Finalized",
-   "emission": "472500000000000000000",
-   "yapperPool": "378000000000000000000",
-   "finalizeTx": "HgZdmz1kb1ymLQ9u9wzt21mJs7GCkoh1prfMY34q4zkK",
-   "supply": "982425250000000000000000",
-   "reserve": "582000000000000000000000",
-   "burnedTotal": "18047250000000000000000",
-   "mintedTotal": "1000472500000000000000000",
-   "streak": 0,
-   "target": "89450000"
-  },
-  {
-   "e": 1,
-   "attention": "74361374",
-   "posts": 89,
-   "yappers": 23,
-   "simulatedLabels": false,
-   "updatedAt": "2026-11-07T16:20:06.020Z",
-   "status": "Finalized",
-   "emission": "872883652319731693683",
-   "yapperPool": "698306921855785354946",
-   "finalizeTx": "585b3MRc1TsjmLjAWujC7XzxiKZsb7A1eKQThrbBGc4E",
-   "supply": "983210845287087758524315",
-   "reserve": "582000000000000000000000",
-   "burnedTotal": "18134538365231973169368",
-   "mintedTotal": "1001345383652319731693683",
-   "streak": 1,
-   "target": "86432274"
-  },
-  {
-   "e": 2,
-   "attention": "5250000",
-   "posts": 7,
-   "yappers": 3,
-   "simulatedLabels": false,
-   "updatedAt": "2026-11-07T16:27:40.369Z",
-   "status": "Finalized",
-   "emission": "60741199519984861210",
-   "yapperPool": "48592959615987888968",
-   "finalizeTx": "EkpDtWCLTC3MjfrPnXn5m3bQvTV1LcNPcJjpVTgXBC9J",
-   "supply": "965805512366655744899404",
-   "reserve": "564540000000000000000000",
-   "burnedTotal": "35600612485183971655489",
-   "mintedTotal": "1001406124851839716554893",
-   "streak": 0,
-   "target": "70195819"
-  },
-  {
-   "e": 3,
-   "attention": "70125000",
-   "posts": 172,
-   "yappers": 19,
-   "simulatedLabels": false,
-   "updatedAt": "2026-11-07T16:38:50.415Z"
-  },
-  {
-   "e": 4,
-   "attention": "75750000",
-   "posts": 172,
-   "yappers": 19,
-   "simulatedLabels": false,
-   "updatedAt": "2026-11-07T16:56:17.494Z"
-  },
-  {
-   "e": 5,
-   "attention": "74125000",
+   "attention": "71000000",
    "posts": 172,
    "yappers": 20,
    "simulatedLabels": false,
-   "updatedAt": "2026-11-07T17:07:41.012Z"
+   "updatedAt": "2026-11-08T00:30:34.985Z",
+   "status": "Finalized",
+   "emission": "710000000000000000000",
+   "yapperPool": "568000000000000000000",
+   "finalizeTx": "Dbngn2oZEUEYzG94JsDhF2E3TzLSdQdSZeYXUL7tk1F5",
+   "supply": "982639000000000000000000",
+   "reserve": "582000000000000000000000",
+   "burnedTotal": "18071000000000000000000",
+   "mintedTotal": "1000710000000000000000000",
+   "streak": 0,
+   "target": "94200000"
+  },
+  {
+   "e": 1,
+   "attention": "70875000",
+   "posts": 172,
+   "yappers": 20,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T00:42:55.330Z",
+   "status": "Finalized",
+   "emission": "752388535031847133757",
+   "yapperPool": "601910828025477707005",
+   "finalizeTx": "GSRfYJnGT9vD5zntkNETcQjJagNaDDQd669earPKQTqU",
+   "supply": "965856149681528662420382",
+   "reserve": "564540000000000000000000",
+   "burnedTotal": "35606238853503184713375",
+   "mintedTotal": "1001462388535031847133757",
+   "streak": 0,
+   "target": "89535000"
+  },
+  {
+   "e": 2,
+   "attention": "0",
+   "posts": 0,
+   "yappers": 0,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T00:49:35.041Z",
+   "status": "Dead",
+   "emission": "0",
+   "yapperPool": "0",
+   "finalizeTx": "6o3wR2hVdxfyyzdaxQuqBUARuAUsd4T3tbsR9hhWJm5H",
+   "supply": "909402149681528662420382",
+   "reserve": "508086000000000000000000",
+   "burnedTotal": "92060238853503184713375",
+   "mintedTotal": "1001462388535031847133757",
+   "streak": 0,
+   "target": "71628000"
+  },
+  {
+   "e": 3,
+   "attention": "74250000",
+   "posts": 172,
+   "yappers": 23,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T00:55:45.751Z"
+  },
+  {
+   "e": 4,
+   "attention": "77375000",
+   "posts": 172,
+   "yappers": 23,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T01:36:23.305Z"
+  },
+  {
+   "e": 6,
+   "attention": "46500000",
+   "posts": 36,
+   "yappers": 11,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T01:48:21.329Z",
+   "status": "Finalized",
+   "emission": "1331341488314625565420",
+   "yapperPool": "1065073190651700452336",
+   "finalizeTx": "ChqyhHuWF1YS96YL2iXpt6Q1rbFqQLgZhCQiAh2eiyv4",
+   "supply": "771909051021011825429260",
+   "reserve": "370394694000000000000000",
+   "burnedTotal": "230884679002334647269917",
+   "mintedTotal": "1002793730023346472699177",
+   "streak": 1,
+   "target": "38638828"
+  },
+  {
+   "e": 7,
+   "attention": "82429902",
+   "posts": 174,
+   "yappers": 24,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T01:54:53.496Z",
+   "status": "Finalized",
+   "emission": "2346678118704842703820",
+   "yapperPool": "1877342494963874163056",
+   "finalizeTx": "FnP5q96Kv2dm24CvadZ8hGpCZgk9tMDkhAtFmLPDEiMr",
+   "supply": "774021061327846183862698",
+   "reserve": "370394694000000000000000",
+   "burnedTotal": "231119346814205131540299",
+   "mintedTotal": "1005140408142051315402997",
+   "streak": 2,
+   "target": "47397042"
+  },
+  {
+   "e": 8,
+   "attention": "2250000",
+   "posts": 3,
+   "yappers": 1,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T02:04:21.784Z",
+   "status": "Finalized",
+   "emission": "47471316880914214013",
+   "yapperPool": "37977053504731371210",
+   "finalizeTx": "5tAenFAv5uuLasCDt6nqDGVTEt7XwpFmB1AdBu3taqcs",
+   "supply": "762951944693039006655310",
+   "reserve": "359282853180000000000000",
+   "burnedTotal": "242235934765893222961700",
+   "mintedTotal": "1005187879458932229617010",
+   "streak": 0,
+   "target": "38367633"
+  },
+  {
+   "e": 9,
+   "attention": "99000000",
+   "posts": 141,
+   "yappers": 23,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T02:10:15.985Z",
+   "status": "Finalized",
+   "emission": "2709314906134553570192",
+   "yapperPool": "2167451924907642856153",
+   "finalizeTx": "7Ggd3gLqVqsSrFy91Kt6pgQ7GTk6uPr2KXKjhktV5tEd",
+   "supply": "765390328108560104868483",
+   "reserve": "359282853180000000000000",
+   "burnedTotal": "242506866256506678318719",
+   "mintedTotal": "1007897194365066783187202",
+   "streak": 1,
+   "target": "50494106"
+  },
+  {
+   "e": 10,
+   "attention": "55000000",
+   "posts": 114,
+   "yappers": 19,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T02:16:50.420Z",
+   "status": "Finalized",
+   "emission": "1198159642632350001403",
+   "yapperPool": "958527714105880001122",
+   "finalizeTx": "8iRubtwJhrV8UDeGpG5QRtr1GRrHB848eXRXyZMjPkqG",
+   "supply": "766468671786929219869746",
+   "reserve": "359282853180000000000000",
+   "burnedTotal": "242626682220769913318859",
+   "mintedTotal": "1009095354007699133188605",
+   "streak": 2,
+   "target": "51395284"
+  },
+  {
+   "e": 11,
+   "attention": "61429902",
+   "posts": 112,
+   "yappers": 22,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T02:26:34.474Z",
+   "status": "Finalized",
+   "emission": "1374530536692821855016",
+   "yapperPool": "1099624429354257484012",
+   "finalizeTx": "HBoZ1eLQCYSWzvJwjbouizSHK36HTi1kYThDBhrHtHPc",
+   "supply": "766705749269952759539261",
+   "reserve": "359282853180000000000000",
+   "burnedTotal": "243764135274439195504360",
+   "mintedTotal": "1010469884544391955043621",
+   "streak": 3,
+   "target": "53402207"
+  },
+  {
+   "e": 12,
+   "attention": "56750000",
+   "posts": 110,
+   "yappers": 20,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-08T02:28:17.839Z"
   }
  ],
  "yappers": [
   {
-   "account": "y01.yap-hq.testnet",
-   "name": "Mira Builds",
-   "share": 0.10792580101180438,
-   "score": 8,
-   "tier": 2,
-   "smart": 4
-  },
-  {
-   "account": "y03.yap-hq.testnet",
-   "name": "Lena Agents",
-   "share": 0.10792580101180438,
-   "score": 8,
-   "tier": 3,
+   "account": "y05.yap-hq.testnet",
+   "name": "Aiko Data",
+   "share": 0.15859030837004406,
+   "score": 9,
+   "tier": 4,
    "smart": 4
   },
   {
    "account": "y10.yap-hq.testnet",
    "name": "Yuki Macro",
-   "share": 0.10792580101180438,
+   "share": 0.14096916299559473,
    "score": 8,
    "tier": 3,
    "smart": 2
   },
   {
-   "account": "y05.yap-hq.testnet",
-   "name": "Aiko Data",
-   "share": 0.09443507588532883,
-   "score": 7,
-   "tier": 4,
-   "smart": 4
-  },
-  {
-   "account": "y06.yap-hq.testnet",
-   "name": "Ravi Wallets",
-   "share": 0.08094435075885328,
-   "score": 6,
-   "tier": 2,
-   "smart": 4
-  },
-  {
    "account": "y07.yap-hq.testnet",
    "name": "Nina Charts",
-   "share": 0.08094435075885328,
+   "share": 0.10572687224669604,
    "score": 6,
-   "tier": 2,
+   "tier": 3,
    "smart": 2
   },
   {
    "account": "y04.yap-hq.testnet",
    "name": "Tomas DAO",
-   "share": 0.06745362563237774,
-   "score": 5,
-   "tier": 1,
+   "share": 0.09691629955947137,
+   "score": 5.5,
+   "tier": 2,
    "smart": 5
   },
   {
-   "account": "y09.yap-hq.testnet",
-   "name": "Sam LP",
-   "share": 0.06070826306913996,
-   "score": 4.5,
+   "account": "y03.yap-hq.testnet",
+   "name": "Lena Agents",
+   "share": 0.0881057268722467,
+   "score": 5,
    "tier": 2,
+   "smart": 4
+  },
+  {
+   "account": "y15.yap-hq.testnet",
+   "name": "New Nora",
+   "share": 0.0881057268722467,
+   "score": 5,
+   "tier": 1,
    "smart": 2
   },
   {
-   "account": "y02.yap-hq.testnet",
-   "name": "Kofi Intents",
-   "share": 0.05396290050590219,
+   "account": "y01.yap-hq.testnet",
+   "name": "Mira Builds",
+   "share": 0.07048458149779736,
    "score": 4,
    "tier": 2,
    "smart": 4
   },
   {
+   "account": "y09.yap-hq.testnet",
+   "name": "Sam LP",
+   "share": 0.05286343612334802,
+   "score": 3,
+   "tier": 2,
+   "smart": 2
+  },
+  {
    "account": "y13.yap-hq.testnet",
    "name": "Hana Pixels",
-   "share": 0.05396290050590219,
-   "score": 4,
+   "share": 0.039647577092511016,
+   "score": 2.25,
    "tier": 1,
    "smart": 2
   },
   {
-   "account": "y15.yap-hq.testnet",
-   "name": "New Nora",
-   "share": 0.05396290050590219,
-   "score": 4,
+   "account": "y02.yap-hq.testnet",
+   "name": "Kofi Intents",
+   "share": 0.03524229074889868,
+   "score": 2,
    "tier": 1,
-   "smart": 2
+   "smart": 4
   },
   {
-   "account": "y14.yap-hq.testnet",
-   "name": "Omar Sound",
-   "share": 0.03541315345699832,
-   "score": 2.625,
-   "tier": 1,
-   "smart": 0
+   "account": "y06.yap-hq.testnet",
+   "name": "Ravi Wallets",
+   "share": 0.03524229074889868,
+   "score": 2,
+   "tier": 2,
+   "smart": 4
   },
   {
    "account": "y08.yap-hq.testnet",
    "name": "Diego Degen",
-   "share": 0.03035413153456998,
-   "score": 2.25,
+   "share": 0.02643171806167401,
+   "score": 1.5,
    "tier": 1,
    "smart": 1
   },
   {
-   "account": "y12.yap-hq.testnet",
-   "name": "Burn Bot Cat",
-   "share": 0.013490725126475547,
-   "score": 1,
+   "account": "y14.yap-hq.testnet",
+   "name": "Omar Sound",
+   "share": 0.019823788546255508,
+   "score": 1.125,
    "tier": 1,
-   "smart": 3
+   "smart": 0
+  },
+  {
+   "account": "y11.yap-hq.testnet",
+   "name": "YAP Frog",
+   "share": 0.00881057268722467,
+   "score": 0.5,
+   "tier": 1,
+   "smart": 4
   }
  ],
  "topics": [
   {
-   "topic": "#near",
-   "share": 0.1442
-  },
-  {
-   "topic": "$YAP",
-   "share": 0.106583
-  },
-  {
-   "topic": "#macro",
-   "share": 0.100313
-  },
-  {
    "topic": "$NEAR",
-   "share": 0.087774
-  },
-  {
-   "topic": "#agents",
-   "share": 0.050156
-  },
-  {
-   "topic": "#fastdata",
-   "share": 0.050156
-  },
-  {
-   "topic": "#nearai",
-   "share": 0.050156
-  },
-  {
-   "topic": "#rhea",
-   "share": 0.050156
-  },
-  {
-   "topic": "#tee",
-   "share": 0.050156
+   "share": 0.168776
   },
   {
    "topic": "#analytics",
-   "share": 0.037617
+   "share": 0.135021
   },
   {
-   "topic": "#intents",
-   "share": 0.037617
+   "topic": "$YAP",
+   "share": 0.088607
   },
   {
-   "topic": "#music",
-   "share": 0.037617
+   "topic": "#rhea",
+   "share": 0.084388
+  },
+  {
+   "topic": "#dao",
+   "share": 0.059071
+  },
+  {
+   "topic": "#near",
+   "share": 0.059071
+  },
+  {
+   "topic": "#macro",
+   "share": 0.050632
+  },
+  {
+   "topic": "#sputnik",
+   "share": 0.050632
+  },
+  {
+   "topic": "#agents",
+   "share": 0.033755
+  },
+  {
+   "topic": "#defi",
+   "share": 0.033755
+  },
+  {
+   "topic": "#learning",
+   "share": 0.033755
+  },
+  {
+   "topic": "#nearart",
+   "share": 0.033755
   }
  ],
  "labels": {
   "spam": [
    {
     "who": "gm bot 1",
-    "text": "yap yap yap $YAP 🚀",
-    "reason": "Repetitive token hype with no substantive content."
-   },
-   {
-    "who": "gm bot 1",
     "text": "LFG $YAP 100x",
-    "reason": "Exact duplicate hype post, likely bot repetition."
+    "reason": "Exact duplicate of earlier hype post; repetitive."
    },
    {
     "who": "gm bot 1",
     "text": "gm gm $YAP",
-    "reason": "Repeated low-effort greeting, likely spam repetition."
+    "reason": "Exact duplicate of earlier greeting; repetitive."
+   },
+   {
+    "who": "gm bot 1",
+    "text": "$YAP to the moon!!!",
+    "reason": "Spammy low-effort hype repeated in the batch."
    }
   ],
   "low": [
    {
-    "who": "Ring E",
-    "text": "Green screens and fresh alpha all over my feed this morning 🚀 The builder energy on #near keeps compounding, and $YAP chatter is heating up",
-    "reason": "Generic hype about alpha and momentum; no specific insight or useful detail."
+    "who": "Ring A",
+    "text": "NEAR ecosystem energy is unreal right now — builders shipping, users showing up, and momentum building every single day. Feels like $YAP sea",
+    "reason": "Generic ecosystem hype without specifics."
    },
    {
-    "who": "Ring E",
-    "text": "Small ships make big waves. Deployed another tiny experiment on #near today — iterations beat hesitations every time. $YAP community, let's ",
-    "reason": "Motivational builder post with vague claim; low-effort and not specific."
+    "who": "Ring B",
+    "text": "GM builders! ☀️ The energy around $YAP on #near is unreal today — community buzzing, momentum building, and everyone's stacking wins. Let's ",
+    "reason": "Generic community hype without specifics."
    },
    {
-    "who": "Diego Degen",
-    "text": "gm degens, the swamp is LOUD today and my $YAP bags are croaking in perfect harmony. frogs don't fud, they front-run. #memecoins",
-    "reason": "Meme greeting with no substantive analysis; low-effort reaction."
+    "who": "Tomas DAO",
+    "text": "This is the whole case for DAO treasuries. Runway measured in years, not vibes — that's how councils ship through the quiet macro instead of",
+    "reason": "Short reaction with generic runway framing; adds little beyond agreement."
    }
   ],
   "insight": [
    {
     "who": "Lena Agents",
-    "text": "Everyone's shipping agents; few can answer 'which model produced this output, on what hardware?' TEE-verified inference turns that from a vi",
-    "reason": "Specific insight linking agent provenance to TEE attestation rather than vague trust."
+    "text": "Agent autonomy without verifiable inference is just delegation with extra steps. TEE attestation gives every decision a receipt — you can au",
+    "reason": "Specific trust-layer insight: TEE attestation creates auditable receipts for agent decisions."
    },
    {
     "who": "Lena Agents",
-    "text": "Agent autonomy without verifiability is just delegated risk. The stack I want: agent logic on NEAR, inference in a TEE, attestation attached",
-    "reason": "Concrete stack proposal tying agent actions to TEE attestation for verifiable autonomy."
+    "text": "This is the use case I keep coming back to: an LP agent handling that rebalance with TEE-verified inference gives you an auditable decision ",
+    "reason": "Concrete LP-agent use case showing auditable rebalance decisions versus APR screenshots."
    },
    {
-    "who": "Lena Agents",
-    "text": "Everyone's shipping agents; few can answer 'which model produced this output, on what hardware?' TEE-verified inference turns that from a vi",
-    "reason": "Specific TEE attestation insight for agent provenance; original and actionable."
+    "who": "Tomas DAO",
+    "text": "Reminder: a treasury policy beats a treasury vote. Write down your runway target, diversification rules, and spending thresholds before the ",
+    "reason": "Actionable governance insight: codify treasury policy before proposals force panic decisions."
    }
   ]
  },
@@ -304,97 +412,196 @@
   "deploy": [
    {
     "action": "deploy token",
-    "hash": "Geb5ZHD71JgD6wdTaDSXYApFqpK2o9Bg18Ewb6v6dJKK"
+    "hash": "2BKXB7vBd56oZzefZqDmAuR9XJLUSdPPsHnnUqfBj9cN"
    },
    {
     "action": "init token",
-    "hash": "Gb8kwi9Heodsts9eNcgUnkQYXrVYmi6AfwFsoSmJNFWE"
+    "hash": "776E3TPMVeQvBrD4QUSsJRpv2aMutxQqfKC3qpV3nxL9"
    },
    {
     "action": "delete full-access key (lock)",
-    "hash": "9L4itgrorJWk2NZ128RUK9PtaFqHNieRnv15CrHHm28A"
+    "hash": "DXLV1MBDMFfcVcz962NPLzgpRX5sJerGfmgU5VhCn2Rm"
    }
   ],
   "finalize": [
    {
     "action": "finalize e0",
-    "hash": "HgZdmz1kb1ymLQ9u9wzt21mJs7GCkoh1prfMY34q4zkK"
+    "hash": "Dbngn2oZEUEYzG94JsDhF2E3TzLSdQdSZeYXUL7tk1F5"
    },
    {
     "action": "finalize e1",
-    "hash": "585b3MRc1TsjmLjAWujC7XzxiKZsb7A1eKQThrbBGc4E"
+    "hash": "GSRfYJnGT9vD5zntkNETcQjJagNaDDQd669earPKQTqU"
    },
    {
     "action": "finalize e2",
-    "hash": "EkpDtWCLTC3MjfrPnXn5m3bQvTV1LcNPcJjpVTgXBC9J"
+    "hash": "6o3wR2hVdxfyyzdaxQuqBUARuAUsd4T3tbsR9hhWJm5H"
+   },
+   {
+    "action": "finalize e6",
+    "hash": "ChqyhHuWF1YS96YL2iXpt6Q1rbFqQLgZhCQiAh2eiyv4"
+   },
+   {
+    "action": "finalize e7",
+    "hash": "FnP5q96Kv2dm24CvadZ8hGpCZgk9tMDkhAtFmLPDEiMr"
+   },
+   {
+    "action": "finalize e8",
+    "hash": "5tAenFAv5uuLasCDt6nqDGVTEt7XwpFmB1AdBu3taqcs"
+   },
+   {
+    "action": "finalize e9",
+    "hash": "7Ggd3gLqVqsSrFy91Kt6pgQ7GTk6uPr2KXKjhktV5tEd"
+   },
+   {
+    "action": "finalize e10",
+    "hash": "8iRubtwJhrV8UDeGpG5QRtr1GRrHB848eXRXyZMjPkqG"
+   },
+   {
+    "action": "finalize e11",
+    "hash": "HBoZ1eLQCYSWzvJwjbouizSHK36HTi1kYThDBhrHtHPc"
    }
   ],
   "tampered": [
    {
     "action": "submit_report e3 (TAMPERED demo)",
-    "hash": "GChiUawATBXrnubB6B2LJhuqLfwiGH96dzx79rvVNJLm"
+    "hash": "H74mJtBu3UEnY9H6XEn7V2Fvfyv7Sf4vBzSybbsy69aS"
    },
    {
     "action": "submit_report e3 (TAMPERED demo)",
-    "hash": "Cg24SCV4vJggKXW1QpM7rtQJmHuQ7n2H5JhjeU6Et5tv"
+    "hash": "6pgL2aVK1NfgS7XFmaz5crzsDVDPik9vroV7cV4BJMYc"
+   },
+   {
+    "action": "submit_report e11 (TAMPERED demo)",
+    "hash": "C2EK6ZdRimSQhqrNnYHPVPHj7yZfz3vXUt549Vp7gA57"
+   },
+   {
+    "action": "submit_report e11 (TAMPERED demo)",
+    "hash": "71ZRfRDUgFAab7PRw8DRmwREdYTa6t5erWBgpk4cLtC8"
    }
   ],
   "challenge": [
    {
-    "action": "challenge e3 (watchdog: labels_hash, yappers_root, attention 89875000 vs 70125000)",
-    "hash": "98w66fKyPugAFVnm5eVTz6SsER4SwAjpyEqou6zkvto7"
-   }
-  ],
-  "vote": [
-   {
-    "action": "dao VoteApprove proposal 5",
-    "hash": "5vGqu6T3ew6jn4PYT9ACMs83xH1Mzy93n9TzAZs1f2UB"
+    "action": "challenge e3 (watchdog: labels_hash, yappers_root, attention 93250000 vs 74250000)",
+    "hash": "3g35hmDnpgz6QDT7ssLdMRXceDYsu6GWu2LjW5K8yRjs"
    },
    {
-    "action": "dao VoteApprove proposal 5",
-    "hash": "C6Uy17JoDRKk2L18guXuFD4FeMR8k27ikcJ3vobifsma"
+    "action": "challenge e11 (watchdog: labels_hash, yappers_root, attention 71179902 vs 61429902)",
+    "hash": "GaNxcg8tkVS7WJhbHEPwJ89LjnyfRpxAHA8uW7FAT9qX"
    }
   ],
+  "vote": [],
   "resubmit": [
    {
     "action": "submit_report e3 (resubmit)",
-    "hash": "GzAK3sTCyZuXmLWTJ459G5cGEeoi86QyjT97XQaBk8Qb"
+    "hash": "4F6GgT6Ub89sz2hVQTLzMC8X2fScrp6LnHwurVpQRpDH"
    },
    {
     "action": "submit_report e3 (resubmit)",
-    "hash": "FTUuxm5jgDXXQzJ1xu2qyZMhbU2A8BfnzxKNYYcchp5F"
+    "hash": "BRhvFciKxiEiCo3ardzx7W8ykjv9UbwZAWhFRi2hH1Dr"
+   },
+   {
+    "action": "submit_report e11 (resubmit)",
+    "hash": "2rAyvmvAdGqZQxQr2CDtvPEdHk6SWT4RmYc4G3Cf2imL"
+   },
+   {
+    "action": "submit_report e11 (resubmit)",
+    "hash": "695nPEGJm9wvi8KiUoJ33GiMmX61MJuGWaF1uax3KzpF"
    }
   ],
   "steward": [
    {
     "action": "dao add_proposal (ChangePolicy: add steward + trusted roles)",
-    "hash": "6DAPKKu3aupf6VWEkjD73fcfSphv1G3dXSoAbLqDwUYK"
+    "hash": "BZPq6uXAFUiBGBN1kvqURG7T7U4gBY6UC4gPA3EyankF"
    },
    {
-    "action": "steward promote y02.yap-hq.testnet (tier 3, epoch 2)",
-    "hash": "8V14xveDJ867YRERQdg3G826s3naNcdkohQv5D8wJehL"
+    "action": "steward promote y03.yap-hq.testnet (tier 4, epoch 0)",
+    "hash": "9r786Yud5HmvjYiCEgEsKtF4M7QyBzJiCnjTHT5yxaGq"
    },
    {
-    "action": "steward promote y01.yap-hq.testnet (tier 3, epoch 2)",
-    "hash": "AjY3bCT2PbZQfXYaVz8c3QyFFwirFTiBrSu9fNMvzSVB"
+    "action": "steward promote y10.yap-hq.testnet (tier 3, epoch 0)",
+    "hash": "APG3gCQB66KY2Ds2NV5aYqhCSF7SsCsfjW624x32f2gE"
    },
    {
-    "action": "steward grant 120 YAP y01.yap-hq.testnet -> y15.yap-hq.testnet",
-    "hash": "4BDuQpAz6H2Ku1iaFz6mN2oHinRGkQWsg9Gbp7abPYvB"
+    "action": "steward promote y10.yap-hq.testnet (tier 4, epoch 1)",
+    "hash": "4iwd58uiLmiQZPPFtdwc8Ji6jmZ6Ho4DhM26tDVSkjT6"
+   },
+   {
+    "action": "steward promote y03.yap-hq.testnet (tier 3, epoch 1)",
+    "hash": "7AJjJJkD13DLTBsToX2XXfpCcDbWU24vctCdce3P57dQ"
+   },
+   {
+    "action": "steward promote y05.yap-hq.testnet (tier 3, epoch 1)",
+    "hash": "DwcLQxEMGtDFn7xX4wSAe4LmBtNfZy15oKMMyuppwD6Q"
+   },
+   {
+    "action": "steward promote y05.yap-hq.testnet (tier 3, epoch 6)",
+    "hash": "9YgQRmF7V2s3ZchptxsKNXJMzFk4fZyvhbY73WBvmZVY"
+   },
+   {
+    "action": "steward promote y10.yap-hq.testnet (tier 4, epoch 6)",
+    "hash": "wzq6vFBgKAUjawNDhiwPSnBeKTBU41ucaXC9yQMiUtv"
+   },
+   {
+    "action": "steward promote y03.yap-hq.testnet (tier 3, epoch 6)",
+    "hash": "5tgdGcFLTp74U7CdDGt5ngJexnQNffW3eCTmMnpTK8wC"
+   },
+   {
+    "action": "steward grant 120 YAP y03.yap-hq.testnet -> y15.yap-hq.testnet",
+    "hash": "vTeSkJNT7uWgMs6aQuPFpMnMBSB8Hkyn9vMtxDQCcoS"
+   },
+   {
+    "action": "steward promote y10.yap-hq.testnet (tier 4, epoch 7)",
+    "hash": "FNM565JKwYYgSjnDGt88ZVbU65FhxP6qLDB58P5WvRcH"
+   },
+   {
+    "action": "steward promote y05.yap-hq.testnet (tier 3, epoch 7)",
+    "hash": "G4HZ2gYuzwfxXm6J2q9Q8C3MX4eix98Ux5QZvjCSXwmq"
+   },
+   {
+    "action": "steward promote y07.yap-hq.testnet (tier 3, epoch 7)",
+    "hash": "mcfTueznFUNeNfZGzSwnn7ebE71z6aSqH6vhwC2Zji5"
+   },
+   {
+    "action": "steward promote y05.yap-hq.testnet (tier 4, epoch 9)",
+    "hash": "EYTpUQXL9c7MoSkEd1nsqxkMj7pJbfPfH9r2eAMmAnKG"
+   },
+   {
+    "action": "steward promote y01.yap-hq.testnet (tier 3, epoch 9)",
+    "hash": "GDKjQ6YmnudvUZjSNhFVnq8p3ej5MzyNgR6viyDjCH6r"
+   },
+   {
+    "action": "steward promote y10.yap-hq.testnet (tier 3, epoch 9)",
+    "hash": "5NLhvvipds3YivXsZCb5QV1Nv21dUQbPkQ6p86uMmxxy"
+   },
+   {
+    "action": "steward promote y05.yap-hq.testnet (tier 4, epoch 10)",
+    "hash": "3ouxZxcQb22wwv6jtRBuyz1CMaTjnweM6aQsNqgGpXZ1"
+   },
+   {
+    "action": "steward promote y10.yap-hq.testnet (tier 3, epoch 10)",
+    "hash": "EdEN6PAJBWgYsqy1Wr5EuGgRohK6qtoznY3QUW6MNWtH"
+   },
+   {
+    "action": "steward promote y01.yap-hq.testnet (tier 3, epoch 10)",
+    "hash": "7RxfXt17TaXMsgEBb8ygDaU3BarSSMS8aSJPTkP6SuJG"
+   },
+   {
+    "action": "steward promote y10.yap-hq.testnet (tier 3, epoch 11)",
+    "hash": "ZqDdMKP6epe9kwA4Rs97BAyifSWhw9DRpmD3of1MqC5"
+   },
+   {
+    "action": "steward promote y05.yap-hq.testnet (tier 4, epoch 11)",
+    "hash": "2gNyPj2tHFXNxo8FL9AT6GGwS6s14LwBJfMWMGDG7CRB"
+   },
+   {
+    "action": "steward promote y01.yap-hq.testnet (tier 3, epoch 11)",
+    "hash": "2raVd3EMuii5vFphpJLoCGcWGfczRaJN3qawGcuaiSBn"
    }
   ],
   "arena": [
    {
     "action": "dao add_proposal (fund arena #near)",
-    "hash": "Ck7VFhvssCN75KT5SrnEa3NM2ZvwpjuiGZ4Ldi4tCY1B"
-   },
-   {
-    "action": "dao VoteApprove proposal 0",
-    "hash": "24KDH8V9FoYjpFqyXckgfdSXc3LU3rBcwKQSP8cy9yud"
-   },
-   {
-    "action": "dao VoteApprove proposal 0",
-    "hash": "Aj9Pi4ygi4CWmmn8hx177HCRdvNeqPhqwGrKcMAsKg4P"
+    "hash": "7DbVug9ohmCfH84SXD6PmbtVJ7MRmhFs5DVbRn48uMN9"
    }
   ]
  },
@@ -713,13 +920,35 @@
  "yapbot": [
   {
    "asker": "y15.yap-hq.testnet",
-   "question": "Hey @yapbot.yap-hq.testnet how am I doing this week? Still learning #near",
-   "reply": "You’re doing well, y15: latest epoch 4 score 4, rank 10 of 19, Bronze tier. Your learning questions are helping; a labeler called one \"useful learning question.\" One tip: post fresh, non-duplicate questions, since repeats scored 0."
-  },
-  {
-   "asker": "y07.yap-hq.testnet",
-   "question": "@yapbot.yap-hq.testnet how is @y03.yap-hq.testnet doing? Their agent threads are great.",
-   "reply": "@y03 is doing well: latest epoch 4 score 8, rank 3 of 19, Gold tier. Labelers liked the 'concrete agent stack with NEAR logic, TEE inference, and per-action attestation.' Tip: add one specific TEE attestation detail to each agent thread to keep the trailing total at the Gold bar (25.5)."
+   "question": "@yapbot.yap-hq.testnet how am I doing this week?",
+   "reply": "y15, you're Bronze with a latest Yap score of 4, rank 7 of 22 in epoch 11, earning 71.601 YAP. Labeler: \"Asks for concrete liquidity metrics; useful onboarding question.\" But exact duplicates were flagged as repetition. Tip: avoid duplicate posts and ask one sharper question per topic."
   }
- ]
+ ],
+ "trust": {
+  "epoch": 11,
+  "proposal": 21,
+  "bad": 71.179902,
+  "good": 61.429902,
+  "badRoot": "d0cc825d7d1eb7c990b7b2e3ed7d899970371da090fb1f4d04fe62e4a20b8764",
+  "goodRoot": "d1aa57a19e5578c6f9bff8311829315668b540d8e659b5833295d5e6b850caee"
+ },
+ "dao_balance": 247926,
+ "members": [
+  "y05.yap-hq.testnet",
+  "y10.yap-hq.testnet",
+  "y01.yap-hq.testnet",
+  "y07.yap-hq.testnet"
+ ],
+ "grantProposal": 18,
+ "streak": {
+  "now": 3,
+  "best": 3
+ },
+ "dataset": {
+  "posts": 110,
+  "likes": 381,
+  "reposts": 45,
+  "follows": 246,
+  "hash": "889b8f7810ffd7e9e7405a52da04fbd720a94909773ba074bd470d60559b919a"
+ }
 }
