@@ -1,175 +1,309 @@
-# $YAP: yap-to-earn that nobody can switch off
+<p align="center">
+  <img src="web/public/logo.svg" width="96" alt="$YAP logo" />
+</p>
 
-**Tracks:** Memecoins With Mechanics · Social Money · NEAR HACKATHON 2026 · live on NEAR testnet
+<h1 align="center">$YAP</h1>
 
-On **15 Jan 2026** X banned apps that reward posting. The next day Kaito shut down Yaps, the product behind
-about 70% of its token's utility. One API decision ended a whole category.
+<p align="center">
+  <b>Yap-to-earn that nobody can switch off.</b><br/>
+  A memecoin whose supply follows its community's attention, scored from public near.social data,<br/>
+  governed by a Sputnik DAO, and locked so that not even we can change the rules.
+</p>
 
-**$YAP rebuilds the Kaito Yaps feature set on near.social**, where every post, like, repost, reply and follow
-is a NEAR transaction (FastData KV writes to the account `social`). The data is public chain data. Nobody can
-revoke an API key.
+<p align="center">
+  <img alt="NEAR testnet" src="https://img.shields.io/badge/NEAR-testnet%20live-00ec97?style=flat-square" />
+  <img alt="Tracks" src="https://img.shields.io/badge/tracks-Memecoins%20With%20Mechanics%20%C2%B7%20Social%20Money-ff6a3d?style=flat-square" />
+  <img alt="No admin key" src="https://img.shields.io/badge/admin%20keys-0-ffb347?style=flat-square" />
+  <img alt="AI in TEE" src="https://img.shields.io/badge/AI-TEE%20attested-8b5cf6?style=flat-square" />
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square" />
+</p>
 
-- **The meme does something.** Supply follows the community's attention:
-  - Loud epochs mint more and grow a streak (the "high score" is on chain).
-  - Quiet epochs burn 3% of the Reserve.
-  - Silence burns 10%.
-  - Unclaimed rewards burn after 14 epochs.
-  - Every parameter is fixed at launch, and the contract has **no full-access key**.
-- **Communities run it with their own treasury.** A stock **Sputnik DAO v2** (works in **Trezu**):
-  - funds topic **Arenas** by proposal;
-  - receives 10% of every mint;
-  - is the **court of appeal** for scoring disputes. The token contract itself files the proposal.
-- **Reputation becomes DAO membership (the Trusted circle).**
-  - Gold+ yappers are added to the DAO's `trusted` role by an immutable steward contract.
-  - The steward checks their Merkle leaf against a finalized epoch, so there is no council vote and no admin.
-  - Trusted members can send small, capped treasury grants: 300 YAP each, 1,500 per season.
-  - Membership expires each season unless it is re-earned.
-- **Reputation-gated access:**
-  - Tiers (Bronze → Inner Circle) come from on-chain score history.
-  - Arenas can require a tier.
-  - Every point traces back to a near.social post.
+<p align="center">
+  <a href="#the-30-second-version">Pitch</a> ·
+  <a href="#live-on-testnet">Live on testnet</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#dont-trust-verify">Verify</a> ·
+  <a href="#run-it">Run it</a> ·
+  <a href="#limits-honestly">Limits</a>
+</p>
 
-## What runs today (testnet, real transactions)
+---
 
-| Piece | Where |
+## The 30-second version
+
+On **15 Jan 2026** X banned apps that reward posting. The next day Kaito shut down Yaps, the product behind about
+70% of its token's utility. **One API decision deleted a whole category.**
+
+$YAP rebuilds the Kaito Yaps feature set on **near.social**, where every post, like, repost, reply and follow is a
+NEAR transaction (FastData KV writes to the `social` account). The data is public chain data, so there is no API key
+for anyone to revoke.
+
+|  | What it means |
 | --- | --- |
-| $YAP token v2 (NEP-141 + mechanics, locked) | `token2.yap-hq.testnet` |
-| Community DAO (Sputnik v2; council of 3, 2 to pass) | `dao.yap-hq.testnet` |
-| Steward v2 (reputation → DAO `trusted` role, capped grants; locked) | `steward2.yap-hq.testnet` |
+| **The meme does something** | Loud epochs mint and grow an on-chain streak. Quiet epochs burn 3% of the Reserve. Silence burns 10%. Unclaimed rewards burn after 14 epochs. |
+| **Nobody holds the off switch** | Every parameter is fixed at launch. The token contract has **zero access keys**: no admin, no upgrade, no pause. |
+| **The community owns the treasury** | A stock **Sputnik DAO v2** (works in Trezu) gets 10% of every mint, funds topic **Arenas**, and is the **court of appeal** for scoring disputes. |
+| **Reputation becomes membership** | Gold+ yappers join the DAO's `trusted` role through an immutable steward contract and a Merkle proof. No council vote, no admin. |
+| **AI that can prove itself** | Post quality is labelled by `Qwen/Qwen3.8-27B` in a verified TEE (Intel TDX + NVIDIA attestation). The label hash goes on chain. |
+| **Every point is checkable** | Open scoring code and published data. Anyone can recompute any epoch in the browser and challenge it. |
+
+---
+
+## Live on testnet
+
+Everything below is running on NEAR testnet with real transactions. Epochs last **10 minutes** on testnet (mainnet
+would use 1 day).
+
+**Snapshot read from `token2.yap-hq.testnet` on 9 Nov 2026:**
+
+| Epochs reported | Finalized | Dead (burned 10%) | Total burned | Reserve left | Best streak |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 61 | 33 | 27 | **579,500 YAP** | 28,190 YAP (of 600,000) | 5 |
+
+We drove the testnet community through loud and quiet stretches on purpose. When it went quiet, the token burned its
+own Reserve, exactly as the rules say.
+
+| Piece | Account |
+| --- | --- |
+| $YAP token (NEP-141 + mechanics, **locked**) | [`token2.yap-hq.testnet`](https://testnet.nearblocks.io/address/token2.yap-hq.testnet) |
+| Community DAO (Sputnik v2, council of 3, 2 to pass) | [`dao.yap-hq.testnet`](https://testnet.nearblocks.io/address/dao.yap-hq.testnet) |
+| Steward (reputation → DAO `trusted` role, capped grants, **locked**) | [`steward2.yap-hq.testnet`](https://testnet.nearblocks.io/address/steward2.yap-hq.testnet) |
 | Scorers (bonded, 2-of-3 identical report hash) | `scorer-1..3.yap-hq.testnet` |
-| Independent watchdog (recomputes every report, challenges mismatches) | `watchdog.yap-hq.testnet` |
-| @yapbot (answers "how am I doing?" on near.social, AI in a verified TEE) | `yapbot.yap-hq.testnet` |
-| AI quality labeler | `Qwen/Qwen3.8-27B` in a verified TEE on NEAR AI Cloud (Intel TDX + NVIDIA attestation, nonce-bound) |
-| Simulated community (clearly labelled) | `y01..y24.yap-hq.testnet` |
+| Independent watchdog (recomputes every report, challenges mismatches) | [`watchdog.yap-hq.testnet`](https://testnet.nearblocks.io/address/watchdog.yap-hq.testnet) |
+| @yapbot (answers "how am I doing?" on near.social) | [`yapbot.yap-hq.testnet`](https://testnet.nearblocks.io/address/yapbot.yap-hq.testnet) |
+| AI quality labeler | `Qwen/Qwen3.8-27B` in a verified TEE on NEAR AI Cloud |
+| Testnet community: 15 writers, plus 4 spam bots and a 5-account like-ring to attack the scoring | `y01..y24.yap-hq.testnet` |
 
-The simulated community has 15 honest personas writing with an AI model, 4 spam bots, and a 5-account like-ring.
+**On-chain moments worth clicking:**
 
-Testnet epochs are 10 minutes; mainnet would use 1 day. Every transaction is listed in [docs/TESTNET.md](docs/TESTNET.md),
-and the app's $YAP page shows them live.
+- Token locked, all full-access keys deleted:
+  [`DXLV1MBDMF…`](https://testnet.nearblocks.io/txns/DXLV1MBDMFfcVcz962NPLzgpRX5sJerGfmgU5VhCn2Rm)
+- Watchdog catches a tampered report (our collusion test) and challenges it:
+  [`3g35hmDnpg…`](https://testnet.nearblocks.io/txns/3g35hmDnpgz6QDT7ssLdMRXceDYsu6GWu2LjW5K8yRjs) ·
+  [`GaNxcg8tkV…`](https://testnet.nearblocks.io/txns/GaNxcg8tkVS7WJhbHEPwJ89LjnyfRpxAHA8uW7FAT9qX)
+- DAO proposal funds the `#near` Arena from the treasury:
+  [`7DbVug9ohm…`](https://testnet.nearblocks.io/txns/7DbVug9ohmCfH84SXD6PmbtVJ7MRmhFs5DVbRn48uMN9)
+- Steward promotes a Gold yapper into the DAO by Merkle proof:
+  [`9r786Yud5H…`](https://testnet.nearblocks.io/txns/9r786Yud5HmvjYiCEgEsKtF4M7QyBzJiCnjTHT5yxaGq)
 
-### Why v2
+Every transaction is listed in **[docs/TESTNET.md](docs/TESTNET.md)**, and the app's $YAP page shows them live.
 
-The first deployment (`token.yap-hq.testnet`, `steward.yap-hq.testnet`) found a real bug during our own collusion test:
-- After a challenge was upheld, the honest resubmitted report could never finalize, because `finalize` only accepted
-  "no challenge" or "rejected".
-- The contracts are immutable (no keys, no upgrade), so we fixed the code and deployed v2. The fix: only a still-open
-  challenge blocks finalization. A regression test now covers the full upheld → re-bond → resubmit → finalize path.
-- v1's data is archived in `web/public/epochs/testnet-v1/` and `deploy/*-v1.json`.
+---
 
-## The mechanic
+## How it works
 
+Every epoch goes through five steps:
+
+```mermaid
+flowchart TD
+    A["1 · Collect<br/>near.social posts, likes, follows"] --> B["2 · Label<br/>AI rates each post in a TEE"]
+    B --> C["3 · Score<br/>open, deterministic code"]
+    C --> D["4 · Report<br/>2 of 3 scorers sign on chain"]
+    D --> E{"5 · Challenge window"}
+    E -->|"no dispute"| F["Finalize"]
+    E -->|"disputed"| G["DAO votes"]
+    G --> F
 ```
-near.social writes ──► epoch dataset ──► AI quality labels (TEE) ──► deterministic score ──► report on chain
-   (FastData KV)        (data_hash)       (labels_hash, attestation)   (integer math, open)   2-of-3 scorers
-                                                                                                    │
-                       challenge window (anyone bonds YAP) ◄────────────────────────────────────────┘
-                              │ challenged → token opens Sputnik DAO proposal → council rules
-                              ▼
-   finalize: attention vs moving target ──► LOUD: mint ≤3× base + streak bonus (+5%/epoch, cap +50%)
-                                         ──► QUIET: streak = 0, burn 3% of Reserve
-                                         ──► DEAD (no report): burn 10% of Reserve
-   split: 80% yappers (Merkle claim) · 10% sYAP stakers · 10% DAO · unclaimed after 14 epochs burns
-```
 
-Full rules: [RULES.md](RULES.md). Scoring formulas with a worked example: [docs/SCORING.md](docs/SCORING.md).
+1. **Collect.** Read every near.social write in the epoch and hash the dataset (`data_hash`).
+2. **Label.** The TEE-attested model rates each post. The labels are hashed (`labels_hash`).
+3. **Score.** Integer-math scoring that anyone can rerun and get the same result.
+4. **Report.** Bonded scorers post the result. 2 of 3 must sign the same hash.
+5. **Challenge.** Anyone can bond YAP to dispute a report. The token contract then opens a Sputnik DAO proposal,
+   and the council rules on it.
 
-### Yap score
+When an epoch finalizes, the community's attention is compared with a moving target:
 
-1. **Smart followers.** PageRank over the near.social follow graph, with teleport weighted by stake. The top 20% are "smart".
-2. **Quality.** Each post gets a label `q ∈ {0 spam, 1 low, 2 normal, 3 insightful}` from the TEE-attested model.
-   - The model runs at temperature 0 with a fixed prompt whose hash is in the report.
-   - Labels are the only non-deterministic input, and their hash is on chain.
-3. **Engagement.**
-   - Likes, reposts, replies and quotes are weighted by the engager's rank, smart status and stake.
-   - Self-engagement and same-epoch new accounts are ignored.
-   - At most 3 actions per engager→author pair count.
-4. **Score.** `post = Q[q] × (1 + ln(1 + engagement))`. Yap score = the best 10 posts, halved for accounts with no
-   smart followers and no stake.
+| Epoch | What happens to supply | Streak |
+| --- | --- | --- |
+| **Loud** (attention ≥ 80% of target) | Mint up to 3× the base emission, plus a 5% bonus per streak epoch (max +50%) | +1 |
+| **Quiet** (attention < 80% of target) | Smaller emission, and burn 3% of the Reserve | Reset to 0 |
+| **Dead** (no report) | Burn 10% of the Reserve | Reset to 0 |
+
+Minted YAP is split **80% to yappers** (Merkle claim), **10% to sYAP stakers** and **10% to the DAO**. Unclaimed
+yapper rewards burn after 14 epochs. Full rules are in [RULES.md](RULES.md), and the scoring formulas
+with a worked example are in [docs/SCORING.md](docs/SCORING.md).
+
+### The Yap score
+
+1. **Smart followers.** PageRank over the near.social follow graph, with teleport weighted by stake. The top 20% are
+   "smart".
+2. **Quality.** Each post gets a label `q ∈ {0 spam, 1 low, 2 normal, 3 insightful}` from the TEE-attested model at
+   temperature 0, with a fixed prompt whose hash is in the report. Labels are the only non-deterministic input, and
+   their hash is on chain.
+3. **Engagement.** Likes, reposts, replies and quotes are weighted by the engager's rank, smart status and stake.
+   Self-engagement and same-epoch new accounts are ignored. At most 3 actions per engager → author pair count.
+4. **Score.**
+
+   ```
+   post score = Q[q] × (1 + ln(1 + engagement))
+   Yap score  = sum of the best 10 posts   (halved with no smart followers and no stake)
+   ```
+
+**Tiers** come from the trailing 30-epoch percentile: Inner Circle (top 1%) · Gold (top 10%) · Silver
+(top 30%) · Bronze (any score). Arenas can require a tier.
+
+### The Trusted circle
+
+- The steward contract checks a Gold+ yapper's Merkle leaf against a finalized epoch, then adds them to the DAO's
+  `trusted` role.
+- Trusted members can send small, capped treasury grants: **300 YAP each, 1,500 per season.**
+- Membership expires each season unless it is re-earned.
+
+---
+
+## Don't trust, verify
+
+The trust model is built so that nobody, including us, has to be trusted:
+
+| Who | What they can do | What stops them |
+| --- | --- | --- |
+| **Deployer (us)** | Nothing after launch | The token and steward have no access keys. Parameters have no setters. |
+| **Scorers** | Propose an epoch report | 2 of 3 must sign the identical hash, each posts a bond, and the bond is slashed if a challenge is upheld. |
+| **Anyone** | Recompute and challenge | Scoring after labels is deterministic. Run `watchdog`, or open the **Verify** page. |
+| **The DAO** | Rule on challenges, fund Arenas | Votes are public Sputnik proposals, opened by the token contract itself. |
+| **The AI** | Label post quality | Runs in an attested TEE (nonce-bound). The prompt hash, labels hash and attestation hash are all in the report. |
+
+The **Verify** page downloads an epoch's dataset and labels, reruns the scoring code in your browser, and checks
+every hash and root against the chain.
+
+---
 
 ## Kaito feature → YAP
 
-| Kaito | YAP on NEAR |
+| Kaito | $YAP on NEAR |
 | --- | --- |
 | Yap points | Yap score per epoch, paid in $YAP by Merkle claim |
-| Mindshare (yappers, tokens) | Mindshare treemaps for accounts and topics (#hashtags, $cashtags, @accounts), with time windows and movers |
+| Mindshare | Treemaps for accounts and topics (#hashtags, $cashtags, @accounts), with time windows and movers |
 | Smart followers | Stake-weighted PageRank over the near.social follow graph |
 | Yapper leaderboards | Global and per-topic leaderboards, rank change, tier |
-| Project leaderboards / campaigns | Arenas, funded by DAO proposal, tier-gated, paid per epoch |
-| Staked token boosts | sYAP: engagement weight plus the stakers' share |
+| Project campaigns | **Arenas**: funded by DAO proposal, tier-gated, paid per epoch |
+| Staked token boosts | **sYAP**: extra engagement weight plus the stakers' share |
 | Anti-slop filters | TEE-attested AI labels, hashed on chain |
-| Closed scoring | Open code and published data. Recompute any epoch in your browser on the Verify page |
+| Closed scoring | Open code and published data. Recompute any epoch on the Verify page. |
 
-The app ([web/](web/)) has these pages:
-- Mindshare, Yapper Leaderboard, Profile (with a downloadable Yap card), Arenas.
-- Feed: post, like, repost, reply and follow on near.social from a burner wallet.
-- Earn (claims, staking), $YAP (streak, supply, burns, lock proof).
-- Verify, Governance, Simulation, How it works.
+### The app ([web/](web/))
 
-It also has a **mainnet read-only** mode that ranks real near.social mainnet yappers over the last 30 days. Posts are
-labelled by the same TEE-attested model, and the mode is unrewarded.
+| Page | What you do there |
+| --- | --- |
+| **Mindshare** | See who and what the community is talking about |
+| **Yapper Leaderboard** | Global and per-topic ranks, tiers, rank change |
+| **Profile** | Score history, best posts, followers, and a downloadable Yap card |
+| **Arenas** | Topic campaigns, plus a builder for DAO funding proposals |
+| **Feed** | Post, like, repost, reply and follow on near.social from a burner wallet |
+| **Earn** | Claim rewards, stake sYAP |
+| **$YAP** | Streak, supply, burns, epochs on chain, and the lock proof |
+| **Verify** | Recompute an epoch in the browser |
+| **Governance** | DAO proposals and the Trusted circle |
+| **Stress test** | 60-epoch attack and economy scenarios |
 
-**@yapbot** lives on near.social:
-- Mention `@yapbot.yap-hq.testnet` ("how am I doing?" or "how is @someone doing?").
-- An agent reads the published scores, the AI labels with their reasons, the tier, and the Trusted-circle status.
-- A model in a verified TEE writes a short reply grounded only in those facts, posted on chain as a reply.
+The app also has a **mainnet read-only** mode. It ranks real near.social mainnet yappers over the last 30 days, with
+posts labelled by the same TEE-attested model. This mode pays no rewards.
 
-The UI is our own brand. Kaito is named only as background.
+### @yapbot
+
+Mention `@yapbot.yap-hq.testnet` on near.social with "how am I doing?" or "how is @someone doing?". An agent gathers
+the published scores, the AI labels with their reasons, the tier and the Trusted-circle status. A model in a verified
+TEE then writes a short reply grounded only in those facts, and posts it on chain as a reply.
+
+---
+
+## Stress test: we attacked our own scoring
+
+Before trusting the scoring with real money, we threw attackers at it. The test runs the production scoring code and
+the contract's exact emission math over 60 epochs of attack traffic, switching each defence on and off.
+
+Share of yapper emission the attackers captured (mean over 60 epochs):
+
+| Attacker | No defences | PageRank | AI labels | Pair cap | Stake weight | **All defences** |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Spam farm (100 bots) | 87.0% | 76.1% | 48.1% | 85.3% | 86.3% | **26.9%** |
+| Like ring (10 accounts) | 52.3% | 42.3% | 52.2% | 35.9% | 50.8% | **19.1%** |
+
+No single defence is enough. Together they cut the spam farm from 87% to 27%.
+
+We also ran a **dead-meme** scenario, where the community goes silent at epoch 20. By epoch 59 the Reserve has
+shrunk from 600,000 to 8,869 YAP. Full results and method are in [sim/RESULTS.md](sim/RESULTS.md); every run is
+reproducible from seed `20261107`.
+
+---
+
+## Repository
+
+```
+contracts/yap/      Rust NEP-141 token + mechanics (near-sdk 5.30.1)      → API: contracts/yap/API.md
+contracts/steward/  Rust steward: reputation → DAO trusted role, capped grants
+indexer/            FastData KV `social` → canonical epoch dataset (data_hash)
+scoring/            PageRank, engagement, Yap score, tiers, mindshare, Merkle (integer math)
+agents/             deploy, crowd seeder, TEE labeler, scorer, watchdog, steward keeper, @yapbot
+sim/                60-epoch stress test (attacks + economy) → web/public/sim.json, sim/RESULTS.md
+web/                Vite + React 19 app
+docs/               TESTNET.md (real tx log), SCORING.md (formulas + worked example)
+```
+
+**Built with:** near-sdk-rs · near-contract-standards · near-workspaces · Sputnik DAO v2 · near.social +
+FastData KV · NEAR AI Cloud (TEE) · near-api-js · TypeScript · React.
+
+---
 
 ## Run it
 
+**Requirements:** Node 23, pnpm 10, Rust 1.95 (pinned in `rust-toolchain.toml`) and `cargo near`.
+
 ```bash
 pnpm install
-pnpm -r test                                  # scoring + indexer + sim tests (vitest)
-cargo test -p yap -p steward                   # contract unit tests + sandbox tests with the real Sputnik DAO wasm
-pnpm sim                                       # 60-epoch economy simulation → web/public/sim.json, sim/RESULTS.md
-pnpm -C web dev                                # the app (http://localhost:5180)
+pnpm -r test                 # scoring + indexer + sim tests (vitest)
+cargo test -p yap -p steward # contract unit tests + sandbox tests with the real Sputnik DAO wasm
+pnpm sim                     # 60-epoch stress test
+pnpm -C web dev              # the app → http://localhost:5180
+```
 
-# testnet operators (keys in ~/.near-credentials/testnet, never in the repo)
-pnpm -C agents deploy                          # sub-accounts, Sputnik DAO, token, scorer bonds, delete full-access keys
-pnpm -C agents seed --setup                    # simulated community profiles + follow graph
-pnpm -C agents crowd                           # simulated community schedule (loud / quiet epochs)
-pnpm -C agents scorer                          # index → label (TEE) → score → publish → report → finalize → claims
-pnpm -C agents watchdog                        # independent audit + automatic challenge on mismatch
-pnpm -C agents yapbot                          # @yapbot: answers mentions on near.social
-pnpm -C agents mainnet --days 30               # read-only mainnet board with TEE labels
-pnpm -C agents gov arena '#near' 500 6 1       # DAO proposal: fund an arena from the treasury
-pnpm -C agents gov vote <id>                   # council votes (2 of 3)
-pnpm -C agents steward deploy                  # steward contract + council ChangePolicy (steward + trusted roles) + lock
-pnpm -C agents steward keeper                  # promote Gold+ yappers each finalized epoch, demote expired ones
+<details>
+<summary><b>Testnet operator commands</b> (keys live in <code>~/.near-credentials/testnet</code>, never in the repo)</summary>
+
+```bash
+pnpm -C agents deploy                       # sub-accounts, Sputnik DAO, token, scorer bonds, delete full-access keys
+pnpm -C agents seed --setup                 # testnet community profiles + follow graph
+pnpm -C agents crowd                        # testnet community activity (loud / quiet epochs)
+pnpm -C agents scorer                       # index → label (TEE) → score → publish → report → finalize → claims
+pnpm -C agents watchdog                     # independent audit + automatic challenge on mismatch
+pnpm -C agents yapbot                       # @yapbot: answers mentions on near.social
+pnpm -C agents mainnet --days 30            # read-only mainnet board with TEE labels
+pnpm -C agents gov arena '#near' 500 6 1    # DAO proposal: fund an arena from the treasury
+pnpm -C agents gov vote <id>                # council votes (2 of 3)
+pnpm -C agents steward deploy               # steward contract + council ChangePolicy + lock
+pnpm -C agents steward keeper               # promote Gold+ yappers each finalized epoch, demote expired ones
 pnpm -C agents steward grant <from> <to> <YAP> <memo>   # a trusted member's capped treasury grant
 ```
 
-`NEARAI_API_KEY` in `.env` enables the real labeler. Without it, labels fall back to a heuristic, and the run is
-marked SIMULATED.
+`NEARAI_API_KEY` in `.env` enables the real labeler. Without it, labels fall back to a deterministic
+heuristic.
 
-## Simulation (60 epochs, real scorer)
+</details>
 
-| Attacker | No defences | All defences |
-| --- | ---: | ---: |
-| Spam farm (100 bots) | 87.0% of emission | 26.9% |
-| Like ring (10 accounts) | 52.3% | 19.1% |
+---
 
-In the dead-meme scenario the community goes silent at epoch 20. By epoch 59 its Reserve has shrunk from
-600,000 to 8,869 YAP. Details are in [sim/RESULTS.md](sim/RESULTS.md).
+## Limits, honestly
 
-## Limits
-
-- **Sybil resistance makes farming expensive, not impossible.** A patient ring of aged accounts that writes decent
-  AI text still earns, about 19% in simulation. The DAO challenge and the per-epoch tier gate are the backstop.
-- **Labels come from one model.** Their hash is on chain, but a different model would label differently. Each post is
+- **Sybil resistance makes farming expensive, not impossible.** A patient ring of aged accounts writing decent AI text
+  still earns about 19% in our stress test. The DAO challenge and the per-epoch tier gate are the backstop.
+- **Labels come from one model.** The hash is on chain, but a different model would label differently. Each post is
   labelled once, then cached.
-- **The 2-of-3 scorers are independent signers, but our testnet scorers run from one service.** Scoring after labels is
+- **The 3 scorers sign independently, but on testnet they run from one service.** Scoring after labels is
   deterministic, so any third party can run `watchdog` and challenge.
-- **near.social mainnet is small today** (about 130 accounts). The testnet community is simulated and marked as such
-  everywhere.
-- **The deploy flow differs from a production launch.** On testnet, the init call is a separate transaction from the
+- **near.social mainnet is small today** (about 130 accounts), so the live economy runs on testnet,
+  and the mainnet board is read-only.
+- **The testnet deploy flow differs from a production launch.** On testnet, init is a separate transaction from the
   deploy. A mainnet launch should deploy, init and lock in one batch.
 
-## Built during the hackathon
+---
 
-Everything in this repository was written during NEAR HACKATHON 2026, 7–14 Nov 2026. Reused from our other
-project in this hackathon (Quorum), copied rather than imported:
-- the NEAR AI attestation checker;
-- the Sputnik sandbox test pattern.
+## Built during NEAR HACKATHON 2026
 
-License: MIT.
+Everything in this repository was written during NEAR HACKATHON 2026 (7–14 Nov 2026). Two pieces were copied, not
+imported, from our other project in this hackathon (Quorum): the NEAR AI attestation checker and the Sputnik sandbox
+test pattern.
+
+The UI is our own brand. Kaito is named only as background.
+
+**License:** MIT
