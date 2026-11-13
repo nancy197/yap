@@ -29,15 +29,7 @@
   - Rust: `cargo fmt` and `cargo clippy` clean.
 
 ## Environment (from the supervisor)
-- **Repo:** /Users/henrypham/Desktop/near_hackathon/yap. A sibling project
-  `../quorum` (ours, finished) has reusable code you may copy, not import:
-  - Rust/near-sdk 5.30.1 contract setup and the near-workspaces sandbox test with the real Sputnik
-    DAO: `../quorum/contracts/quorum/tests/sandbox.rs`.
-  - NEAR AI Cloud client with TEE attestation verification: `../quorum/agents/providers/nearai.ts`.
-  - near-api-js 7.4 usage (Account, callFunctionRaw, sub-accounts, access keys):
-    `../quorum/agents/testnet.ts`.
-  - Burner wallet via faucet: `../quorum/web/src/TryIt.tsx`.
-  - Charts and palette: `../quorum/web/src/charts.tsx` and `../quorum/web/src/styles.css`.
+- **Repo:** /Users/henrypham/Desktop/near_hackathon/yap.
 - **Toolchain:**
   - Rust 1.95 pinned via rust-toolchain.toml; `cargo near` installed.
   - Node 23 and pnpm 10.

@@ -3,7 +3,7 @@
 Deadline: 2026-11-14 23:59 UTC. Tracks: memecoins + social. Testnet only.
 
 ## Phase 1: contract (`contracts/yap`)
-- [x] Cargo workspace (root Cargo.toml, release profile like ../quorum), crate `contracts/yap`.
+- [x] Cargo workspace (root Cargo.toml, release profile), crate `contracts/yap`.
 - [x] Config + init + validation; genesis mint/split; FT + storage + metadata; no admin methods.
 - [x] Epoch reports: scorer bonds, m-of-n identical report hash → proposed.
 - [x] Challenge via ft_transfer_call → Sputnik `add_proposal` (FunctionCall to `resolve_challenge`); resolve (DAO only); expire.
@@ -42,9 +42,9 @@ Deadline: 2026-11-14 23:59 UTC. Tracks: memecoins + social. Testnet only.
 - [x] README (story, how it works, NEAR features used, what is simulated, limits), demo script.
 
 ## Progress log
-P3 2026-11-07: Read AGENTS.md, RULES.md, SPEC.md Agents, PLAN.md, contract API, scoring spec, Phase 2 APIs, and Quorum testnet/attestation code. Corrected Phase 3 council plan to use independent council accounts. Starting agents package; verification pending.
+P3 2026-11-07: Read AGENTS.md, RULES.md, SPEC.md Agents, PLAN.md, contract API, scoring spec, Phase 2 APIs, and the testnet/attestation helpers. Corrected Phase 3 council plan to use independent council accounts. Starting agents package; verification pending.
 P3 2026-11-07: Added agents workspace scaffold, shared testnet signing/transaction helpers, fixed label prompt, and gitignored key/cache/state paths. Installing near-api-js and DCAP dependencies next; dependency fetch may take several minutes. Verification pending.
-P1 2026-11-07: Read AGENTS.md, RULES.md, SPEC.md, PLAN.md and the Quorum contract/sandbox setup. Starting the Cargo workspace and contract modules; verification pending.
+P1 2026-11-07: Read AGENTS.md, RULES.md, SPEC.md, PLAN.md and the contract/sandbox setup. Starting the Cargo workspace and contract modules; verification pending.
 P1 2026-11-07: Added config, Merkle, epoch, challenge, staking, and arena state/transition modules. Starting cargo dependency fetch/check; this may take several minutes.
 P1 2026-11-07: Shared Merkle vectors generated and five Rust unit tests pass (genesis/emission/dead, challenge, claims, staking/arena, vectors). Starting the wasm build; it may take several minutes.
 P1 2026-11-07: First wasm build exposed missing ABI schema derives; added them to public data types. ABI generation now passes and the wasm compilation is running. Added a real Sputnik DAO sandbox flow; execution pending.

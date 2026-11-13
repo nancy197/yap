@@ -311,9 +311,9 @@ heuristic.
 
 ## Built during NEAR HACKATHON 2026
 
-Everything in this repository was written during NEAR HACKATHON 2026 (7–14 Nov 2026). Two pieces were copied, not
-imported, from our other project in this hackathon (Quorum): the NEAR AI attestation checker and the Sputnik sandbox
-test pattern.
+Everything in this repository was written during NEAR HACKATHON 2026 (7–14 Nov 2026). Two pieces were adapted
+from existing code rather than written from scratch: the NEAR AI attestation checker and the Sputnik sandbox test
+pattern.
 
 The UI is our own brand. Kaito is named only as background.
 

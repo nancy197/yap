@@ -8,7 +8,7 @@ transactions.
 ## Layout (pnpm workspace + cargo workspace)
 ```
 contracts/yap/          Rust NEP-141 token + mechanics (near-sdk =5.30.1, Rust 1.95 pinned)
-contracts/tests/fixtures/sputnikdao2.wasm   copy from ../quorum/contracts/tests/fixtures/
+contracts/tests/fixtures/sputnikdao2.wasm   Sputnik DAO v2 release wasm
 indexer/                TS: read FastData KV `social` → canonical epoch dataset (JSON)
 scoring/                TS: dataset + labels → scores, smart followers, mindshare, tiers, merkle
 agents/                 TS: labeler (NEAR AI Cloud TEE), scorer service, crowd seeder (testnet bots)
@@ -100,7 +100,7 @@ docs/                   TESTNET.md (real tx log), SCORING.md, ARCH.md
   - Uses NEAR AI Cloud (OpenAI-compatible, https://cloud-api.near.ai/v1, key `NEARAI_API_KEY` in
     `.env`, never print it).
   - Model `Qwen/Qwen3.8-27B`, temperature 0, JSON output `{key, q, reason}` per post, in batches.
-  - Copy attestation verification from `../quorum/agents/providers/nearai.ts`: Intel TDX via
+  - Attestation verification: Intel TDX via
     @phala/dcap-qvl, NVIDIA NRAS, nonce binding.
   - Save the attestation report and its hash with the labels.
   - Cache labels by post key, so a post is never re-labelled.
@@ -170,11 +170,11 @@ docs/                   TESTNET.md (real tx log), SCORING.md, ARCH.md
      - Read near.social posts (testnet) and post, like, reply and follow from the app via
        `__fastdata_kv`.
      - Wallet: @near-wallet-selector (MyNearWallet + Meteor) on testnet, plus a one-click burner
-       account (faucet https://helper.nearprotocol.com/account, as in ../quorum/web/src/TryIt.tsx).
+       account (faucet https://helper.nearprotocol.com/account).
   8. **Verify:** pick an epoch, recompute scores and the Merkle root in the browser, and show
      match/mismatch against the chain. Also show the labeler's TEE attestation summary.
   9. **Governance:** the community DAO (Sputnik), with challenges and arena proposals.
   10. **Sim:** charts from sim.json.
-- **Charts:** follow the dataviz rules from ../quorum/web (palette validated, one axis, legends,
+- **Charts:** follow the dataviz rules (palette validated, one axis, legends,
   hover tooltips). Use Recharts or hand-rolled SVG.
 - Must build with `pnpm -C web build` and work at 375px width.

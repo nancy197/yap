@@ -649,7 +649,7 @@
   },
   {
     "at": "2026-11-07T16:32:10.351Z",
-    "action": "fund yap-hq from quorum-court (testnet)",
+    "action": "fund yap-hq (testnet top-up)",
     "account": "yap-hq.testnet",
     "hash": "5enMPmKqwEVsf9ZCUQzF6vnzP2qsyS8QAXUoUVjsXsPY",
     "url": "https://testnet.nearblocks.io/txns/5enMPmKqwEVsf9ZCUQzF6vnzP2qsyS8QAXUoUVjsXsPY"

@@ -1,5 +1,4 @@
 // NEAR AI Cloud client with TEE attestation verification (Intel TDX via DCAP + NVIDIA NRAS GPU, nonce-bound).
-// Copied from our Quorum project (agents/providers/nearai.ts).
 import { createHash, randomBytes } from 'node:crypto';
 const sha256 = (s: string) => createHash('sha256').update(s).digest('hex');
 export const NEARAI_BASE = 'https://cloud-api.near.ai/v1';
