@@ -1,0 +1,58 @@
+{
+ "labels": {
+  "y04.yap-hq.testnet/1794112336289": 2,
+  "y04.yap-hq.testnet/1794112336290": 1,
+  "y04.yap-hq.testnet/1794112336291": 2,
+  "y05.yap-hq.testnet/1794112339046": 3,
+  "y05.yap-hq.testnet/1794112339047": 3,
+  "y05.yap-hq.testnet/1794112339048": 3
+ },
+ "details": [
+  {
+   "key": "y04.yap-hq.testnet/1794112336289",
+   "q": 2,
+   "reason": "Useful governance heuristic, but generic policy advice rather than a novel insight.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794112336290",
+   "q": 1,
+   "reason": "Short reactive slogan; adds little beyond the prior point.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794112336291",
+   "q": 2,
+   "reason": "Practical LP treasury warning about IL, but mostly a concise restatement of a known tradeoff.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794112339046",
+   "q": 3,
+   "reason": "Specific throughput and fee metrics with a clear on-chain read.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794112339047",
+   "q": 3,
+   "reason": "Concrete APR/IL breakeven math and volume-curve framing.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794112339048",
+   "q": 3,
+   "reason": "Specific indexer observation linking mention spikes to realized-vol windows.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

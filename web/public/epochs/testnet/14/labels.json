@@ -1,0 +1,30 @@
+{
+ "labels": {
+  "y06.yap-hq.testnet/1794105131895": 2,
+  "y06.yap-hq.testnet/1794105131897": 3
+ },
+ "details": [
+  {
+   "key": "y06.yap-hq.testnet/1794105131895",
+   "q": 2,
+   "reason": "Clear, useful point about wallet UX and blind signing, though the recommendation is fairly common.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794105131897",
+   "q": 3,
+   "reason": "Specific insight tying a concrete IL figure to wallet display and fee APR minus IL UX.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

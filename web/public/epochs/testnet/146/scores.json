@@ -1,0 +1,55 @@
+{
+ "epoch": 146,
+ "fromMs": 1794184200000,
+ "toMs": 1794184800000,
+ "predictedYapperPool": "0",
+ "stakes": {},
+ "arenas": [],
+ "trailing": {
+  "y05.yap-hq.testnet": [
+   "6000000"
+  ],
+  "y01.yap-hq.testnet": [
+   "4000000"
+  ],
+  "y04.yap-hq.testnet": [
+   "4000000"
+  ],
+  "y06.yap-hq.testnet": [
+   "4000000"
+  ],
+  "y03.yap-hq.testnet": [
+   "2250000"
+  ],
+  "y07.yap-hq.testnet": [
+   "2250000"
+  ],
+  "y02.yap-hq.testnet": [
+   "2000000"
+  ]
+ },
+ "report": {
+  "attention": "0",
+  "yappers_root": "0000000000000000000000000000000000000000000000000000000000000000",
+  "arenas": [],
+  "labels_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+  "attestation_hash": null,
+  "data_hash": "5c3bd400d22e295b1d7f1e1d6e7fd8bcf6079ce197783a63b5a003eee0949131",
+  "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/146/"
+ },
+ "result": {
+  "attention": "0",
+  "yappersRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "yappers": [],
+  "arenas": {},
+  "mindshare": [],
+  "smartAccounts": [
+   "y01.yap-hq.testnet",
+   "y02.yap-hq.testnet",
+   "y03.yap-hq.testnet",
+   "y05.yap-hq.testnet",
+   "y06.yap-hq.testnet"
+  ]
+ }
+}

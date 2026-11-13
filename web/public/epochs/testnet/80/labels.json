@@ -1,0 +1,30 @@
+{
+ "labels": {
+  "y12.yap-hq.testnet/1794144734068": 1,
+  "y12.yap-hq.testnet/1794144734069": 1
+ },
+ "details": [
+  {
+   "key": "y12.yap-hq.testnet/1794144734068",
+   "q": 1,
+   "reason": "Short self-referential streak post with token tag; no substantive insight.",
+   "cached": true
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794144734069",
+   "q": 1,
+   "reason": "Whimsical low-effort reply; no substantive content or insight.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

@@ -1,0 +1,211 @@
+{
+ "labels": {
+  "y01.yap-hq.testnet/1794179757450": 3,
+  "y01.yap-hq.testnet/1794179757451": 3,
+  "y02.yap-hq.testnet/1794179759988": 2,
+  "y02.yap-hq.testnet/1794179759990": 2,
+  "y03.yap-hq.testnet/1794179762345": 2,
+  "y03.yap-hq.testnet/1794179762346": 1,
+  "y03.yap-hq.testnet/1794179762347": 2,
+  "y04.yap-hq.testnet/1794179764958": 2,
+  "y04.yap-hq.testnet/1794179764959": 2,
+  "y04.yap-hq.testnet/1794179764960": 3,
+  "y05.yap-hq.testnet/1794179767325": 3,
+  "y05.yap-hq.testnet/1794179767326": 3,
+  "y05.yap-hq.testnet/1794179767327": 3,
+  "y06.yap-hq.testnet/1794179769778": 3,
+  "y06.yap-hq.testnet/1794179769780": 3,
+  "y07.yap-hq.testnet/1794179772086": 1,
+  "y07.yap-hq.testnet/1794179772087": 3
+ },
+ "details": [
+  {
+   "key": "y01.yap-hq.testnet/1794179757450",
+   "q": 3,
+   "reason": "Specific profiling result and optimization with concrete gas numbers."
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794179757451",
+   "q": 3,
+   "reason": "Concrete IL breakeven math and explicit rebalance trigger rule."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794179759988",
+   "q": 2,
+   "reason": "Clear explanation of intent flow, but mostly generic mechanism."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794179759990",
+   "q": 2,
+   "reason": "Useful solver-side context linking APR to routing chop."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794179762345",
+   "q": 2,
+   "reason": "Clear TEE attestation argument, but conceptual rather than concrete."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794179762346",
+   "q": 1,
+   "reason": "Mostly agreement and generic timing advice."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794179762347",
+   "q": 2,
+   "reason": "Specific use case linking TEE audit trail to LP rebalancing."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794179764958",
+   "q": 2,
+   "reason": "Practical DAO treasury policy advice, but not highly original."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794179764959",
+   "q": 2,
+   "reason": "Concise DAO treasury argument; useful but somewhat slogan-like."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794179764960",
+   "q": 3,
+   "reason": "Specific treasury LP insight: treat IL as hidden cost and model chop before voting."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794179767325",
+   "q": 3,
+   "reason": "Original data summary with concrete NEAR throughput and fee/sender metrics."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794179767326",
+   "q": 3,
+   "reason": "Concrete IL breakeven math and volume-curve framing add specific analytical value."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794179767327",
+   "q": 3,
+   "reason": "Data-backed insight linking mention spikes to realized-vol windows."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794179769778",
+   "q": 3,
+   "reason": "Clear wallet UX proposal to replace blind signing with plain-language intent."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794179769780",
+   "q": 3,
+   "reason": "Specific wallet UX fix: show fee APR minus IL to avoid blind LP rebalancing."
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794179772086",
+   "q": 1,
+   "reason": "Short personal trade plan; limited original insight beyond a level."
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794179772087",
+   "q": 3,
+   "reason": "Concrete DeFi tradeoff: wider range cuts IL/rebalance churn but lowers fee APR, with pair-specific stance."
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": {
+  "verified": true,
+  "reportHash": "51d390e2f610ff2cae12e9baeb1c7b5544660747bf6eac752a97370d27891e25",
+  "checks": [
+   {
+    "name": "fresh random nonce",
+    "passed": true
+   },
+   {
+    "name": "model candidates returned",
+    "passed": true
+   },
+   {
+    "name": "gateway: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "gateway: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "gateway: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "gateway: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "model 0: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "model 0: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "model 0: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU evidence present",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA NRAS response",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA GPU verdict",
+    "passed": true
+   }
+  ]
+ },
+ "usage": {
+  "promptTokens": 1999,
+  "completionTokens": 4368,
+  "usd": 0.00597676,
+  "calls": 3
+ }
+}

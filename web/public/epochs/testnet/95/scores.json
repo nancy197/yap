@@ -1,0 +1,1482 @@
+{
+ "epoch": 95,
+ "fromMs": 1794153600000,
+ "toMs": 1794154200000,
+ "predictedYapperPool": "1740082178295111172062",
+ "stakes": {},
+ "arenas": [],
+ "trailing": {
+  "y05.yap-hq.testnet": [
+   "6000000",
+   "9000000",
+   "10000000",
+   "9000000",
+   "11000000",
+   "9000000",
+   "10000000",
+   "10000000",
+   "10000000",
+   "4000000",
+   "5000000",
+   "10000000",
+   "9000000",
+   "8000000",
+   "10000000",
+   "9000000",
+   "9000000"
+  ],
+  "y09.yap-hq.testnet": [
+   "5000000",
+   "4000000",
+   "4000000",
+   "3000000",
+   "3000000",
+   "3000000",
+   "3000000",
+   "3000000",
+   "4000000",
+   "4000000",
+   "3000000",
+   "3000000",
+   "3000000",
+   "3000000",
+   "3000000",
+   "3000000"
+  ],
+  "y10.yap-hq.testnet": [
+   "5000000",
+   "9000000",
+   "9000000",
+   "8304902",
+   "8000000",
+   "9000000",
+   "8000000",
+   "8000000",
+   "8000000",
+   "5000000",
+   "8000000",
+   "8000000",
+   "8000000",
+   "7000000",
+   "8000000",
+   "6000000"
+  ],
+  "y03.yap-hq.testnet": [
+   "4250000",
+   "5000000",
+   "4000000",
+   "5000000",
+   "5000000",
+   "5000000",
+   "5000000",
+   "5000000",
+   "5000000",
+   "5304902",
+   "3250000",
+   "5000000",
+   "4250000",
+   "4250000",
+   "4000000",
+   "4304902"
+  ],
+  "y01.yap-hq.testnet": [
+   "4000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "3000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "4000000",
+   "3000000",
+   "4000000"
+  ],
+  "y04.yap-hq.testnet": [
+   "4000000",
+   "6250000",
+   "5250000",
+   "4250000",
+   "5250000",
+   "6250000",
+   "4500000",
+   "4500000",
+   "3500000",
+   "4000000",
+   "4500000",
+   "3500000",
+   "3500000",
+   "4500000",
+   "2250000",
+   "5250000",
+   "5000000"
+  ],
+  "y02.yap-hq.testnet": [
+   "3000000",
+   "3000000",
+   "3000000",
+   "2000000",
+   "3000000",
+   "2000000",
+   "2000000",
+   "3000000",
+   "3000000",
+   "2000000",
+   "3000000",
+   "2000000",
+   "3000000",
+   "3000000",
+   "3000000",
+   "2000000"
+  ],
+  "y06.yap-hq.testnet": [
+   "3000000",
+   "3000000",
+   "2000000",
+   "3000000",
+   "3000000",
+   "2000000",
+   "2000000",
+   "2000000",
+   "4000000",
+   "2000000",
+   "2000000",
+   "2000000",
+   "3000000",
+   "2000000",
+   "3000000",
+   "3000000",
+   "3000000"
+  ],
+  "y13.yap-hq.testnet": [
+   "3000000",
+   "2250000",
+   "3250000",
+   "3250000",
+   "2250000",
+   "2250000",
+   "3250000",
+   "2250000",
+   "3000000",
+   "1250000",
+   "2250000",
+   "3304902",
+   "2250000",
+   "5250000",
+   "2250000",
+   "4000000"
+  ],
+  "y15.yap-hq.testnet": [
+   "3000000",
+   "4250000",
+   "4000000",
+   "4000000",
+   "5304902",
+   "5000000",
+   "3250000",
+   "5000000",
+   "4250000",
+   "3000000",
+   "4250000",
+   "3250000",
+   "4250000",
+   "3000000",
+   "4250000",
+   "3250000"
+  ],
+  "y07.yap-hq.testnet": [
+   "2250000",
+   "6000000",
+   "5250000",
+   "6000000",
+   "6000000",
+   "6000000",
+   "6000000",
+   "6000000",
+   "5000000",
+   "3000000",
+   "6000000",
+   "6000000",
+   "6000000",
+   "6000000",
+   "6000000",
+   "3250000"
+  ],
+  "y14.yap-hq.testnet": [
+   "2000000",
+   "1625000",
+   "1125000",
+   "1500000",
+   "1125000",
+   "1625000",
+   "1125000",
+   "2000000",
+   "2000000",
+   "1125000",
+   "750000",
+   "2000000",
+   "1125000",
+   "1125000",
+   "1125000",
+   "1125000"
+  ],
+  "y08.yap-hq.testnet": [
+   "1500000",
+   "1500000",
+   "750000",
+   "1500000",
+   "1500000",
+   "1500000",
+   "1500000",
+   "1500000",
+   "1500000",
+   "1500000",
+   "1500000",
+   "2804902",
+   "1500000",
+   "2500000"
+  ],
+  "y11.yap-hq.testnet": [
+   "500000",
+   "1250000",
+   "500000",
+   "500000",
+   "1250000",
+   "500000",
+   "1250000",
+   "500000",
+   "500000",
+   "500000",
+   "1250000",
+   "1250000",
+   "500000",
+   "1500000",
+   "1250000",
+   "750000"
+  ],
+  "y12.yap-hq.testnet": [
+   "500000",
+   "500000",
+   "804902",
+   "500000",
+   "500000",
+   "250000",
+   "500000",
+   "554902",
+   "500000",
+   "500000",
+   "500000",
+   "250000",
+   "500000",
+   "1469608",
+   "500000",
+   "500000"
+  ],
+  "y16.yap-hq.testnet": [
+   "125000",
+   "500000",
+   "625000",
+   "750000",
+   "625000",
+   "500000",
+   "625000",
+   "750000",
+   "375000",
+   "250000",
+   "250000",
+   "375000",
+   "250000",
+   "250000",
+   "375000",
+   "250000"
+  ],
+  "y19.yap-hq.testnet": [
+   "125000",
+   "625000",
+   "500000",
+   "250000",
+   "375000",
+   "250000",
+   "125000",
+   "375000",
+   "375000",
+   "500000",
+   "375000",
+   "750000",
+   "375000",
+   "500000"
+  ],
+  "y20.yap-hq.testnet": [
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000"
+  ],
+  "y21.yap-hq.testnet": [
+   "125000",
+   "125000",
+   "250000",
+   "125000",
+   "250000",
+   "250000",
+   "125000",
+   "125000",
+   "125000",
+   "250000",
+   "125000",
+   "125000",
+   "250000"
+  ],
+  "y22.yap-hq.testnet": [
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000"
+  ],
+  "y23.yap-hq.testnet": [
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000"
+  ],
+  "y24.yap-hq.testnet": [
+   "125000",
+   "125000",
+   "125000",
+   "125000",
+   "125000"
+  ],
+  "y17.yap-hq.testnet": [
+   "750000",
+   "375000",
+   "750000",
+   "625000",
+   "625000",
+   "375000",
+   "125000",
+   "375000",
+   "125000",
+   "250000",
+   "125000",
+   "500000",
+   "125000",
+   "375000",
+   "250000"
+  ],
+  "y18.yap-hq.testnet": [
+   "500000",
+   "375000",
+   "125000",
+   "625000",
+   "250000",
+   "125000",
+   "125000",
+   "250000",
+   "250000",
+   "250000",
+   "125000",
+   "250000"
+  ],
+  "yapbot.yap-hq.testnet": [
+   "500000",
+   "500000",
+   "500000",
+   "500000",
+   "500000",
+   "500000",
+   "1000000",
+   "500000"
+  ]
+ },
+ "report": {
+  "attention": "61054902",
+  "yappers_root": "a7901682e27cfd22abd9a0ce28236ffc85007b2750571dc5e6f6ea1d4eb16490",
+  "arenas": [],
+  "labels_hash": "2d32b3d4eeea6b7015fc48d58638fae566d973ad4521189c029d15f082b42f96",
+  "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+  "attestation_hash": null,
+  "data_hash": "2e6e9199c85ad9d5d643bca3e6c27fbcaf964b5e758ce1c3dd092bdab115dcfa",
+  "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/95/"
+ },
+ "result": {
+  "attention": "61054902",
+  "yappersRoot": "a7901682e27cfd22abd9a0ce28236ffc85007b2750571dc5e6f6ea1d4eb16490",
+  "yappers": [
+   {
+    "account": "y05.yap-hq.testnet",
+    "score": "9000000",
+    "amount": "256502575414108445356",
+    "tier": 4,
+    "smartFollowers": 4,
+    "rankNorm": "973805",
+    "posts": [
+     {
+      "key": "y05.yap-hq.testnet/1794153672359",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y05.yap-hq.testnet/1794153672360",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y05.yap-hq.testnet/1794153910416",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y05.yap-hq.testnet/1794153910417",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y05.yap-hq.testnet/1794153672358",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y05.yap-hq.testnet/1794153910415",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "de46ca83b625d84a2c0b8f276e3839bfd4b7bd26e5e7620f87b659ae3edb058a",
+     "43cdeade4aca2c0696dfe406957f4863b7b3f77ea42d313ee930bbf429e32ccc",
+     "10ceb6ba81c2a0cf80e6e2fa56aed2ab2210a257a417760f36ba9d44359edbbb",
+     "5c9b8442261e2070c19fcbd897b4d7cf73e5be7447d8d6c1cc62623617c1972d",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y07.yap-hq.testnet",
+    "score": "6000000",
+    "amount": "171001716942738963571",
+    "tier": 3,
+    "smartFollowers": 2,
+    "rankNorm": "454278",
+    "posts": [
+     {
+      "key": "y07.yap-hq.testnet/1794153677429",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y07.yap-hq.testnet/1794153915272",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y07.yap-hq.testnet/1794153677428",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y07.yap-hq.testnet/1794153915271",
+      "score": "1000000",
+      "q": 2
+     }
+    ],
+    "proof": [
+     "4b2f5f5cd0e8b376de3d2ed887efdeec14df446578fa63376d9d55c9a600e44c",
+     "3d4f30f09b58fadb1a11cb109ababa1ac88388b5ac38bb31e0b727ad64f93622",
+     "10ceb6ba81c2a0cf80e6e2fa56aed2ab2210a257a417760f36ba9d44359edbbb",
+     "5c9b8442261e2070c19fcbd897b4d7cf73e5be7447d8d6c1cc62623617c1972d",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y10.yap-hq.testnet",
+    "score": "6000000",
+    "amount": "171001716942738963571",
+    "tier": 3,
+    "smartFollowers": 2,
+    "rankNorm": "406596",
+    "posts": [
+     {
+      "key": "y10.yap-hq.testnet/1794153684596",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y10.yap-hq.testnet/1794153922603",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y10.yap-hq.testnet/1794153684595",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y10.yap-hq.testnet/1794153684597",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y10.yap-hq.testnet/1794153922604",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y10.yap-hq.testnet/1794153922605",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "adf91d1a4791135f03cb2aae4912878aaf83b170ee48f593629bef17cdd70b10",
+     "9b66dcd995d1dd5e71519dfcacc38fd1d0ed627a4107bef657e753cb5466ee5f",
+     "db4ba5196771598bf6af614dea40cfbd5cef757e267675f2fed782723aabf47e",
+     "71b6c7ab78e78f7dce20eb38a5a6e4cac578a5e85a205b2ce2e3df97c30eb274",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y04.yap-hq.testnet",
+    "score": "5500000",
+    "amount": "156751573864177383273",
+    "tier": 2,
+    "smartFollowers": 5,
+    "rankNorm": "960625",
+    "posts": [
+     {
+      "key": "y04.yap-hq.testnet/1794153669941",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y04.yap-hq.testnet/1794153669943",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y04.yap-hq.testnet/1794153908666",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y04.yap-hq.testnet/1794153669942",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y04.yap-hq.testnet/1794153908667",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y04.yap-hq.testnet/1794153908668",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "893102431a56a69ed1dfc385a4d8104efe3365e98375603d0fb7fc2fe3a61c59",
+     "7ac6c5654a77b11d60dc821f7f675c7443f0a02de01b91c498e0aca90d278cfe",
+     "34db329a49122f17e5119ba55ca03f623726fc3d9b7936db780b1a7a475bbcbf",
+     "5c9b8442261e2070c19fcbd897b4d7cf73e5be7447d8d6c1cc62623617c1972d",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y03.yap-hq.testnet",
+    "score": "5000000",
+    "amount": "142501430785615802976",
+    "tier": 2,
+    "smartFollowers": 4,
+    "rankNorm": "960625",
+    "posts": [
+     {
+      "key": "y03.yap-hq.testnet/1794153667531",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y03.yap-hq.testnet/1794153667533",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y03.yap-hq.testnet/1794153667532",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y03.yap-hq.testnet/1794153906291",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y03.yap-hq.testnet/1794153906292",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y03.yap-hq.testnet/1794153906293",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "2dd05732c240389dc67eaa1ee92f55c382e88ccb80e08cda278e75774d3a6856",
+     "7ac6c5654a77b11d60dc821f7f675c7443f0a02de01b91c498e0aca90d278cfe",
+     "34db329a49122f17e5119ba55ca03f623726fc3d9b7936db780b1a7a475bbcbf",
+     "5c9b8442261e2070c19fcbd897b4d7cf73e5be7447d8d6c1cc62623617c1972d",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y09.yap-hq.testnet",
+    "score": "4304902",
+    "amount": "122690938878371808293",
+    "tier": 2,
+    "smartFollowers": 2,
+    "rankNorm": "400608",
+    "posts": [
+     {
+      "key": "y09.yap-hq.testnet/1794153682137",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y09.yap-hq.testnet/1794153682138",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y09.yap-hq.testnet/1794153682139",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y09.yap-hq.testnet/1794153936963",
+      "score": "304902",
+      "q": 1
+     },
+     {
+      "key": "y09.yap-hq.testnet/1794153919869",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y09.yap-hq.testnet/1794153919870",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y09.yap-hq.testnet/1794153919871",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "41d280591c3b988027a87390cf0222ae08d03b448c9807daf5efe071adaee8d7",
+     "9b66dcd995d1dd5e71519dfcacc38fd1d0ed627a4107bef657e753cb5466ee5f",
+     "db4ba5196771598bf6af614dea40cfbd5cef757e267675f2fed782723aabf47e",
+     "71b6c7ab78e78f7dce20eb38a5a6e4cac578a5e85a205b2ce2e3df97c30eb274",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y01.yap-hq.testnet",
+    "score": "4000000",
+    "amount": "114001144628492642381",
+    "tier": 2,
+    "smartFollowers": 4,
+    "rankNorm": "973805",
+    "posts": [
+     {
+      "key": "y01.yap-hq.testnet/1794153662648",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y01.yap-hq.testnet/1794153662649",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y01.yap-hq.testnet/1794153901681",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y01.yap-hq.testnet/1794153901682",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "da30727e045d748302cc56c07c8184d4c4ae15d4e5b809d3c5450e3d084fd096",
+     "29acba09a29a6980b909763e369d7365c4fed50cdbb1f461b51196bc0234a834",
+     "34db329a49122f17e5119ba55ca03f623726fc3d9b7936db780b1a7a475bbcbf",
+     "5c9b8442261e2070c19fcbd897b4d7cf73e5be7447d8d6c1cc62623617c1972d",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y15.yap-hq.testnet",
+    "score": "4000000",
+    "amount": "114001144628492642380",
+    "tier": 2,
+    "smartFollowers": 2,
+    "rankNorm": "352200",
+    "posts": [
+     {
+      "key": "y15.yap-hq.testnet/1794153696034",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y15.yap-hq.testnet/1794153696035",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y15.yap-hq.testnet/1794153696036",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y15.yap-hq.testnet/1794153934656",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y15.yap-hq.testnet/1794153934657",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y15.yap-hq.testnet/1794153934658",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "10197f6c67b28d08d8314a264d2f8a6e104f21b608a1b573807f83342080b927",
+     "7c40ac5ef9642a4ace7513ab317d7d9f7d4f94676cfa36d731a7c0836a1a31be",
+     "7dbb5304e735bee84e676a3a838e876ab1b8e812ed5aad2e8f5c0e49180e0c29",
+     "71b6c7ab78e78f7dce20eb38a5a6e4cac578a5e85a205b2ce2e3df97c30eb274",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y13.yap-hq.testnet",
+    "score": "3250000",
+    "amount": "92625930010650271933",
+    "tier": 1,
+    "smartFollowers": 2,
+    "rankNorm": "337920",
+    "posts": [
+     {
+      "key": "y13.yap-hq.testnet/1794153691664",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y13.yap-hq.testnet/1794153929946",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y13.yap-hq.testnet/1794153691665",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y13.yap-hq.testnet/1794153929945",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "40b04cdffbf75755fea298c5ca1fe4495f877353958200d28878a148cdfc9450",
+     "a6d7e37ac03cda39c4f2fcb1fdf73c061ff11c9a075c3fa7d5957a392fc94bc9",
+     "7dbb5304e735bee84e676a3a838e876ab1b8e812ed5aad2e8f5c0e49180e0c29",
+     "71b6c7ab78e78f7dce20eb38a5a6e4cac578a5e85a205b2ce2e3df97c30eb274",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y02.yap-hq.testnet",
+    "score": "3000000",
+    "amount": "85500858471369481786",
+    "tier": 1,
+    "smartFollowers": 4,
+    "rankNorm": "1000000",
+    "posts": [
+     {
+      "key": "y02.yap-hq.testnet/1794153665134",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y02.yap-hq.testnet/1794153665132",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y02.yap-hq.testnet/1794153904144",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y02.yap-hq.testnet/1794153904146",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "628b40394762fe31bf672cac6a2ba1b3a8de1390b60b092f49cb067587fdc30d",
+     "29acba09a29a6980b909763e369d7365c4fed50cdbb1f461b51196bc0234a834",
+     "34db329a49122f17e5119ba55ca03f623726fc3d9b7936db780b1a7a475bbcbf",
+     "5c9b8442261e2070c19fcbd897b4d7cf73e5be7447d8d6c1cc62623617c1972d",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y06.yap-hq.testnet",
+    "score": "3000000",
+    "amount": "85500858471369481786",
+    "tier": 1,
+    "smartFollowers": 4,
+    "rankNorm": "984310",
+    "posts": [
+     {
+      "key": "y06.yap-hq.testnet/1794153674756",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y06.yap-hq.testnet/1794153674754",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y06.yap-hq.testnet/1794153912657",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y06.yap-hq.testnet/1794153912659",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "a7f040116206cbb966ad066b0eb2f7702b504750272dc3e469d18f34d6b10866",
+     "43cdeade4aca2c0696dfe406957f4863b7b3f77ea42d313ee930bbf429e32ccc",
+     "10ceb6ba81c2a0cf80e6e2fa56aed2ab2210a257a417760f36ba9d44359edbbb",
+     "5c9b8442261e2070c19fcbd897b4d7cf73e5be7447d8d6c1cc62623617c1972d",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y14.yap-hq.testnet",
+    "score": "2000000",
+    "amount": "57000572314246321190",
+    "tier": 1,
+    "smartFollowers": 0,
+    "rankNorm": "324226",
+    "posts": [
+     {
+      "key": "y14.yap-hq.testnet/1794153693888",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y14.yap-hq.testnet/1794153693886",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y14.yap-hq.testnet/1794153693887",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y14.yap-hq.testnet/1794153932133",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y14.yap-hq.testnet/1794153932134",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y14.yap-hq.testnet/1794153932135",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "35a234b69e4811db175aacaacf1e5b7aa8c02f41c33e7d8d0bfdc5e33c2b4b7d",
+     "a6d7e37ac03cda39c4f2fcb1fdf73c061ff11c9a075c3fa7d5957a392fc94bc9",
+     "7dbb5304e735bee84e676a3a838e876ab1b8e812ed5aad2e8f5c0e49180e0c29",
+     "71b6c7ab78e78f7dce20eb38a5a6e4cac578a5e85a205b2ce2e3df97c30eb274",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y08.yap-hq.testnet",
+    "score": "1500000",
+    "amount": "42750429235684740893",
+    "tier": 1,
+    "smartFollowers": 1,
+    "rankNorm": "254995",
+    "posts": [
+     {
+      "key": "y08.yap-hq.testnet/1794153679667",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y08.yap-hq.testnet/1794153679665",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y08.yap-hq.testnet/1794153679666",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y08.yap-hq.testnet/1794153917457",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y08.yap-hq.testnet/1794153917458",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y08.yap-hq.testnet/1794153917459",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "a501dc4a2e3e8c18c929b20d7a40c40a8c79660d88d346aae7951b0f9e1bd5a4",
+     "3d4f30f09b58fadb1a11cb109ababa1ac88388b5ac38bb31e0b727ad64f93622",
+     "10ceb6ba81c2a0cf80e6e2fa56aed2ab2210a257a417760f36ba9d44359edbbb",
+     "5c9b8442261e2070c19fcbd897b4d7cf73e5be7447d8d6c1cc62623617c1972d",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y11.yap-hq.testnet",
+    "score": "1500000",
+    "amount": "42750429235684740893",
+    "tier": 1,
+    "smartFollowers": 4,
+    "rankNorm": "707801",
+    "posts": [
+     {
+      "key": "y11.yap-hq.testnet/1794153686979",
+      "score": "1000000",
+      "q": 2
+     },
+     {
+      "key": "y11.yap-hq.testnet/1794153686980",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y11.yap-hq.testnet/1794153924824",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y11.yap-hq.testnet/1794153924823",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "467a6154eeb4f4f298c488e2544fa297e7c06c84ea514983f3f27cb6777935c4",
+     "7a1bdc3a20348c9dfff682754180b80f34f6404a16dde442338e1ed8780de129",
+     "db4ba5196771598bf6af614dea40cfbd5cef757e267675f2fed782723aabf47e",
+     "71b6c7ab78e78f7dce20eb38a5a6e4cac578a5e85a205b2ce2e3df97c30eb274",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y16.yap-hq.testnet",
+    "score": "625000",
+    "amount": "17812678848201975371",
+    "tier": 1,
+    "smartFollowers": 0,
+    "rankNorm": "92071",
+    "posts": [
+     {
+      "key": "y16.yap-hq.testnet/1794153698694",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y16.yap-hq.testnet/1794153698695",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y16.yap-hq.testnet/1794153939539",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y16.yap-hq.testnet/1794153939540",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y16.yap-hq.testnet/1794153939541",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y16.yap-hq.testnet/1794153698693",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "fbefc854f46fed29f35c34c0c3c44e6644f0232e6770a76991e9cb23dc162075",
+     "7c40ac5ef9642a4ace7513ab317d7d9f7d4f94676cfa36d731a7c0836a1a31be",
+     "7dbb5304e735bee84e676a3a838e876ab1b8e812ed5aad2e8f5c0e49180e0c29",
+     "71b6c7ab78e78f7dce20eb38a5a6e4cac578a5e85a205b2ce2e3df97c30eb274",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y12.yap-hq.testnet",
+    "score": "500000",
+    "amount": "14250143078561580297",
+    "tier": 1,
+    "smartFollowers": 3,
+    "rankNorm": "455644",
+    "posts": [
+     {
+      "key": "y12.yap-hq.testnet/1794153689205",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y12.yap-hq.testnet/1794153689206",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y12.yap-hq.testnet/1794153927363",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y12.yap-hq.testnet/1794153927364",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "dfd8eda9c5d2fe67811f863290907e37b225a701f49cec0f6b2e962b65f329f5",
+     "7a1bdc3a20348c9dfff682754180b80f34f6404a16dde442338e1ed8780de129",
+     "db4ba5196771598bf6af614dea40cfbd5cef757e267675f2fed782723aabf47e",
+     "71b6c7ab78e78f7dce20eb38a5a6e4cac578a5e85a205b2ce2e3df97c30eb274",
+     "c83ebbb91aefd7199a636b9b04fd74907eff2d5373b7eb6402afadc8acce461a"
+    ]
+   },
+   {
+    "account": "y19.yap-hq.testnet",
+    "score": "500000",
+    "amount": "14250143078561580297",
+    "tier": 1,
+    "smartFollowers": 0,
+    "rankNorm": "92071",
+    "posts": [
+     {
+      "key": "y19.yap-hq.testnet/1794153705860",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y19.yap-hq.testnet/1794153705861",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y19.yap-hq.testnet/1794153946780",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y19.yap-hq.testnet/1794153946781",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y19.yap-hq.testnet/1794153705859",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y19.yap-hq.testnet/1794153946782",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "3d0674d1060334e8b2fec927e5368a3488127a6ed279a6a31b3914f0adc773ec",
+     "fa8ad84a94c96e48f866d560ca5065ed9f04f81d10d65ccb1b356c3b2accd06d",
+     "8567998f4e161d9a3220cf94494b8078c01d230f71ea43c148b41722d34cceee",
+     "a98b6241bfcd6b4782a8ba64c7639e45463c10dfcd033d7b31ab13e9c13ad87d",
+     "1a0b2c8647dd29b8c0528f1390ff15f3dffceb0079d8a1dad1c5ce37d171df3f"
+    ]
+   },
+   {
+    "account": "yapbot.yap-hq.testnet",
+    "score": "500000",
+    "amount": "14250143078561580297",
+    "tier": 1,
+    "smartFollowers": 0,
+    "rankNorm": "81863",
+    "posts": [
+     {
+      "key": "yapbot.yap-hq.testnet/1794153988326",
+      "score": "1000000",
+      "q": 2
+     }
+    ],
+    "proof": [
+     "a9a54a6c6951aaa268956f1dca0f99fd27ccecf3d20eb7de08ebeb6413f87fdd",
+     "8e59704d0588b1d86b5934ff5b4cf0ffe0d16dd2774229347cfc5c2dd302a35d",
+     "24906f662ec13c9c2c0eb2389c9ff5e28b5b0aab966958af8d9d14d2af4500a4",
+     "a98b6241bfcd6b4782a8ba64c7639e45463c10dfcd033d7b31ab13e9c13ad87d",
+     "1a0b2c8647dd29b8c0528f1390ff15f3dffceb0079d8a1dad1c5ce37d171df3f"
+    ]
+   },
+   {
+    "account": "y17.yap-hq.testnet",
+    "score": "250000",
+    "amount": "7125071539280790148",
+    "tier": 1,
+    "smartFollowers": 0,
+    "rankNorm": "92071",
+    "posts": [
+     {
+      "key": "y17.yap-hq.testnet/1794153701042",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y17.yap-hq.testnet/1794153941844",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y17.yap-hq.testnet/1794153701041",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y17.yap-hq.testnet/1794153701043",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y17.yap-hq.testnet/1794153941845",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y17.yap-hq.testnet/1794153941846",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "0955a0e899553095109050e293a35bdbbd2fc3f166ccf90502cb713dc7ff5ba7",
+     "0a154187ac9fa28c418e378324eed15f22524a38e971facf41d08c4ad553d045",
+     "8567998f4e161d9a3220cf94494b8078c01d230f71ea43c148b41722d34cceee",
+     "a98b6241bfcd6b4782a8ba64c7639e45463c10dfcd033d7b31ab13e9c13ad87d",
+     "1a0b2c8647dd29b8c0528f1390ff15f3dffceb0079d8a1dad1c5ce37d171df3f"
+    ]
+   },
+   {
+    "account": "y18.yap-hq.testnet",
+    "score": "250000",
+    "amount": "7125071539280790148",
+    "tier": 1,
+    "smartFollowers": 0,
+    "rankNorm": "92071",
+    "posts": [
+     {
+      "key": "y18.yap-hq.testnet/1794153703260",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y18.yap-hq.testnet/1794153944588",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y18.yap-hq.testnet/1794153703258",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y18.yap-hq.testnet/1794153703259",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y18.yap-hq.testnet/1794153944589",
+      "score": "0",
+      "q": 0
+     },
+     {
+      "key": "y18.yap-hq.testnet/1794153944590",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "fda555aa5496190e31cb12a3a3dc5f1b38aa3a157b0674b6fc27e4c54f7af928",
+     "0a154187ac9fa28c418e378324eed15f22524a38e971facf41d08c4ad553d045",
+     "8567998f4e161d9a3220cf94494b8078c01d230f71ea43c148b41722d34cceee",
+     "a98b6241bfcd6b4782a8ba64c7639e45463c10dfcd033d7b31ab13e9c13ad87d",
+     "1a0b2c8647dd29b8c0528f1390ff15f3dffceb0079d8a1dad1c5ce37d171df3f"
+    ]
+   },
+   {
+    "account": "y21.yap-hq.testnet",
+    "score": "250000",
+    "amount": "7125071539280790148",
+    "tier": 1,
+    "smartFollowers": 0,
+    "rankNorm": "636496",
+    "posts": [
+     {
+      "key": "y21.yap-hq.testnet/1794153710462",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y21.yap-hq.testnet/1794153951760",
+      "score": "250000",
+      "q": 1
+     }
+    ],
+    "proof": [
+     "cc0f5b000ab30c92d87df47c9364b273b66bb76e0f96657680f35429ec4aafeb",
+     "8e59704d0588b1d86b5934ff5b4cf0ffe0d16dd2774229347cfc5c2dd302a35d",
+     "24906f662ec13c9c2c0eb2389c9ff5e28b5b0aab966958af8d9d14d2af4500a4",
+     "a98b6241bfcd6b4782a8ba64c7639e45463c10dfcd033d7b31ab13e9c13ad87d",
+     "1a0b2c8647dd29b8c0528f1390ff15f3dffceb0079d8a1dad1c5ce37d171df3f"
+    ]
+   },
+   {
+    "account": "y20.yap-hq.testnet",
+    "score": "125000",
+    "amount": "3562535769640395074",
+    "tier": 1,
+    "smartFollowers": 0,
+    "rankNorm": "636496",
+    "posts": [
+     {
+      "key": "y20.yap-hq.testnet/1794153708064",
+      "score": "250000",
+      "q": 1
+     },
+     {
+      "key": "y20.yap-hq.testnet/1794153949177",
+      "score": "0",
+      "q": 0
+     }
+    ],
+    "proof": [
+     "33da4ad6e49be73cb3a754f99357f98a3daf735107c4014857ae09066622ee43",
+     "fa8ad84a94c96e48f866d560ca5065ed9f04f81d10d65ccb1b356c3b2accd06d",
+     "8567998f4e161d9a3220cf94494b8078c01d230f71ea43c148b41722d34cceee",
+     "a98b6241bfcd6b4782a8ba64c7639e45463c10dfcd033d7b31ab13e9c13ad87d",
+     "1a0b2c8647dd29b8c0528f1390ff15f3dffceb0079d8a1dad1c5ce37d171df3f"
+    ]
+   }
+  ],
+  "arenas": {},
+  "mindshare": [
+   {
+    "topic": "$NEAR",
+    "score": "11000000",
+    "share": "167798"
+   },
+   {
+    "topic": "#analytics",
+    "score": "8000000",
+    "share": "122035"
+   },
+   {
+    "topic": "$YAP",
+    "score": "7250000",
+    "share": "110594"
+   },
+   {
+    "topic": "#rhea",
+    "score": "6000000",
+    "share": "91526"
+   },
+   {
+    "topic": "#near",
+    "score": "3750000",
+    "share": "57203"
+   },
+   {
+    "topic": "#dao",
+    "score": "3500000",
+    "share": "53390"
+   },
+   {
+    "topic": "#macro",
+    "score": "3000000",
+    "share": "45763"
+   },
+   {
+    "topic": "#sputnik",
+    "score": "3000000",
+    "share": "45763"
+   },
+   {
+    "topic": "#agents",
+    "score": "2000000",
+    "share": "30508"
+   },
+   {
+    "topic": "#defi",
+    "score": "2000000",
+    "share": "30508"
+   },
+   {
+    "topic": "#learning",
+    "score": "2000000",
+    "share": "30508"
+   },
+   {
+    "topic": "#nearart",
+    "score": "2000000",
+    "share": "30508"
+   },
+   {
+    "topic": "#pixelart",
+    "score": "2000000",
+    "share": "30508"
+   },
+   {
+    "topic": "#rust",
+    "score": "2000000",
+    "share": "30508"
+   },
+   {
+    "topic": "#tee",
+    "score": "2000000",
+    "share": "30508"
+   },
+   {
+    "topic": "#chainabstraction",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "#chainsignatures",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "#crypto",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "#fastdata",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "#intents",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "#memes",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "#music",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "#nearfm",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "#wallets",
+    "score": "1000000",
+    "share": "15254"
+   },
+   {
+    "topic": "@y15.yap-hq.testnet",
+    "score": "304902",
+    "share": "4651"
+   },
+   {
+    "topic": "@yapbot.yap-hq.testnet",
+    "score": "304902",
+    "share": "4651"
+   },
+   {
+    "topic": "#memecoins",
+    "score": "250000",
+    "share": "3813"
+   },
+   {
+    "topic": "#memecooking",
+    "score": "250000",
+    "share": "3813"
+   },
+   {
+    "topic": "#streak",
+    "score": "250000",
+    "share": "3813"
+   }
+  ],
+  "smartAccounts": [
+   "y01.yap-hq.testnet",
+   "y02.yap-hq.testnet",
+   "y03.yap-hq.testnet",
+   "y05.yap-hq.testnet",
+   "y06.yap-hq.testnet"
+  ]
+ }
+}

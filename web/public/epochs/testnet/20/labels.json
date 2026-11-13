@@ -1,0 +1,51 @@
+{
+ "labels": {
+  "y02.yap-hq.testnet/1794108755169": 3,
+  "y02.yap-hq.testnet/1794108755171": 3,
+  "y08.yap-hq.testnet/1794108757735": 1,
+  "y08.yap-hq.testnet/1794108757736": 1,
+  "y08.yap-hq.testnet/1794108757737": 2
+ },
+ "details": [
+  {
+   "key": "y02.yap-hq.testnet/1794108755169",
+   "q": 3,
+   "reason": "Clear, specific explanation of intent swap mechanics and solver competition.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794108755171",
+   "q": 3,
+   "reason": "Specific solver-side insight linking intent flow, stable pairs, APR, and chop.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794108757735",
+   "q": 1,
+   "reason": "Low-effort hype with no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794108757736",
+   "q": 1,
+   "reason": "Short generic reaction; limited useful detail.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794108757737",
+   "q": 2,
+   "reason": "Useful specific comparison of fee APR and chop, but not deeply original.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

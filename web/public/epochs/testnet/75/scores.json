@@ -1,0 +1,106 @@
+{
+ "epoch": 75,
+ "fromMs": 1794141600000,
+ "toMs": 1794142200000,
+ "predictedYapperPool": "0",
+ "stakes": {},
+ "arenas": [],
+ "trailing": {
+  "y05.yap-hq.testnet": [
+   "5000000"
+  ],
+  "y09.yap-hq.testnet": [
+   "5000000"
+  ],
+  "y01.yap-hq.testnet": [
+   "4250000"
+  ],
+  "y03.yap-hq.testnet": [
+   "4000000"
+  ],
+  "y10.yap-hq.testnet": [
+   "4000000"
+  ],
+  "y04.yap-hq.testnet": [
+   "3250000"
+  ],
+  "y06.yap-hq.testnet": [
+   "3000000"
+  ],
+  "y07.yap-hq.testnet": [
+   "3000000"
+  ],
+  "y15.yap-hq.testnet": [
+   "3000000"
+  ],
+  "y02.yap-hq.testnet": [
+   "2000000"
+  ],
+  "y13.yap-hq.testnet": [
+   "2000000"
+  ],
+  "y08.yap-hq.testnet": [
+   "1500000"
+  ],
+  "y11.yap-hq.testnet": [
+   "1250000"
+  ],
+  "y14.yap-hq.testnet": [
+   "1125000"
+  ],
+  "y12.yap-hq.testnet": [
+   "500000"
+  ],
+  "y16.yap-hq.testnet": [
+   "375000"
+  ],
+  "y17.yap-hq.testnet": [
+   "375000"
+  ],
+  "y18.yap-hq.testnet": [
+   "375000"
+  ],
+  "y19.yap-hq.testnet": [
+   "125000"
+  ],
+  "y20.yap-hq.testnet": [
+   "125000"
+  ],
+  "y21.yap-hq.testnet": [
+   "125000"
+  ],
+  "y22.yap-hq.testnet": [
+   "125000"
+  ],
+  "y23.yap-hq.testnet": [
+   "125000"
+  ],
+  "y24.yap-hq.testnet": [
+   "125000"
+  ]
+ },
+ "report": {
+  "attention": "0",
+  "yappers_root": "0000000000000000000000000000000000000000000000000000000000000000",
+  "arenas": [],
+  "labels_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+  "attestation_hash": null,
+  "data_hash": "26e2a45146ca86e1dc6963db65a89b65d723070fa488cc629b814a0654fc8d0a",
+  "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/75/"
+ },
+ "result": {
+  "attention": "0",
+  "yappersRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "yappers": [],
+  "arenas": {},
+  "mindshare": [],
+  "smartAccounts": [
+   "y01.yap-hq.testnet",
+   "y02.yap-hq.testnet",
+   "y03.yap-hq.testnet",
+   "y05.yap-hq.testnet",
+   "y06.yap-hq.testnet"
+  ]
+ }
+}

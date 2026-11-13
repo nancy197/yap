@@ -1,0 +1,51 @@
+{
+ "labels": {
+  "y04.yap-hq.testnet/1794151933268": 2,
+  "y04.yap-hq.testnet/1794151933269": 1,
+  "y04.yap-hq.testnet/1794151933270": 2,
+  "y06.yap-hq.testnet/1794151935928": 2,
+  "y06.yap-hq.testnet/1794151935930": 3
+ },
+ "details": [
+  {
+   "key": "y04.yap-hq.testnet/1794151933268",
+   "q": 2,
+   "reason": "Practical DAO treasury governance advice with concrete policy items.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794151933269",
+   "q": 1,
+   "reason": "Short reply restating runway point; adds little beyond the prior post.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794151933270",
+   "q": 2,
+   "reason": "Useful LP treasury point: compare APR and impermanent loss before voting.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794151935928",
+   "q": 2,
+   "reason": "Clear wallet UX issue and plain-language intent solution for blind signing.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794151935930",
+   "q": 3,
+   "reason": "Specific insight: wallets should show fee APR minus IL to prevent blind rebalancing.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

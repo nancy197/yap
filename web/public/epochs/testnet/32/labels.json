@@ -1,0 +1,139 @@
+{
+ "labels": {
+  "y05.yap-hq.testnet/1794116260779": 2,
+  "y05.yap-hq.testnet/1794116260780": 3,
+  "y05.yap-hq.testnet/1794116260781": 3,
+  "y12.yap-hq.testnet/1794116263257": 1,
+  "y12.yap-hq.testnet/1794116263258": 1
+ },
+ "details": [
+  {
+   "key": "y05.yap-hq.testnet/1794116260779",
+   "q": 2,
+   "reason": "Concise NEAR throughput summary with specific metrics; useful but not a novel insight."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794116260780",
+   "q": 3,
+   "reason": "Specific IL/APR breakeven math and framing; original, actionable insight."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794116260781",
+   "q": 3,
+   "reason": "Specific indexer observation linking mention spikes to realized-vol windows; useful insight."
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794116263257",
+   "q": 1,
+   "reason": "Low-effort streak/gm post with token tag; no substantive content."
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794116263258",
+   "q": 1,
+   "reason": "Whimsical low-effort reply; no useful information or insight."
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": {
+  "verified": true,
+  "reportHash": "157a7aee35d2b68a1cf2fd5a597228db4dc2bff828fa02e776915bd78e728d9c",
+  "checks": [
+   {
+    "name": "fresh random nonce",
+    "passed": true
+   },
+   {
+    "name": "model candidates returned",
+    "passed": true
+   },
+   {
+    "name": "gateway: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "gateway: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "gateway: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "gateway: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "model 0: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "model 0: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "model 0: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU evidence present",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA NRAS response",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA GPU verdict",
+    "passed": true
+   }
+  ]
+ },
+ "usage": {
+  "promptTokens": 614,
+  "completionTokens": 1537,
+  "usd": 0.00209951,
+  "calls": 1
+ }
+}

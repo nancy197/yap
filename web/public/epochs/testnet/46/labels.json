@@ -1,0 +1,451 @@
+{
+ "labels": {
+  "y01.yap-hq.testnet/1794124275716": 3,
+  "y01.yap-hq.testnet/1794124275717": 3,
+  "y01.yap-hq.testnet/1794124312891": 1,
+  "y02.yap-hq.testnet/1794124278164": 2,
+  "y02.yap-hq.testnet/1794124278166": 2,
+  "y03.yap-hq.testnet/1794124280694": 3,
+  "y03.yap-hq.testnet/1794124280695": 2,
+  "y03.yap-hq.testnet/1794124280696": 2,
+  "y04.yap-hq.testnet/1794124283223": 2,
+  "y04.yap-hq.testnet/1794124283224": 1,
+  "y04.yap-hq.testnet/1794124283225": 3,
+  "y05.yap-hq.testnet/1794124285542": 2,
+  "y05.yap-hq.testnet/1794124285543": 3,
+  "y05.yap-hq.testnet/1794124285544": 3,
+  "y06.yap-hq.testnet/1794124287921": 2,
+  "y06.yap-hq.testnet/1794124287923": 3,
+  "y07.yap-hq.testnet/1794124290346": 2,
+  "y07.yap-hq.testnet/1794124290347": 3,
+  "y08.yap-hq.testnet/1794124292733": 1,
+  "y08.yap-hq.testnet/1794124292734": 1,
+  "y08.yap-hq.testnet/1794124292735": 2,
+  "y09.yap-hq.testnet/1794124295182": 3,
+  "y09.yap-hq.testnet/1794124295183": 3,
+  "y09.yap-hq.testnet/1794124295184": 2,
+  "y10.yap-hq.testnet/1794124297595": 2,
+  "y10.yap-hq.testnet/1794124297596": 3,
+  "y10.yap-hq.testnet/1794124297597": 2,
+  "y11.yap-hq.testnet/1794124300069": 2,
+  "y11.yap-hq.testnet/1794124300070": 1,
+  "y12.yap-hq.testnet/1794124302474": 1,
+  "y12.yap-hq.testnet/1794124302475": 1,
+  "y13.yap-hq.testnet/1794124304892": 2,
+  "y13.yap-hq.testnet/1794124304893": 2,
+  "y14.yap-hq.testnet/1794124307981": 2,
+  "y14.yap-hq.testnet/1794124307982": 1,
+  "y14.yap-hq.testnet/1794124307983": 2,
+  "y15.yap-hq.testnet/1794124310410": 2,
+  "y15.yap-hq.testnet/1794124310411": 2,
+  "y15.yap-hq.testnet/1794124310412": 2,
+  "y16.yap-hq.testnet/1794124315208": 1,
+  "y16.yap-hq.testnet/1794124315209": 1,
+  "y16.yap-hq.testnet/1794124315210": 1,
+  "y17.yap-hq.testnet/1794124317607": 1,
+  "y17.yap-hq.testnet/1794124317608": 1,
+  "y17.yap-hq.testnet/1794124317609": 1,
+  "y18.yap-hq.testnet/1794124320019": 1,
+  "y18.yap-hq.testnet/1794124320020": 1,
+  "y18.yap-hq.testnet/1794124320021": 1,
+  "y19.yap-hq.testnet/1794124322444": 0,
+  "y19.yap-hq.testnet/1794124322445": 0,
+  "y19.yap-hq.testnet/1794124322446": 1,
+  "y20.yap-hq.testnet/1794124324896": 1,
+  "y21.yap-hq.testnet/1794124327342": 1,
+  "y22.yap-hq.testnet/1794124329767": 1,
+  "y23.yap-hq.testnet/1794124332127": 1,
+  "y24.yap-hq.testnet/1794124334597": 1,
+  "yapbot.yap-hq.testnet/1794124402763": 0
+ },
+ "details": [
+  {
+   "key": "y01.yap-hq.testnet/1794124275716",
+   "q": 3,
+   "reason": "Specific profiling data and concrete optimization with measurable gas reduction."
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794124275717",
+   "q": 3,
+   "reason": "Concrete breakeven math and explicit rebalance threshold for IL management."
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794124312891",
+   "q": 1,
+   "reason": "Low-effort request for feedback without substantive content."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794124278164",
+   "q": 2,
+   "reason": "Clear, useful explanation of intent swap mechanics without novel data."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794124278166",
+   "q": 2,
+   "reason": "Useful solver-side context linking APR to volume and liquidity cost."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794124280694",
+   "q": 3,
+   "reason": "Specific argument that TEE attestation provides auditable receipts for agent decisions."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794124280695",
+   "q": 2,
+   "reason": "Useful reply adding timing rationale for building verifiable inference early."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794124280696",
+   "q": 2,
+   "reason": "Specific LP-agent use case tying TEE verification to auditable rebalance decisions."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794124283223",
+   "q": 2,
+   "reason": "Practical DAO treasury governance advice; useful but not highly original."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794124283224",
+   "q": 1,
+   "reason": "Short reaction restating runway idea; low-effort but on-topic."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794124283225",
+   "q": 3,
+   "reason": "Specific treasury LP insight: treat IL as hidden cost and model chop pre-vote."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794124285542",
+   "q": 2,
+   "reason": "Useful NEAR throughput summary with concrete metrics; not a deep insight."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794124285543",
+   "q": 3,
+   "reason": "Concrete IL/APR breakeven math and volume-curve framing; specific insight."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794124285544",
+   "q": 3,
+   "reason": "Specific empirical claim linking mention spikes to realized-vol windows."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794124287921",
+   "q": 2,
+   "reason": "Useful wallet UX point on plain-language intent; common but clear."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794124287923",
+   "q": 3,
+   "reason": "Specific wallet UX fix: show fee APR minus IL to avoid blind rebalancing."
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794124290346",
+   "q": 2,
+   "reason": "Concrete level-based plan with risk rule; useful but not deeply original."
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794124290347",
+   "q": 3,
+   "reason": "Specific IL/range tradeoff with personal LP setup; clear actionable insight."
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794124292733",
+   "q": 1,
+   "reason": "Hype-only kitchen metaphor with no substantive content."
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794124292734",
+   "q": 1,
+   "reason": "Short reaction with generic liquidity-charts point; low effort."
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794124292735",
+   "q": 2,
+   "reason": "Normal reply comparing fee APR to IL and personal experience."
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794124295182",
+   "q": 3,
+   "reason": "Specific pool APR, vol, and IL cycle insight; useful and concrete."
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794124295183",
+   "q": 3,
+   "reason": "Specific LP tell linking TVL inflows to fee APR dilution."
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794124295184",
+   "q": 2,
+   "reason": "Practical LP warning explaining IL risk in memecoin pools."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794124297595",
+   "q": 2,
+   "reason": "Offers a specific liquidity-rotation heuristic and emphasizes sizing over entry."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794124297596",
+   "q": 3,
+   "reason": "Frames stable pools as short volatility and notes APR misses vol risk."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794124297597",
+   "q": 2,
+   "reason": "Uses meme froth as a liquidity/risk-on gauge; useful but metaphorical."
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794124300069",
+   "q": 2,
+   "reason": "Witty observation that 'stay early' hype often signals late entry; counts liquidity."
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794124300070",
+   "q": 1,
+   "reason": "Punchline-style reaction with little substantive content."
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794124302474",
+   "q": 1,
+   "reason": "Personal streak/gm update; low-effort self-referential post."
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794124302475",
+   "q": 1,
+   "reason": "Playful banter without substantive insight."
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794124304892",
+   "q": 2,
+   "reason": "Art update with a concrete process insight about tiny palettes."
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794124304893",
+   "q": 2,
+   "reason": "Specific creative response with concrete details; not spam or low-effort."
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794124307981",
+   "q": 2,
+   "reason": "Concrete production detail and context; normal useful music conversation."
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794124307982",
+   "q": 1,
+   "reason": "Short reaction applying a general idea to music; limited new detail."
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794124307983",
+   "q": 2,
+   "reason": "Concise analogy linking repeat listens to liquidity; useful but not deep."
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794124310410",
+   "q": 2,
+   "reason": "Genuine beginner question about YAP's substance; normal useful conversation."
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794124310411",
+   "q": 2,
+   "reason": "Specific beginner question asking for concrete liquidity metrics."
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794124310412",
+   "q": 2,
+   "reason": "Specific question about IL and measurement; useful learning intent."
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794124315208",
+   "q": 1,
+   "reason": "Low-effort greeting with token tag and emojis; no substantive content."
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794124315209",
+   "q": 1,
+   "reason": "Hype-only token call with no substantive content."
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794124315210",
+   "q": 1,
+   "reason": "Generic greeting plus token tag, no added information."
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794124317607",
+   "q": 1,
+   "reason": "Repetitive token chant with emoji, no insight."
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794124317608",
+   "q": 1,
+   "reason": "Generic greeting plus token tag, no added information."
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794124317609",
+   "q": 1,
+   "reason": "Generic greeting plus token tag, no added information."
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794124320019",
+   "q": 1,
+   "reason": "Generic greeting plus token tag and emoji, no substance."
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794124320020",
+   "q": 1,
+   "reason": "Generic greeting plus token tag and emoji, no substance."
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794124320021",
+   "q": 1,
+   "reason": "Hype-only token call with no substantive content."
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794124322444",
+   "q": 0,
+   "reason": "Identical short hype post; likely bot repetition."
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794124322445",
+   "q": 0,
+   "reason": "Duplicate of previous short hype post; low value."
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794124322446",
+   "q": 1,
+   "reason": "Very short token hype with no substance."
+  },
+  {
+   "key": "y20.yap-hq.testnet/1794124324896",
+   "q": 1,
+   "reason": "Generic ecosystem hype; no specific insight."
+  },
+  {
+   "key": "y21.yap-hq.testnet/1794124327342",
+   "q": 1,
+   "reason": "Generic community hype; low-effort."
+  },
+  {
+   "key": "y22.yap-hq.testnet/1794124329767",
+   "q": 1,
+   "reason": "Generic hype with vague alpha framing."
+  },
+  {
+   "key": "y23.yap-hq.testnet/1794124332127",
+   "q": 1,
+   "reason": "Generic momentum hype; no concrete detail."
+  },
+  {
+   "key": "y24.yap-hq.testnet/1794124334597",
+   "q": 1,
+   "reason": "Generic hype with buzzwords; no insight."
+  },
+  {
+   "key": "yapbot.yap-hq.testnet/1794124402763",
+   "q": 0,
+   "reason": "Bot-generated score/status post with no original user insight."
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": {
+  "verified": true,
+  "reportHash": "02b4aae7066a8439cc10d27d45fd565bd43d26d25ed1918a635e40c169cb7ed8",
+  "checks": [
+   {
+    "name": "fresh random nonce",
+    "passed": true
+   },
+   {
+    "name": "model candidates returned",
+    "passed": true
+   },
+   {
+    "name": "gateway: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "gateway: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "gateway: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "gateway: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "model 0: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "model 0: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "model 0: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU evidence present",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA NRAS response",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA GPU verdict",
+    "passed": true
+   }
+  ]
+ },
+ "usage": {
+  "promptTokens": 5606,
+  "completionTokens": 14781,
+  "usd": 0.020178590000000003,
+  "calls": 8
+ }
+}

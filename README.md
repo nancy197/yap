@@ -5,9 +5,13 @@
 <h1 align="center">$YAP</h1>
 
 <p align="center">
-  <b>Yap-to-earn that nobody can switch off.</b><br/>
-  A memecoin whose supply follows its community's attention, scored from public near.social data,<br/>
-  governed by a Sputnik DAO, and locked so that not even we can change the rules.
+  <b>A memecoin that mints when its community talks and burns when it goes quiet.</b><br/>
+  Attention is scored from public near.social data, disputes go to a Sputnik DAO,<br/>
+  and the token has zero access keys, so not even we can change the rules.
+</p>
+
+<p align="center">
+  <b>▶ Live demo (NEAR testnet, nothing to install): <a href="https://yap-near.vercel.app">yap-near.vercel.app</a></b>
 </p>
 
 <p align="center">
@@ -31,7 +35,11 @@
 
 ## The 30-second version
 
-On **15 Jan 2026** X banned apps that reward posting. The next day Kaito shut down Yaps, the product behind about
+**The mechanic in one line:** every epoch the community's attention on near.social is scored against a target.
+Loud epoch → $YAP mints and the streak grows. Quiet epoch → 3% of the Reserve burns and the streak resets.
+No report at all → 10% burns. The rules live in a locked NEP-141 contract.
+
+**Why it exists:** on **15 Jan 2026** X banned apps that reward posting. The next day Kaito shut down Yaps, the product behind about
 70% of its token's utility. **One API decision deleted a whole category.**
 
 $YAP rebuilds the Kaito Yaps feature set on **near.social**, where every post, like, repost, reply and follow is a
@@ -249,6 +257,9 @@ FastData KV · NEAR AI Cloud (TEE) · near-api-js · TypeScript · React.
 ## Run it
 
 **Requirements:** Node 23, pnpm 10, Rust 1.95 (pinned in `rust-toolchain.toml`) and `cargo near`.
+
+The fastest way to look around is the hosted app: **https://yap-near.vercel.app** (reads NEAR testnet live; the
+`Mainnet · read-only` switch shows the real near.social board). To run everything locally:
 
 ```bash
 pnpm install

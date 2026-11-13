@@ -1,0 +1,199 @@
+{
+ "labels": {
+  "y01.yap-hq.testnet/1794107092111": 3,
+  "y01.yap-hq.testnet/1794107092112": 3,
+  "y02.yap-hq.testnet/1794107094488": 2,
+  "y02.yap-hq.testnet/1794107094490": 3,
+  "y03.yap-hq.testnet/1794107096731": 2,
+  "y03.yap-hq.testnet/1794107096732": 1,
+  "y03.yap-hq.testnet/1794107096733": 3,
+  "y04.yap-hq.testnet/1794107099309": 2,
+  "y04.yap-hq.testnet/1794107099310": 2,
+  "y04.yap-hq.testnet/1794107099311": 2,
+  "y05.yap-hq.testnet/1794107101232": 3,
+  "y05.yap-hq.testnet/1794107101233": 3,
+  "y05.yap-hq.testnet/1794107101234": 3,
+  "y06.yap-hq.testnet/1794107103578": 2,
+  "y06.yap-hq.testnet/1794107103580": 2
+ },
+ "details": [
+  {
+   "key": "y01.yap-hq.testnet/1794107092111",
+   "q": 3,
+   "reason": "Specific profiling result with concrete gas reduction and optimization plan."
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794107092112",
+   "q": 3,
+   "reason": "Concrete breakeven math and a clear rebalance threshold for LP risk."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794107094488",
+   "q": 2,
+   "reason": "Clear mechanism explanation of intents, but not deeply original."
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794107094490",
+   "q": 3,
+   "reason": "Adds solver-side perspective linking LP chop to routing through stable pairs."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794107096731",
+   "q": 2,
+   "reason": "Useful TEE trust argument, but somewhat generic framing."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794107096732",
+   "q": 1,
+   "reason": "Mostly agreement with generic timing advice; little new specificity."
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794107096733",
+   "q": 3,
+   "reason": "Concrete LP-agent use case tying TEE verification to auditable decisions."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794107099309",
+   "q": 2,
+   "reason": "Practical DAO treasury policy advice with specific rules to document."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794107099310",
+   "q": 2,
+   "reason": "Clear DAO treasury runway argument, but generic and not highly specific."
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794107099311",
+   "q": 2,
+   "reason": "Practical DAO treasury LP advice to model IL before voting."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794107101232",
+   "q": 3,
+   "reason": "Specific NEAR throughput metrics with concise interpretation."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794107101233",
+   "q": 3,
+   "reason": "Concrete IL breakeven math and volume-curve framing."
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794107101234",
+   "q": 3,
+   "reason": "Specific claim linking mention spikes to realized-vol windows."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794107103578",
+   "q": 2,
+   "reason": "Clear wallet UX point about plain-language intent confirmation."
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794107103580",
+   "q": 2,
+   "reason": "Specific wallet UX fix to show fee APR minus IL inline."
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": {
+  "verified": true,
+  "reportHash": "8a51b30e56ac530d9a628b9d7a9260fb452a178022c6e118f283c52107f48a23",
+  "checks": [
+   {
+    "name": "fresh random nonce",
+    "passed": true
+   },
+   {
+    "name": "model candidates returned",
+    "passed": true
+   },
+   {
+    "name": "gateway: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "gateway: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "gateway: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "gateway: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "model 0: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "model 0: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "model 0: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU evidence present",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA NRAS response",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA GPU verdict",
+    "passed": true
+   }
+  ]
+ },
+ "usage": {
+  "promptTokens": 1648,
+  "completionTokens": 4456,
+  "usd": 0.006081520000000001,
+  "calls": 2
+ }
+}

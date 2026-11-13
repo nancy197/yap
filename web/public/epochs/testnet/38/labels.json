@@ -1,0 +1,58 @@
+{
+ "labels": {
+  "y04.yap-hq.testnet/1794119521803": 2,
+  "y04.yap-hq.testnet/1794119521804": 2,
+  "y04.yap-hq.testnet/1794119521805": 2,
+  "y09.yap-hq.testnet/1794119524394": 2,
+  "y09.yap-hq.testnet/1794119524395": 3,
+  "y09.yap-hq.testnet/1794119524396": 2
+ },
+ "details": [
+  {
+   "key": "y04.yap-hq.testnet/1794119521803",
+   "q": 2,
+   "reason": "Actionable governance point: codify runway, diversification, and spending thresholds before proposals.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794119521804",
+   "q": 2,
+   "reason": "Useful reply linking long runway to avoiding forced treasury sales during downturns.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794119521805",
+   "q": 2,
+   "reason": "Specific LP treasury check: treat IL as an expense and model chop before voting.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794119524394",
+   "q": 2,
+   "reason": "Concrete pool observation with APR, volatility, and IL caveat.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794119524395",
+   "q": 3,
+   "reason": "Specific mid-cycle tell: TVL inflows after green runs can precede fee APR dilution.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794119524396",
+   "q": 2,
+   "reason": "Practical warning that memecoin LP APR can be wiped by IL in a single volatile candle.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}
