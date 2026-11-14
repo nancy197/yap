@@ -28,6 +28,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/nancy197/yap/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/nancy197/yap/actions/workflows/ci.yml/badge.svg?branch=main" /></a>
   <img alt="NEAR testnet" src="https://img.shields.io/badge/NEAR-testnet%20live-00ec97?style=flat-square" />
   <img alt="Tracks" src="https://img.shields.io/badge/tracks-Memecoins%20With%20Mechanics%20%C2%B7%20Social%20Money-ff6a3d?style=flat-square" />
   <img alt="No admin key" src="https://img.shields.io/badge/admin%20keys-0-ffb347?style=flat-square" />
