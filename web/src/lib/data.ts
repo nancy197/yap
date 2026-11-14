@@ -1,9 +1,11 @@
 // Data layer: published epoch files (scores, labels, datasets), on-chain views, near.social profiles.
 // Testnet = live, rewarded epochs. Mainnet = read-only sample of real near.social data (unrewarded).
 export const RPC = 'https://test.rpc.fastnear.com';
-export const TOKEN = 'token2.yap-hq.testnet';
+export const TOKEN = 'token3.yap-hq.testnet';
 export const DAO = 'dao.yap-hq.testnet';
-export const STEWARD = 'steward2.yap-hq.testnet';
+export const STEWARD = 'steward3.yap-hq.testnet';
+/** Published epoch files of the live deployment (token2's run stays under ./epochs/testnet). */
+export const EPOCHS = './epochs/token3';
 export const HQ = 'yap-hq.testnet';
 export const KV_TEST = 'https://kv.test.fastnear.com';
 export const SOCIAL_MAIN = 'https://api2.near.social';
@@ -56,7 +58,7 @@ export function getJson<T = any>(url: string, fresh = false): Promise<T> {
   return p;
 }
 export async function epochIndex(): Promise<{ epochs: Record<string, any> }> {
-  return getJson('./epochs/testnet/index.json', true).catch(() => ({ epochs: {} }));
+  return getJson(`${EPOCHS}/index.json`, true).catch(() => ({ epochs: {} }));
 }
 export async function loadEpochs(net: Net): Promise<EpochScores[]> {
   if (net === 'mainnet') {
@@ -66,10 +68,10 @@ export async function loadEpochs(net: Net): Promise<EpochScores[]> {
   }
   const idx = await epochIndex();
   const ids = Object.keys(idx.epochs).map(Number).sort((a, b) => a - b);
-  const out = await Promise.all(ids.map((e) => getJson<EpochScores>(`./epochs/testnet/${e}/scores.json`).catch(() => null)));
+  const out = await Promise.all(ids.map((e) => getJson<EpochScores>(`${EPOCHS}/${e}/scores.json`).catch(() => null)));
   return out.filter(Boolean) as EpochScores[];
 }
-export const epochFile = (e: number, f: 'dataset' | 'labels' | 'scores') => getJson(e < 0 ? `./mainnet/${f}.json` : `./epochs/testnet/${e}/${f}.json`);
+export const epochFile = (e: number, f: 'dataset' | 'labels' | 'scores') => getJson(e < 0 ? `./mainnet/${f}.json` : `${EPOCHS}/${e}/${f}.json`);
 export const mainnetMeta = () => getJson<any>('./mainnet/scores.json').catch(() => null);
 
 // ---------- aggregation (Kaito-style windows) ----------

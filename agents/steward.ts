@@ -7,12 +7,12 @@
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { ROOT, HQ, TOKEN, DAO, Y, tgas, call, view, signer, subAccount, recordTx, txHash, provider, sleep, loadEnv } from './common.ts';
+import { STEWARD, EPOCH_DIR, ROOT, HQ, TOKEN, DAO, Y, tgas, call, view, signer, subAccount, recordTx, txHash, provider, sleep, loadEnv } from './common.ts';
 import { COUNCIL } from './deploy.ts';
 
-export const STEWARD = `steward2.${HQ}`;
+export { STEWARD };
 const ROLE = 'trusted';
-const PUBLIC = resolve(ROOT, 'web/public/epochs/testnet');
+const PUBLIC = resolve(ROOT, 'web/public/epochs', EPOCH_DIR);
 const log = (...a: unknown[]) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 async function hasCode(id: string) {

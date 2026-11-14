@@ -1,8 +1,8 @@
 {
-  "genesisTs": 1794096600,
+  "genesisTs": 1794621000,
   "network": "testnet",
   "hq": "yap-hq.testnet",
-  "token": "token2.yap-hq.testnet",
+  "token": "token3.yap-hq.testnet",
   "dao": "dao.yap-hq.testnet",
   "scorers": [
     "scorer-1.yap-hq.testnet",
@@ -16,7 +16,7 @@
   ],
   "config": {
     "epoch_secs": 600,
-    "genesis_ts": 1794096600,
+    "genesis_ts": 1794621000,
     "base_emission": "1000000000000000000000",
     "initial_attention_target": "100000000",
     "ema_bps": 2000,
@@ -54,5 +54,5 @@
     }
   },
   "locked": true,
-  "lockCheckedAt": "2026-11-08T00:01:15.927Z"
+  "lockCheckedAt": "2026-11-14T01:34:32.019Z"
 }

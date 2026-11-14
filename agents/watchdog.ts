@@ -6,10 +6,10 @@ import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { score, datasetHash, canonical, sha256Hex } from '@yap/scoring';
-import { ROOT, HQ, TOKEN, tgas, call, view, signer, subAccount, recordTx, sleep, loadEnv } from './common.ts';
+import { EPOCH_DIR, ROOT, HQ, TOKEN, tgas, call, view, signer, subAccount, recordTx, sleep, loadEnv } from './common.ts';
 
 const WHO = process.argv.includes('--account') ? process.argv[process.argv.indexOf('--account') + 1]! : `watchdog.${HQ}`;
-const PUBLIC = resolve(ROOT, 'web/public/epochs/testnet');
+const PUBLIC = resolve(ROOT, 'web/public/epochs', EPOCH_DIR);
 const log = (...a: unknown[]) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const checked = new Set<number>();
 
@@ -48,7 +48,7 @@ for (;;) {
       const me = await signer(WHO);
       if (!(await view(TOKEN, 'storage_balance_of', { account_id: WHO }))) await call(me, TOKEN, 'storage_deposit', { account_id: WHO }, 1_250_000_000_000_000_000_000n, tgas(30));
       if (BigInt(await view<string>(TOKEN, 'ft_balance_of', { account_id: WHO })) < BigInt(bond)) await recordTx('fund watchdog bond', await call(await signer(HQ), TOKEN, 'ft_transfer', { receiver_id: WHO, amount: bond }, 1n, tgas(30)), WHO);
-      const reason = `https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/${ep.number}/ (recomputed: ${res})`;
+      const reason = `${process.env.YAP_PUBLIC_BASE ?? `https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/${EPOCH_DIR}`}/${ep.number}/ (recomputed: ${res})`;
       const h = await call(me, TOKEN, 'ft_transfer_call', { receiver_id: TOKEN, amount: bond, msg: JSON.stringify({ challenge: { epoch: ep.number, reason_uri: reason.slice(0, 400) } }) }, 1n, tgas(250));
       await recordTx(`challenge e${ep.number} (watchdog: ${res})`, h, WHO);
       log(JSON.stringify(await view(TOKEN, 'get_challenge', { e: ep.number })));

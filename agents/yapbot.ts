@@ -8,12 +8,11 @@ import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { chatJson, fetchAttestation } from './providers/nearai.ts';
 import { kvWrite } from './seed.ts';
-import { ROOT, HQ, TOKEN, view, signer, subAccount, sleep, loadEnv } from './common.ts';
+import { STEWARD, EPOCH_DIR, ROOT, HQ, TOKEN, view, signer, subAccount, sleep, loadEnv } from './common.ts';
 
 export const BOT = `yapbot.${HQ}`;
-const STEWARD = `steward2.${HQ}`;
 const MODEL = 'Qwen/Qwen3.8-27B';
-const PUBLIC = resolve(ROOT, 'web/public/epochs/testnet');
+const PUBLIC = resolve(ROOT, 'web/public/epochs', EPOCH_DIR);
 const STATE = resolve(ROOT, 'data/yapbot-state.json');
 const TIER = ['None', 'Bronze', 'Silver', 'Gold', 'Inner Circle'];
 const log = (...a: unknown[]) => console.log(new Date().toISOString().slice(11, 19), ...a);

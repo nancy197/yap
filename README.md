@@ -89,36 +89,44 @@ for anyone to revoke.
 
 ## Live on testnet
 
-Everything below is running on NEAR testnet with real transactions. Epochs last **10 minutes** on testnet (mainnet
-would use 1 day).
+Everything below runs on NEAR testnet with real transactions. Epochs last **10 minutes** on testnet (mainnet would
+use 1 day).
 
-**Snapshot read from `token2.yap-hq.testnet` on 9 Nov 2026:**
+**Live deployment (v3): [`token3.yap-hq.testnet`](https://testnet.nearblocks.io/address/token3.yap-hq.testnet),
+launched 14 Nov 2026 at 01:50 UTC** with the full 600,000 YAP Reserve. Current streak, supply, burns and every epoch
+are on the [$YAP page](https://yap-near.vercel.app/#/token), read straight from the chain. The scorers, watchdog,
+steward keeper and @yapbot run under a supervisor that restarts them on failure and keeps every contract funded for
+its own storage.
 
-| Epochs reported | Finalized | Dead (burned 10%) | Total burned | Reserve left | Best streak |
-| ---: | ---: | ---: | ---: | ---: | ---: |
-| 61 | 33 | 27 | **579,500 YAP** | 28,190 YAP (of 600,000) | 5 |
+<details>
+<summary><b>Earlier run (v2, <code>token2.yap-hq.testnet</code>, 8–14 Nov)</b></summary>
 
-> **Why so many dead epochs and burns?** The burns are the mechanic working, not a malfunction. The 600,000 YAP
-> Reserve exists to be burned when attention fades. Dead epochs came from two sources. Some were silent stretches
-> where we switched the simulated community off to exercise the burn. The rest were epochs our testnet scorers
-> missed while they were down. In both cases the contract did what it promises: nobody reported, so anyone could call
-> `crank_dead_epoch` and 10% of the Reserve burned. The token does not wait for its developers. The same path is
-> reproduced in the [dead-meme simulation](sim/RESULTS.md).
+v2 ran the same contract for six days: 33 epochs finalized, best streak 5, and the watchdog caught and challenged a
+deliberately tampered report (links below). Its many dead epochs came partly from silent stretches we ran on purpose
+to exercise the burn, and partly from hours when our single scorer host was offline. The contract handled both the
+same way: nobody reported, so anyone could call `crank_dead_epoch` and 10% of the Reserve burned. That is the rule
+working, but it left v2's Reserve almost empty, so we relaunched as v3 with a supervised runner. v2 stays on chain
+and its full transaction log is in [docs/TESTNET-v2.md](docs/TESTNET-v2.md). The same burn path is reproduced in the
+[dead-meme simulation](sim/RESULTS.md).
+
+</details>
 
 | Piece | Account |
 | --- | --- |
-| $YAP token (NEP-141 + mechanics, **locked**) | [`token2.yap-hq.testnet`](https://testnet.nearblocks.io/address/token2.yap-hq.testnet) |
+| $YAP token (NEP-141 + mechanics, **locked**) | [`token3.yap-hq.testnet`](https://testnet.nearblocks.io/address/token3.yap-hq.testnet) |
 | Community DAO (Sputnik v2, council of 3, 2 to pass) | [`dao.yap-hq.testnet`](https://testnet.nearblocks.io/address/dao.yap-hq.testnet) |
-| Steward (reputation → DAO `trusted` role, capped grants, **locked**) | [`steward2.yap-hq.testnet`](https://testnet.nearblocks.io/address/steward2.yap-hq.testnet) |
+| Steward (reputation → DAO `trusted` role, capped grants, **locked**) | [`steward3.yap-hq.testnet`](https://testnet.nearblocks.io/address/steward3.yap-hq.testnet) |
 | Scorers (bonded, 2-of-3 identical report hash) | `scorer-1..3.yap-hq.testnet` |
 | Independent watchdog (recomputes every report, challenges mismatches) | [`watchdog.yap-hq.testnet`](https://testnet.nearblocks.io/address/watchdog.yap-hq.testnet) |
 | @yapbot (answers "how am I doing?" on near.social) | [`yapbot.yap-hq.testnet`](https://testnet.nearblocks.io/address/yapbot.yap-hq.testnet) |
 | AI quality labeler | `Qwen/Qwen3.8-27B` in a verified TEE on NEAR AI Cloud |
 | Testnet community: 15 writers, plus 4 spam bots and a 5-account like-ring to attack the scoring | `y01..y24.yap-hq.testnet` |
 
-**On-chain moments worth clicking:**
+**On-chain moments worth clicking** (v3 lock first, then highlights from the v2 run):
 
-- Token locked, all full-access keys deleted:
+- v3 token locked, all full-access keys deleted:
+  [`3GotWLyQ21…`](https://testnet.nearblocks.io/txns/3GotWLyQ21H4zqF2iP8Esguw8ZQ39v9jTJq7mustWGc6)
+- v2 token locked the same way:
   [`DXLV1MBDMF…`](https://testnet.nearblocks.io/txns/DXLV1MBDMFfcVcz962NPLzgpRX5sJerGfmgU5VhCn2Rm)
 - Watchdog catches a tampered report (our collusion test) and challenges it:
   [`3g35hmDnpg…`](https://testnet.nearblocks.io/txns/3g35hmDnpgz6QDT7ssLdMRXceDYsu6GWu2LjW5K8yRjs) ·

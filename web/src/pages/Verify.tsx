@@ -2,7 +2,7 @@
 // labels with the same open scoring code, and compare against the report the scorers put on chain.
 import { useState } from 'react';
 import { score, datasetHash, canonical, sha256Hex } from '@yap/scoring';
-import { epochIndex, epochFile, view, sc } from '../lib/data';
+import { epochIndex, epochFile, view, sc, EPOCHS } from '../lib/data';
 import { useAsync, Loading } from '../ui/kit';
 
 type Check = { name: string; ok: boolean; detail: string };
@@ -59,7 +59,7 @@ export default function Verify({ epoch }: { epoch?: string }) {
           {ids.map((i) => <option key={i} value={i}>Epoch #{i}</option>)}
         </select>
         <button className="btn primary" disabled={busy || e == null} onClick={run}>{busy ? 'Recomputing…' : 'Recompute & compare'}</button>
-        {e != null && <><a className="btn ghost" href={`./epochs/testnet/${e}/dataset.json`} target="_blank">dataset.json</a><a className="btn ghost" href={`./epochs/testnet/${e}/labels.json`} target="_blank">labels.json</a><a className="btn ghost" href={`./epochs/testnet/${e}/scores.json`} target="_blank">scores.json</a></>}
+        {e != null && <><a className="btn ghost" href={`${EPOCHS}/${e}/dataset.json`} target="_blank">dataset.json</a><a className="btn ghost" href={`${EPOCHS}/${e}/labels.json`} target="_blank">labels.json</a><a className="btn ghost" href={`${EPOCHS}/${e}/scores.json`} target="_blank">scores.json</a></>}
       </div>
       {!idx ? <Loading /> : !ids.length ? <div className="empty">No epochs published yet.</div> : (
         <div className="grid g-main">

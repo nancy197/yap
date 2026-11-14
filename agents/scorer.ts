@@ -11,12 +11,12 @@ import { resolve } from 'node:path';
 import { history, makeDataset } from '@yap/indexer';
 import { score, canonical, sha256Hex, type EpochDataset, type ScoreResult, type Write } from '@yap/scoring';
 import { labelDataset, type LabelRun } from './labeler.ts';
-import { ROOT, HQ, TOKEN, Y, tgas, call, view, signer, recordTx, sleep, loadEnv } from './common.ts';
+import { EPOCH_DIR, ROOT, HQ, TOKEN, Y, tgas, call, view, signer, recordTx, sleep, loadEnv } from './common.ts';
 import { SCORERS } from './deploy.ts';
 import { PERSONAS } from './seed.ts';
 
-const PUBLIC = resolve(ROOT, 'web/public/epochs/testnet');
-const BASE_URI = process.env.YAP_PUBLIC_BASE ?? 'https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet';
+const PUBLIC = resolve(ROOT, 'web/public/epochs', EPOCH_DIR);
+const BASE_URI = process.env.YAP_PUBLIC_BASE ?? `https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/${EPOCH_DIR}`;
 const mock = process.argv.includes('--mock');
 const log = (...a: unknown[]) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -40,10 +40,26 @@ export function predictYapperPool(attention: bigint, st: St): bigint {
   return (emission * BigInt(cfg.yapper_bps)) / 10_000n;
 }
 
+// The full testnet history takes minutes to page through, and the scorer needs it twice per epoch. FastData pages
+// newest first, so after the first full read only the new head is fetched, up to the first write already held.
+// Ordinals are renumbered so the merged list is identical to a fresh full read (same data_hash as the watchdog).
+let writesCache: Write[] | null = null;
+const writeId = (w: Write) => `${w.receiptId}:${w.actionIndex}:${w.key}`;
 async function allWrites(): Promise<Write[]> {
-  const out: Write[] = [];
-  for await (const w of history('testnet')) out.push(w);
-  return out;
+  if (!writesCache) {
+    const out: Write[] = [];
+    for await (const w of history('testnet')) out.push(w);
+    writesCache = out;
+    return out;
+  }
+  const known = new Set(writesCache.slice(0, 5_000).map(writeId));
+  const fresh: Write[] = [];
+  for await (const w of history('testnet')) {
+    if (known.has(writeId(w))) break;
+    fresh.push(w);
+  }
+  writesCache = [...fresh, ...writesCache].map((w, i) => ({ ...w, sourceOrdinal: i + 1 }));
+  return writesCache;
 }
 
 /** Trailing per-account scores (for tiers) from the files we already published. */

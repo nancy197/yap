@@ -2,10 +2,10 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { ROOT, TOKEN, DAO, view } from './common.ts';
+import { EPOCH_DIR, ROOT, TOKEN, DAO, view } from './common.ts';
 
 const txs: any[] = JSON.parse(await readFile(resolve(ROOT, 'deploy/transactions.json'), 'utf8'));
-const idxF = resolve(ROOT, 'web/public/epochs/testnet/index.json');
+const idxF = resolve(ROOT, 'web/public/epochs', EPOCH_DIR, 'index.json');
 const idx = existsSync(idxF) ? JSON.parse(await readFile(idxF, 'utf8')) : { epochs: {} };
 const st: any = await view(TOKEN, 'get_state');
 const chain: any[] = await view(TOKEN, 'get_epochs', { from: 0, limit: 200 });
