@@ -4,9 +4,10 @@
 
 <h1 align="center">$YAP</h1>
 
-<h3 align="center">Yap to earn. Go quiet and it burns.</h3>
+<h3 align="center">Make Yap Great Again.</h3>
 
 <p align="center">
+  <b>Yap to earn. Go quiet and it burns.</b><br/>
   $YAP pays people for posting on near.social, but only while the whole community keeps talking.<br/>
   Loud epochs mint and grow a shared streak. Quiet ones burn the Reserve.<br/>
   The contract has zero access keys, so nobody can stop the burn. Not even us.
