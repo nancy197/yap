@@ -4,14 +4,22 @@
 
 <h1 align="center">$YAP</h1>
 
+<h3 align="center">Talk and it mints. Go quiet and it burns.</h3>
+
 <p align="center">
-  <b>A memecoin that mints when its community talks and burns when it goes quiet.</b><br/>
-  Attention is scored from public near.social data, disputes go to a Sputnik DAO,<br/>
-  and the token has zero access keys, so not even we can change the rules.
+  A memecoin whose supply follows its community's attention on near.social.<br/>
+  The rules live in a contract with zero access keys, so not even we can change them. Disputes go to a Sputnik DAO.
 </p>
 
 <p align="center">
-  <b>▶ Live demo (NEAR testnet, nothing to install): <a href="https://yap-near.vercel.app">yap-near.vercel.app</a></b>
+  <a href="https://x.com/HenryphamPo/status/2119834848730997109">
+    <img src="docs/media/mechanic.gif" width="720" alt="Attention is measured against a moving target: a loud epoch mints new YAP and grows the streak, a quiet one resets the streak and burns 3% of the Reserve" />
+  </a>
+</p>
+
+<p align="center">
+  <b>▶ <a href="https://yap-near.vercel.app">Live demo</a></b> (NEAR testnet, nothing to install) ·
+  <b>🎥 <a href="https://x.com/HenryphamPo/status/2119834848730997109">3-minute demo video on X</a></b>
 </p>
 
 <p align="center">
@@ -68,8 +76,12 @@ would use 1 day).
 | ---: | ---: | ---: | ---: | ---: | ---: |
 | 61 | 33 | 27 | **579,500 YAP** | 28,190 YAP (of 600,000) | 5 |
 
-We drove the testnet community through loud and quiet stretches on purpose. When it went quiet, the token burned its
-own Reserve, exactly as the rules say.
+> **Why so many dead epochs and burns?** The burns are the mechanic working, not a malfunction. The 600,000 YAP
+> Reserve exists to be burned when attention fades. Dead epochs came from two sources. Some were silent stretches
+> where we switched the simulated community off to exercise the burn. The rest were epochs our testnet scorers
+> missed while they were down. In both cases the contract did what it promises: nobody reported, so anyone could call
+> `crank_dead_epoch` and 10% of the Reserve burned. The token does not wait for its developers. The same path is
+> reproduced in the [dead-meme simulation](sim/RESULTS.md).
 
 | Piece | Account |
 | --- | --- |
