@@ -7,22 +7,21 @@
 <h3 align="center">Make Yap Great Again.</h3>
 
 <p align="center">
-  <b>Yap to earn. Go quiet and it burns.</b><br/>
-  $YAP pays people for posting on near.social, but only while the whole community keeps talking.<br/>
-  Loud epochs mint and grow a shared streak. Quiet ones burn the Reserve.<br/>
-  The contract has zero access keys, so nobody can stop the burn. Not even us.<br/>
+  <b>Proof of Yap: the community mines $YAP by talking.</b><br/>
+  Every post on near.social earns. Every block pays a jackpot. Every block needs more yap than the last.<br/>
+  Nothing burns, and the contract has zero access keys, so nobody can change the rules. Not even us.<br/>
   <b>Bots don't get paid:</b> every post is read by an AI model running in a TEE on NEAR AI Cloud, and spam earns zero.
 </p>
 
 <p align="center">
-  <a href="https://x.com/HenryphamPo/status/2119834848730997109">
-    <img src="docs/media/mechanic.gif" width="720" alt="Attention is measured against a moving target: a loud epoch mints new YAP and grows the streak, a quiet one resets the streak and burns 3% of the Reserve" />
+  <a href="https://yap-near.vercel.app/#/token">
+    <img src="docs/media/proof-of-yap.png" width="720" alt="The $YAP page: the block the community is mining, its progress bar and the jackpot waiting to explode" />
   </a>
 </p>
 
 <p align="center">
   <b>▶ <a href="https://yap-near.vercel.app">Live demo</a></b> (NEAR testnet, nothing to install) ·
-  <b>🎥 <a href="https://x.com/HenryphamPo/status/2119834848730997109">3-minute demo video on X</a></b>
+  🎥 <a href="https://x.com/HenryphamPo/status/2119834848730997109">3-minute stack walkthrough on X</a> (recorded for v2, before Proof of Yap)
 </p>
 
 <p align="center">
@@ -46,20 +45,18 @@
 
 ## The 30-second version
 
-**The game.** Every epoch, the whole community's attention on near.social is measured against a target that rises
-with it.
+**The game: Proof of Yap.** The community mines $YAP the way miners mine Bitcoin, except the work is talking.
 
-| The community… | The coin… | The streak |
-| --- | --- | --- |
-| **stays loud** (≥ 80% of target) | mints up to 3× the base, plus 5% per streak epoch (max +50%) | +1 🔥 |
-| **goes quiet** | mints a little and **burns 3% of the Reserve** | back to 0 🧊 |
-| **says nothing** (no report) | **burns 10% of the Reserve**: the silence tax | back to 0 💀 |
+| | What happens |
+| --- | --- |
+| 🗣 **You yap** | Every 10-minute tick (1 day on mainnet) you earn $YAP by Yap score: post quality × engagement from trusted accounts |
+| 📈 **The community fills the block** | Each tick's total attention fills a shared progress bar. 20% of every mint drips into the jackpot |
+| 💥 **The block fills** | The jackpot explodes: everything in the pot plus 10% of the 600,000 YAP vault, **split by contribution over the whole block**, not only the final tick |
+| ⛏ **Difficulty rises** | The next block needs 25% more attention, so every jackpot is harder to reach than the last |
+| 🤫 **Nobody talks** | Nothing burns. The bar just waits, and unclaimed rewards flow back into the jackpot |
 
-**Your cut.** 80% of every mint goes to yappers by Yap score (post quality × engagement from trusted accounts),
-claimed with a Merkle proof. Leave it unclaimed for 14 epochs and your share burns too.
-
-So everyone's payout depends on everyone else. The pot grows only while people keep yapping, and the coin eats its
-own Reserve when they stop. The best streak is printed on chain like a high score.
+Your payout depends on everyone else: the faster the community yaps, the sooner the jackpot drops, and the more you
+yapped during the block, the bigger your share. Near the end of a block everyone wants to be in the tick that fills it.
 
 **Bots don't get paid.** Yap-to-earn dies when bots farm it, so every post is read by `Qwen/Qwen3.8-27B` running in
 a TEE on **NEAR AI Cloud** (Intel TDX + NVIDIA attestation, checked on every call). The model labels each post
@@ -78,7 +75,7 @@ for anyone to revoke.
 
 |  | What it means |
 | --- | --- |
-| **The meme does something** | Loud epochs mint and grow an on-chain streak. Quiet epochs burn 3% of the Reserve. Silence burns 10%. Unclaimed rewards burn after 14 epochs. |
+| **The meme does something** | Proof of Yap: talking fills a shared block, a full block explodes the jackpot, and every block needs 25% more yap. |
 | **Nobody holds the off switch** | Every parameter is fixed at launch. The token contract has **zero access keys**: no admin, no upgrade, no pause. |
 | **The community owns the treasury** | A stock **Sputnik DAO v2** (works in Trezu) gets 10% of every mint, funds topic **Arenas**, and is the **court of appeal** for scoring disputes. |
 | **Reputation becomes membership** | Gold+ yappers join the DAO's `trusted` role through an immutable steward contract and a Merkle proof. No council vote, no admin. |
@@ -92,40 +89,41 @@ for anyone to revoke.
 Everything below runs on NEAR testnet with real transactions. Epochs last **10 minutes** on testnet (mainnet would
 use 1 day).
 
-**Live deployment (v3): [`token3.yap-hq.testnet`](https://testnet.nearblocks.io/address/token3.yap-hq.testnet),
-launched 14 Nov 2026 at 01:50 UTC** with the full 600,000 YAP Reserve. Current streak, supply, burns and every epoch
-are on the [$YAP page](https://yap-near.vercel.app/#/token), read straight from the chain. The scorers, watchdog,
-steward keeper and @yapbot run under a supervisor that restarts them on failure and keeps every contract funded for
-its own storage.
+**Live deployment (v4, Proof of Yap): [`token4.yap-hq.testnet`](https://testnet.nearblocks.io/address/token4.yap-hq.testnet),
+mining since 14 Nov 2026, 02:30 UTC.** Block #1 needs 300 attention (about an hour of a lively community). The current
+block, jackpot, every jackpot paid and every tick are on the [$YAP page](https://yap-near.vercel.app/#/token), read
+straight from the chain. The scorers, watchdog, steward keeper and @yapbot run under a supervisor that restarts them
+on failure and keeps every contract funded for its own storage.
 
 <details>
-<summary><b>Earlier run (v2, <code>token2.yap-hq.testnet</code>, 8–14 Nov)</b></summary>
+<summary><b>Earlier runs (v2 <code>token2</code>, 8–14 Nov · v3 <code>token3</code>, 14 Nov): the burn mechanic we replaced</b></summary>
 
 v2 ran the same contract for six days: 33 epochs finalized, best streak 5, and the watchdog caught and challenged a
 deliberately tampered report (links below). Its many dead epochs came partly from silent stretches we ran on purpose
 to exercise the burn, and partly from hours when our single scorer host was offline. The contract handled both the
 same way: nobody reported, so anyone could call `crank_dead_epoch` and 10% of the Reserve burned. That is the rule
-working, but it left v2's Reserve almost empty, so we relaunched as v3 with a supervised runner. v2 stays on chain
-and its full transaction log is in [docs/TESTNET-v2.md](docs/TESTNET-v2.md). The same burn path is reproduced in the
-[dead-meme simulation](sim/RESULTS.md).
+working, but it left v2's Reserve almost empty. We relaunched as v3 with a supervised runner, then replaced the burn
+mechanic with Proof of Yap (v4): punishing silence made a quiet week look like a broken token, while a jackpot that
+grows with the community rewards exactly the behaviour a memecoin wants. v2 and v3 stay on chain; v2's full
+transaction log is in [docs/TESTNET-v2.md](docs/TESTNET-v2.md).
 
 </details>
 
 | Piece | Account |
 | --- | --- |
-| $YAP token (NEP-141 + mechanics, **locked**) | [`token3.yap-hq.testnet`](https://testnet.nearblocks.io/address/token3.yap-hq.testnet) |
+| $YAP token (NEP-141 + mechanics, **locked**) | [`token4.yap-hq.testnet`](https://testnet.nearblocks.io/address/token4.yap-hq.testnet) |
 | Community DAO (Sputnik v2, council of 3, 2 to pass) | [`dao.yap-hq.testnet`](https://testnet.nearblocks.io/address/dao.yap-hq.testnet) |
-| Steward (reputation → DAO `trusted` role, capped grants, **locked**) | [`steward3.yap-hq.testnet`](https://testnet.nearblocks.io/address/steward3.yap-hq.testnet) |
+| Steward (reputation → DAO `trusted` role, capped grants, **locked**) | [`steward4.yap-hq.testnet`](https://testnet.nearblocks.io/address/steward4.yap-hq.testnet) |
 | Scorers (bonded, 2-of-3 identical report hash) | `scorer-1..3.yap-hq.testnet` |
 | Independent watchdog (recomputes every report, challenges mismatches) | [`watchdog.yap-hq.testnet`](https://testnet.nearblocks.io/address/watchdog.yap-hq.testnet) |
 | @yapbot (answers "how am I doing?" on near.social) | [`yapbot.yap-hq.testnet`](https://testnet.nearblocks.io/address/yapbot.yap-hq.testnet) |
 | AI quality labeler | `Qwen/Qwen3.8-27B` in a verified TEE on NEAR AI Cloud |
 | Testnet community: 15 writers, plus 4 spam bots and a 5-account like-ring to attack the scoring | `y01..y24.yap-hq.testnet` |
 
-**On-chain moments worth clicking** (v3 lock first, then highlights from the v2 run):
+**On-chain moments worth clicking** (v4 lock first, then highlights from the v2 run):
 
-- v3 token locked, all full-access keys deleted:
-  [`3GotWLyQ21…`](https://testnet.nearblocks.io/txns/3GotWLyQ21H4zqF2iP8Esguw8ZQ39v9jTJq7mustWGc6)
+- v4 token locked, all full-access keys deleted:
+  [`5XMgZR9jVu…`](https://testnet.nearblocks.io/txns/5XMgZR9jVupjtm4qJt138gDczAT2wPND5h2P4LW3EX1P)
 - v2 token locked the same way:
   [`DXLV1MBDMF…`](https://testnet.nearblocks.io/txns/DXLV1MBDMFfcVcz962NPLzgpRX5sJerGfmgU5VhCn2Rm)
 - Watchdog catches a tampered report (our collusion test) and challenges it:
@@ -164,14 +162,17 @@ flowchart TD
 
 When an epoch finalizes, the community's attention is compared with a moving target:
 
-| Epoch | What happens to supply | Streak |
-| --- | --- | --- |
-| **Loud** (attention ≥ 80% of target) | Mint up to 3× the base emission, plus a 5% bonus per streak epoch (max +50%) | +1 |
-| **Quiet** (attention < 80% of target) | Smaller emission, and burn 3% of the Reserve | Reset to 0 |
-| **Dead** (no report) | Burn 10% of the Reserve | Reset to 0 |
+Then the tick settles on chain:
 
-Minted YAP is split **80% to yappers** (Merkle claim), **10% to sYAP stakers** and **10% to the DAO**. Unclaimed
-yapper rewards burn after 14 epochs. Full rules are in [RULES.md](RULES.md), and the scoring formulas
+| Step | Rule |
+| --- | --- |
+| **Mint** | `base emission × attention / target`, capped at 3×. The target follows attention by EMA |
+| **Feed the jackpot** | 20% of the mint goes to the jackpot pot. The rest: **80% to yappers** (Merkle claim), **10% to sYAP stakers**, **10% to the DAO** |
+| **Fill the block** | The tick's attention is added to the block's progress |
+| **Explode** | Progress ≥ threshold: pot + 10% of the vault is added to this tick's claim tree, split by each account's Yap score summed over every tick of the block. The next threshold is 25% higher |
+| **Silence** | A tick nobody reports mints nothing and adds nothing. Nothing burns |
+
+Rewards left unclaimed for 14 ticks return to the jackpot. Full rules are in [RULES.md](RULES.md), and the scoring formulas
 with a worked example are in [docs/SCORING.md](docs/SCORING.md).
 
 ### The Yap score
@@ -223,7 +224,7 @@ every hash and root against the chain.
 
 | Kaito | $YAP on NEAR |
 | --- | --- |
-| Yap points | Yap score per epoch, paid in $YAP by Merkle claim |
+| Yap points | Yap score per tick, paid in $YAP by Merkle claim, plus a share of every block's jackpot |
 | Mindshare | Treemaps for accounts and topics (#hashtags, $cashtags, @accounts), with time windows and movers |
 | Smart followers | Stake-weighted PageRank over the near.social follow graph |
 | Yapper leaderboards | Global and per-topic leaderboards, rank change, tier |
@@ -242,7 +243,7 @@ every hash and root against the chain.
 | **Arenas** | Topic campaigns, plus a builder for DAO funding proposals |
 | **Feed** | Post, like, repost, reply and follow on near.social from a burner wallet |
 | **Earn** | Claim rewards, stake sYAP |
-| **$YAP** | Streak, supply, burns, epochs on chain, and the lock proof |
+| **$YAP** | The block being mined, its progress bar, the jackpot, every jackpot paid, ticks on chain, and the lock proof |
 | **Verify** | Recompute an epoch in the browser |
 | **Governance** | DAO proposals and the Trusted circle |
 | **Stress test** | 60-epoch attack and economy scenarios |
@@ -272,8 +273,9 @@ Share of yapper emission the attackers captured (mean over 60 epochs):
 
 No single defence is enough. Together they cut the spam farm from 87% to 27%.
 
-We also ran a **dead-meme** scenario, where the community goes silent at epoch 20. By epoch 59 the Reserve has
-shrunk from 600,000 to 8,869 YAP. Full results and method are in [sim/RESULTS.md](sim/RESULTS.md); every run is
+The same 60-epoch runs also play out the economy. A steady community mines 11 blocks and pays 482,078 YAP in
+jackpots; in the **dead-meme** scenario the community goes silent at epoch 20, nothing burns, the bar simply stops
+and the vault keeps 318,865 YAP for when people come back. Full results and method are in [sim/RESULTS.md](sim/RESULTS.md); every run is
 reproducible from seed `20261107`.
 
 ---
@@ -317,7 +319,7 @@ pnpm -C web dev              # the app → http://localhost:5180
 ```bash
 pnpm -C agents deploy                       # sub-accounts, Sputnik DAO, token, scorer bonds, delete full-access keys
 pnpm -C agents seed --setup                 # testnet community profiles + follow graph
-pnpm -C agents crowd                        # testnet community activity (loud / quiet epochs)
+pnpm -C agents crowd                        # testnet community activity (busy and slow ticks)
 pnpm -C agents scorer                       # index → label (TEE) → score → publish → report → finalize → claims
 pnpm -C agents watchdog                     # independent audit + automatic challenge on mismatch
 pnpm -C agents yapbot                       # @yapbot: answers mentions on near.social

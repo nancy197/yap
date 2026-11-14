@@ -1,11 +1,11 @@
 // Data layer: published epoch files (scores, labels, datasets), on-chain views, near.social profiles.
 // Testnet = live, rewarded epochs. Mainnet = read-only sample of real near.social data (unrewarded).
 export const RPC = 'https://test.rpc.fastnear.com';
-export const TOKEN = 'token3.yap-hq.testnet';
+export const TOKEN = 'token4.yap-hq.testnet';
 export const DAO = 'dao.yap-hq.testnet';
-export const STEWARD = 'steward3.yap-hq.testnet';
-/** Published epoch files of the live deployment (token2's run stays under ./epochs/testnet). */
-export const EPOCHS = './epochs/token3';
+export const STEWARD = 'steward4.yap-hq.testnet';
+/** Published tick files of the live deployment (earlier runs keep ./epochs/testnet and ./epochs/token3). */
+export const EPOCHS = './epochs/token4';
 export const HQ = 'yap-hq.testnet';
 export const KV_TEST = 'https://kv.test.fastnear.com';
 export const SOCIAL_MAIN = 'https://api2.near.social';

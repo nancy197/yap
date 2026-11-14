@@ -1,3 +1,6 @@
+> **v4 note:** the token mechanic changed to Proof of Yap (blocks, jackpot, rising difficulty, no burns). RULES.md R-3 and
+> `contracts/yap/API.md` are current; the loud/quiet/streak/burn fields below describe the original build plan.
+
 # $YAP technical spec
 
 Hackathon: NEAR HACKATHON 2026, deadline 2026-11-14 23:59 UTC. Tracks: Memecoins With Mechanics

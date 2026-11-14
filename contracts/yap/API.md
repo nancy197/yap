@@ -8,14 +8,15 @@ All `U128` amounts are JSON decimal strings. Epoch IDs and arena IDs are integer
 | --- | --- | --- |
 | `new` | `config: Config`, `metadata?: FungibleTokenMetadata` | Initializes fixed rules and genesis balances. |
 | `get_config` | none | Fixed `Config`. |
-| `get_state` | none | Streak, best streak, target, mint/burn totals, reserve, current epoch, reward per share. |
-| `get_epoch`, `get_epochs` | `e`; or `from, limit` | Epoch record(s). |
+| `get_state` | none | Current block number, start tick, progress and threshold; jackpot pot; vault; target; mint/burn totals; current tick; reward per share. |
+| `get_block`, `get_blocks` | `number`; or `from, limit` | Mined block(s): start/end tick, threshold, progress, jackpot payout. |
+| `get_epoch`, `get_epochs` | `e`; or `from, limit` | Tick record(s), including `block` and `jackpot` (payout included in `yapper_pool`). |
 | `get_arena`, `get_arenas` | `id`; or `from, limit` | Arena record(s). |
 | `get_stake`, `get_scorer` | `account` | Stake or scorer bond. |
 | `get_challenge`, `is_claimed` | `e`; or `e, account` | Challenge or claim state. |
 | `ft_metadata`, `ft_total_supply`, `ft_balance_of`, `storage_balance_of`, `storage_balance_bounds` | Standard NEP-141/145/148 arguments | Standard token views. |
 
-`Config` contains all parameters in `SPEC.md` plus `dao_proposal_bond`, the yoctoNEAR bond attached when the contract opens a Sputnik proposal. `genesis_split` has `reserve_bps`, `dao_bps`, and `deployer_bps` summing to 10,000.
+`Config` contains all parameters in `SPEC.md` plus `dao_proposal_bond`, the yoctoNEAR bond attached when the contract opens a Sputnik proposal. `Config` also holds the Proof of Yap parameters `jackpot_bps`, `vault_release_bps`, `initial_block_threshold` and `difficulty_bps` (RULES.md R-3). `genesis_split` has `vault_bps`, `dao_bps`, and `deployer_bps` summing to 10,000.
 
 ## Calls
 
@@ -25,11 +26,11 @@ All `U128` amounts are JSON decimal strings. Epoch IDs and arena IDs are integer
 | `ft_transfer`, `ft_transfer_call` | Standard NEP-141 arguments | Transfer YAP; `ft_transfer_call` routes the JSON messages below. |
 | `submit_report` | `e: u32, report: EpochReport` | Bonded scorer votes for a Borsh-hashed report. |
 | `finalize` | `e: u32` | Finalize after challenge window. |
-| `crank_dead_epoch` | `e: u32` | Mark an epoch dead after the report deadline. |
+| `crank_dead_epoch` | `e: u32` | Mark a tick silent after the report deadline: no mint, no progress, no burn. |
 | `resolve_challenge` | `e: u32, upheld: bool` | DAO-only challenge settlement. |
 | `expire_challenge` | `e: u32` | Check rejected, removed, or expired DAO proposal after 4 challenge windows. |
 | `claim` | `e, amount: U128, score: u64, tier: u8, proof: string[]` | Claim YAP from the epoch root. |
-| `burn_unclaimed` | `e: u32` | Burn remaining yapper allocation after the claim window. |
+| `recycle_unclaimed` | `e: u32` | Move the remaining yapper allocation back into the jackpot pot after the claim window. |
 | `unstake`, `withdraw`, `claim_staker_rewards` | `amount: U128`; none; none | Unbond, withdraw, claim stake rewards. |
 | `claim_arena` | `arena_id, e, amount: U128, proof: string[], yapper_amount: U128, score: u64, tier: u8, yapper_proof: string[]` | Claim an arena payout, proving both arena allocation and the tier gate against the epoch yapper root. |
 | `close_arena` | `id: u32` | Refund unspent budget after all arena claim windows. |

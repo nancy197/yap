@@ -17,10 +17,11 @@ contract account's full-access keys (a script does this and prints the proof).
 ## R-1 Token
 - NEP-141 + NEP-145 storage + NEP-148 metadata. Symbol `YAP`, 18 decimals.
 - At init the contract mints `initial_supply` and splits it by `genesis_split`. Defaults:
-  - 60% to the **Reserve**, held by the contract.
+  - 60% to the **vault**, held by the contract and released only into jackpots (R-3).
   - 25% to the **community DAO**, an existing Sputnik DAO v2 account given at init.
   - 15% to the deployer for liquidity and the launch, e.g. a meme.cooking-style fair launch.
-- Burns are real: they reduce `ft_total_supply`. Every mint and burn emits a NEP-297 event
+- The mechanic never burns. The only burns are penalties (slashed scorer bonds, rejected challenge bonds,
+  R-5), and they are real: they reduce `ft_total_supply`. Every mint and burn emits a NEP-297 event
   (`ft_mint`/`ft_burn` per NEP-141 events, plus `yap_*` events below).
 
 ## R-2 Epochs and attention
@@ -37,28 +38,30 @@ contract account's full-access keys (a script does this and prints the proof).
   `ema_bps = 2000`, i.e. 20% weight on the new epoch. It is seeded at init with
   `initial_attention_target`.
 
-## R-3 Emission, streak, burn (the meme mechanic)
-Let `ratio = attention / attention_target`.
-- **Loud epoch** (`ratio >= loud_bps/10000`, default 0.8):
-  - `streak += 1` and `best_streak = max(best_streak, streak)`.
-  - `emission = base_emission * min(ratio, max_ratio) * (1 + min(streak, streak_cap) * streak_step_bps / 10000)`.
-    Defaults: `max_ratio = 3.0`, `streak_cap = 10`, `streak_step_bps = 500` (+5% per loud epoch in a row, up to +50%).
-  - The emission is minted fresh, so supply grows when the community is loud.
-- **Quiet epoch** (`ratio < loud_bps/10000`):
-  - `streak = 0`, `emission = base_emission * ratio` (it shrinks with attention).
-  - The contract also **burns** `quiet_burn_bps` (default 300 = 3%) of the Reserve. A meme nobody
-    talks about eats its own treasury.
-- **Dead epoch** (`attention == 0`, or no report finalized within `report_deadline_epochs`):
-  - `emission = 0`, burn `dead_burn_bps` (default 1000) of the Reserve.
-  - Anyone can call `crank_dead_epoch(e)` once the deadline has passed.
-- Split of each epoch's emission:
+## R-3 Proof of Yap (the meme mechanic)
+Epochs are the measurement **ticks**. Blocks are mined by the community's attention.
+- **Tick emission:** `emission = min(base_emission * attention / attention_target, base_emission * max_ratio)`
+  (default `max_ratio = 3.0`), minted fresh. A tick with zero attention, or with no report finalized within
+  `report_deadline_epochs` (anyone can call `crank_dead_epoch(e)`), mints nothing, adds nothing and burns nothing.
+- **Jackpot share:** `jackpot_bps` (default 2000) of every tick's emission goes to `jackpot_pot`. The rest splits:
   - `yapper_bps` (default 8000) to yappers by Yap score (Merkle claim).
-  - `staker_bps` (default 1000) to sYAP stakers, pro rata to stake-epochs (R-6).
+  - `staker_bps` (default 1000) to sYAP stakers, pro rata to stake-epochs (R-6); if nobody staked through the
+    tick, this share goes to the community DAO.
   - `dao_bps` (default 1000) to the community DAO.
-- **Use it or lose it:** a claim is open for `claim_epochs` (default 14) epochs. After that,
-  anyone can call `burn_unclaimed(e)`, which burns what is left.
-- The "high score" `best_streak`, the current `streak` and the running totals of minted and
-  burned YAP are on chain and shown on the token page.
+- **Blocks:** every finalized tick adds its `attention` to `block_progress`. When
+  `block_progress >= block_threshold` the block is mined in that tick:
+  - `payout = jackpot_pot + vault * vault_release_bps / 10000` (default 10% of the vault) is added to the tick's
+    yapper pool, so it is claimed with the same Merkle root.
+  - The payout is split by each account's Yap score **summed over every tick of the block**
+    (`block_start_epoch..=e`), so everyone who helped fill the bar shares it, including accounts that were silent
+    in the final tick. The split is integer pro rata with the remainder in account order (`jackpotShares` in
+    `scoring/src/jackpot.ts`).
+  - The block is recorded (`get_blocks`), the pot resets, progress resets to 0 (no carry-over) and
+    `block_threshold *= difficulty_bps / 10000` (default 12500 = +25%). Block 1 needs `initial_block_threshold`.
+- **Use it or lose it, without burning:** a claim is open for `claim_epochs` (default 14) ticks. After that,
+  anyone can call `recycle_unclaimed(e)`, which moves what is left back into the jackpot pot.
+- The current block, its progress and threshold, the pot, the vault and every past jackpot are on chain and shown
+  on the token page.
 
 ## R-4 Yap score (deterministic; spec in SCORING.md)
 1. **Data.**
@@ -110,8 +113,8 @@ Let `ratio = attention / attention_target`.
   - Upheld: the report is discarded and the scorers who signed it lose their bond. Half goes to the
     challenger and half is burned. Scorers may resubmit.
   - Rejected: the challenger's bond is burned.
-- After the window with no open challenge, anyone calls `finalize(e)`. That applies R-3 (mint or
-  burn, streak) and opens claims.
+- After the window with no open challenge, anyone calls `finalize(e)`. That applies R-3 (mint, jackpot
+  share, block progress and, if the block fills, the jackpot payout) and opens claims.
 - `resolve_challenge` is callable only by the DAO account (predecessor check).
 
 ## R-6 Staking (sYAP)

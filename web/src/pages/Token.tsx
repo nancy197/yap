@@ -39,7 +39,9 @@ export default function Token() {
   const pts: [number, number][] = [[-1, genesis], ...snaps.map((x) => [x.e, x.supply] as [number, number])];
   const vaultPts: [number, number][] = [[-1, genesis * cfg.genesis_split.vault_bps / 10000], ...snaps.filter((x) => x.vault !== null).map((x) => [x.e, x.vault!] as [number, number])];
   const fullKeys = (keys?.keys ?? []).filter((k: any) => k.access_key.permission === 'FullAccess');
-  const log = (txs ?? []).filter((t: any) => /finalize|claim|challenge|arena|submit_report|init token|delete full-access/.test(t.action)).slice(-60).reverse();
+  // The tx log is shared by every deployment; show only what happened since this token's init.
+  const since = (txs ?? []).findLastIndex((t: any) => t.action === 'init token' && t.account === TOKEN);
+  const log = (txs ?? []).slice(Math.max(0, since)).filter((t: any) => /finalize|claim|challenge|arena|submit_report|init token|delete full-access/.test(t.action)).slice(-60).reverse();
   const paid = [...(blocks ?? [])].sort((a, b) => b.number - a.number);
   return (
     <div className="page">

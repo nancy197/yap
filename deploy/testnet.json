@@ -1,8 +1,8 @@
 {
-  "genesisTs": 1794621000,
+  "genesisTs": 1794623400,
   "network": "testnet",
   "hq": "yap-hq.testnet",
-  "token": "token3.yap-hq.testnet",
+  "token": "token4.yap-hq.testnet",
   "dao": "dao.yap-hq.testnet",
   "scorers": [
     "scorer-1.yap-hq.testnet",
@@ -16,16 +16,15 @@
   ],
   "config": {
     "epoch_secs": 600,
-    "genesis_ts": 1794621000,
+    "genesis_ts": 1794623400,
     "base_emission": "1000000000000000000000",
     "initial_attention_target": "100000000",
     "ema_bps": 2000,
-    "loud_bps": 8000,
     "max_ratio_bps": 30000,
-    "streak_cap": 10,
-    "streak_step_bps": 500,
-    "quiet_burn_bps": 300,
-    "dead_burn_bps": 1000,
+    "jackpot_bps": 2000,
+    "vault_release_bps": 1000,
+    "initial_block_threshold": "300000000",
+    "difficulty_bps": 12500,
     "report_deadline_epochs": 3,
     "yapper_bps": 8000,
     "staker_bps": 1000,
@@ -48,11 +47,11 @@
     ],
     "initial_supply": "1000000000000000000000000",
     "genesis_split": {
-      "reserve_bps": 6000,
+      "vault_bps": 6000,
       "dao_bps": 2500,
       "deployer_bps": 1500
     }
   },
   "locked": true,
-  "lockCheckedAt": "2026-11-14T01:34:32.019Z"
+  "lockCheckedAt": "2026-11-14T02:16:25.892Z"
 }
