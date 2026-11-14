@@ -4,11 +4,12 @@
 
 <h1 align="center">$YAP</h1>
 
-<h3 align="center">Talk and it mints. Go quiet and it burns.</h3>
+<h3 align="center">Yap to earn. Go quiet and it burns.</h3>
 
 <p align="center">
-  A memecoin whose supply follows its community's attention on near.social.<br/>
-  The rules live in a contract with zero access keys, so not even we can change them. Disputes go to a Sputnik DAO.
+  $YAP pays people for posting on near.social, but only while the whole community keeps talking.<br/>
+  Loud epochs mint and grow a shared streak. Quiet ones burn the Reserve.<br/>
+  The contract has zero access keys, so nobody can stop the burn. Not even us.
 </p>
 
 <p align="center">
@@ -43,9 +44,20 @@
 
 ## The 30-second version
 
-**The mechanic in one line:** every epoch the community's attention on near.social is scored against a target.
-Loud epoch → $YAP mints and the streak grows. Quiet epoch → 3% of the Reserve burns and the streak resets.
-No report at all → 10% burns. The rules live in a locked NEP-141 contract.
+**The game.** Every epoch, the whole community's attention on near.social is measured against a target that rises
+with it.
+
+| The community… | The coin… | The streak |
+| --- | --- | --- |
+| **stays loud** (≥ 80% of target) | mints up to 3× the base, plus 5% per streak epoch (max +50%) | +1 🔥 |
+| **goes quiet** | mints a little and **burns 3% of the Reserve** | back to 0 🧊 |
+| **says nothing** (no report) | **burns 10% of the Reserve**: the silence tax | back to 0 💀 |
+
+**Your cut.** 80% of every mint goes to yappers by Yap score (post quality × engagement from trusted accounts),
+claimed with a Merkle proof. Leave it unclaimed for 14 epochs and your share burns too.
+
+So everyone's payout depends on everyone else. The pot grows only while people keep yapping, and the coin eats its
+own Reserve when they stop. The best streak is printed on chain like a high score.
 
 **Why it exists:** on **15 Jan 2026** X banned apps that reward posting. The next day Kaito shut down Yaps, the product behind about
 70% of its token's utility. **One API decision deleted a whole category.**
