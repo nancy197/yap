@@ -24,7 +24,7 @@
 
 <p align="center">
   <b>▶ <a href="https://yap-near.vercel.app">Live demo</a></b> (NEAR testnet, nothing to install) ·
-  🎥 <a href="https://x.com/HenryphamPo/status/2119834848730997109">3-minute stack walkthrough on X</a> (recorded for v2, before Proof of Yap)
+  <b>🎥 <a href="https://x.com/HenryphamPo/status/2121452052002066561">3-minute demo video on X</a></b>
 </p>
 
 <p align="center">
