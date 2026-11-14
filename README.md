@@ -10,7 +10,8 @@
   <b>Yap to earn. Go quiet and it burns.</b><br/>
   $YAP pays people for posting on near.social, but only while the whole community keeps talking.<br/>
   Loud epochs mint and grow a shared streak. Quiet ones burn the Reserve.<br/>
-  The contract has zero access keys, so nobody can stop the burn. Not even us.
+  The contract has zero access keys, so nobody can stop the burn. Not even us.<br/>
+  <b>Bots don't get paid:</b> every post is read by an AI model running in a TEE on NEAR AI Cloud, and spam earns zero.
 </p>
 
 <p align="center">
@@ -28,7 +29,7 @@
   <img alt="NEAR testnet" src="https://img.shields.io/badge/NEAR-testnet%20live-00ec97?style=flat-square" />
   <img alt="Tracks" src="https://img.shields.io/badge/tracks-Memecoins%20With%20Mechanics%20%C2%B7%20Social%20Money-ff6a3d?style=flat-square" />
   <img alt="No admin key" src="https://img.shields.io/badge/admin%20keys-0-ffb347?style=flat-square" />
-  <img alt="AI in TEE" src="https://img.shields.io/badge/AI-TEE%20attested-8b5cf6?style=flat-square" />
+  <img alt="Anti-bot: NEAR AI in TEE" src="https://img.shields.io/badge/anti--bot-NEAR%20AI%20in%20TEE-8b5cf6?style=flat-square" />
   <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square" />
 </p>
 
@@ -59,6 +60,14 @@ claimed with a Merkle proof. Leave it unclaimed for 14 epochs and your share bur
 
 So everyone's payout depends on everyone else. The pot grows only while people keep yapping, and the coin eats its
 own Reserve when they stop. The best streak is printed on chain like a high score.
+
+**Bots don't get paid.** Yap-to-earn dies when bots farm it, so every post is read by `Qwen/Qwen3.8-27B` running in
+a TEE on **NEAR AI Cloud** (Intel TDX + NVIDIA attestation, checked on every call). The model labels each post
+`0 spam · 1 low · 2 normal · 3 insightful`. Spam and bot repetition get `0`, and a `0` post earns nothing however many
+likes it collects. The prompt hash, labels hash and attestation hash go on chain with every report, so anyone can
+check the model and the rules were not swapped. In our stress test, AI labels alone cut a 100-bot spam farm from 87%
+to 48% of the payout. Together with stake-weighted PageRank and the per-pair like cap, which catch like-rings that
+an AI can't see, the farm drops to 27% ([details](#stress-test-we-attacked-our-own-scoring)).
 
 **Why it exists:** on **15 Jan 2026** X banned apps that reward posting. The next day Kaito shut down Yaps, the product behind about
 70% of its token's utility. **One API decision deleted a whole category.**
