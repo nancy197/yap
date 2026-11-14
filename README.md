@@ -13,7 +13,7 @@
   and is split by how much you yapped during the whole block.<br/>
   ⛏ <b>Then it gets harder.</b> The next jackpot needs 25% more yap than the last.<br/><br/>
   🤖 <b>Bots don't get paid:</b> a NEAR AI model in a TEE reads every post, and spam earns zero.<br/>
-  🔒 Nothing burns, and the contract has zero access keys, so nobody can change the rules. Not even us.
+  🔒 The contract has zero access keys, so nobody can change the rules. Not even us.
 </p>
 
 <p align="center">
