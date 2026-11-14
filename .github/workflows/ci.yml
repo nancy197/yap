@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  typescript:
+    name: Scoring, indexer, sim, agents, web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 23
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Unit tests (scoring, indexer, 60-tick sim)
+        run: pnpm -r test
+      - name: Type-check agents
+        run: pnpm -C agents build
+      - name: Build web app
+        run: pnpm -C web build
+
+  rust:
+    name: Contracts (yap token, steward)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          cache: true
+      - name: Unit tests
+        run: cargo test -p yap -p steward --lib
