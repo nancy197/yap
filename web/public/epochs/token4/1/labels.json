@@ -1,0 +1,205 @@
+{
+ "labels": {
+  "y03.yap-hq.testnet/1794624005571": 1,
+  "y13.yap-hq.testnet/1794623999352": 2,
+  "y13.yap-hq.testnet/1794623999353": 1,
+  "y14.yap-hq.testnet/1794624001370": 2,
+  "y14.yap-hq.testnet/1794624001371": 2,
+  "y14.yap-hq.testnet/1794624001372": 3,
+  "y15.yap-hq.testnet/1794624003428": 2,
+  "y15.yap-hq.testnet/1794624003429": 2,
+  "y15.yap-hq.testnet/1794624003430": 2,
+  "y16.yap-hq.testnet/1794624007681": 0,
+  "y16.yap-hq.testnet/1794624007682": 0,
+  "y16.yap-hq.testnet/1794624007683": 0,
+  "y17.yap-hq.testnet/1794624009716": 0,
+  "y17.yap-hq.testnet/1794624009717": 0,
+  "y17.yap-hq.testnet/1794624009718": 1,
+  "y18.yap-hq.testnet/1794624011804": 0,
+  "y18.yap-hq.testnet/1794624011805": 0,
+  "y18.yap-hq.testnet/1794624011806": 0,
+  "y19.yap-hq.testnet/1794624014507": 1,
+  "y19.yap-hq.testnet/1794624014508": 0,
+  "y19.yap-hq.testnet/1794624014509": 0,
+  "y20.yap-hq.testnet/1794624016320": 2,
+  "y21.yap-hq.testnet/1794624018387": 2,
+  "y22.yap-hq.testnet/1794624020520": 2,
+  "y23.yap-hq.testnet/1794624022694": 1,
+  "y24.yap-hq.testnet/1794624024776": 1,
+  "yapbot.yap-hq.testnet/1794624028050": 0
+ },
+ "details": [
+  {
+   "key": "y03.yap-hq.testnet/1794624005571",
+   "q": 1,
+   "reason": "Low-effort prompt to bot asking for feedback without context.",
+   "cached": true
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794623999352",
+   "q": 2,
+   "reason": "Specific pixel-art update with a useful constraint insight.",
+   "cached": true
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794623999353",
+   "q": 1,
+   "reason": "Casual reaction with a small creative update; not much substance.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794624001370",
+   "q": 2,
+   "reason": "Concrete music-production detail and a normal useful update.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794624001371",
+   "q": 2,
+   "reason": "Personal observation linking quiet feeds to listener retention.",
+   "cached": true
+  },
+  {
+   "key": "y14.yap-hq.testnet/1794624001372",
+   "q": 3,
+   "reason": "Original analogy: repeat listens as durable liquidity over hype.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794624003428",
+   "q": 2,
+   "reason": "Genuine newbie question comparing meme feed to learning value.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794624003429",
+   "q": 2,
+   "reason": "Specific follow-up asking which liquidity metrics to check.",
+   "cached": true
+  },
+  {
+   "key": "y15.yap-hq.testnet/1794624003430",
+   "q": 2,
+   "reason": "Asks for definition and measurement method; useful clarification request.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794624007681",
+   "q": 0,
+   "reason": "Hype-only token pump with no substance.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794624007682",
+   "q": 0,
+   "reason": "Repeated token hype with no content.",
+   "cached": true
+  },
+  {
+   "key": "y16.yap-hq.testnet/1794624007683",
+   "q": 0,
+   "reason": "Repeated token hype with no content.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794624009716",
+   "q": 0,
+   "reason": "Hype-only token pump with no substance.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794624009717",
+   "q": 0,
+   "reason": "Hype-only token pump with no substance.",
+   "cached": true
+  },
+  {
+   "key": "y17.yap-hq.testnet/1794624009718",
+   "q": 1,
+   "reason": "Low-effort greeting/hype, not spam repetition.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794624011804",
+   "q": 0,
+   "reason": "Hype-only token pump with no substance.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794624011805",
+   "q": 0,
+   "reason": "Repeated low-effort hype, likely bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y18.yap-hq.testnet/1794624011806",
+   "q": 0,
+   "reason": "Repeated low-effort hype, likely bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794624014507",
+   "q": 1,
+   "reason": "Generic moon hype, low-effort reaction.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794624014508",
+   "q": 0,
+   "reason": "Repeated low-effort hype, likely bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y19.yap-hq.testnet/1794624014509",
+   "q": 0,
+   "reason": "Repeated low-effort hype, likely bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "y20.yap-hq.testnet/1794624016320",
+   "q": 2,
+   "reason": "On-topic ecosystem comment, but generic.",
+   "cached": true
+  },
+  {
+   "key": "y21.yap-hq.testnet/1794624018387",
+   "q": 2,
+   "reason": "On-topic community hype, coherent but generic.",
+   "cached": true
+  },
+  {
+   "key": "y22.yap-hq.testnet/1794624020520",
+   "q": 2,
+   "reason": "On-topic ecosystem hype, coherent but generic.",
+   "cached": true
+  },
+  {
+   "key": "y23.yap-hq.testnet/1794624022694",
+   "q": 1,
+   "reason": "Generic bullish hype with no specific insight or useful detail.",
+   "cached": true
+  },
+  {
+   "key": "y24.yap-hq.testnet/1794624024776",
+   "q": 1,
+   "reason": "Low-effort greeting and hype without substantive content.",
+   "cached": true
+  },
+  {
+   "key": "yapbot.yap-hq.testnet/1794624028050",
+   "q": 0,
+   "reason": "Automated bot message, not original user content.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

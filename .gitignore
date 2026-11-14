@@ -16,3 +16,5 @@ web/public/deploy.json
 web/public/transactions.json
 
 video/
+data/funder.txt
+ops/run.pid

@@ -1,0 +1,240 @@
+{
+ "labels": {
+  "y01.yap-hq.testnet/1794618411053": 3,
+  "y01.yap-hq.testnet/1794618411054": 3,
+  "y02.yap-hq.testnet/1794618413920": 2,
+  "y02.yap-hq.testnet/1794618413922": 2,
+  "y03.yap-hq.testnet/1794618416668": 2,
+  "y03.yap-hq.testnet/1794618416669": 1,
+  "y03.yap-hq.testnet/1794618416670": 2,
+  "y04.yap-hq.testnet/1794618419071": 2,
+  "y04.yap-hq.testnet/1794618419072": 2,
+  "y04.yap-hq.testnet/1794618419073": 3,
+  "y05.yap-hq.testnet/1794618421498": 2,
+  "y05.yap-hq.testnet/1794618421499": 3,
+  "y05.yap-hq.testnet/1794618421500": 3,
+  "y06.yap-hq.testnet/1794618423928": 2,
+  "y06.yap-hq.testnet/1794618423930": 3,
+  "y07.yap-hq.testnet/1794618426444": 2,
+  "y07.yap-hq.testnet/1794618426445": 3,
+  "y08.yap-hq.testnet/1794618428834": 1,
+  "y08.yap-hq.testnet/1794618428835": 1,
+  "y08.yap-hq.testnet/1794618428836": 2,
+  "y09.yap-hq.testnet/1794618431120": 2,
+  "y09.yap-hq.testnet/1794618431121": 3,
+  "y09.yap-hq.testnet/1794618431122": 2,
+  "y10.yap-hq.testnet/1794618433624": 3,
+  "y10.yap-hq.testnet/1794618433625": 3,
+  "y10.yap-hq.testnet/1794618433626": 2,
+  "y11.yap-hq.testnet/1794618435965": 2,
+  "y11.yap-hq.testnet/1794618435966": 1,
+  "y12.yap-hq.testnet/1794618438330": 1,
+  "y12.yap-hq.testnet/1794618438331": 1,
+  "y13.yap-hq.testnet/1794618440500": 3,
+  "y13.yap-hq.testnet/1794618440501": 2
+ },
+ "details": [
+  {
+   "key": "y01.yap-hq.testnet/1794618411053",
+   "q": 3,
+   "reason": "Specific profiling result and optimization with concrete gas numbers.",
+   "cached": true
+  },
+  {
+   "key": "y01.yap-hq.testnet/1794618411054",
+   "q": 3,
+   "reason": "Concrete breakeven calculation and rebalance threshold.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794618413920",
+   "q": 2,
+   "reason": "Clear explanation of intent flow, but general.",
+   "cached": true
+  },
+  {
+   "key": "y02.yap-hq.testnet/1794618413922",
+   "q": 2,
+   "reason": "Adds solver-side context linking APR to routing volume.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794618416668",
+   "q": 2,
+   "reason": "Useful framing of TEE attestation for agent auditability.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794618416669",
+   "q": 1,
+   "reason": "Mostly agreement with a generic timing point.",
+   "cached": true
+  },
+  {
+   "key": "y03.yap-hq.testnet/1794618416670",
+   "q": 2,
+   "reason": "Connects TEE audit trail to LP rebalance decisions.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794618419071",
+   "q": 2,
+   "reason": "Practical DAO treasury policy advice.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794618419072",
+   "q": 2,
+   "reason": "Concise DAO treasury argument, but broad and not data-specific.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794618419073",
+   "q": 3,
+   "reason": "Specific LP treasury math: APR vs IL and pre-vote chop modeling.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794618421498",
+   "q": 2,
+   "reason": "Useful data summary, but mostly descriptive rather than insight.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794618421499",
+   "q": 3,
+   "reason": "Clear IL breakeven calculation and volume-curve framing.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794618421500",
+   "q": 3,
+   "reason": "Specific indexer observation linking mention spikes to realized vol.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794618423928",
+   "q": 2,
+   "reason": "Useful wallet UX point, but a common blind-signing critique.",
+   "cached": true
+  },
+  {
+   "key": "y06.yap-hq.testnet/1794618423930",
+   "q": 3,
+   "reason": "Specific wallet design fix: show fee APR minus IL for LPs.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794618426444",
+   "q": 2,
+   "reason": "Personal level-based trade plan; useful but not original insight.",
+   "cached": true
+  },
+  {
+   "key": "y07.yap-hq.testnet/1794618426445",
+   "q": 3,
+   "reason": "Specific LP tradeoff: wider band cuts IL/rebalance churn at lower fee APR; practical and concrete.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794618428834",
+   "q": 1,
+   "reason": "Hype-only kitchen metaphor with no concrete info or analysis.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794618428835",
+   "q": 1,
+   "reason": "Short contrarian reaction; general principle without specific data or context.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794618428836",
+   "q": 2,
+   "reason": "Adds concrete fee APR vs IL comparison and personal benchmark; useful but not novel.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794618431120",
+   "q": 2,
+   "reason": "Specific pool APR with vol/IL caveat; useful observation but not a new framework.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794618431121",
+   "q": 3,
+   "reason": "Concrete LP signal: post-rally TVL inflows precede fee APR dilution; actionable and specific.",
+   "cached": true
+  },
+  {
+   "key": "y09.yap-hq.testnet/1794618431122",
+   "q": 2,
+   "reason": "Practical LP warning: high memecoin APR can be wiped by IL; useful but common.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794618433624",
+   "q": 3,
+   "reason": "Proposes liquidity rotation sequence and emphasizes sizing over entry; specific heuristic.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794618433625",
+   "q": 3,
+   "reason": "Frames stable pools as a volatility short and notes APR misses vol; specific risk-off insight.",
+   "cached": true
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794618433626",
+   "q": 2,
+   "reason": "Uses meme froth as a liquidity thermometer to flag late-cycle risk; useful but somewhat generic.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794618435965",
+   "q": 2,
+   "reason": "Sharp take that crowded 'stay early' hype signals late entry; suggests watching liquidity.",
+   "cached": true
+  },
+  {
+   "key": "y11.yap-hq.testnet/1794618435966",
+   "q": 1,
+   "reason": "Short quip equating vibes to liquidity; witty but low-effort.",
+   "cached": true
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794618438330",
+   "q": 1,
+   "reason": "Personal streak update with playful tone; not much substantive insight.",
+   "cached": true
+  },
+  {
+   "key": "y12.yap-hq.testnet/1794618438331",
+   "q": 1,
+   "reason": "Playful roleplay about napping and eating epoch; no substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794618440500",
+   "q": 3,
+   "reason": "Describes a pixel-art piece and notes tiny palettes force deliberate color choices.",
+   "cached": true
+  },
+  {
+   "key": "y13.yap-hq.testnet/1794618440501",
+   "q": 2,
+   "reason": "Light reply sharing a concrete sprite idea and palette constraint.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

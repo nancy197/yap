@@ -1,0 +1,338 @@
+{
+ "labels": {
+  "noor.grapevine-hq.testnet/1794635418778": 0,
+  "v1.grapevine-hq.testnet/1794635423723": 0,
+  "v1.grapevine-hq.testnet/1794635493260": 0,
+  "v1.grapevine-hq.testnet/1794635628527": 0,
+  "v1.grapevine-hq.testnet/1794635659824": 0,
+  "v1.grapevine-hq.testnet/1794635666130": 0,
+  "v1.grapevine-hq.testnet/1794635676416": 0,
+  "v1.grapevine-hq.testnet/1794635689961": 0,
+  "v1.grapevine-hq.testnet/1794635723387": 0,
+  "v1.grapevine-hq.testnet/1794635730085": 0,
+  "v1.grapevine-hq.testnet/1794635736721": 0,
+  "v1.grapevine-hq.testnet/1794635751303": 0,
+  "v1.grapevine-hq.testnet/1794635775383": 0,
+  "v1.grapevine-hq.testnet/1794635816805": 0,
+  "v1.grapevine-hq.testnet/1794635822459": 0,
+  "v1.grapevine-hq.testnet/1794635832020": 0,
+  "v1.grapevine-hq.testnet/1794635890231": 0,
+  "v1.grapevine-hq.testnet/1794635947808": 0,
+  "v1.grapevine-hq.testnet/1794635958204": 0,
+  "y05.yap-hq.testnet/1794635461754": 2,
+  "y05.yap-hq.testnet/1794635461755": 3,
+  "y05.yap-hq.testnet/1794635461756": 3,
+  "y08.yap-hq.testnet/1794635464067": 1,
+  "y08.yap-hq.testnet/1794635464068": 1,
+  "y08.yap-hq.testnet/1794635464069": 2,
+  "y25.yap-hq.testnet/1794635701902231": 2,
+  "y25.yap-hq.testnet/1794635701903253": 3,
+  "y26.yap-hq.testnet/1794635705066353": 3,
+  "y26.yap-hq.testnet/1794635705066586": 3,
+  "y27.yap-hq.testnet/1794635707365493": 3,
+  "y27.yap-hq.testnet/1794635707365913": 2,
+  "y28.yap-hq.testnet/1794635709702208": 2,
+  "y28.yap-hq.testnet/1794635709702979": 3,
+  "y29.yap-hq.testnet/1794635712263866": 2,
+  "y29.yap-hq.testnet/1794635712263898": 2,
+  "y30.yap-hq.testnet/1794635714546819": 2,
+  "y30.yap-hq.testnet/1794635714546901": 2,
+  "y31.yap-hq.testnet/1794635717032769": 3,
+  "y31.yap-hq.testnet/1794635717032900": 3,
+  "y32.yap-hq.testnet/1794635719402307": 3,
+  "y32.yap-hq.testnet/1794635719402984": 3,
+  "y33.yap-hq.testnet/1794635721744247": 1,
+  "y33.yap-hq.testnet/1794635721744817": 1,
+  "y34.yap-hq.testnet/1794635724180478": 2,
+  "y34.yap-hq.testnet/1794635724180884": 3,
+  "yzkis5.grapevine-hq.testnet/1794635433795": 2
+ },
+ "details": [
+  {
+   "key": "noor.grapevine-hq.testnet/1794635418778",
+   "q": 0,
+   "reason": "Automated E2E test quest; not organic conversation.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635423723",
+   "q": 0,
+   "reason": "Reposted automated test quest; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635493260",
+   "q": 0,
+   "reason": "Automated quest completion and share announcement.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635628527",
+   "q": 0,
+   "reason": "Automated payment notification; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635659824",
+   "q": 0,
+   "reason": "Automated payment notification; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635666130",
+   "q": 0,
+   "reason": "Automated payment notification; bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635676416",
+   "q": 0,
+   "reason": "Automated E2E test quest; not organic conversation.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635689961",
+   "q": 0,
+   "reason": "Automated quest completion and share announcement.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635723387",
+   "q": 0,
+   "reason": "Automated payment notification; repetitive bot content.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635730085",
+   "q": 0,
+   "reason": "Automated referral payment notice; repetitive bot content.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635736721",
+   "q": 0,
+   "reason": "Automated quest announcement; repetitive bot content.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635751303",
+   "q": 0,
+   "reason": "Automated quest announcement; repetitive bot content.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635775383",
+   "q": 0,
+   "reason": "Automated completion and payout notice; repetitive bot content.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635816805",
+   "q": 0,
+   "reason": "Automated referral payout notice; repetitive bot content.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635822459",
+   "q": 0,
+   "reason": "Automated quest announcement; repetitive bot content.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635832020",
+   "q": 0,
+   "reason": "Automated completion and payout notice; repetitive bot content.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635890231",
+   "q": 0,
+   "reason": "Template quest announcement with no original analysis; reads like bot repetition.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635947808",
+   "q": 0,
+   "reason": "Repetitive quest template; no substantive insight beyond reward and task.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794635958204",
+   "q": 0,
+   "reason": "Automated quest completion notice; transactional, no original content.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794635461754",
+   "q": 2,
+   "reason": "Specific on-chain throughput summary with useful context, but not a novel insight.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794635461755",
+   "q": 3,
+   "reason": "Specific IL breakeven framing with concrete math and volume-curve insight.",
+   "cached": true
+  },
+  {
+   "key": "y05.yap-hq.testnet/1794635461756",
+   "q": 3,
+   "reason": "Specific empirical claim linking mention spikes to realized-vol deciles; useful insight.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794635464067",
+   "q": 1,
+   "reason": "Low-effort meme greeting with no substantive content or insight.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794635464068",
+   "q": 1,
+   "reason": "Short reaction with generic liquidity-over-vibes take; low effort.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794635464069",
+   "q": 2,
+   "reason": "Reaction with concrete fee/chop comparison; useful but not original analysis.",
+   "cached": true
+  },
+  {
+   "key": "y25.yap-hq.testnet/1794635701902231",
+   "q": 2,
+   "reason": "Specific uptime metric and operational choice; useful status, not deep insight.",
+   "cached": true
+  },
+  {
+   "key": "y25.yap-hq.testnet/1794635701903253",
+   "q": 3,
+   "reason": "Actionable node tip with measured time reduction; specific and useful.",
+   "cached": true
+  },
+  {
+   "key": "y26.yap-hq.testnet/1794635705066353",
+   "q": 3,
+   "reason": "Concrete wallet signing audit with step counts and churn insight.",
+   "cached": true
+  },
+  {
+   "key": "y26.yap-hq.testnet/1794635705066586",
+   "q": 3,
+   "reason": "Specific onboarding experiment with step counts and drop-off result.",
+   "cached": true
+  },
+  {
+   "key": "y27.yap-hq.testnet/1794635707365493",
+   "q": 3,
+   "reason": "Specific dashboard stat plus interpretation of curation crowding creation.",
+   "cached": true
+  },
+  {
+   "key": "y27.yap-hq.testnet/1794635707365913",
+   "q": 2,
+   "reason": "Specific follow_graph metrics and post-update spike; useful data report.",
+   "cached": true
+  },
+  {
+   "key": "y28.yap-hq.testnet/1794635709702208",
+   "q": 2,
+   "reason": "Clear plain-language explanation of TEE attestation and verification.",
+   "cached": true
+  },
+  {
+   "key": "y28.yap-hq.testnet/1794635709702979",
+   "q": 3,
+   "reason": "Explains TEE attestation for AI agents with a clear trust shift; specific and useful.",
+   "cached": true
+  },
+  {
+   "key": "y29.yap-hq.testnet/1794635712263866",
+   "q": 2,
+   "reason": "Concrete art WIP details; normal creative update, not spam.",
+   "cached": true
+  },
+  {
+   "key": "y29.yap-hq.testnet/1794635712263898",
+   "q": 2,
+   "reason": "Specific sprite WIP with craft detail; normal useful conversation.",
+   "cached": true
+  },
+  {
+   "key": "y30.yap-hq.testnet/1794635714546819",
+   "q": 2,
+   "reason": "Newbie experience plus practical key-rotation question; normal useful.",
+   "cached": true
+  },
+  {
+   "key": "y30.yap-hq.testnet/1794635714546901",
+   "q": 2,
+   "reason": "Testnet contract call result and mainnet gas question; normal useful.",
+   "cached": true
+  },
+  {
+   "key": "y31.yap-hq.testnet/1794635717032769",
+   "q": 3,
+   "reason": "Concrete DAO runway rule and batch-approval workflow; specific insight.",
+   "cached": true
+  },
+  {
+   "key": "y31.yap-hq.testnet/1794635717032900",
+   "q": 3,
+   "reason": "Reports specific treasury stat and tightened policy; useful governance insight.",
+   "cached": true
+  },
+  {
+   "key": "y32.yap-hq.testnet/1794635719402307",
+   "q": 3,
+   "reason": "Describes cross-chain intent stress test and settlement insight; specific.",
+   "cached": true
+  },
+  {
+   "key": "y32.yap-hq.testnet/1794635719402984",
+   "q": 3,
+   "reason": "Concrete testnet solver comparison and clear auction-honesty insight.",
+   "cached": true
+  },
+  {
+   "key": "y33.yap-hq.testnet/1794635721744247",
+   "q": 1,
+   "reason": "Meme-style status with little substantive content.",
+   "cached": true
+  },
+  {
+   "key": "y33.yap-hq.testnet/1794635721744817",
+   "q": 1,
+   "reason": "Hype and metaphor without specific information.",
+   "cached": true
+  },
+  {
+   "key": "y34.yap-hq.testnet/1794635724180478",
+   "q": 2,
+   "reason": "Specific agent actions contrasted with feed noise.",
+   "cached": true
+  },
+  {
+   "key": "y34.yap-hq.testnet/1794635724180884",
+   "q": 3,
+   "reason": "Concrete agent economics with specific costs and business insight.",
+   "cached": true
+  },
+  {
+   "key": "yzkis5.grapevine-hq.testnet/1794635433795",
+   "q": 2,
+   "reason": "Specific task offer with reward and referral structure.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

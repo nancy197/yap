@@ -29,10 +29,13 @@ export async function promptText() {
   return readFile(resolve(ROOT, 'agents/prompts/label.md'), 'utf8');
 }
 
-export async function labelDataset(d: EpochDataset, opts: { mock?: boolean } = {}): Promise<LabelRun> {
+export async function labelDataset(d: EpochDataset, opts: { mock?: boolean; deadlineMs?: number } = {}): Promise<LabelRun> {
   const prompt = await promptText();
   const promptHash = sha(prompt);
   const posts = d.posts; // every post in the dataset may be scored or engaged with, so all need a label
+  // A slow or unreachable labeler must not cost the epoch its report, so calls stop at `deadlineMs` and the
+  // remaining posts take the deterministic heuristic label, each one marked as such in the published labels.
+  const outOfTime = () => opts.deadlineMs !== undefined && Date.now() >= opts.deadlineMs;
   if (opts.mock || !process.env.NEARAI_API_KEY) {
     const labels = mockLabels(d);
     return { labels, details: Object.entries(labels).map(([key, q]) => ({ key, q, reason: 'SIMULATED heuristic label' })), model: 'mock-heuristic (SIMULATED)', simulated: true, promptHash, attestation: null, usage: { promptTokens: 0, completionTokens: 0, usd: 0, calls: 0 } };
@@ -47,7 +50,7 @@ export async function labelDataset(d: EpochDataset, opts: { mock?: boolean } = {
   }
   // Attest the model's TEE once per run, before sending any post to it.
   let att: AttestationResult | null = null;
-  if (todo.length) {
+  if (todo.length && !outOfTime()) {
     att = await fetchAttestation(LABEL_MODEL);
     if (!att.verified) throw new Error(`attestation failed: ${att.checks.filter((c) => !c.passed).map((c) => c.name).join(', ')}`);
   }
@@ -90,19 +93,28 @@ export async function labelDataset(d: EpochDataset, opts: { mock?: boolean } = {
   // Six batches in flight: labelling must finish well inside one epoch.
   const work = async (first: (typeof todo)) => {
     let left = first;
-    for (let attempt = 0; attempt < 2 && left.length; attempt++) {
+    for (let attempt = 0; attempt < 2 && left.length && !outOfTime(); attempt++) {
       const got = await ask(left);
       for (const p of left) if (got.has(p.key)) await save(p, got.get(p.key)!);
       left = left.filter((p) => !got.has(p.key));
     }
     // Last resort: one post per call; if even that fails, a clearly marked heuristic label (not cached).
     for (const p of left) {
-      const got = await ask([p]);
+      const got = outOfTime() ? new Map<string, Detail>() : await ask([p]);
       if (got.has(p.key)) await save(p, got.get(p.key)!);
       else details.push({ key: p.key, q: fallback[p.key]!, reason: 'FALLBACK heuristic: the TEE labeler returned no valid label for this post' });
     }
   };
-  for (let i = 0; i < batches.length; i += 6) await Promise.all(batches.slice(i, i + 6).map(work));
+  for (let i = 0; i < batches.length; i += 6) {
+    if (outOfTime()) break;
+    await Promise.all(batches.slice(i, i + 6).map(work));
+  }
+  // Whatever the labeler did or did not answer, every post ends up with a label: scoring needs all of them.
+  const labelled = new Set(details.map((x) => x.key));
+  for (const p of posts) {
+    if (labelled.has(p.key)) continue;
+    details.push({ key: p.key, q: fallback[p.key]!, reason: 'FALLBACK heuristic: the TEE labeler ran out of time for this post' });
+  }
   try {
     const price = (await modelPricing())[LABEL_MODEL];
     if (price) usage.usd = (usage.promptTokens * price.input + usage.completionTokens * price.output) / 1e6;

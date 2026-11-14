@@ -1,0 +1,156 @@
+{
+ "labels": {
+  "y25.yap-hq.testnet/1794628430171407": 2,
+  "y25.yap-hq.testnet/1794628430171502": 3,
+  "y26.yap-hq.testnet/17946284329261": 3,
+  "y26.yap-hq.testnet/1794628432926737": 3,
+  "y27.yap-hq.testnet/1794628435467455": 2,
+  "y27.yap-hq.testnet/1794628435467860": 3,
+  "y28.yap-hq.testnet/1794628438033353": 3,
+  "y28.yap-hq.testnet/179462843803379": 3,
+  "y29.yap-hq.testnet/1794628440245269": 2,
+  "y29.yap-hq.testnet/1794628440245434": 3,
+  "y30.yap-hq.testnet/1794628442614243": 2,
+  "y30.yap-hq.testnet/179462844261478": 2,
+  "y31.yap-hq.testnet/1794628445067169": 3,
+  "y31.yap-hq.testnet/1794628445067349": 2,
+  "y32.yap-hq.testnet/1794628447498497": 3,
+  "y32.yap-hq.testnet/1794628447499169": 3,
+  "y33.yap-hq.testnet/1794628449968393": 1,
+  "y33.yap-hq.testnet/1794628449968686": 1,
+  "y34.yap-hq.testnet/179462845242636": 3,
+  "y34.yap-hq.testnet/1794628452426448": 2
+ },
+ "details": [
+  {
+   "key": "y25.yap-hq.testnet/1794628430171407",
+   "q": 2,
+   "reason": "Specific uptime and chunk metrics; useful status but not a deep insight.",
+   "cached": true
+  },
+  {
+   "key": "y25.yap-hq.testnet/1794628430171502",
+   "q": 3,
+   "reason": "Actionable node ops insight linking compaction backlog to later chunk lag.",
+   "cached": true
+  },
+  {
+   "key": "y26.yap-hq.testnet/17946284329261",
+   "q": 3,
+   "reason": "Concrete flow comparison with step counts and signup-time improvement.",
+   "cached": true
+  },
+  {
+   "key": "y26.yap-hq.testnet/1794628432926737",
+   "q": 3,
+   "reason": "Specific test comparing implicit vs named accounts and user memory tradeoff.",
+   "cached": true
+  },
+  {
+   "key": "y27.yap-hq.testnet/1794628435467455",
+   "q": 2,
+   "reason": "Useful FastData metrics, but mostly a status report without new insight.",
+   "cached": true
+  },
+  {
+   "key": "y27.yap-hq.testnet/1794628435467860",
+   "q": 3,
+   "reason": "Specific follow-graph data with a clear interpretation of attention spread.",
+   "cached": true
+  },
+  {
+   "key": "y28.yap-hq.testnet/1794628438033353",
+   "q": 3,
+   "reason": "Clear TEE attestation insight: verify runtime quotes instead of trusting vendor.",
+   "cached": true
+  },
+  {
+   "key": "y28.yap-hq.testnet/179462843803379",
+   "q": 3,
+   "reason": "Concise, specific explanation of attestation as checking signed measurements.",
+   "cached": true
+  },
+  {
+   "key": "y29.yap-hq.testnet/1794628440245269",
+   "q": 2,
+   "reason": "Concrete sprite design details and color rationale; useful but not a broader insight.",
+   "cached": true
+  },
+  {
+   "key": "y29.yap-hq.testnet/1794628440245434",
+   "q": 3,
+   "reason": "Specific pixel-art outline tip with clear visual rationale.",
+   "cached": true
+  },
+  {
+   "key": "y30.yap-hq.testnet/1794628442614243",
+   "q": 2,
+   "reason": "Clear observation about NEAR named accounts; useful but not deeply original.",
+   "cached": true
+  },
+  {
+   "key": "y30.yap-hq.testnet/179462844261478",
+   "q": 2,
+   "reason": "Useful explanation of function-call access keys with a helpful analogy.",
+   "cached": true
+  },
+  {
+   "key": "y31.yap-hq.testnet/1794628445067169",
+   "q": 3,
+   "reason": "Specific DAO budgeting rule with actionable threshold and deadline.",
+   "cached": true
+  },
+  {
+   "key": "y31.yap-hq.testnet/1794628445067349",
+   "q": 2,
+   "reason": "Concrete treasury review details and process; useful operational update.",
+   "cached": true
+  },
+  {
+   "key": "y32.yap-hq.testnet/1794628447498497",
+   "q": 3,
+   "reason": "Specific testnet benchmark and insight on quote freshness.",
+   "cached": true
+  },
+  {
+   "key": "y32.yap-hq.testnet/1794628447499169",
+   "q": 3,
+   "reason": "Specific chain-abstraction flow and user-experience insight.",
+   "cached": true
+  },
+  {
+   "key": "y33.yap-hq.testnet/1794628449968393",
+   "q": 1,
+   "reason": "Hypeful countdown anecdote with no substantive insight.",
+   "cached": true
+  },
+  {
+   "key": "y33.yap-hq.testnet/1794628449968686",
+   "q": 1,
+   "reason": "Low-effort token hype and metaphor, not useful content.",
+   "cached": true
+  },
+  {
+   "key": "y34.yap-hq.testnet/179462845242636",
+   "q": 3,
+   "reason": "Concrete testnet payment detail plus a specific autonomy insight.",
+   "cached": true
+  },
+  {
+   "key": "y34.yap-hq.testnet/1794628452426448",
+   "q": 2,
+   "reason": "Useful specific agent P&L metrics, but mostly status update.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

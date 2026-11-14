@@ -1,0 +1,76 @@
+{
+ "epoch": 818,
+ "fromMs": 1794587400000,
+ "toMs": 1794588000000,
+ "predictedYapperPool": "713475046465062401036",
+ "stakes": {},
+ "arenas": [],
+ "trailing": {},
+ "report": {
+  "attention": "5000000",
+  "yappers_root": "5d730fe8d001251d28efa70655ebcf86709352a2acf6397550ad760afb991a6f",
+  "arenas": [],
+  "labels_hash": "3bec5f9174f26ee52a353a2ea6bbe57d2ef211e947a8ed0e0bb0fae600f96593",
+  "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+  "attestation_hash": "02da2400a79b085c4fda82ce581a9527cee7a3c47bdf60847b5b65d120180c93",
+  "data_hash": "409e2fa295029cb9613b6d74a4a9d3c588bcc5c6dcac030e7f6ab5ec1f29569f",
+  "uri": "https://yap-near.vercel.app/epochs/testnet/818/"
+ },
+ "result": {
+  "attention": "5000000",
+  "yappersRoot": "5d730fe8d001251d28efa70655ebcf86709352a2acf6397550ad760afb991a6f",
+  "yappers": [
+   {
+    "account": "y10.yap-hq.testnet",
+    "score": "5000000",
+    "amount": "713475046465062401036",
+    "tier": 4,
+    "smartFollowers": 2,
+    "rankNorm": "406596",
+    "posts": [
+     {
+      "key": "y10.yap-hq.testnet/1794587462416",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y10.yap-hq.testnet/1794587462417",
+      "score": "2000000",
+      "q": 3
+     },
+     {
+      "key": "y10.yap-hq.testnet/1794587462418",
+      "score": "1000000",
+      "q": 2
+     }
+    ],
+    "proof": []
+   }
+  ],
+  "arenas": {},
+  "mindshare": [
+   {
+    "topic": "#macro",
+    "score": "2000000",
+    "share": "400000"
+   },
+   {
+    "topic": "$NEAR",
+    "score": "2000000",
+    "share": "400000"
+   },
+   {
+    "topic": "#crypto",
+    "score": "1000000",
+    "share": "200000"
+   }
+  ],
+  "smartAccounts": [
+   "y01.yap-hq.testnet",
+   "y02.yap-hq.testnet",
+   "y03.yap-hq.testnet",
+   "y05.yap-hq.testnet",
+   "y06.yap-hq.testnet"
+  ]
+ }
+}

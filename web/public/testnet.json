@@ -1,340 +1,797 @@
 {
- "generatedAt": "2026-11-08T02:26:55.226Z",
+ "generatedAt": "2026-11-14T07:45:54.226Z",
  "state": {
-  "streak": 3,
-  "best_streak": 3,
-  "attention_target": "53402207",
-  "minted_total": "1010469884544391955043621",
-  "burned_total": "243764135274439195504360",
-  "reserve": "359282853180000000000000",
-  "current_epoch": 13,
+  "block_number": 4,
+  "block_start_epoch": 18,
+  "block_progress": "339668859",
+  "block_threshold": "585937500",
+  "jackpot_pot": "1369787686555256605827",
+  "vault": "437400000000000000000000",
+  "attention_target": "32411280",
+  "minted_total": "1023250654359650155460761",
+  "burned_total": "0",
+  "current_epoch": 31,
   "reward_per_share": "0"
  },
- "supply": "766705749269952759539261",
+ "supply": "1023250654359650155460761",
  "epochs": [
   {
    "number": 0,
    "status": "Finalized",
    "report": {
-    "attention": "71000000",
-    "yappers_root": "d6bfbe0925f5745a957ca7b6c5b5724dc42af78feb589ad9d646640cb823238e",
+    "attention": "87125000",
+    "yappers_root": "dcf5679f311fcaa0458b348a3956595ec0ac76656996db8d9ea71b6057a85c2b",
     "arenas": [],
-    "labels_hash": "eac7292a4b7fe712a8e582be9f03e2f228fc9f317a99e982c9c89d59ebda3ac4",
+    "labels_hash": "20489438869784e64aa557b1099d8db1dd57d196f7a410c2ebbfb1fe3ba28701",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
-    "attestation_hash": "f19ade74cf6b59d202c05b39ab0d0e406339de8735a0ee4d513f509d3914ef5b",
-    "data_hash": "4ec411408e1e276f2e6133d0c8fd8e93a94d9fe47899f082156fbd1f0c06cb8d",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/0/"
+    "attestation_hash": null,
+    "data_hash": "74c15a7777f2245f7c8d3f3a89e12686c18f22db8117009a216ff51e09c7bad1",
+    "uri": "https://yap-near.vercel.app/epochs/token4/0/"
    },
-   "report_hash": "5caf63eb137d927a524dae95b86ae2c0705798ca3581a6ca6f1e85d07e82dcc0",
+   "report_hash": "b4096d12833d3a9435995fbc11c9bf6f786be4159ef5dcc2333d850f15cd4aee",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794097520813643000,
-   "emission": "710000000000000000000",
-   "yapper_pool": "568000000000000000000",
-   "staker_pool": "71000000000000000000",
-   "dao_pool": "71000000000000000000",
-   "claimed": "568000000000000000000",
-   "unclaimed_burned": false
+   "proposed_at": 1794624509526610400,
+   "emission": "871250000000000000000",
+   "yapper_pool": "557600000000000000000",
+   "staker_pool": "69700000000000000000",
+   "dao_pool": "69700000000000000000",
+   "claimed": "512800000000000000000",
+   "unclaimed_recycled": false,
+   "block": 1,
+   "jackpot": "0"
   },
   {
    "number": 1,
    "status": "Finalized",
    "report": {
-    "attention": "70875000",
-    "yappers_root": "7fde8a6d4062f63c76300faecd8cfb10eca9650b79bcb5fb5ad2d1c4c32d2601",
-    "arenas": [
-     {
-      "arena_id": 0,
-      "root": "c2e66b971374f642e5d51b73ea3486e07482f64eac188e7116893528ef86c087"
-     }
-    ],
-    "labels_hash": "83b092eda0e6591bc05896f68c9bfd6a07815064f610b9a893629e6e2339d222",
+    "attention": "10500000",
+    "yappers_root": "46bc1889a488a199e5efd3ce64821eabe58800d7417f782eba999e57fafa0f06",
+    "arenas": [],
+    "labels_hash": "892c05c7a09fdfec6ef910dabad6ec80356fdd0b5f1fd02532c96f2e6b8de679",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
-    "attestation_hash": "afe7e82ae616d214dc8d5ad8bb81b3bc679e27aed603ba15310a7d5fdd31d890",
-    "data_hash": "6bc359f068298a91a7b0966c7b036540e2c94273de043a43ba409f3074772957",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/1/"
+    "attestation_hash": null,
+    "data_hash": "5a06265464c7b98b32a9f7679c1a77a2e365dc04d4ec3277c82be1ca1254ec96",
+    "uri": "https://yap-near.vercel.app/epochs/token4/1/"
    },
-   "report_hash": "4b1513ec16a1cd10343103ccafd1fc3cbf09e925dec6ff91bc653cf82da21599",
+   "report_hash": "ac05186ac0ab0308402eb21613d16bf2250359cf664ac6808b9ada724b682ff8",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794098257109726500,
-   "emission": "752388535031847133757",
-   "yapper_pool": "601910828025477707005",
-   "staker_pool": "75238853503184713375",
-   "dao_pool": "75238853503184713377",
-   "claimed": "582802547770700636943",
-   "unclaimed_burned": false
+   "proposed_at": 1794624993973550000,
+   "emission": "107775211701308698999",
+   "yapper_pool": "68976135488837567360",
+   "staker_pool": "8622016936104695920",
+   "dao_pool": "8622016936104695920",
+   "claimed": "67333846548627149088",
+   "unclaimed_recycled": false,
+   "block": 1,
+   "jackpot": "0"
   },
   {
    "number": 2,
-   "status": "Dead",
+   "status": "Finalized",
    "report": {
-    "attention": "0",
-    "yappers_root": "0000000000000000000000000000000000000000000000000000000000000000",
-    "arenas": [
-     {
-      "arena_id": 0,
-      "root": "0000000000000000000000000000000000000000000000000000000000000000"
-     }
-    ],
-    "labels_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "attention": "88543859",
+    "yappers_root": "ebb5f1da0f3d8425bf48a9b26987fb2e808420ccaf863b2afe3f543784b7a7a3",
+    "arenas": [],
+    "labels_hash": "8546f7db7e427844f13adfa3e7f8ae4b82d2b8ed20a13a4ab0636ccb2436692c",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "fe62e7029fa63dac368e249712bfa90e09c00b08e60a64261fe69fee84ef6de7",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/2/"
+    "data_hash": "b645f4838193829a47d597a3c5eca03df1fe5b97d387a4a12f545733c9ecc3fd",
+    "uri": "https://yap-near.vercel.app/epochs/token4/2/"
    },
-   "report_hash": "8c01de1e9b49f34a913a88329c74aedc81b28da04f76e280eaface8c6a2ae593",
+   "report_hash": "e348e1916dfac87c216a9d54ce6b9a2401940e4645c0246b514ad036d170ba15",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794098652360697000,
-   "emission": "0",
-   "yapper_pool": "0",
-   "staker_pool": "0",
-   "dao_pool": "0",
-   "claimed": "0",
-   "unclaimed_burned": false
+   "proposed_at": 1794625578071027000,
+   "emission": "1106245114942528735632",
+   "yapper_pool": "707996873563218390804",
+   "staker_pool": "88499609195402298850",
+   "dao_pool": "88499609195402298852",
+   "claimed": "291205269365317341334",
+   "unclaimed_recycled": false,
+   "block": 1,
+   "jackpot": "0"
   },
   {
    "number": 3,
-   "status": "Dead",
+   "status": "Finalized",
    "report": {
-    "attention": "74250000",
-    "yappers_root": "9a0fc30520e0b1dafbb987ab6dbe43f149db36877c499f2d9159ebad44e86adb",
-    "arenas": [
-     {
-      "arena_id": 0,
-      "root": "20a4abcd45b080597cff3689f2bc9283b2fcf981e46351203273b405f43504eb"
-     }
-    ],
-    "labels_hash": "d959207d6ede4a50c04d3d85256a178bcabaacd2efef220e87951d8cd5bbb6ee",
+    "attention": "134000000",
+    "yappers_root": "654a970f36591ee4614b0f36c95fc1d252ecef6c9f3d89bba770d6a0d184623a",
+    "arenas": [],
+    "labels_hash": "ae270b150fcd8c4bf73e0970cfd4cbf1216aa24f871216b48783c8bd9cc69734",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "68dda2f3cc29c1b00c3489fd84bbe621a4f7f6ca9955b7eb4aa5acb9acc4e173",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/3/"
+    "data_hash": "fbe3fa044ee33c2b1163d30c0a59fd494bf376a98556608c652419d5d14985f5",
+    "uri": "https://yap-near.vercel.app/epochs/token4/3/"
    },
-   "report_hash": "25c0d4baec494b1a815744194dd98b194d6e01c1a325e10bd6829c4182dbf68a",
+   "report_hash": "5afe47a3fbe2437a71470c91c768a1853e42be12660ff2d678fe75a0d129b0c6",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794099362995894500,
-   "emission": "0",
-   "yapper_pool": "0",
-   "staker_pool": "0",
-   "dao_pool": "0",
-   "claimed": "0",
-   "unclaimed_burned": false
+   "proposed_at": 1794626405142098700,
+   "emission": "1639328799577875280868",
+   "yapper_pool": "61794090256974182722854",
+   "staker_pool": "131146303966230022469",
+   "dao_pool": "131146303966230022470",
+   "claimed": "39826196869248831278008",
+   "unclaimed_recycled": false,
+   "block": 1,
+   "jackpot": "60744919825244342543098"
   },
   {
    "number": 4,
-   "status": "Dead",
-   "report": null,
-   "report_hash": null,
-   "signers": [],
-   "proposed_at": 0,
-   "emission": "0",
-   "yapper_pool": "0",
-   "staker_pool": "0",
-   "dao_pool": "0",
+   "status": "Finalized",
+   "report": {
+    "attention": "120750000",
+    "yappers_root": "dbf88e4958c580c0e4d74f841c9189d0d62482ac9327a5590fb19e2498f04a97",
+    "arenas": [],
+    "labels_hash": "7c87bf45dd87b058fe8cb5e21bdf55c55c39c4fdefdba3d79ef6b0300f9e187a",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "cd2b7f30d410c8154ded44ea5492073072ac9963b0956ed75dfbc3ecf17038d5",
+    "uri": "https://yap-near.vercel.app/epochs/token4/4/"
+   },
+   "report_hash": "2351a6c2e2703bf9405c3e384ddca1f8e9e4978d93e99fefce878058b15f6cae",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794626817283466500,
+   "emission": "1309757822687231263727",
+   "yapper_pool": "838245006519828008785",
+   "staker_pool": "104780625814978501098",
+   "dao_pool": "104780625814978501099",
    "claimed": "0",
-   "unclaimed_burned": false
+   "unclaimed_recycled": false,
+   "block": 2,
+   "jackpot": "0"
   },
   {
    "number": 5,
-   "status": "Dead",
-   "report": null,
-   "report_hash": null,
-   "signers": [],
-   "proposed_at": 0,
-   "emission": "0",
-   "yapper_pool": "0",
-   "staker_pool": "0",
-   "dao_pool": "0",
-   "claimed": "0",
-   "unclaimed_burned": false
+   "status": "Finalized",
+   "report": {
+    "attention": "72625000",
+    "yappers_root": "c156515a4d1cff863454d925aad609ec6a24b787af69d0084ee87f2e338b8806",
+    "arenas": [],
+    "labels_hash": "9af1c505384d083ae8387a48d08912d26f011696c65a8c652ea71af3230e7070",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "3f8a344401ca54530bddaa25e2eecab972593962f21cdf893bfafc225e6078fb",
+    "uri": "https://yap-near.vercel.app/epochs/token4/5/"
+   },
+   "report_hash": "048f6f8865433f919cf34e55b4820d7660a6dd67ed9e987cdbcbb3dfc563ebeb",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794627287288719600,
+   "emission": "741797390858800876269",
+   "yapper_pool": "474750330149632560812",
+   "staker_pool": "59343791268704070101",
+   "dao_pool": "59343791268704070103",
+   "claimed": "301519572848906049815",
+   "unclaimed_recycled": false,
+   "block": 2,
+   "jackpot": "0"
   },
   {
    "number": 6,
    "status": "Finalized",
    "report": {
-    "attention": "46500000",
-    "yappers_root": "d683dfac9a4e6d097e82a3d25715088720659579c9b1129a7f27c14118ea898a",
-    "arenas": [
-     {
-      "arena_id": 0,
-      "root": "7d349a6b5a5e86260392961d16535f184bfeef547f6490801e510ce8b46c8964"
-     }
-    ],
-    "labels_hash": "e8c1c66a0cb2e392c33a6184e331df62e18913efbbf6ec8d0a755777e12b94eb",
+    "attention": "73125000",
+    "yappers_root": "20e0a5210e476c6b9112ed82b1ef74efc863d25bb7a260d0e42771f713fb378f",
+    "arenas": [],
+    "labels_hash": "f5a2bc86b6a430848d8ab17941dcf86c89666efcc900b3c8d44e64689d709d03",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "cb5d55e7f7a12157a91031cf351133dca64cd736d2f154cc97574b80e3e7c824",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/6/"
+    "data_hash": "0c992b5f4bcfc8f0a8d4d957cae28bb06bdd486bf29ea09f07dadcb4656965ca",
+    "uri": "https://yap-near.vercel.app/epochs/token4/6/"
    },
-   "report_hash": "2da0076af6f0c75af97c5367cb046ac4979c1f20f49322264782b4de36f6421e",
+   "report_hash": "4d36a7fc6b4f509b3b88e4e0759ff9631ab94c18877e2c77cc7c2377797461d5",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794102188704103000,
-   "emission": "1331341488314625565420",
-   "yapper_pool": "1065073190651700452336",
-   "staker_pool": "133134148831462556542",
-   "dao_pool": "133134148831462556542",
-   "claimed": "1065073190651700452336",
-   "unclaimed_burned": false
+   "proposed_at": 1794627939447171300,
+   "emission": "787575230397661785265",
+   "yapper_pool": "504048147454503542569",
+   "staker_pool": "63006018431812942821",
+   "dao_pool": "63006018431812942822",
+   "claimed": "314491579181015030839",
+   "unclaimed_recycled": false,
+   "block": 2,
+   "jackpot": "0"
   },
   {
    "number": 7,
    "status": "Finalized",
    "report": {
-    "attention": "82429902",
-    "yappers_root": "969e12cedebd21e7d40aa8c96b275b52589f1742097aef29cec26e79aed8511f",
+    "attention": "74875000",
+    "yappers_root": "42659fe92832df092141ae23cc9ee48222616890a4249f085b78ec37a2059224",
     "arenas": [],
-    "labels_hash": "e60eeb77eca549848014b8484b6717287ebf5a2d164227de3de06af8a53aff81",
+    "labels_hash": "5c89dbe447777c1af8505fdd6b194a1ba3bd2b5f4a410c62d469359516e0481d",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "a68e98f4d6bf2129046741cdb29990d89d9633de1253c654cdcf0282aeca4aec",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/7/"
+    "data_hash": "2f5117c2579950aadf2393e0d6682c83c7d36b4ce2ab68f88e4d4cc3ca77ba11",
+    "uri": "https://yap-near.vercel.app/epochs/token4/7/"
    },
-   "report_hash": "427384662dad01cc9a20a097963ed39181e04706222e5292927632f2fc2d11d5",
+   "report_hash": "0445cc551f0ff375aabe4598ec28330e633640475563c551a17660613bd792ca",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794102569500466200,
-   "emission": "2346678118704842703820",
-   "yapper_pool": "1877342494963874163056",
-   "staker_pool": "234667811870484270382",
-   "dao_pool": "234667811870484270382",
-   "claimed": "1806170563972592543442",
-   "unclaimed_burned": false
+   "proposed_at": 1794628581173213200,
+   "emission": "842204194659434445063",
+   "yapper_pool": "539010684582038044840",
+   "staker_pool": "67376335572754755605",
+   "dao_pool": "67376335572754755606",
+   "claimed": "319447066822409859634",
+   "unclaimed_recycled": false,
+   "block": 2,
+   "jackpot": "0"
   },
   {
    "number": 8,
    "status": "Finalized",
    "report": {
-    "attention": "2250000",
-    "yappers_root": "26a3d570848e937671e4ad45f6ae1fec5a8149e03b604a4541279231196b0ef0",
+    "attention": "29500000",
+    "yappers_root": "e2cd00c55297ca4f6bb475fc36990304f2c5912c6ab71e959d6391004c8c996b",
     "arenas": [],
-    "labels_hash": "6bc5e86c72e7078c423a6c681e1129cceef94033cb802edb4c5df0bcb902c2ea",
+    "labels_hash": "13468cf4f2a8f38bf232bd63ad8a068016c4356d04d98779eb18a503dfa00662",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "f995bee6da68985364cd5248267d8f7f47c5386b3943e610deb06254acbfc3bf",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/8/"
+    "data_hash": "edae60b6c0454ee4340e518bd7b8e17ef401850b82b48ce66f01c66cab57000f",
+    "uri": "https://yap-near.vercel.app/epochs/token4/8/"
    },
-   "report_hash": "18d03ab27a60219a5aba76c31736733cbfa2bd26b01056ecb0d7f977f3c6e45c",
+   "report_hash": "eb0a60e731b39fe81c74ea2e90a2d41ff4aed2b9e2d37a1e4dcba4988a818299",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794102988083970300,
-   "emission": "47471316880914214013",
-   "yapper_pool": "37977053504731371210",
-   "staker_pool": "4747131688091421401",
-   "dao_pool": "4747131688091421402",
-   "claimed": "37977053504731371210",
-   "unclaimed_burned": false
+   "proposed_at": 1794629094808778500,
+   "emission": "342633235605042790012",
+   "yapper_pool": "219285270787227385608",
+   "staker_pool": "27410658848403423201",
+   "dao_pool": "27410658848403423201",
+   "claimed": "0",
+   "unclaimed_recycled": false,
+   "block": 2,
+   "jackpot": "0"
   },
   {
    "number": 9,
    "status": "Finalized",
    "report": {
-    "attention": "99000000",
-    "yappers_root": "d63a271c84f91a087d4879e2bd707bea7b47d2c7c9b3cceb330ad8c2592c8966",
+    "attention": "74875000",
+    "yappers_root": "6bbb19421b86319695fc76a843982b98880342d48a1202ae5a48f9a1c224a84d",
     "arenas": [],
-    "labels_hash": "07548a57484cc270e83cea68eb9793155b486e07a00a8d01cdcb7e56fc2464b9",
+    "labels_hash": "cf8709b830c1d59c8b0a9329d393fcbd3bed7ed0da60f2d97e688885aab3d9af",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "da05b82bae1378aa340815f3feeb36fb60f2d30cd356ba9d063babf5a62cdfc3",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/9/"
+    "data_hash": "e28553ec30e8ce48a0f78b19cd1332c5f56f4415b9d6523d3c93293c9e7d20b3",
+    "uri": "https://yap-near.vercel.app/epochs/token4/9/"
    },
-   "report_hash": "01005e415273deb7c6f9e5944c18e5ba94feb8fe37beab4bc2abc2a0bad5ef09",
+   "report_hash": "a4b60e6a86032f79bdc44d575aa7a1894b74ff32078ffd91604c3421250cbe32",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794103500893093600,
-   "emission": "2709314906134553570192",
-   "yapper_pool": "2167451924907642856153",
-   "staker_pool": "270931490613455357019",
-   "dao_pool": "270931490613455357020",
+   "proposed_at": 1794629726402279000,
+   "emission": "1001292955049869738305",
+   "yapper_pool": "55645879657083524812241",
+   "staker_pool": "80103436403989579064",
+   "dao_pool": "80103436403989579065",
    "claimed": "0",
-   "unclaimed_burned": false
+   "unclaimed_recycled": false,
+   "block": 2,
+   "jackpot": "55005052165851608179726"
   },
   {
    "number": 10,
    "status": "Finalized",
    "report": {
-    "attention": "55000000",
-    "yappers_root": "5b8c05c7e408375df08a75f1bacc953968794a43bea57e04ae323ceb548a8fa5",
+    "attention": "68875000",
+    "yappers_root": "f0162bd4022b82f826577bfbbda4e7221f76c1c1f5bc61c3d83b376fe51c23fe",
     "arenas": [],
-    "labels_hash": "ecb4eeb103b95b7552f17d7e3c1119112b64ed9a8e7a5cbbd9db67c3f6463eda",
+    "labels_hash": "46cdbafbdc75bb64ac74e50d450e328c15e7f6e529a56d93bc6d116fa46e08f2",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "f8d03fb6585f1143a736c9184a77488bb121121294bc83c8d3f492ed5636b2bd",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/10/"
+    "data_hash": "1511e924cf91c70f32654477fc4b2c8e2dc2e3efb871de6468c80b0bec3ae470",
+    "uri": "https://yap-near.vercel.app/epochs/token4/10/"
    },
-   "report_hash": "8e75cdb08778502a29b0615e3cb7cff7aefeb3928afd2beb8e754f0eb0598e00",
+   "report_hash": "280a2f0311a753c5984e7bfb2df4dd8074e34654c004c6af8ef659b09da3f888",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794103854071145000,
-   "emission": "1198159642632350001403",
-   "yapper_pool": "958527714105880001122",
-   "staker_pool": "119815964263235000140",
-   "dao_pool": "119815964263235000141",
-   "claimed": "958527714105880001122",
-   "unclaimed_burned": false
+   "proposed_at": 1794630324970318800,
+   "emission": "920817674864981055822",
+   "yapper_pool": "589323311913587875726",
+   "staker_pool": "73665413989198484465",
+   "dao_pool": "73665413989198484467",
+   "claimed": "368995540127382608219",
+   "unclaimed_recycled": false,
+   "block": 3,
+   "jackpot": "0"
   },
   {
    "number": 11,
    "status": "Finalized",
    "report": {
-    "attention": "61429902",
-    "yappers_root": "d1aa57a19e5578c6f9bff8311829315668b540d8e659b5833295d5e6b850caee",
+    "attention": "72375000",
+    "yappers_root": "b7cc60a215516f719cad275927ce0b53b8a1d7ca6cac76bc2e32e2ea2a8e3228",
     "arenas": [],
-    "labels_hash": "e24e2decc0b6d926834a30ca7b34f922b9d2b5c51202cb0e9b3d73228a8644a3",
+    "labels_hash": "4ef240b2e25637148f2c6debc4e3a03be354d4dee670d815bd4075939102854b",
     "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
     "attestation_hash": null,
-    "data_hash": "c626fd68b278c34bac04dcf342f08061c053f4fe8315ea57f915de48c3bd0423",
-    "uri": "https://raw.githubusercontent.com/nancy197/yap/main/web/public/epochs/testnet/11/"
+    "data_hash": "27a83c160faea9322e1b36a416a5e9e3c50712019be36cbd8896addff497ed12",
+    "uri": "https://yap-near.vercel.app/epochs/token4/11/"
    },
-   "report_hash": "daa6fe7c871c246d9455f86aa5e35feea545f96285e0713342316cfc55638ced",
+   "report_hash": "c568c146302cc2149909bed230ac1b5256f66bd6172491e370752ab1c4b49fe1",
    "signers": [
     "scorer-1.yap-hq.testnet",
     "scorer-2.yap-hq.testnet"
    ],
-   "proposed_at": 1794104475683645000,
-   "emission": "1374530536692821855016",
-   "yapper_pool": "1099624429354257484012",
-   "staker_pool": "137453053669282185501",
-   "dao_pool": "137453053669282185503",
-   "claimed": "690151062109122696941",
-   "unclaimed_burned": false
-  }
- ],
- "arenas": [
+   "proposed_at": 1794630967477673500,
+   "emission": "983180702255512301944",
+   "yapper_pool": "629235649443527873244",
+   "staker_pool": "78654456180440984155",
+   "dao_pool": "78654456180440984157",
+   "claimed": "403188991266923732258",
+   "unclaimed_recycled": false,
+   "block": 3,
+   "jackpot": "0"
+  },
   {
-   "id": 0,
-   "opener": "dao.yap-hq.testnet",
-   "token": "token2.yap-hq.testnet",
-   "topic": "#near",
-   "title": "near builders arena",
-   "min_tier": 1,
-   "per_epoch": "500000000000000000000",
-   "start_epoch": 1,
-   "epochs": 6,
-   "budget_left": "3000000000000000000000",
-   "closed": false
+   "number": 12,
+   "status": "Finalized",
+   "report": {
+    "attention": "74000000",
+    "yappers_root": "55fe1a46c1c89e1775d40d0f8b204eb0bc5cca45e85eb6a31aa704551dba904d",
+    "arenas": [],
+    "labels_hash": "b8a5702a849aa3c3b8a38579a4f853ba4d87546b5f1c8a52614b28f2fd0159c9",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "7d7128febbe07fc66d86c704f8d3de8089fe95705286562bbd652d146df5b8e8",
+    "uri": "https://yap-near.vercel.app/epochs/token4/12/"
+   },
+   "report_hash": "1fd7c27349a282271e7c8f9f58f670d4fb9a9dff320c0871e68209c5e62020a4",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794631563515863600,
+   "emission": "1008648534182880737288",
+   "yapper_pool": "645535061877043671864",
+   "staker_pool": "80691882734630458983",
+   "dao_pool": "80691882734630458984",
+   "claimed": "410001998759743953756",
+   "unclaimed_recycled": false,
+   "block": 3,
+   "jackpot": "0"
+  },
+  {
+   "number": 13,
+   "status": "Finalized",
+   "report": {
+    "attention": "77000000",
+    "yappers_root": "b1af11dad872084836a5fc39ef6683cfa35a1e3b33eed0693bfb848cafae9077",
+    "arenas": [],
+    "labels_hash": "225afaef3e00d74061522399b9e35fece1d99b1d74c8437bc63c8f541acb7806",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "97a4b716a4f9709abcacd0962403395e75866e40dc6c429fbb94d34eb2603a5c",
+    "uri": "https://yap-near.vercel.app/epochs/token4/13/"
+   },
+   "report_hash": "60b171dc07a0d9a6bc25455d5c2d917c76792d86729d06ab2105cfb51014b09d",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794632252862326500,
+   "emission": "1047727441081115385052",
+   "yapper_pool": "670545562291913846433",
+   "staker_pool": "83818195286489230804",
+   "dao_pool": "83818195286489230805",
+   "claimed": "414736784469511648530",
+   "unclaimed_recycled": false,
+   "block": 3,
+   "jackpot": "0"
+  },
+  {
+   "number": 14,
+   "status": "Finalized",
+   "report": {
+    "attention": "29500000",
+    "yappers_root": "f6f8410f3aac2f9ff6b0095ca37ce8672d1da25a73666652519407d2822b9fac",
+    "arenas": [],
+    "labels_hash": "2d11bb16eaca8ff5d97118bdb418236881736637984dcdcdddb2a24e6b17fcd6",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "b83ec55cc8b121cb7568d114f8ed3a028175121e1b92b5f678511424c334eabe",
+    "uri": "https://yap-near.vercel.app/epochs/token4/14/"
+   },
+   "report_hash": "431d0e159aab5ee84caba6f49bbc47b5006a7c07d25b0f566b8852146ef8cb3a",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794632719898847500,
+   "emission": "397606725597284823192",
+   "yapper_pool": "254468304382262286843",
+   "staker_pool": "31808538047782785855",
+   "dao_pool": "31808538047782785856",
+   "claimed": "32347665811304527990",
+   "unclaimed_recycled": false,
+   "block": 3,
+   "jackpot": "0"
+  },
+  {
+   "number": 15,
+   "status": "Finalized",
+   "report": {
+    "attention": "69625000",
+    "yappers_root": "7828a2c3ad8c544d0cd2e1e050c6653f67417aacf4d8a4ff16c8ce8b2fa048ee",
+    "arenas": [],
+    "labels_hash": "5015eeb95d392ce3e75411063aa9e2bc0853d62a97d29e13f14c661ae31162d2",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "e2ed4bf14cf22f23001ee2ae1a5ae7dea85f748d080fe6ef8b82775714e2556a",
+    "uri": "https://yap-near.vercel.app/epochs/token4/15/"
+   },
+   "report_hash": "146edf0d2f3eea2a3c42c245ea59c2376ea1a3b65bc18e9f9abd243e367896f2",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794633288325832700,
+   "emission": "1066965890131062795183",
+   "yapper_pool": "682858169683880188917",
+   "staker_pool": "85357271210485023614",
+   "dao_pool": "85357271210485023616",
+   "claimed": "442570555217021091923",
+   "unclaimed_recycled": false,
+   "block": 3,
+   "jackpot": "0"
+  },
+  {
+   "number": 16,
+   "status": "Finalized",
+   "report": {
+    "attention": "75250000",
+    "yappers_root": "a37d2d6f13fa3898b0e5a161aad2867b74b41f8773b4a0a1415db54a54798e4e",
+    "arenas": [],
+    "labels_hash": "38d3fb7347be0a7a1ea830b85d56cbac37abfac70710b6790e46e695f260f426",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "9a4bb67fee0aab2487ecc05faa99b6be858804da586ddc5b31d66913ca8c5d7c",
+    "uri": "https://yap-near.vercel.app/epochs/token4/16/"
+   },
+   "report_hash": "02d0cba58331797fb1cf774df18d3cd7666f2cd007d5667c25bdbb6af338a7bb",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794633921947323400,
+   "emission": "1137925577550157377753",
+   "yapper_pool": "728272369632100721762",
+   "staker_pool": "91034046204012590220",
+   "dao_pool": "91034046204012590221",
+   "claimed": "459706811395678196466",
+   "unclaimed_recycled": false,
+   "block": 3,
+   "jackpot": "0"
+  },
+  {
+   "number": 17,
+   "status": "Finalized",
+   "report": {
+    "attention": "74000000",
+    "yappers_root": "30f5449c4742c562dd87c8f632c00826b2fcce620cf2ea415a56e102911458bc",
+    "arenas": [],
+    "labels_hash": "e918aeba621acfb60a5acfe44d2cb18234d3eb7a2448a474fafcec9160ed906e",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "10785c502cd139dd29013d585331227f4e12addef479757d35f2eb69580e5b45",
+    "uri": "https://yap-near.vercel.app/epochs/token4/17/"
+   },
+   "report_hash": "63f99bba6e825a71dc3b48680bb1435285910edd3bb4ebab230413adfcfe9afd",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794634572834382600,
+   "emission": "1088983425731124341245",
+   "yapper_pool": "50827320586746743341888",
+   "staker_pool": "87118674058489947299",
+   "dao_pool": "87118674058489947301",
+   "claimed": "30422084711554750550118",
+   "unclaimed_recycled": false,
+   "block": 3,
+   "jackpot": "50130371194278823763492"
+  },
+  {
+   "number": 18,
+   "status": "Finalized",
+   "report": {
+    "attention": "79750000",
+    "yappers_root": "e06925819006332eb65b61c8cb9e009522b91ef520d86af47232985deb343e4f",
+    "arenas": [],
+    "labels_hash": "5215c50bfd2c9843124d82e8c94f283647705ea37de3502a8f49cd72cc67275f",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "37c05762602e52c3441d724a8caf272735df8166cf315b3c0f0ce10997051104",
+    "uri": "https://yap-near.vercel.app/epochs/token4/18/"
+   },
+   "report_hash": "1db9d996c86d8356798fe481b2cdfdbd50034bb60214282baffc63da810c7036",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794635162849885000,
+   "emission": "1153079393586365653808",
+   "yapper_pool": "737970811895274018437",
+   "staker_pool": "92246351486909252304",
+   "dao_pool": "92246351486909252306",
+   "claimed": "434916967511948324349",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 19,
+   "status": "Finalized",
+   "report": {
+    "attention": "75750000",
+    "yappers_root": "1bb150309429dacd1e0310ecd3efb43c776ba5a9dcc8a4337586fb9f224f7189",
+    "arenas": [],
+    "labels_hash": "1864e63bfd0160875efe6981333bdfb308d368fce2783edf3dbdc8d4e0b72914",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "5efb533bdb3785748eebe49700d2e3ee0ebe582c70c87830b0f88433a01d0fc0",
+    "uri": "https://yap-near.vercel.app/epochs/token4/19/"
+   },
+   "report_hash": "d07ff631903e5b4b314e39e63f1c73494308f8ab737854bd282ec5020c87dfe3",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794635756050107100,
+   "emission": "1062708931907938794867",
+   "yapper_pool": "680133716421080828715",
+   "staker_pool": "85016714552635103589",
+   "dao_pool": "85016714552635103590",
+   "claimed": "398428167210369132337",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 20,
+   "status": "Finalized",
+   "report": {
+    "attention": "35500000",
+    "yappers_root": "632e84e671c8b9bbdf3da86c14066c2b792fac0e749f6c1b9747b2f168db4898",
+    "arenas": [],
+    "labels_hash": "c557f9281ca1d457705642a4acae94cf2c65d32ff4ebe640456003d65c9f6941",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "b876824dbcf06279eb0cb5bdfc2e830672b7092612ed4fd9d3616817f0bebb81",
+    "uri": "https://yap-near.vercel.app/epochs/token4/20/"
+   },
+   "report_hash": "34b74ebd5e9e203b78bd3097322c3cdf580f0efe6ee8e0cabdc484236406c06f",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794636313848459500,
+   "emission": "491866332068243890327",
+   "yapper_pool": "314794452523676089809",
+   "staker_pool": "39349306565459511226",
+   "dao_pool": "39349306565459511227",
+   "claimed": "57638420884616748839",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 21,
+   "status": "Finalized",
+   "report": {
+    "attention": "74000000",
+    "yappers_root": "8cd1e877f0cd37a78b64fea4c307d84598c7b772dda47d05dcd4a6f11a11c7ea",
+    "arenas": [],
+    "labels_hash": "d1fad2e129550ead3dd9ebdb551159d089fba216eedcb694cb169ec4e0621262",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "6dcbdaa249f27fc5d0806ba7c7ad96db977f1975dbff27b9e71c91ab09c9787e",
+    "uri": "https://yap-near.vercel.app/epochs/token4/21/"
+   },
+   "report_hash": "5d2ddac23964f720e74182d0226a13665ca84c0b0dd345a45d248339a4f4b51a",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794636942644389000,
+   "emission": "1141283775213734690140",
+   "yapper_pool": "730421616136790201689",
+   "staker_pool": "91302702017098775211",
+   "dao_pool": "91302702017098775212",
+   "claimed": "421966541754699744900",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 22,
+   "status": "Dead",
+   "report": {
+    "attention": "72000000",
+    "yappers_root": "d07cd9a169f7e5ed9fd7068a166da0e58d510212ed00c894b13b4ba1b5a350f5",
+    "arenas": [],
+    "labels_hash": "0e74f7e84d7ddcb45254a2539b733a55df78109d20bb942462a22f796d05ce34",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "bc389b699f3d0becc8b4b6afe8ce31988508da6ee0229cac8e15a88c4e1f7594",
+    "uri": "https://yap-near.vercel.app/epochs/token4/22/"
+   },
+   "report_hash": "bca0bfa7de23cf34eaee3bf5b84f56bc5021bedacb55d96ab495b2016ce6e4ee",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794637569915454200,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 23,
+   "status": "Dead",
+   "report": null,
+   "report_hash": null,
+   "signers": [],
+   "proposed_at": 0,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 24,
+   "status": "Dead",
+   "report": null,
+   "report_hash": null,
+   "signers": [],
+   "proposed_at": 0,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 25,
+   "status": "Dead",
+   "report": null,
+   "report_hash": null,
+   "signers": [],
+   "proposed_at": 0,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 26,
+   "status": "Dead",
+   "report": {
+    "attention": "0",
+    "yappers_root": "0000000000000000000000000000000000000000000000000000000000000000",
+    "arenas": [],
+    "labels_hash": "35495643ec49a81e2b610756fff008add31e3bae408a2e9c24e93664044faa36",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "6889b93f960e0c0cd87e8896800ab2058feb477cf686297775a57bed4f1a2860",
+    "uri": "https://yap-near.vercel.app/epochs/token4/26/"
+   },
+   "report_hash": "a74a3145039d15ed03a091c488cdadfcc7bffe97ceea54dbb282ecc4fe53fe25",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794641361640033300,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 27,
+   "status": "Finalized",
+   "report": {
+    "attention": "74668859",
+    "yappers_root": "a559b45745b0247939c134c74a1bf96f5b03d0e860857823a00ad6ab399c3479",
+    "arenas": [],
+    "labels_hash": "65fd33b436d3cf3f7cec05de5259fa1d7d889d4619e29423f260c4e2b12ab528",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "a83464ffc1f829426eb140c66abb19f7274827943d8904f19a86c82ecfd35c17",
+    "uri": "https://yap-near.vercel.app/epochs/token4/27/"
+   },
+   "report_hash": "0eb8a23841f82184911fb236f94aa3173efba3dd2f935ff6b7cc8ca99f261a57",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794641446960204800,
+   "emission": "3000000000000000000000",
+   "yapper_pool": "1920000000000000000000",
+   "staker_pool": "240000000000000000000",
+   "dao_pool": "240000000000000000000",
+   "claimed": "1174307609012747871246",
+   "unclaimed_recycled": false,
+   "block": 4,
+   "jackpot": "0"
+  },
+  {
+   "number": 28,
+   "status": "Proposed",
+   "report": {
+    "attention": "70875000",
+    "yappers_root": "a4d9f86fdfadf66295440e6a7d6c65d84483993e643e2c907213fe99a76a4d53",
+    "arenas": [],
+    "labels_hash": "513568f6f9cf76398e70d758ff4699d3acb988d158a6308b80cf9756b45288fb",
+    "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+    "attestation_hash": null,
+    "data_hash": "cf94897b22c188801298babba069d7136b6909956ff8521e4b00ae222437e79b",
+    "uri": "https://yap-near.vercel.app/epochs/token4/28/"
+   },
+   "report_hash": "7431f4b56e751e36917b37da42df187554c1170ec907abd20bba203a989b5152",
+   "signers": [
+    "scorer-1.yap-hq.testnet",
+    "scorer-2.yap-hq.testnet"
+   ],
+   "proposed_at": 1794642008986379300,
+   "emission": "0",
+   "yapper_pool": "0",
+   "staker_pool": "0",
+   "dao_pool": "0",
+   "claimed": "0",
+   "unclaimed_recycled": false,
+   "block": 0,
+   "jackpot": "0"
   }
  ],
- "txCount": 189
+ "arenas": [],
+ "txCount": 1458
 }

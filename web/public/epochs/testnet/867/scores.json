@@ -1,0 +1,33 @@
+{
+ "epoch": 867,
+ "fromMs": 1794616800000,
+ "toMs": 1794617400000,
+ "predictedYapperPool": "0",
+ "stakes": {},
+ "arenas": [],
+ "trailing": {},
+ "report": {
+  "attention": "0",
+  "yappers_root": "0000000000000000000000000000000000000000000000000000000000000000",
+  "arenas": [],
+  "labels_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "prompt_hash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+  "attestation_hash": null,
+  "data_hash": "e6acef95862871b15d21c1971ddb5c6e340a779e33d1edb7e7f538c650189cff",
+  "uri": "https://yap-near.vercel.app/epochs/testnet/867/"
+ },
+ "result": {
+  "attention": "0",
+  "yappersRoot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "yappers": [],
+  "arenas": {},
+  "mindshare": [],
+  "smartAccounts": [
+   "y01.yap-hq.testnet",
+   "y02.yap-hq.testnet",
+   "y03.yap-hq.testnet",
+   "y05.yap-hq.testnet",
+   "y06.yap-hq.testnet"
+  ]
+ }
+}

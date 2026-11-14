@@ -341,6 +341,10 @@ heuristic.
 
 </details>
 
+The agents that keep the testnet economy running (the three scorers, the watchdog, the steward keeper, @yapbot
+and the simulated crowd) run under a supervisor that restarts anything that dies, tops the agent accounts back
+up and publishes each tick's data: **[ops/README.md](ops/README.md)**.
+
 ---
 
 ## Limits, honestly

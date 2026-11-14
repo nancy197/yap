@@ -1,0 +1,127 @@
+{
+ "labels": {
+  "y10.yap-hq.testnet/1794587462416": 3,
+  "y10.yap-hq.testnet/1794587462417": 3,
+  "y10.yap-hq.testnet/1794587462418": 2
+ },
+ "details": [
+  {
+   "key": "y10.yap-hq.testnet/1794587462416",
+   "q": 3,
+   "reason": "Specific liquidity-cycle heuristic and actionable sizing point; not just hype."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794587462417",
+   "q": 3,
+   "reason": "Non-obvious framing of stable pools as short volatility missing from APR quotes."
+  },
+  {
+   "key": "y10.yap-hq.testnet/1794587462418",
+   "q": 2,
+   "reason": "Useful risk-on froth observation, but the peak-froth signal is fairly common."
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": {
+  "verified": true,
+  "reportHash": "02da2400a79b085c4fda82ce581a9527cee7a3c47bdf60847b5b65d120180c93",
+  "checks": [
+   {
+    "name": "fresh random nonce",
+    "passed": true
+   },
+   {
+    "name": "model candidates returned",
+    "passed": true
+   },
+   {
+    "name": "gateway: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "gateway: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "gateway: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "gateway: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "gateway: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "gateway: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: Intel DCAP TCB UpToDate",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX quote",
+    "passed": true
+   },
+   {
+    "name": "model 0: TDX production mode",
+    "passed": true
+   },
+   {
+    "name": "model 0: ECDSA signer identity",
+    "passed": true
+   },
+   {
+    "name": "model 0: quote binds signer and nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: echoed nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: MRCONFIGID binds compose",
+    "passed": true
+   },
+   {
+    "name": "model 0: RTMR3 event log replay",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU evidence present",
+    "passed": true
+   },
+   {
+    "name": "model 0: GPU nonce",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA NRAS response",
+    "passed": true
+   },
+   {
+    "name": "model 0: NVIDIA GPU verdict",
+    "passed": true
+   }
+  ]
+ },
+ "usage": {
+  "promptTokens": 422,
+  "completionTokens": 1718,
+  "usd": 0.00233618,
+  "calls": 1
+ }
+}

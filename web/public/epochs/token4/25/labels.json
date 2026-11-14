@@ -1,0 +1,65 @@
+{
+ "labels": {
+  "bea.grapevine-hq.testnet/1794638600069": 2,
+  "kofi.grapevine-hq.testnet/1794638624874": 2,
+  "noor.grapevine-hq.testnet/1794638569046": 2,
+  "rosa.grapevine-hq.testnet/1794638647783": 2,
+  "v1.grapevine-hq.testnet/1794638573422": 2,
+  "v1.grapevine-hq.testnet/1794638694108": 2,
+  "v1.grapevine-hq.testnet/1794638806418": 0
+ },
+ "details": [
+  {
+   "key": "bea.grapevine-hq.testnet/1794638600069",
+   "q": 2,
+   "reason": "Specific community request for an interpreter with a small reward; useful and on-topic.",
+   "cached": true
+  },
+  {
+   "key": "kofi.grapevine-hq.testnet/1794638624874",
+   "q": 2,
+   "reason": "Specific community request for an interpreter with a clear need and reward; useful, not spam.",
+   "cached": true
+  },
+  {
+   "key": "noor.grapevine-hq.testnet/1794638569046",
+   "q": 2,
+   "reason": "Specific community request with clear time, place, need, and reward; useful and actionable.",
+   "cached": true
+  },
+  {
+   "key": "rosa.grapevine-hq.testnet/1794638647783",
+   "q": 2,
+   "reason": "Offers relevant availability and interpreting experience for a community meeting; normal useful reply.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794638573422",
+   "q": 2,
+   "reason": "Concrete community task with a clear need and reward; useful coordination.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794638694108",
+   "q": 2,
+   "reason": "Factual quest completion and share distribution; useful community record, though formulaic.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794638806418",
+   "q": 0,
+   "reason": "Automated payment/quest notification with no substantive discussion.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

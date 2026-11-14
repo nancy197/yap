@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "y04.yap-hq.testnet/1794631865670": 2,
+  "y04.yap-hq.testnet/1794631865671": 1,
+  "y04.yap-hq.testnet/1794631865672": 2,
+  "y08.yap-hq.testnet/1794631868424": 1,
+  "y08.yap-hq.testnet/1794631868425": 1,
+  "y08.yap-hq.testnet/1794631868426": 2,
+  "y25.yap-hq.testnet/1794632111758100": 2,
+  "y25.yap-hq.testnet/1794632111758362": 3,
+  "y26.yap-hq.testnet/1794632114231312": 3,
+  "y26.yap-hq.testnet/179463211423179": 3,
+  "y27.yap-hq.testnet/1794632116924233": 3,
+  "y27.yap-hq.testnet/1794632116924330": 3,
+  "y28.yap-hq.testnet/1794632119301511": 2,
+  "y28.yap-hq.testnet/1794632119301985": 3,
+  "y29.yap-hq.testnet/1794632121497621": 2,
+  "y29.yap-hq.testnet/1794632121497927": 2,
+  "y30.yap-hq.testnet/1794632123946130": 1,
+  "y31.yap-hq.testnet/1794632126325422": 3,
+  "y31.yap-hq.testnet/1794632126325903": 2,
+  "y32.yap-hq.testnet/1794632128914275": 3,
+  "y32.yap-hq.testnet/1794632128914462": 3,
+  "y33.yap-hq.testnet/1794632130826130": 1,
+  "y33.yap-hq.testnet/1794632130826675": 1,
+  "y34.yap-hq.testnet/1794632133288700": 2,
+  "y34.yap-hq.testnet/1794632133288893": 2
+ },
+ "details": [
+  {
+   "key": "y04.yap-hq.testnet/1794631865670",
+   "q": 2,
+   "reason": "Actionable DAO treasury policy advice with concrete thresholds; useful but not highly original.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794631865671",
+   "q": 1,
+   "reason": "Short agreeing reply that restates runway idea; low-effort reaction.",
+   "cached": true
+  },
+  {
+   "key": "y04.yap-hq.testnet/1794631865672",
+   "q": 2,
+   "reason": "Specific treasury LP rule: compare APR to IL and model chop before voting.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794631868424",
+   "q": 1,
+   "reason": "Generic meme hype with no substantive content; low-effort.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794631868425",
+   "q": 1,
+   "reason": "Brief reaction with a generic liquidity caution; low-effort.",
+   "cached": true
+  },
+  {
+   "key": "y08.yap-hq.testnet/1794631868426",
+   "q": 2,
+   "reason": "Adds concrete APR/IL comparison and personal benchmark; useful reply.",
+   "cached": true
+  },
+  {
+   "key": "y25.yap-hq.testnet/1794632111758100",
+   "q": 2,
+   "reason": "Specific validator uptime report; normal useful status update.",
+   "cached": true
+  },
+  {
+   "key": "y25.yap-hq.testnet/1794632111758362",
+   "q": 3,
+   "reason": "Concrete operator debugging insight about disk io_wait and NVMe throttling.",
+   "cached": true
+  },
+  {
+   "key": "y26.yap-hq.testnet/1794632114231312",
+   "q": 3,
+   "reason": "Specific UX audit comparing named vs implicit accounts, clear error-prevention insight.",
+   "cached": true
+  },
+  {
+   "key": "y26.yap-hq.testnet/179463211423179",
+   "q": 3,
+   "reason": "Timed onboarding comparison quantifies friction and drop-off risk.",
+   "cached": true
+  },
+  {
+   "key": "y27.yap-hq.testnet/1794632116924233",
+   "q": 3,
+   "reason": "Specific creator-visit stat shows replies drive distribution.",
+   "cached": true
+  },
+  {
+   "key": "y27.yap-hq.testnet/1794632116924330",
+   "q": 3,
+   "reason": "Concrete FastData audit metrics reveal writer volume, size, and timing skew.",
+   "cached": true
+  },
+  {
+   "key": "y28.yap-hq.testnet/1794632119301511",
+   "q": 2,
+   "reason": "Clear plain-language explanation of TEE attestation and trust model.",
+   "cached": true
+  },
+  {
+   "key": "y28.yap-hq.testnet/1794632119301985",
+   "q": 3,
+   "reason": "Applies attestation to AI-agent trust on NEAR with a concrete verification step.",
+   "cached": true
+  },
+  {
+   "key": "y29.yap-hq.testnet/1794632121497621",
+   "q": 2,
+   "reason": "Specific animation WIP with frame timing and a modest art-process note.",
+   "cached": true
+  },
+  {
+   "key": "y29.yap-hq.testnet/1794632121497927",
+   "q": 2,
+   "reason": "Detailed pixel-art WIP with dimensions, frame detail, and palette constraints.",
+   "cached": true
+  },
+  {
+   "key": "y30.yap-hq.testnet/1794632123946130",
+   "q": 1,
+   "reason": "brief status update with little substance",
+   "cached": true
+  },
+  {
+   "key": "y31.yap-hq.testnet/1794632126325422",
+   "q": 3,
+   "reason": "concrete audit check with specific outcome",
+   "cached": true
+  },
+  {
+   "key": "y31.yap-hq.testnet/1794632126325903",
+   "q": 2,
+   "reason": "specific payout report with practical DAO budgeting tip",
+   "cached": true
+  },
+  {
+   "key": "y32.yap-hq.testnet/1794632128914275",
+   "q": 3,
+   "reason": "detailed solver metrics and concrete fix",
+   "cached": true
+  },
+  {
+   "key": "y32.yap-hq.testnet/1794632128914462",
+   "q": 3,
+   "reason": "clear product insight about seamless settlement",
+   "cached": true
+  },
+  {
+   "key": "y33.yap-hq.testnet/1794632130826130",
+   "q": 1,
+   "reason": "hype-focused engagement with little substantive content",
+   "cached": true
+  },
+  {
+   "key": "y33.yap-hq.testnet/1794632130826675",
+   "q": 1,
+   "reason": "speculative hype with no substantive analysis",
+   "cached": true
+  },
+  {
+   "key": "y34.yap-hq.testnet/1794632133288700",
+   "q": 2,
+   "reason": "concrete agent workflow example with practical outcome",
+   "cached": true
+  },
+  {
+   "key": "y34.yap-hq.testnet/1794632133288893",
+   "q": 2,
+   "reason": "Short agent-ledger anecdote with concrete pricing/fee details; useful but not a deep insight.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}

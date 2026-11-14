@@ -1,0 +1,30 @@
+{
+ "network": "testnet",
+ "token": "token3.yap-hq.testnet",
+ "epochs": {
+  "0": {
+   "attention": "42375000",
+   "posts": 57,
+   "yappers": 23,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-14T02:12:26.791Z",
+   "status": "Finalized",
+   "emission": "423750000000000000000",
+   "yapperPool": "339000000000000000000",
+   "finalizeTx": "6yQVqcaVPnyeCphvWw8Z6vu6QWov1QJRru3p2gZGQT2H",
+   "supply": "982381375000000000000000",
+   "reserve": "582000000000000000000000",
+   "burnedTotal": "18042375000000000000000",
+   "mintedTotal": "1000423750000000000000000",
+   "streak": 0,
+   "target": "88475000"
+  },
+  "1": {
+   "attention": "0",
+   "posts": 0,
+   "yappers": 0,
+   "simulatedLabels": false,
+   "updatedAt": "2026-11-14T02:15:06.355Z"
+  }
+ }
+}

@@ -24,6 +24,13 @@ type Cfg = { epoch_secs: number; genesis_ts: number; base_emission: string; max_
 type St = { attention_target: string; current_epoch: number; block_number: number; block_start_epoch: number; block_progress: string; block_threshold: string; jackpot_pot: string; vault: string };
 const cfg = await view<Cfg>(TOKEN, 'get_config');
 const bounds = (e: number) => ({ fromMs: (cfg.genesis_ts + e * cfg.epoch_secs) * 1000, toMs: (cfg.genesis_ts + (e + 1) * cfg.epoch_secs) * 1000 });
+const curEpoch = () => Math.floor((Date.now() / 1000 - cfg.genesis_ts) / cfg.epoch_secs);
+const cfg_deadline = () => (cfg as any).report_deadline_epochs as number;
+/** The contract refuses a report once the current epoch passes `e + report_deadline_epochs`, so this is the
+ *  wall-clock instant after which epoch `e` can only go Dead. Every expensive step is budgeted against it. */
+const submitDeadlineMs = (e: number) => bounds(e + cfg_deadline()).toMs;
+/** Time kept back from labelling for the full FastData read, scoring and the on-chain submits. */
+const SUBMIT_RESERVE_MS = 90_000;
 
 /** Same integer math as the contract's `finalize`, so leaf amounts sum to exactly the pool it will set:
  *  `tick` is this tick's yapper share; `jackpot` is the block payout if this tick's attention completes the block. */
@@ -86,12 +93,12 @@ async function stakes(accounts: string[]): Promise<Record<string, string>> {
   return out;
 }
 
-async function buildReport(e: number, tamper = false) {
+async function buildReport(e: number, tamper = false, labelDeadlineMs?: number) {
   const { fromMs, toMs } = bounds(e);
   const writes = await allWrites(toMs + 30_000);
   const dataset: EpochDataset = makeDataset('testnet', fromMs, toMs, writes, e);
   log(`epoch ${e}: ${dataset.posts.length} posts, ${dataset.likes.length} likes, ${dataset.reposts.length} reposts, ${dataset.follows.length} follows`);
-  const labels: LabelRun = await labelDataset(dataset, { mock });
+  const labels: LabelRun = await labelDataset(dataset, { mock, deadlineMs: labelDeadlineMs });
   if (tamper) {
     // DEMO OF COLLUSION: two scorers inflate the like-ring's labels to q=3. The published honest files stay as they
     // are, so anyone re-running Verify sees the on-chain root does not match, and can challenge.
@@ -160,9 +167,14 @@ async function ensureBond(id: string) {
 async function submit(e: number) {
   const rec = await epochRec(e);
   if (rec && rec.status !== 'Discarded') return log(`epoch ${e} already ${rec.status}`);
-  const honest = await buildReport(e);
-  const tampered = e === tamperAt && !rec ? await buildReport(e, true) : null;
+  const deadline = submitDeadlineMs(e);
+  if (Date.now() >= deadline) return log(`epoch ${e}: report deadline passed, leaving it to the crank`);
+  const honest = await buildReport(e, false, deadline - SUBMIT_RESERVE_MS);
+  const tampered = e === tamperAt && !rec ? await buildReport(e, true, deadline - SUBMIT_RESERVE_MS) : null;
   for (const [i, id] of SCORERS.entries()) {
+    // Reading the data and labelling it takes minutes, so the deadline is checked again here rather than
+    // sending transactions the contract will refuse.
+    if (Date.now() >= deadline) return log(`epoch ${e}: deadline passed while building the report`);
     if (await view(TOKEN, 'get_epoch', { e }).then((r: any) => r?.status === 'Proposed').catch(() => false)) {
       // Quorum already reached; a third identical vote would be rejected, so record agreement off-chain only.
       log(`${id}: quorum already reached, skipping`);
@@ -221,54 +233,82 @@ async function claims(e: number) {
 
 const claimRuns = new Set<number>();
 const prelabeled = new Set<number>();
+
+/** Past the deadline a report can no longer be accepted, so the permissionless crank closes the epoch. */
+async function crankDead(e: number, why = '') {
+  try {
+    await recordTx(`crank_dead_epoch e${e}${why}`, await call(await signer(SCORERS[0]!), TOKEN, 'crank_dead_epoch', { e }, 0n, tgas(100)));
+  } catch (err) {
+    log(`crank failed: ${String(err).slice(0, 160)}`);
+  }
+}
+
+/** Cheap pass: finalize, claim and close every finished epoch, with no data read and no labelling. It runs
+ *  first so that the labelling budget below is never spent on an epoch the contract would already refuse. */
+async function settle(from: number, cur: number): Promise<Record<number, string | undefined>> {
+  const status: Record<number, string | undefined> = {};
+  for (let e = from; e < cur; e++) {
+    const rec = await epochRec(e);
+    status[e] = rec?.status;
+    if (rec?.status === 'Finalized') {
+      if (!claimRuns.has(e)) { claimRuns.add(e); await claims(e); }
+      continue;
+    }
+    if (rec?.status === 'Dead' || rec?.status === 'Challenged') continue;
+    if (rec?.status === 'Proposed') {
+      if (await finalize(e)) {
+        status[e] = 'Finalized';
+        claimRuns.add(e);
+        await claims(e);
+      } else if (Date.now() >= submitDeadlineMs(e)) {
+        await crankDead(e, ' (missed deadline)');
+        status[e] = (await epochRec(e))?.status;
+      }
+      continue;
+    }
+    if (Date.now() >= submitDeadlineMs(e)) {
+      await crankDead(e);
+      status[e] = (await epochRec(e))?.status;
+    }
+  }
+  return status;
+}
+
+/** Expensive pass: at most one report per loop, for the oldest epoch that can still make its deadline. Each
+ *  epoch needs its predecessor settled, because the predicted pool reads the state that settling it leaves. */
+async function reportNext(from: number, cur: number, status: Record<number, string | undefined>) {
+  for (let e = from; e < cur; e++) {
+    const st = status[e];
+    if (st === 'Finalized' || st === 'Dead') continue;
+    // Proposed and still inside its challenge window, or waiting on the DAO: later epochs have to wait too.
+    if (st === 'Proposed') return;
+    if (st === 'Challenged') return log(`epoch ${e} challenged: waiting for the DAO`);
+    if (Date.now() < bounds(e).toMs + 30_000) return; // the indexer needs a moment past the epoch's end
+    if (Date.now() >= submitDeadlineMs(e)) continue; // already closed above, or will be on the next loop
+    return await submit(e);
+  }
+}
+
 async function tick() {
-  const now = Date.now();
-  const cur = Math.floor((now / 1000 - cfg.genesis_ts) / cfg.epoch_secs);
-  // Label the epoch that just ended right away (labels are cached), so its report is fast even while the
-  // previous epoch is still in its challenge window. Only the pool prediction has to wait for that.
+  const cur = curEpoch();
+  const from = Math.max(0, cur - 8);
+  const status = await settle(from, cur);
+  await reportNext(from, cur, status);
+  // Last: label the epoch that just ended so its own report is quick. Labels are cached, so this is pure
+  // prefetch, and it runs after the work above because it must never delay a report that is due.
   const ended = cur - 1;
-  if (ended >= 0 && !prelabeled.has(ended) && now >= bounds(ended).toMs + 30_000) {
+  if (ended >= 0 && !prelabeled.has(ended) && Date.now() >= bounds(ended).toMs + 30_000) {
     prelabeled.add(ended);
     try {
       const { fromMs, toMs } = bounds(ended);
       const d = makeDataset('testnet', fromMs, toMs, await allWrites(toMs + 30_000), ended);
-      const l = await labelDataset(d, { mock });
+      const l = await labelDataset(d, { mock, deadlineMs: submitDeadlineMs(ended) - SUBMIT_RESERVE_MS });
       log(`prelabeled epoch ${ended}: ${l.details.length} posts, $${l.usage.usd.toFixed(4)}`);
     } catch (err) {
       log(`prelabel ${ended} failed: ${String(err).slice(0, 160)}`);
     }
   }
-  // Walk recent epochs oldest first: each needs its predecessor final, because the predicted pool depends on it.
-  for (let e = Math.max(0, cur - 8); e < cur; e++) {
-    const rec = await epochRec(e);
-    // Past the finalization deadline and never finalized: the permissionless crank marks it dead (10% burn).
-    if (rec?.status === 'Proposed' && cur > e + cfg_deadline()) {
-      try {
-        await recordTx(`crank_dead_epoch e${e} (missed deadline)`, await call(await signer(SCORERS[0]!), TOKEN, 'crank_dead_epoch', { e }, 0n, tgas(100)));
-      } catch (err) { log(`crank failed: ${String(err).slice(0, 160)}`); }
-      continue;
-    }
-    if (rec && ['Finalized', 'Dead'].includes(rec.status)) {
-      if (rec.status === 'Finalized' && !claimRuns.has(e)) { claimRuns.add(e); await claims(e); }
-      continue;
-    }
-    if (rec?.status === 'Proposed') {
-      if (await finalize(e)) { claimRuns.add(e); await claims(e); continue; }
-      return;
-    }
-    if (rec?.status === 'Challenged') return log(`epoch ${e} challenged: waiting for the DAO`);
-    if (now < bounds(e).toMs + 30_000) return;
-    if (cur > e + cfg_deadline()) {
-      try {
-        await recordTx(`crank_dead_epoch e${e}`, await call(await signer(SCORERS[0]!), TOKEN, 'crank_dead_epoch', { e }, 0n, tgas(100)));
-      } catch (err) { log(`crank failed: ${String(err).slice(0, 160)}`); }
-      continue;
-    }
-    await submit(e);
-    return;
-  }
 }
-const cfg_deadline = () => (cfg as any).report_deadline_epochs as number;
 
 await loadEnv();
 const once = process.argv.indexOf('--once');

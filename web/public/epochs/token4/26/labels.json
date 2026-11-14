@@ -1,0 +1,30 @@
+{
+ "labels": {
+  "v1.grapevine-hq.testnet/1794639113166": 0,
+  "v1.grapevine-hq.testnet/1794639174229": 0
+ },
+ "details": [
+  {
+   "key": "v1.grapevine-hq.testnet/1794639113166",
+   "q": 0,
+   "reason": "Automated payment notification with no conversational value.",
+   "cached": true
+  },
+  {
+   "key": "v1.grapevine-hq.testnet/1794639174229",
+   "q": 0,
+   "reason": "Bot-generated payment notice, repetitive and low value.",
+   "cached": true
+  }
+ ],
+ "model": "Qwen/Qwen3.8-27B",
+ "simulated": false,
+ "promptHash": "0295a90e4b3e2f48c96577554a218e952053fcde9b231cd4526428ca3e13666c",
+ "attestation": null,
+ "usage": {
+  "promptTokens": 0,
+  "completionTokens": 0,
+  "usd": 0,
+  "calls": 0
+ }
+}
