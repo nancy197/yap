@@ -52,26 +52,17 @@ async function earlierInBlock(start: number, e: number): Promise<Record<string, 
   return out;
 }
 
-// The full testnet history takes minutes to page through, and the scorer needs it twice per epoch. FastData pages
-// newest first, so after the first full read only the new head is fetched, up to the first write already held.
-// Ordinals are renumbered so the merged list is identical to a fresh full read (same data_hash as the watchdog).
-let writesCache: Write[] | null = null;
-const writeId = (w: Write) => `${w.receiptId}:${w.actionIndex}:${w.key}`;
-async function allWrites(): Promise<Write[]> {
-  if (!writesCache) {
-    const out: Write[] = [];
-    for await (const w of history('testnet')) out.push(w);
-    writesCache = out;
-    return out;
-  }
-  const known = new Set(writesCache.slice(0, 5_000).map(writeId));
-  const fresh: Write[] = [];
-  for await (const w of history('testnet')) {
-    if (known.has(writeId(w))) break;
-    fresh.push(w);
-  }
-  writesCache = [...fresh, ...writesCache].map((w, i) => ({ ...w, sourceOrdinal: i + 1 }));
-  return writesCache;
+// FastData does not return history in strict time order (late-indexed writes land behind newer ones), so an
+// incremental "stop at the first known write" read silently drops data. Do one full read per tick instead and share
+// it between prelabelling and the report: a read is reused only if it started after `notBefore`.
+let writesCache: { at: number; writes: Write[] } | null = null;
+async function allWrites(notBefore: number): Promise<Write[]> {
+  if (writesCache && writesCache.at >= notBefore) return writesCache.writes;
+  const at = Date.now();
+  const out: Write[] = [];
+  for await (const w of history('testnet')) out.push(w);
+  writesCache = { at, writes: out };
+  return out;
 }
 
 /** Trailing per-account scores (for tiers) from the files we already published. */
@@ -97,7 +88,7 @@ async function stakes(accounts: string[]): Promise<Record<string, string>> {
 
 async function buildReport(e: number, tamper = false) {
   const { fromMs, toMs } = bounds(e);
-  const writes = await allWrites();
+  const writes = await allWrites(toMs + 30_000);
   const dataset: EpochDataset = makeDataset('testnet', fromMs, toMs, writes, e);
   log(`epoch ${e}: ${dataset.posts.length} posts, ${dataset.likes.length} likes, ${dataset.reposts.length} reposts, ${dataset.follows.length} follows`);
   const labels: LabelRun = await labelDataset(dataset, { mock });
@@ -240,7 +231,7 @@ async function tick() {
     prelabeled.add(ended);
     try {
       const { fromMs, toMs } = bounds(ended);
-      const d = makeDataset('testnet', fromMs, toMs, await allWrites(), ended);
+      const d = makeDataset('testnet', fromMs, toMs, await allWrites(toMs + 30_000), ended);
       const l = await labelDataset(d, { mock });
       log(`prelabeled epoch ${ended}: ${l.details.length} posts, $${l.usage.usd.toFixed(4)}`);
     } catch (err) {
