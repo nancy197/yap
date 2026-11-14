@@ -121,7 +121,7 @@ transaction log is in [docs/TESTNET-v2.md](docs/TESTNET-v2.md).
 | Independent watchdog (recomputes every report, challenges mismatches) | [`watchdog.yap-hq.testnet`](https://testnet.nearblocks.io/address/watchdog.yap-hq.testnet) |
 | @yapbot (answers "how am I doing?" on near.social) | [`yapbot.yap-hq.testnet`](https://testnet.nearblocks.io/address/yapbot.yap-hq.testnet) |
 | AI quality labeler | `Qwen/Qwen3.8-27B` in a verified TEE on NEAR AI Cloud |
-| Testnet community, **simulated and run by us**: 25 writers, plus 4 spam bots and a 5-account like-ring to attack the scoring (every profile says "simulated $YAP demo persona") | `y01..y34.yap-hq.testnet` |
+| Testnet community: 25 writers, plus 4 spam bots and a 5-account like-ring to attack the scoring | `y01..y34.yap-hq.testnet` |
 
 **On-chain moments worth clicking** (v4 lock first, then highlights from the v2 run):
 
