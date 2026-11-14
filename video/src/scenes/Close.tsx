@@ -10,7 +10,7 @@ export function Close() {
   const tBuilt = cue('close', 'built');
   const tOn = cue('close', 'on', 9);
   const lines = [
-    ['The meme is the mechanic.', 8],
+    ['Yap to earn. Pop the jackpot.', 8],
     ['The community runs the treasury.', tCommunity],
     ['Every number lives on NEAR.', tNear - 10],
   ] as const;

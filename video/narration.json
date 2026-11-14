@@ -1,14 +1,50 @@
 [
-  {"id":"hook","text":"January fifteenth, twenty twenty-six. X bans every app that pays people to post. The next day, Kaito shuts down Yaps. One API decision, and a whole corner of crypto is gone."},
-  {"id":"title","text":"This is YAP. Yap-to-earn that nobody can switch off. It runs on near dot social, where every post, like and follow is a NEAR transaction."},
-  {"id":"data","text":"There is no API key to revoke. Posts land on chain through FastData. Our indexer replays them into one dataset per epoch, and anyone can rebuild that same dataset, byte for byte."},
-  {"id":"score","text":"Every post then gets a quality label from an AI model running inside a verified TEE on NEAR AI Cloud. Spam scores zero; real insight scores high. Engagement weighs more when it comes from smart followers, ranked by PageRank over the follow graph, or from accounts that stake. Everything after the label is open, deterministic math."},
-  {"id":"meme","text":"Now, the meme. Every epoch, the community's attention is measured against a moving target. A loud epoch mints new YAP and grows the streak. A quiet one resets the streak and burns three percent of the reserve. Total silence burns ten. And nobody can change these rules: every admin key on the contract is deleted."},
-  {"id":"trust","text":"So who reports the scores? Three bonded scorers, and two must sign the exact same report. To prove it works, we made two of them cheat and inflate the numbers. An independent watchdog recomputed the epoch, caught the mismatch in seconds, and challenged. The token contract opened a Sputnik DAO proposal, the council upheld it, and the cheaters lost their bonds. The honest report took their place."},
-  {"id":"kaito","text":"On top sits everything Kaito users know. Mindshare maps for yappers and topics. Leaderboards with rank changes and smart followers. Profiles with a shareable Yap card. Arenas, where a DAO funds a reward pool for a topic and pays its best voices every epoch. And staking, which gives your likes more weight."},
-  {"id":"social","text":"Then the community takes over. The treasury is a standard Sputnik DAO that also works in Trezu. Reach Gold, and an immutable steward contract checks your proof on chain and adds you to the DAO's trusted circle. No vote needed. Trusted members can send small grants straight from the treasury, and the seat expires unless you earn it again."},
-  {"id":"bot","text":"Want to know how you're doing? Just ask yapbot on near dot social. It reads your published scores and replies on chain, written by a model inside a TEE, using only real numbers."},
-  {"id":"verify","text":"And don't trust us. Pick any epoch, and your own browser recomputes every score and the Merkle root in milliseconds, then checks them against the chain."},
-  {"id":"proof","text":"It already ranks real near dot social mainnet yappers. And across sixty simulated epochs, the defenses cut a hundred-bot spam farm from eighty-seven percent of rewards to twenty-seven. A meme that goes silent eats its own reserve."},
-  {"id":"close","text":"YAP. The meme is the mechanic, the community runs the treasury, and every number in this video lives on NEAR. Built at NEAR Hackathon twenty twenty-six. Yap on."}
+ {
+  "id": "hook",
+  "text": "January fifteenth, twenty twenty-six. X bans every app that pays people to post. The next day, Kaito shuts down Yaps. One API decision, and a whole corner of crypto is gone."
+ },
+ {
+  "id": "title",
+  "text": "This is YAP. Proof of Yap: yap-to-earn that nobody can switch off. It runs on near dot social, where every post, like and follow is a NEAR transaction."
+ },
+ {
+  "id": "data",
+  "text": "There is no API key to revoke. Posts land on chain through FastData. Our indexer replays them into one dataset per epoch, and anyone can rebuild that same dataset, byte for byte."
+ },
+ {
+  "id": "score",
+  "text": "Every post then gets a quality label from an AI model running inside a verified TEE on NEAR AI Cloud. Spam scores zero; real insight scores high. Engagement weighs more when it comes from smart followers, ranked by PageRank over the follow graph, or from accounts that stake. Everything after the label is open, deterministic math."
+ },
+ {
+  "id": "meme",
+  "text": "Now, the meme. Proof of Yap. Every ten minutes, you earn YAP for what you post. And everyone's yap fills one shared bar. When the bar is full, the jackpot explodes, and it is split by how much each of you yapped during the whole block. Then the next block needs twenty-five percent more. And nobody can change these rules: every admin key on the contract is deleted."
+ },
+ {
+  "id": "trust",
+  "text": "So who reports the scores? Three bonded scorers, and two must sign the exact same report. To prove it works, we made two of them cheat and inflate the numbers. An independent watchdog recomputed the epoch, caught the mismatch in seconds, and challenged. The token contract opened a Sputnik DAO proposal, the council upheld it, and the cheaters lost their bonds. The honest report took their place."
+ },
+ {
+  "id": "kaito",
+  "text": "On top sits everything Kaito users know. Mindshare maps for yappers and topics. Leaderboards with rank changes and smart followers. Profiles with a shareable Yap card. Arenas, where a DAO funds a reward pool for a topic and pays its best voices every epoch. And staking, which gives your likes more weight."
+ },
+ {
+  "id": "social",
+  "text": "Then the community takes over. The treasury is a standard Sputnik DAO that also works in Trezu. Reach Gold, and an immutable steward contract checks your proof on chain and adds you to the DAO's trusted circle. No vote needed. Trusted members can send small grants straight from the treasury, and the seat expires unless you earn it again."
+ },
+ {
+  "id": "bot",
+  "text": "Want to know how you're doing? Just ask yapbot on near dot social. It reads your published scores and replies on chain, written by a model inside a TEE, using only real numbers."
+ },
+ {
+  "id": "verify",
+  "text": "And don't trust us. Pick any epoch, and your own browser recomputes every score and the Merkle root in milliseconds, then checks them against the chain."
+ },
+ {
+  "id": "proof",
+  "text": "It already ranks real near dot social mainnet yappers. And across sixty simulated epochs, the defenses cut a hundred-bot spam farm from eighty-seven percent of rewards to twenty-seven. And when a community goes silent, nothing burns: the bar simply waits."
+ },
+ {
+  "id": "close",
+  "text": "YAP. Yap to earn, fill the bar, pop the jackpot. The community runs the treasury, and every number in this video lives on NEAR. Built at NEAR Hackathon twenty twenty-six. Yap on."
+ }
 ]

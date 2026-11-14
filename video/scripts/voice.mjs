@@ -3,7 +3,13 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 const env = readFileSync(new URL('../../.env', import.meta.url), 'utf8');
-const KEY = env.match(/^ELEVENLAB_API_KEY_2=(.*)$/m)?.[1]?.replace(/["'\s]/g, '');
+// Several keys may be configured; use the first one with enough character quota left.
+const KEYS = ['ELEVENLAB_API_KEY_3', 'ELEVENLAB_API_KEY', 'ELEVENLAB_API_KEY_2'].map((k) => env.match(new RegExp(`^${k}=(.*)$`, 'm'))?.[1]?.replace(/["'\s]/g, '')).filter(Boolean);
+let KEY = KEYS[0];
+for (const k of KEYS) {
+  const u = await fetch('https://api.elevenlabs.io/v1/user/subscription', { headers: { 'xi-api-key': k } }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  if (u && u.character_limit - u.character_count > 1500) { KEY = k; break; }
+}
 const VOICE = 'cjVigY5qzO86Huf0OWal'; // Eric: smooth, trustworthy (premade)
 const scenes = JSON.parse(readFileSync(new URL('../narration.json', import.meta.url), 'utf8'));
 const only = process.argv.slice(2);

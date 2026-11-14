@@ -32,7 +32,7 @@ export function Title() {
         </div>
       </div>
       <div style={{ marginTop: 70, height: 90 }}>
-        <Kinetic text="Yap-to-earn that nobody can switch off." delay={tSwitch - 18} size={64} weight={600} highlight={['nobody', 'switch', 'off']} style={{ justifyContent: 'center' }} />
+        <Kinetic text="Proof of Yap: yap-to-earn nobody can switch off." delay={tSwitch - 18} size={64} weight={600} highlight={['nobody', 'switch', 'off']} style={{ justifyContent: 'center' }} />
       </div>
       <div style={{ display: 'flex', gap: 18, marginTop: 34 }}>
         {[

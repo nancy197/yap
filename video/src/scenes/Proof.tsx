@@ -48,7 +48,7 @@ export function Proof() {
               {line(data.sim.deadSupply, top, draw, C.red)}
             </svg>
             <div style={{ display: 'flex', gap: 30, marginTop: 18, fontFamily: mono, fontSize: 22 }}>
-              <span style={{ color: C.blue }}>— steady</span><span style={{ color: C.violet }}>— hype then fade</span><span style={{ color: C.red, opacity: ease(f, tSilent - 10, tSilent) }}>— silent meme eats its reserve</span>
+              <span style={{ color: C.blue }}>— steady</span><span style={{ color: C.violet }}>— hype then fade</span><span style={{ color: C.red, opacity: ease(f, tSilent - 10, tSilent) }}>— silent community: the bar just waits</span>
             </div>
           </div>
           <div style={{ flex: 1, display: 'grid', gap: 34, alignContent: 'start' }}>
