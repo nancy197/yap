@@ -7,10 +7,13 @@
 <h3 align="center">Make Yap Great Again.</h3>
 
 <p align="center">
-  <b>Proof of Yap: the community mines $YAP by talking.</b><br/>
-  Every post on near.social earns. Every block pays a jackpot. Every block needs more yap than the last.<br/>
-  Nothing burns, and the contract has zero access keys, so nobody can change the rules. Not even us.<br/>
-  <b>Bots don't get paid:</b> every post is read by an AI model running in a TEE on NEAR AI Cloud, and spam earns zero.
+  <b>Proof of Yap: the community mines $YAP by talking.</b><br/><br/>
+  💬 <b>Yap and earn.</b> Every 10 minutes your near.social posts are scored, and you get paid in $YAP.<br/>
+  💥 <b>Fill the bar, pop the jackpot.</b> Everyone's yap fills a shared bar. When it's full, the jackpot explodes<br/>
+  and is split by how much you yapped during the whole block.<br/>
+  ⛏ <b>Then it gets harder.</b> The next jackpot needs 25% more yap than the last.<br/><br/>
+  🤖 <b>Bots don't get paid:</b> a NEAR AI model in a TEE reads every post, and spam earns zero.<br/>
+  🔒 Nothing burns, and the contract has zero access keys, so nobody can change the rules. Not even us.
 </p>
 
 <p align="center">
