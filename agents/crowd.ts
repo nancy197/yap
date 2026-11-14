@@ -1,5 +1,5 @@
 // Drives the SIMULATED community on a schedule: two loud rounds per epoch, except planned quiet epochs
-// (one tiny round) so the demo shows both the streak and a quiet-epoch burn. Usage: pnpm crowd [--quiet-every N]
+// (one tiny round) so the demo shows the block bar filling at different speeds. Usage: pnpm crowd [--quiet-every N]
 import { spawnSync } from 'node:child_process';
 import { view, TOKEN, sleep } from './common.ts';
 const cfg: any = await view(TOKEN, 'get_config');

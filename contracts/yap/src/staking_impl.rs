@@ -103,7 +103,11 @@ impl Yap {
             .iter()
             .fold(0u128, |sum, (_, amount)| add(sum, *amount));
         if total == 0 {
-            self.burn_from_contract(pool, "no_eligible_stakers");
+            // Nobody staked through this tick: the stakers' share goes to the community DAO (nothing burns).
+            // Not to the jackpot, so scorers can predict a block's payout without knowing every stake.
+            let dao = self.config.dao.clone();
+            self.token.internal_transfer(&self_id(), &dao, pool, None);
+            events::emit("staker_pool_to_dao", json!({"epoch":e,"amount":U128(pool)}));
             return;
         }
         self.reward_per_share = add(self.reward_per_share, mul(pool, SCALE) / total);

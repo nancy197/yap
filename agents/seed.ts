@@ -27,7 +27,7 @@ export const PERSONAS: Persona[] = [
   P(9, 'Sam LP', 'trader', 'LPing on Rhea.', 'liquidity provider sharing pool yields and IL math', ['#rhea', '$NEAR', '#defi']),
   P(10, 'Yuki Macro', 'trader', 'Macro takes, crypto cycles.', 'macro commentator linking news to crypto', ['$NEAR', '#macro', '#crypto']),
   P(11, 'YAP Frog', 'meme', 'ribbit. yap or burn.', 'meme account writing short witty jokes about yapping and burns', ['$YAP', '#yap', '#memes']),
-  P(12, 'Burn Bot Cat', 'meme', 'I eat quiet epochs.', 'cat persona joking about the streak and quiet-epoch burns', ['$YAP', '#yap', '#streak']),
+  P(12, 'Miner Cat', 'meme', 'I mine $YAP with my mouth.', 'cat persona hyping the community jackpot and how close the block is to exploding', ['$YAP', '#yap', '#jackpot']),
   P(13, 'Hana Pixels', 'artist', 'Pixel art on NEAR.', 'artist describing new pieces and process', ['#nearart', '#pixelart', '#nfts']),
   P(14, 'Omar Sound', 'artist', 'Music on near.fm.', 'musician sharing tracks and production notes', ['#nearfm', '#music', '#near']),
   P(15, 'New Nora', 'newbie', 'Week 1 on NEAR.', 'curious newcomer asking honest questions', ['#near', '#learning', '$YAP']),

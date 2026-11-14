@@ -11,7 +11,7 @@ const DEF: [string, string][] = [['none', 'No defences'], ['pageRank', 'PageRank
 
 export default function Sim() {
   const { data } = useAsync(() => getJson<any>('./sim.json'), []);
-  const [metric, setMetric] = useState<'supply' | 'reserve'>('supply');
+  const [metric, setMetric] = useState<'supply' | 'vault'>('supply');
   if (!data) return <div className="page"><Loading /></div>;
   const sc: Record<string, any[]> = data.scenarios;
   const main = ['steady', 'hype-then-fade', 'dead-meme', 'spam-farm', 'whale-staker'];
@@ -21,12 +21,12 @@ export default function Sim() {
       <div className="page-head">
         <div>
           <h1>Simulation</h1>
-          <p>{data.epochs} epochs per scenario, seed {data.seed}. Synthetic near.social activity is replayed through the real indexer and scorer, then the exact token rules (loud/quiet/dead, streak, burns, unclaimed burn). Values are simulated YAP, not on-chain balances.</p>
+          <p>{data.epochs} epochs per scenario, seed {data.seed}. Synthetic near.social activity is replayed through the real indexer and scorer, then the exact token rules (Proof of Yap: per-tick emission, blocks, jackpots, vault releases; nothing burns). Values are simulated YAP, not on-chain balances.</p>
         </div>
-        <div className="tabs right"><button className={metric === 'supply' ? 'on' : ''} onClick={() => setMetric('supply')}>Supply</button><button className={metric === 'reserve' ? 'on' : ''} onClick={() => setMetric('reserve')}>Reserve</button></div>
+        <div className="tabs right"><button className={metric === 'supply' ? 'on' : ''} onClick={() => setMetric('supply')}>Supply</button><button className={metric === 'vault' ? 'on' : ''} onClick={() => setMetric('vault')}>Vault</button></div>
       </div>
       <div className="card" style={{ marginBottom: 14 }}>
-        <div className="card-h"><h2>{metric === 'supply' ? 'Total supply' : 'Reserve'} by scenario</h2><span className="note">a meme that stops talking eats its Reserve</span></div>
+        <div className="card-h"><h2>{metric === 'supply' ? 'Total supply' : 'Vault'} by scenario</h2><span className="note">every jackpot releases 10% of the vault</span></div>
         <LineChart series={main.map((k, i) => ({ name: NAMES[k]!, color: COLORS[i]!, points: sc[k]!.map((r) => [r.epoch, r[metric]] as [number, number]) }))} height={320} width={1100} xLabel="epoch" yFormat={(v) => `${(v / 1000).toFixed(0)}k`} />
       </div>
       <div className="grid g2">
@@ -49,9 +49,9 @@ export default function Sim() {
           <p className="note" style={{ padding: '0 16px 14px' }}>Mean over 60 epochs. Each single defence helps a little; together they cut the spam farm from 87% to 27% and the ring from 52% to 19%. They don't reach zero: a patient ring of aged accounts writing decent text still earns. That's the stated limit; the DAO challenge is the backstop.</p>
         </div>
         <div className="card">
-          <h2 style={{ marginBottom: 10 }}>Streak in the hype-then-fade scenario</h2>
-          <LineChart series={[{ name: 'Streak', color: 'var(--series-2)', points: sc['hype-then-fade']!.map((r) => [r.epoch, r.streak] as [number, number]) }, { name: 'Best streak', color: 'var(--series-1)', points: sc['hype-then-fade']!.map((r) => [r.epoch, r.bestStreak] as [number, number]) }]} height={220} xLabel="epoch" />
-          <p className="note">The high score survives the fade; the live streak resets on the first quiet epoch.</p>
+          <h2 style={{ marginBottom: 10 }}>Blocks mined by scenario</h2>
+          <LineChart series={main.map((k, i) => ({ name: NAMES[k]!, color: COLORS[i]!, points: sc[k]!.map((r) => [r.epoch, r.block - (r.kind === 'jackpot' ? 0 : 1)] as [number, number]) }))} height={260} width={520} xLabel="epoch" yFormat={(v) => v.toFixed(0)} />
+          <p className="note">Each block needs 25% more attention than the last, so jackpots come further apart unless the community grows.</p>
         </div>
       </div>
     </div>

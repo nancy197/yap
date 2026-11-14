@@ -16,8 +16,8 @@ const sc = (raw: string | undefined) => (raw ? (Number(raw) / 1e6).toFixed(2) : 
 const rows = chain.sort((a, b) => a.number - b.number).map((e) => {
   const i = idx.epochs[e.number] ?? {};
   const att = e.report?.attention;
-  const kind = e.status === 'Dead' ? 'dead' : i.target && att ? (BigInt(e.emission) > 0n && i.streak > 0 ? 'loud' : 'quiet') : '';
-  return `| ${e.number} | ${e.status} | ${sc(att)} | ${kind} | ${y(e.emission)} | ${i.streak ?? '—'} | ${y(i.burnedTotal)} | ${y(i.supply)} | ${e.signers?.length ?? 0}/3 | ${i.posts ?? '—'} | ${i.simulatedLabels === false ? 'TEE AI' : i.simulatedLabels ? 'heuristic' : '—'} |`;
+  const kind = e.status === 'Dead' ? 'silent' : BigInt(e.jackpot ?? '0') > 0n ? `💥 block ${e.block}` : e.status === 'Finalized' ? `block ${e.block}` : '';
+  return `| ${e.number} | ${e.status} | ${sc(att)} | ${kind} | ${y(e.emission)} | ${y(e.jackpot)} | ${y(i.vault)} | ${y(i.supply)} | ${e.signers?.length ?? 0}/3 | ${i.posts ?? '—'} | ${i.simulatedLabels === false ? 'TEE AI' : i.simulatedLabels ? 'heuristic' : '—'} |`;
 });
 const groups = new Map<string, any[]>();
 for (const t of txs) {
@@ -31,15 +31,15 @@ on-chain epoch records. Every hash links to testnet.nearblocks.io. Times are UTC
 
 - Token: [\`${TOKEN}\`](https://testnet.nearblocks.io/address/${TOKEN}). It has **no access keys**: every full-access key was deleted after init.
 - Community DAO: [\`${DAO}\`](https://testnet.nearblocks.io/address/${DAO}). Sputnik DAO v2 with a council of 3; 2 votes pass a proposal.
-- State now: supply ${y(supply)} YAP; minted ${y(st.minted_total)}; burned ${y(st.burned_total)}; Reserve ${y(st.reserve)}.
-  Streak ${st.streak}, best streak ${st.best_streak}.
+- State now: supply ${y(supply)} YAP; minted ${y(st.minted_total)}; vault ${y(st.vault)}; jackpot pot ${y(st.jackpot_pot)}.
+  Mining block ${st.block_number}: ${sc(st.block_progress)} / ${sc(st.block_threshold)} attention.
 - **Simulated community.** Accounts \`y01..y24.yap-hq.testnet\` are demo personas: 15 honest (text written by \`z-ai/glm-5.3-flash\`), 4 spam bots and a 5-account like-ring.
   Their near.social writes are real testnet transactions.
 - **Labels.** Post quality labels come from \`Qwen/Qwen3.8-27B\` in a TEE on NEAR AI Cloud. Its attestation is verified before every labelling run.
 
 ## Epochs
 
-| # | status | attention | kind | emission (YAP) | streak | burned total | supply | signers | posts | labels |
+| # | status | attention | block | emission (YAP) | jackpot (YAP) | vault | supply | signers | posts | labels |
 | ---: | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 ${rows.join('\n')}
 

@@ -20,24 +20,36 @@ const BASE_URI = process.env.YAP_PUBLIC_BASE ?? `https://raw.githubusercontent.c
 const mock = process.argv.includes('--mock');
 const log = (...a: unknown[]) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
-type Cfg = { epoch_secs: number; genesis_ts: number; base_emission: string; max_ratio_bps: number; loud_bps: number; streak_cap: number; streak_step_bps: number; yapper_bps: number; challenge_secs: number; claim_epochs: number };
-type St = { streak: number; attention_target: string; current_epoch: number };
+type Cfg = { epoch_secs: number; genesis_ts: number; base_emission: string; max_ratio_bps: number; jackpot_bps: number; vault_release_bps: number; yapper_bps: number; challenge_secs: number; claim_epochs: number };
+type St = { attention_target: string; current_epoch: number; block_number: number; block_start_epoch: number; block_progress: string; block_threshold: string; jackpot_pot: string; vault: string };
 const cfg = await view<Cfg>(TOKEN, 'get_config');
 const bounds = (e: number) => ({ fromMs: (cfg.genesis_ts + e * cfg.epoch_secs) * 1000, toMs: (cfg.genesis_ts + (e + 1) * cfg.epoch_secs) * 1000 });
 
-/** Same integer math as the contract's `finalize`, so leaf amounts sum to exactly the yapper pool it will mint. */
-export function predictYapperPool(attention: bigint, st: St): bigint {
-  if (attention === 0n) return 0n;
-  const target = BigInt(st.attention_target);
-  const base = (BigInt(cfg.base_emission) * attention) / target;
-  const loud = attention * 10_000n >= target * BigInt(cfg.loud_bps);
-  let emission = base;
-  if (loud) {
-    const streak = BigInt(Math.min(st.streak + 1, cfg.streak_cap));
-    const limited = base < (BigInt(cfg.base_emission) * BigInt(cfg.max_ratio_bps)) / 10_000n ? base : (BigInt(cfg.base_emission) * BigInt(cfg.max_ratio_bps)) / 10_000n;
-    emission = (limited * (10_000n + streak * BigInt(cfg.streak_step_bps))) / 10_000n;
+/** Same integer math as the contract's `finalize`, so leaf amounts sum to exactly the pool it will set:
+ *  `tick` is this tick's yapper share; `jackpot` is the block payout if this tick's attention completes the block. */
+export function predictPools(attention: bigint, st: St): { tick: bigint; jackpot: bigint } {
+  if (attention === 0n) return { tick: 0n, jackpot: 0n };
+  const base = BigInt(cfg.base_emission);
+  const raw = (base * attention) / BigInt(st.attention_target);
+  const cap = (base * BigInt(cfg.max_ratio_bps)) / 10_000n;
+  const emission = raw < cap ? raw : cap;
+  const toJackpot = (emission * BigInt(cfg.jackpot_bps)) / 10_000n;
+  const tick = ((emission - toJackpot) * BigInt(cfg.yapper_bps)) / 10_000n;
+  const completes = BigInt(st.block_progress) + attention >= BigInt(st.block_threshold);
+  const release = (BigInt(st.vault) * BigInt(cfg.vault_release_bps)) / 10_000n;
+  return { tick, jackpot: completes ? BigInt(st.jackpot_pot) + toJackpot + release : 0n };
+}
+
+/** Per-account Yap scores of the block's earlier ticks, from the files we already published. */
+async function earlierInBlock(start: number, e: number): Promise<Record<string, string>[]> {
+  const out: Record<string, string>[] = [];
+  for (let k = start; k < e; k++) {
+    const f = resolve(PUBLIC, String(k), 'scores.json');
+    if (!existsSync(f)) continue;
+    const s = JSON.parse(await readFile(f, 'utf8'));
+    out.push(Object.fromEntries((s.result.yappers as { account: string; score: string }[]).filter((y) => BigInt(y.score) > 0n).map((y) => [y.account, y.score])));
   }
-  return (emission * BigInt(cfg.yapper_bps)) / 10_000n;
+  return out;
 }
 
 // The full testnet history takes minutes to page through, and the scorer needs it twice per epoch. FastData pages
@@ -102,8 +114,11 @@ async function buildReport(e: number, tamper = false) {
   // First pass gives attention; the pool depends on it, so score again with the exact allocation.
   const trail = await trailing(e);
   const first = score(dataset, labels.labels, st, { yapperAllocation: '0', arenas, trailingScores: trail });
-  const pool = predictYapperPool(BigInt(first.attention), state);
-  const result: ScoreResult = score(dataset, labels.labels, st, { yapperAllocation: pool.toString(), arenas, trailingScores: trail });
+  const pools = predictPools(BigInt(first.attention), state);
+  const jackpot = pools.jackpot > 0n ? { block: state.block_number, payout: pools.jackpot.toString(), earlier: await earlierInBlock(state.block_start_epoch, e) } : undefined;
+  if (jackpot) log(`epoch ${e} completes block ${state.block_number}: jackpot ${pools.jackpot} split over ${jackpot.earlier.length + 1} ticks`);
+  const scoreParams = { yapperAllocation: pools.tick.toString(), arenas, trailingScores: trail, ...(jackpot ? { jackpot } : {}) };
+  const result: ScoreResult = score(dataset, labels.labels, st, scoreParams);
   const labelsHash = sha256Hex(canonical(labels.labels));
   const report = {
     attention: result.attention,
@@ -123,7 +138,7 @@ async function buildReport(e: number, tamper = false) {
   }
   await writeFile(resolve(dir, 'dataset.json'), canonical(dataset));
   await writeFile(resolve(dir, 'labels.json'), JSON.stringify({ labels: labels.labels, details: labels.details, model: labels.model, simulated: labels.simulated, promptHash: labels.promptHash, attestation: labels.attestation, usage: labels.usage }, null, 1));
-  await writeFile(resolve(dir, 'scores.json'), JSON.stringify({ epoch: e, fromMs, toMs, predictedYapperPool: pool.toString(), stakes: st, arenas, trailing: trail, report, result }, null, 1));
+  await writeFile(resolve(dir, 'scores.json'), JSON.stringify({ epoch: e, fromMs, toMs, predictedYapperPool: (pools.tick + pools.jackpot).toString(), predictedJackpot: pools.jackpot.toString(), scoreParams, stakes: st, arenas, trailing: trail, report, result }, null, 1));
   await updateIndex(e, { attention: result.attention, posts: dataset.posts.length, yappers: result.yappers.length, simulatedLabels: labels.simulated });
   return report;
 }
@@ -186,7 +201,7 @@ async function finalize(e: number) {
   const after = await epochRec(e);
   const st: any = await view(TOKEN, 'get_state');
   const supply = await view<string>(TOKEN, 'ft_total_supply');
-  await updateIndex(e, { status: after.status, emission: after.emission, yapperPool: after.yapper_pool, finalizeTx: h, supply, reserve: st.reserve, burnedTotal: st.burned_total, mintedTotal: st.minted_total, streak: st.streak, target: st.attention_target });
+  await updateIndex(e, { status: after.status, emission: after.emission, yapperPool: after.yapper_pool, finalizeTx: h, supply, vault: st.vault, jackpotPot: st.jackpot_pot, block: after.block, jackpot: after.jackpot, blockNumber: st.block_number, blockProgress: st.block_progress, blockThreshold: st.block_threshold, burnedTotal: st.burned_total, mintedTotal: st.minted_total, target: st.attention_target });
   log(`finalized ${e}: emission ${Number(BigInt(after.emission) / 10n ** 15n) / 1000} YAP`);
   return true;
 }

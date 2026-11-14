@@ -23,7 +23,22 @@ async function audit(e: number): Promise<string | null> {
   const problems: string[] = [];
   if (datasetHash(d) !== rep.data_hash) problems.push('data_hash');
   if (sha256Hex(canonical(l.labels)) !== rep.labels_hash) problems.push('labels_hash');
-  const r = score(d, l.labels, s.stakes ?? {}, { yapperAllocation: s.predictedYapperPool, arenas: s.arenas ?? [], trailingScores: s.trailing });
+  // v4 files carry the exact score params; a block's earlier contributions must match those ticks' own published scores.
+  const params = s.scoreParams ?? { yapperAllocation: s.predictedYapperPool, arenas: s.arenas ?? [], trailingScores: s.trailing };
+  if (params.jackpot) {
+    // Rebuild the block's earlier contributions from our own copies of those ticks, exactly as the scorer does.
+    const done = chain.status === 'Finalized' && BigInt(chain.jackpot ?? '0') > 0n;
+    const start: number = done ? (await view<any>(TOKEN, 'get_block', { number: chain.block })).start_epoch : (await view<any>(TOKEN, 'get_state')).block_start_epoch;
+    const own: Record<string, string>[] = [];
+    for (let k = start; k < e; k++) {
+      const f = resolve(PUBLIC, String(k), 'scores.json');
+      if (!existsSync(f)) continue;
+      const ys = JSON.parse(await readFile(f, 'utf8')).result.yappers as { account: string; score: string }[];
+      own.push(Object.fromEntries(ys.filter((y) => BigInt(y.score) > 0n).map((y) => [y.account, y.score])));
+    }
+    if (JSON.stringify(own) !== JSON.stringify(params.jackpot.earlier)) problems.push('jackpot contributions');
+  }
+  const r = score(d, l.labels, s.stakes ?? {}, params);
   if (r.yappersRoot !== rep.yappers_root) problems.push('yappers_root');
   if (r.attention !== rep.attention) problems.push(`attention ${rep.attention} vs ${r.attention}`);
   return problems.length ? problems.join(', ') : '';

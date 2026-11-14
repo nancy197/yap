@@ -31,7 +31,7 @@ export default function Verify({ epoch }: { epoch?: string }) {
         out.push({ name: 'data_hash on chain = recomputed', ok: rep.data_hash === dh, detail: rep.data_hash });
         out.push({ name: 'labels_hash on chain = recomputed', ok: rep.labels_hash === lh, detail: rep.labels_hash });
       }
-      const r = score(d as any, (l as any).labels, (s as any).stakes ?? {}, { yapperAllocation: (s as any).predictedYapperPool ?? '0', arenas: (s as any).arenas ?? [], trailingScores: (s as any).trailing ?? undefined });
+      const r = score(d as any, (l as any).labels, (s as any).stakes ?? {}, (s as any).scoreParams ?? { yapperAllocation: (s as any).predictedYapperPool ?? '0', arenas: (s as any).arenas ?? [], trailingScores: (s as any).trailing ?? undefined });
       const ms = (performance.now() - t0).toFixed(0);
       out.push({ name: `Recomputed scores in this browser (${ms} ms)`, ok: true, detail: `${r.yappers.length} yappers, attention ${sc(r.attention).toFixed(3)}` });
       out.push({ name: 'Attention = published', ok: r.attention === (s as any).result.attention, detail: `${r.attention} vs ${(s as any).result.attention}` });

@@ -48,7 +48,7 @@ export default function Earn() {
       <div className="page-head">
         <div>
           <h1>Earn</h1>
-          <p>Each finalized epoch mints $YAP to yappers in proportion to Yap score. Claim with the Merkle proof from the published scores: the contract checks it against the root the scorers reported. Unclaimed rewards burn after {cfg?.claim_epochs ?? 14} epochs. Stake to earn the stakers' {cfg ? cfg.staker_bps / 100 : 10}% and to give your likes more weight.</p>
+          <p>Each finalized epoch mints $YAP to yappers in proportion to Yap score. Claim with the Merkle proof from the published scores: the contract checks it against the root the scorers reported. Jackpot shares arrive in the same claim. Unclaimed rewards return to the jackpot after {cfg?.claim_epochs ?? 14} ticks. Stake to earn the stakers' {cfg ? cfg.staker_bps / 100 : 10}% and to give your likes more weight.</p>
         </div>
       </div>
       {!w ? (

@@ -19,12 +19,11 @@ fn cfg() -> Config {
         base_emission: U128(1_000),
         initial_attention_target: U128(1_000),
         ema_bps: 2_000,
-        loud_bps: 8_000,
         max_ratio_bps: 30_000,
-        streak_cap: 2,
-        streak_step_bps: 500,
-        quiet_burn_bps: 300,
-        dead_burn_bps: 1_000,
+        jackpot_bps: 2_000,
+        vault_release_bps: 1_000,
+        initial_block_threshold: U128(2_500),
+        difficulty_bps: 12_500,
         report_deadline_epochs: 3,
         yapper_bps: 8_000,
         staker_bps: 1_000,
@@ -41,7 +40,7 @@ fn cfg() -> Config {
         accepted_arena_tokens: vec![id("usdc.testnet")],
         initial_supply: U128(100_000),
         genesis_split: GenesisSplit {
-            reserve_bps: 6_000,
+            vault_bps: 6_000,
             dao_bps: 2_500,
             deployer_bps: 1_500,
         },
@@ -80,17 +79,29 @@ fn propose(y: &mut Yap, e: u32, attention: u128, root: String) {
 }
 
 #[test]
-fn genesis_and_loud_quiet_dead() {
+fn genesis_emission_split_and_dead_tick_burn_nothing() {
     let mut y = setup();
     assert_eq!(y.token.total_supply, 100_000);
-    assert_eq!(y.reserve, 60_000);
+    assert_eq!(y.vault, 60_000);
     assert_eq!(y.token.accounts.get(&id("dao.testnet")), Some(25_000));
     let root = hex::encode([1; 32]);
     propose(&mut y, 0, 1_000, root.clone());
     ctx("any.testnet", 115);
     y.finalize(0);
-    assert_eq!(y.streak, 1);
-    assert_eq!(y.get_epoch(0).unwrap().emission.0, 1_050);
+    let e0 = y.get_epoch(0).unwrap();
+    // 1_000 minted: 20% to the jackpot, the remaining 800 split 80/10/10.
+    assert_eq!(e0.emission.0, 1_000);
+    assert_eq!(
+        (e0.yapper_pool.0, e0.staker_pool.0, e0.dao_pool.0),
+        (640, 80, 80)
+    );
+    assert_eq!(y.jackpot_pot, 200);
+    assert_eq!(
+        e0.yapper_pool.0 + e0.staker_pool.0 + e0.dao_pool.0 + y.jackpot_pot,
+        e0.emission.0
+    );
+    assert_eq!((e0.block, e0.jackpot.0), (1, 0));
+    assert_eq!(y.block_progress, 1_000);
     assert_eq!(y.attention_target, 1_000);
     ctx("s1.testnet", 121);
     y.submit_report(1, report(100, root.clone()));
@@ -98,33 +109,63 @@ fn genesis_and_loud_quiet_dead() {
     y.submit_report(1, report(100, root));
     ctx("any.testnet", 125);
     y.finalize(1);
-    assert_eq!(y.streak, 0);
-    assert_eq!(y.attention_target, 820);
     assert_eq!(y.get_epoch(1).unwrap().emission.0, 100);
-    let before = y.reserve;
+    assert_eq!(y.jackpot_pot, 220);
+    assert_eq!(y.attention_target, 820);
+    assert_eq!(y.block_progress, 1_100);
+    // A tick nobody reported burns nothing and adds no progress.
     ctx("any.testnet", 161);
     y.crank_dead_epoch(2);
-    assert_eq!(y.reserve, before - before / 10);
-    assert_eq!(y.attention_target, 656);
     assert_eq!(y.get_epoch(2).unwrap().status, EpochStatus::Dead);
-    assert!(y.burned_total > 0);
+    assert_eq!(y.attention_target, 656);
+    assert_eq!(
+        (y.vault, y.burned_total, y.block_progress),
+        (60_000, 0, 1_100)
+    );
 }
 
 #[test]
-fn streak_cap_ema_and_claim_burn() {
+fn block_pays_jackpot_raises_difficulty_and_recycles_unclaimed() {
     let mut y = setup();
-    let leaf = merkle::yapper_leaf(0, "alice.testnet", 100, 5, 2);
+    let leaf = merkle::yapper_leaf(0, "alice.testnet", 8_000, 5, 2);
     propose(&mut y, 0, 3_000, leaf);
     ctx("any.testnet", 115);
     y.finalize(0);
-    assert_eq!(y.get_epoch(0).unwrap().emission.0, 3_150);
-    assert_eq!(y.attention_target, 1_400);
+    // 3_000 attention crosses the 2_500 threshold: pot (600) + 10% of the vault (6_000) pays out in this tick.
+    let e0 = y.get_epoch(0).unwrap();
+    assert_eq!(e0.emission.0, 3_000);
+    assert_eq!(e0.jackpot.0, 6_600);
+    assert_eq!(e0.yapper_pool.0, 1_920 + 6_600);
+    assert_eq!((y.jackpot_pot, y.vault), (0, 54_000));
+    let b = y.get_block(1).unwrap();
+    assert_eq!(
+        (
+            b.start_epoch,
+            b.end_epoch,
+            b.progress.0,
+            b.threshold.0,
+            b.payout.0
+        ),
+        (0, 0, 3_000, 2_500, 6_600)
+    );
+    assert_eq!(
+        (
+            y.block_number,
+            y.block_start_epoch,
+            y.block_progress,
+            y.block_threshold
+        ),
+        (2, 1, 0, 3_125)
+    );
+    // A leaf that includes a jackpot share is claimed like any other.
     ctx("alice.testnet", 116);
-    y.claim(0, U128(100), 5, 2, vec![]);
-    assert!(y.is_claimed(0, id("alice.testnet")));
+    y.claim(0, U128(8_000), 5, 2, vec![]);
+    assert_eq!(y.token.accounts.get(&id("alice.testnet")), Some(8_000));
+    // After the claim window the unclaimed 520 goes back into the jackpot instead of burning.
     ctx("any.testnet", 251);
-    y.burn_unclaimed(0);
-    assert!(y.get_epoch(0).unwrap().unclaimed_burned);
+    y.recycle_unclaimed(0);
+    assert!(y.get_epoch(0).unwrap().unclaimed_recycled);
+    assert_eq!((y.jackpot_pot, y.burned_total), (520, 0));
 }
 
 #[test]
@@ -246,7 +287,7 @@ fn merkle_shared_vectors() {
 }
 
 #[test]
-fn scorer_quorum_requires_identical_hash_and_streak_caps() {
+fn scorer_quorum_requires_identical_hash_and_blocks_advance() {
     let mut y = setup();
     for who in ["s1.testnet", "s2.testnet", "s3.testnet"] {
         y.scorers.insert(
@@ -276,9 +317,10 @@ fn scorer_quorum_requires_identical_hash_and_streak_caps() {
         ctx("any.testnet", t + 5);
         y.finalize(e);
     }
-    assert_eq!(y.streak, 4);
-    assert_eq!(y.best_streak, 4);
-    assert_eq!(y.get_epoch(3).unwrap().emission.0, 1_100);
+    // No streak bonus any more; the first block (2_500) completes in tick 2.
+    assert_eq!(y.get_epoch(3).unwrap().emission.0, 1_000);
+    assert_eq!(y.get_block(1).unwrap().end_epoch, 2);
+    assert_eq!(y.block_number, 2);
 }
 
 #[test]

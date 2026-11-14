@@ -80,7 +80,25 @@ pub struct Epoch {
     pub staker_pool: U128,
     pub dao_pool: U128,
     pub claimed: U128,
-    pub unclaimed_burned: bool,
+    /// Unclaimed yapper rewards went back into the jackpot.
+    pub unclaimed_recycled: bool,
+    /// The block this tick counted towards.
+    pub block: u32,
+    /// Jackpot paid out in this tick (already included in `yapper_pool`), 0 if the block did not complete here.
+    pub jackpot: U128,
+}
+
+/// A completed block: the jackpot it paid and the ticks whose yappers shared it.
+#[derive(Clone, BorshDeserialize, BorshSerialize, Serialize, Deserialize, near_sdk::NearSchema)]
+#[abi(borsh, json)]
+#[serde(crate = "near_sdk::serde")]
+pub struct Block {
+    pub number: u32,
+    pub start_epoch: u32,
+    pub end_epoch: u32,
+    pub threshold: U128,
+    pub progress: U128,
+    pub payout: U128,
 }
 
 impl Epoch {
@@ -97,7 +115,9 @@ impl Epoch {
             staker_pool: U128(0),
             dao_pool: U128(0),
             claimed: U128(0),
-            unclaimed_burned: false,
+            unclaimed_recycled: false,
+            block: 0,
+            jackpot: U128(0),
         }
     }
 }

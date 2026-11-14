@@ -1,6 +1,7 @@
 import { S, div, ln, log10, mul, prorata, sqrt, stakeFixed } from './fixed.js';
 import { arenaLeaf, merkle, yapperLeaf } from './merkle.js';
-import type { EpochDataset, Labels, ScoreParams, ScoreResult, Stakes } from './types.js';
+import { blockContributions, jackpotShares } from './jackpot.js';
+import type { EpochDataset, JackpotResult, Labels, ScoreParams, ScoreResult, Stakes } from './types.js';
 
 const cmp = (a:string,b:string):number => a<b?-1:a>b?1:0;
 function assertParams(p: ScoreParams): Required<Pick<ScoreParams,'smartPct'|'minFollowers'|'maxPosts'|'yapperAllocation'|'arenas'|'trailingScores'>> {
@@ -113,11 +114,26 @@ export function score(dataset: EpochDataset, labels: Labels, stakes: Stakes = {}
   const tiers = tierMap(yapScores,p.trailingScores);
   const eligible = accounts.filter(a=>(yapScores.get(a) ?? 0n)>0n).sort();
   const amounts = prorata(eligible.map(key=>({key,score:yapScores.get(key)!})),BigInt(p.yapperAllocation));
-  const leaves = eligible.map(a=>yapperLeaf(dataset.epoch,a,amounts.get(a) ?? 0n,yapScores.get(a)!,tiers.get(a) ?? 0));
+  // Block completed in this tick: everyone who contributed during the block gets a leaf, even if silent now.
+  let jackpot: JackpotResult | undefined;
+  let shares = new Map<string,bigint>();
+  if (params.jackpot) {
+    const current = Object.fromEntries([...yapScores].filter(([,v])=>v>0n).map(([a,v])=>[a,v.toString()]));
+    const contributions = blockContributions([...params.jackpot.earlier,current]);
+    shares = jackpotShares(contributions,BigInt(params.jackpot.payout));
+    const keys = [...contributions.keys()].sort();
+    jackpot = {block:params.jackpot.block,payout:params.jackpot.payout,
+      contributions:Object.fromEntries(keys.map(a=>[a,contributions.get(a)!.toString()])),
+      shares:Object.fromEntries(keys.map(a=>[a,(shares.get(a) ?? 0n).toString()]))};
+  }
+  const members = [...new Set([...eligible,...[...shares].filter(([,v])=>v>0n).map(([a])=>a)])].sort();
+  const leafAmount = (a: string) => (amounts.get(a) ?? 0n)+(shares.get(a) ?? 0n);
+  const leaves = members.map(a=>yapperLeaf(dataset.epoch,a,leafAmount(a),yapScores.get(a) ?? 0n,tiers.get(a) ?? 0));
   const tree = merkle(leaves);
-  const yappers = eligible.map((account,i)=>({account,score:yapScores.get(account)!.toString(),amount:(amounts.get(account) ?? 0n).toString(),tier:tiers.get(account) ?? 0,
+  const yappers = members.map((account,i)=>({account,score:(yapScores.get(account) ?? 0n).toString(),amount:leafAmount(account).toString(),
+    ...(shares.has(account) ? {jackpot:shares.get(account)!.toString()} : {}),tier:tiers.get(account) ?? 0,
     smartFollowers:smartFollowers.get(account) ?? 0,rankNorm:(rankNorm.get(account) ?? 0n).toString(),
-    posts:selected.get(account)!.map(x=>({key:x.key,score:x.score.toString(),q:x.q})),proof:tree.proofs[i]!}))
+    posts:(selected.get(account) ?? []).map(x=>({key:x.key,score:x.score.toString(),q:x.q})),proof:tree.proofs[i]!}))
     .sort((a,b)=>BigInt(a.score)===BigInt(b.score)?cmp(a.account,b.account):BigInt(a.score)>BigInt(b.score)?-1:1);
   const attention = [...yapScores.values()].reduce((a,b)=>a+b,0n).toString();
   const topicScores = new Map<string,bigint>();
@@ -141,5 +157,5 @@ export function score(dataset: EpochDataset, labels: Labels, stakes: Stakes = {}
     const arenaTree = merkle(members.map(([account])=>arenaLeaf(arena.id,dataset.epoch,account,payouts.get(account) ?? 0n)));
     arenas[String(arena.id)] = {id:arena.id,topic:arena.topic,root:arenaTree.root,yappers:members.map(([account,value],i)=>({account,score:value.toString(),amount:(payouts.get(account) ?? 0n).toString(),proof:arenaTree.proofs[i]!}))};
   }
-  return {attention,yappersRoot:tree.root,yappers,arenas,mindshare,smartAccounts:[...smart].sort()};
+  return {attention,yappersRoot:tree.root,yappers,arenas,mindshare,smartAccounts:[...smart].sort(),...(jackpot ? {jackpot} : {})};
 }

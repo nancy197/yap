@@ -75,8 +75,8 @@ export default function Mindshare() {
       <div className="grid g4" style={{ marginBottom: 14 }}>
         <div className="card stat"><div className="caps">Yappers ({wins.find((x) => x[1] === w)?.[0]})</div><div className="v">{rows.length}</div><div className="s">accounts with score &gt; 0</div></div>
         <div className="card stat"><div className="caps">{net === 'mainnet' ? 'Attention · window' : 'Attention · last epoch'}</div><div className="v">{sc(last.result.attention).toFixed(1)}</div><div className="s">{state ? `target ${sc(state.attention_target).toFixed(1)}` : net === 'mainnet' ? 'last 30 days' : `epoch #${last.epoch}`}</div></div>
-        <div className="card stat"><div className="caps">Streak</div><div className="v">{state ? `🔥 ${state.streak}` : '—'}</div><div className="s">{state ? `best ${state.best_streak} · loud epochs in a row` : 'testnet only'}</div></div>
-        <div className="card stat"><div className="caps">Minted / burned</div><div className="v" style={{ fontSize: 18 }}>{state ? `${yap(state.minted_total, 0)} / ${yap(state.burned_total, 0)}` : '—'}</div><div className="s">$YAP all time</div></div>
+        <div className="card stat"><div className="caps">Block</div><div className="v">{state ? `⛏ #${state.block_number}` : '—'}</div><div className="s">{state ? `${Math.min(100, (sc(state.block_progress) / Math.max(1e-9, sc(state.block_threshold))) * 100).toFixed(0)}% to the jackpot` : 'testnet only'}</div></div>
+        <div className="card stat"><div className="caps">💰 Jackpot pot</div><div className="v" style={{ fontSize: 18 }}>{state ? yap(state.jackpot_pot, 0) : '—'}</div><div className="s">{state ? `+ vault ${yap(state.vault, 0)} $YAP` : 'testnet only'}</div></div>
       </div>
 
       <div className="card" style={{ marginBottom: 14 }}>

@@ -42,13 +42,13 @@ async fn advance_to(worker: &Worker<Sandbox>, target_ns: u64) -> Result<()> {
 }
 fn cfg(dao: &Contract, scorers: &[Account], genesis_ts: u64) -> Value {
     json!({"epoch_secs":5,"genesis_ts":genesis_ts,"base_emission":"1000","initial_attention_target":"1000",
-        "ema_bps":2000,"loud_bps":8000,"max_ratio_bps":30000,"streak_cap":10,"streak_step_bps":500,
-        "quiet_burn_bps":300,"dead_burn_bps":1000,"report_deadline_epochs":10,
+        "ema_bps":2000,"max_ratio_bps":30000,"jackpot_bps":2000,"vault_release_bps":1000,"initial_block_threshold":"2500","difficulty_bps":12500,
+        "report_deadline_epochs":10,
         "yapper_bps":8000,"staker_bps":1000,"dao_bps":1000,"claim_epochs":14,
         "scorers":scorers.iter().map(|a|a.id().as_str()).collect::<Vec<_>>(),"scorer_quorum":2,
         "scorer_bond":"100","challenge_secs":2,"challenge_bond":"50","unbond_epochs":7,
         "dao":dao.id(),"dao_proposal_bond":N.to_string(),"accepted_arena_tokens":[],
-        "initial_supply":"100000","genesis_split":{"reserve_bps":6000,"dao_bps":2500,"deployer_bps":1500}})
+        "initial_supply":"100000","genesis_split":{"vault_bps":6000,"dao_bps":2500,"deployer_bps":1500}})
 }
 async fn register(owner: &Account, c: &Contract, target: &Account) -> Result<()> {
     call(
@@ -187,12 +187,24 @@ async fn real_dao_challenge_and_funded_arena() -> Result<()> {
     // The re-bonded scorers resubmit an honest report for the discarded epoch, and it finalizes.
     let honest = json!({"attention":"900","yappers_root":h(5),"arenas":[],"labels_hash":h(2),"data_hash":h(3),"uri":"https://example.test/0b"});
     for scorer in scorers.iter().take(2) {
-        call(scorer, &token, "submit_report", json!({"e":0,"report":honest}), 0).await?;
+        call(
+            scorer,
+            &token,
+            "submit_report",
+            json!({"e":0,"report":honest}),
+            0,
+        )
+        .await?;
     }
-    let resubmitted_at = view(&token, "get_epoch", json!({"e":0})).await?["proposed_at"].as_u64().unwrap();
+    let resubmitted_at = view(&token, "get_epoch", json!({"e":0})).await?["proposed_at"]
+        .as_u64()
+        .unwrap();
     advance_to(&worker, resubmitted_at + 2_100_000_000).await?;
     call(&alice, &token, "finalize", json!({"e":0}), 0).await?;
-    assert_eq!(view(&token, "get_epoch", json!({"e":0})).await?["status"], "Finalized");
+    assert_eq!(
+        view(&token, "get_epoch", json!({"e":0})).await?["status"],
+        "Finalized"
+    );
     // The DAO funds an arena by approving a FunctionCall proposal that invokes its YAP balance.
     let arena_msg = json!({"open_arena":{"topic":"#rhea","per_epoch":"100","epochs":2,"min_tier":2,"title":"Rhea"}});
     let args = base64::engine::general_purpose::STANDARD.encode(serde_json::to_vec(&json!({

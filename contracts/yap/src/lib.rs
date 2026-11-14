@@ -18,7 +18,7 @@ mod token;
 pub use arena::Arena;
 pub use challenge::{Challenge, ChallengeStatus};
 pub use config::{Config, GenesisSplit};
-pub use epoch::{ArenaRoot, Epoch, EpochReport, EpochStatus};
+pub use epoch::{ArenaRoot, Block, Epoch, EpochReport, EpochStatus};
 pub use staking::Stake;
 
 use base64::Engine;
@@ -84,12 +84,15 @@ pub struct Scorer {
 #[abi(json)]
 #[serde(crate = "near_sdk::serde")]
 pub struct StateView {
-    pub streak: u32,
-    pub best_streak: u32,
+    pub block_number: u32,
+    pub block_start_epoch: u32,
+    pub block_progress: U128,
+    pub block_threshold: U128,
+    pub jackpot_pot: U128,
+    pub vault: U128,
     pub attention_target: U128,
     pub minted_total: U128,
     pub burned_total: U128,
-    pub reserve: U128,
     pub current_epoch: u32,
     pub reward_per_share: U128,
 }
@@ -100,9 +103,14 @@ pub struct Yap {
     config: Config,
     token: FungibleToken,
     metadata: FungibleTokenMetadata,
-    reserve: u128,
-    streak: u32,
-    best_streak: u32,
+    // Proof of Yap: ticks add attention to the current block; crossing the threshold pays the jackpot.
+    vault: u128,
+    jackpot_pot: u128,
+    block_number: u32,
+    block_start_epoch: u32,
+    block_progress: u128,
+    block_threshold: u128,
+    blocks: UnorderedMap<u32, Block>,
     attention_target: u128,
     minted_total: u128,
     burned_total: u128,
@@ -148,24 +156,28 @@ impl Yap {
         for id in &genesis_accounts {
             token.internal_register_account(id);
         }
-        let reserve = bps(config.initial_supply.0, config.genesis_split.reserve_bps);
+        let vault = bps(config.initial_supply.0, config.genesis_split.vault_bps);
         let dao_amount = bps(config.initial_supply.0, config.genesis_split.dao_bps);
-        let deployer_amount = sub(sub(config.initial_supply.0, reserve), dao_amount);
-        token.internal_deposit(&contract, reserve);
-        token::mint_event(&contract, reserve, "genesis reserve");
+        let deployer_amount = sub(sub(config.initial_supply.0, vault), dao_amount);
+        token.internal_deposit(&contract, vault);
+        token::mint_event(&contract, vault, "genesis vault");
         token.internal_deposit(&config.dao, dao_amount);
         token::mint_event(&config.dao, dao_amount, "genesis DAO");
         token.internal_deposit(&deployer, deployer_amount);
         token::mint_event(&deployer, deployer_amount, "genesis deployer");
         let result = Self {
             attention_target: config.initial_attention_target.0,
+            block_threshold: config.initial_block_threshold.0,
             config,
             token,
             metadata,
-            reserve,
-            streak: 0,
-            best_streak: 0,
-            minted_total: add(add(reserve, dao_amount), deployer_amount),
+            vault,
+            jackpot_pot: 0,
+            block_number: 1,
+            block_start_epoch: 0,
+            block_progress: 0,
+            blocks: UnorderedMap::new(b"b".to_vec()),
+            minted_total: add(add(vault, dao_amount), deployer_amount),
             burned_total: 0,
             reward_per_share: 0,
             epochs: UnorderedMap::new(b"e".to_vec()),
@@ -181,7 +193,7 @@ impl Yap {
         };
         events::emit(
             "genesis",
-            json!({"reserve":U128(reserve),"dao":U128(dao_amount),"deployer":U128(deployer_amount)}),
+            json!({"vault":U128(vault),"dao":U128(dao_amount),"deployer":U128(deployer_amount)}),
         );
         result
     }
@@ -191,12 +203,15 @@ impl Yap {
     }
     pub fn get_state(&self) -> StateView {
         StateView {
-            streak: self.streak,
-            best_streak: self.best_streak,
+            block_number: self.block_number,
+            block_start_epoch: self.block_start_epoch,
+            block_progress: U128(self.block_progress),
+            block_threshold: U128(self.block_threshold),
+            jackpot_pot: U128(self.jackpot_pot),
+            vault: U128(self.vault),
             attention_target: U128(self.attention_target),
             minted_total: U128(self.minted_total),
             burned_total: U128(self.burned_total),
-            reserve: U128(self.reserve),
             current_epoch: self.current_epoch(),
             reward_per_share: U128(self.reward_per_share),
         }
@@ -207,6 +222,14 @@ impl Yap {
     pub fn get_epochs(&self, from: u32, limit: u32) -> Vec<Epoch> {
         (from..from.saturating_add(limit.min(100)))
             .filter_map(|e| self.get_epoch(e))
+            .collect()
+    }
+    pub fn get_block(&self, number: u32) -> Option<Block> {
+        self.blocks.get(&number)
+    }
+    pub fn get_blocks(&self, from: u32, limit: u32) -> Vec<Block> {
+        (from..from.saturating_add(limit.min(100)))
+            .filter_map(|n| self.get_block(n))
             .collect()
     }
     pub fn get_arena(&self, id: u32) -> Option<Arena> {
@@ -339,28 +362,10 @@ impl Yap {
         if attention == 0 {
             self.apply_dead(&mut epoch);
         } else {
+            // More yap mints more, capped at max_ratio x the base; the target follows attention by EMA.
             let old_target = self.attention_target;
-            let loud = mul(attention, 10_000) >= mul(old_target, self.config.loud_bps as u128);
-            let base_at_attention = mul(self.config.base_emission.0, attention) / old_target;
-            let emission = if loud {
-                self.streak = self.streak.checked_add(1).expect("streak overflow");
-                self.best_streak = self.best_streak.max(self.streak);
-                let limited = base_at_attention.min(
-                    mul(
-                        self.config.base_emission.0,
-                        self.config.max_ratio_bps as u128,
-                    ) / 10_000,
-                );
-                let streak_bonus = mul(
-                    self.streak.min(self.config.streak_cap) as u128,
-                    self.config.streak_step_bps as u128,
-                );
-                mul(limited, add(10_000, streak_bonus)) / 10_000
-            } else {
-                self.streak = 0;
-                self.burn_reserve(self.config.quiet_burn_bps);
-                base_at_attention
-            };
+            let emission = (mul(self.config.base_emission.0, attention) / old_target)
+                .min(bps(self.config.base_emission.0, self.config.max_ratio_bps));
             self.attention_target = (add(
                 mul(old_target, (10_000 - self.config.ema_bps) as u128),
                 mul(attention, self.config.ema_bps as u128),
@@ -368,9 +373,10 @@ impl Yap {
                 .max(1);
             epoch.status = EpochStatus::Finalized;
             self.allocate_emission(&mut epoch, emission);
+            self.advance_block(&mut epoch, attention);
             events::emit(
                 "epoch_finalized",
-                json!({"epoch":e,"attention":U128(attention),"emission":U128(emission),"streak":self.streak}),
+                json!({"epoch":e,"attention":U128(attention),"emission":U128(emission),"block":epoch.block,"block_progress":U128(self.block_progress),"jackpot":epoch.jackpot}),
             );
         }
         self.epochs.insert(&e, &epoch);
@@ -421,21 +427,25 @@ impl Yap {
         events::emit("claim", json!({"epoch":e,"account":caller,"amount":amount}));
     }
 
-    pub fn burn_unclaimed(&mut self, e: u32) {
+    /// Nothing burns in Proof of Yap: rewards left unclaimed after the claim window go back into the jackpot.
+    pub fn recycle_unclaimed(&mut self, e: u32) {
         let mut epoch = self.get_epoch(e).expect("epoch missing");
         require!(
-            epoch.status == EpochStatus::Finalized && !epoch.unclaimed_burned,
-            "not burnable"
+            epoch.status == EpochStatus::Finalized && !epoch.unclaimed_recycled,
+            "not recyclable"
         );
         require!(
             self.current_epoch() > e.saturating_add(self.config.claim_epochs),
             "claim window open"
         );
         let left = sub(epoch.yapper_pool.0, epoch.claimed.0);
-        self.burn_from_contract(left, "unclaimed");
-        epoch.unclaimed_burned = true;
+        self.jackpot_pot = add(self.jackpot_pot, left);
+        epoch.unclaimed_recycled = true;
         self.epochs.insert(&e, &epoch);
-        events::emit("unclaimed_burned", json!({"epoch":e,"amount":U128(left)}));
+        events::emit(
+            "unclaimed_to_jackpot",
+            json!({"epoch":e,"amount":U128(left),"jackpot_pot":U128(self.jackpot_pot)}),
+        );
     }
 }
 
@@ -473,26 +483,58 @@ impl Yap {
         self.burned_total = add(self.burned_total, amount);
         events::emit("burn", json!({"amount":U128(amount),"reason":reason}));
     }
-    fn burn_reserve(&mut self, burn_bps: u32) {
-        let amount = bps(self.reserve, burn_bps);
-        self.reserve = sub(self.reserve, amount);
-        self.burn_from_contract(amount, "reserve");
-    }
+    /// A tick nobody reported (or with zero attention): no mint, no progress, nothing burns.
     fn apply_dead(&mut self, epoch: &mut Epoch) {
-        self.streak = 0;
-        self.burn_reserve(self.config.dead_burn_bps);
         self.attention_target = bps(self.attention_target, 10_000 - self.config.ema_bps).max(1);
         epoch.status = EpochStatus::Dead;
+        epoch.block = self.block_number;
         events::emit(
             "epoch_dead",
-            json!({"epoch":epoch.number,"reserve":U128(self.reserve),"attention_target":U128(self.attention_target)}),
+            json!({"epoch":epoch.number,"attention_target":U128(self.attention_target)}),
         );
     }
+    /// Adds the tick's attention to the current block. Crossing the threshold pays the jackpot pot plus a vault
+    /// release into this tick's yapper pool (split off chain by contribution over the whole block), then starts
+    /// the next block with a higher threshold.
+    fn advance_block(&mut self, epoch: &mut Epoch, attention: u128) {
+        epoch.block = self.block_number;
+        self.block_progress = add(self.block_progress, attention);
+        if self.block_progress < self.block_threshold {
+            return;
+        }
+        let release = bps(self.vault, self.config.vault_release_bps);
+        self.vault = sub(self.vault, release);
+        let payout = add(self.jackpot_pot, release);
+        self.jackpot_pot = 0;
+        epoch.jackpot = U128(payout);
+        epoch.yapper_pool = U128(add(epoch.yapper_pool.0, payout));
+        let block = Block {
+            number: self.block_number,
+            start_epoch: self.block_start_epoch,
+            end_epoch: epoch.number,
+            threshold: U128(self.block_threshold),
+            progress: U128(self.block_progress),
+            payout: U128(payout),
+        };
+        self.blocks.insert(&self.block_number, &block);
+        events::emit(
+            "jackpot",
+            json!({"block":block.number,"start_epoch":block.start_epoch,"end_epoch":block.end_epoch,"payout":block.payout,"threshold":block.threshold}),
+        );
+        self.block_number = self.block_number.checked_add(1).expect("block overflow");
+        self.block_start_epoch = epoch.number.saturating_add(1);
+        self.block_progress = 0;
+        self.block_threshold = bps(self.block_threshold, self.config.difficulty_bps).max(1);
+    }
     fn allocate_emission(&mut self, epoch: &mut Epoch, emission: u128) {
-        let yapper = bps(emission, self.config.yapper_bps);
-        let staker = bps(emission, self.config.staker_bps);
-        let dao = sub(sub(emission, yapper), staker);
-        self.mint(&self_id(), add(yapper, staker), "epoch");
+        // The jackpot share comes off the top; the rest is split yapper / staker / DAO as before.
+        let jackpot = bps(emission, self.config.jackpot_bps);
+        let rest = sub(emission, jackpot);
+        let yapper = bps(rest, self.config.yapper_bps);
+        let staker = bps(rest, self.config.staker_bps);
+        let dao = sub(sub(rest, yapper), staker);
+        self.jackpot_pot = add(self.jackpot_pot, jackpot);
+        self.mint(&self_id(), add(add(yapper, staker), jackpot), "epoch");
         self.mint(&self.config.dao.clone(), dao, "epoch_dao");
         epoch.emission = U128(emission);
         epoch.yapper_pool = U128(yapper);

@@ -45,11 +45,21 @@ export interface ScoreParams {
   yapperAllocation?: string;
   arenas?: ArenaConfig[];
   trailingScores?: Record<string, string[]>;
+  /** Set when this tick completes a block: the payout to split and the earlier ticks' per-account scores. */
+  jackpot?: JackpotParams;
+}
+export interface JackpotParams { block: number; payout: string; earlier: Record<string, string>[]; }
+export interface JackpotResult {
+  block: number;
+  payout: string;
+  contributions: Record<string, string>; // summed Yap score over the block's ticks
+  shares: Record<string, string>; // raw YAP units, included in each leaf's amount
 }
 export interface Yapper {
   account: string;
   score: string; // scaled by 1e6
-  amount: string; // raw YAP units
+  amount: string; // raw YAP units: this tick's share plus any jackpot share
+  jackpot?: string; // jackpot part of `amount`
   tier: number;
   smartFollowers: number;
   rankNorm: string;
@@ -64,4 +74,5 @@ export interface ScoreResult {
   arenas: Record<string, ArenaResult>;
   mindshare: {topic: string; score: string; share: string}[];
   smartAccounts: string[];
+  jackpot?: JackpotResult;
 }
